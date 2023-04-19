@@ -68,8 +68,7 @@ endif;
 
         <?php
            foreach ($liste_des_clients_a_afficher as $client) : 
-                print_r($client);
-                echo '<br>';
+                echo $client->ID;
            endforeach;
         ?>
 
