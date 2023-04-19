@@ -88,12 +88,12 @@ if (is_singular('client')) : ?>
 				<?php endif; ?>
 			</div>
 			<div id="nav_blog_center" class="nav_blog_item">
-				<?php $texte_bouton_de_retour_offres = get_field('texte_bouton_de_retour_offres', 'option');
+				<?php $texte_bouton_de_retour_aux_clients = get_field('texte_bouton_de_retour_clients', 'option');
 				$page_qui_liste_les_clients = get_field('page_qui_liste_les_clients', 'option');
 				$page_qui_liste_les_clients_id = $page_qui_liste_les_clients->ID;
 				$page_qui_liste_les_clients_permalink = get_permalink($page_qui_liste_les_clients_id); ?>
-				<a href="<?php echo $page_qui_liste_les_offres_permalink; ?>" class="nav_blog_link_item">
-					<span><?php if ($blog_retour) : ?><?php echo $blog_retour; ?><?php endif; ?><br><?php echo $texte_bouton_de_retour_offres; ?></span>
+				<a href="<?php echo $page_qui_liste_les_clients_permalink; ?>" class="nav_blog_link_item">
+					<span><?php if ($blog_retour) : ?><?php echo $blog_retour; ?><?php endif; ?><br><?php echo $texte_bouton_de_retour_aux_clients; ?></span>
 				</a>
 			</div>
 			<div id="nav_blog_right" class="nav_blog_item">
