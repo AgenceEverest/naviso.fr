@@ -67,7 +67,7 @@ endif;
 <div class="content_width col_flexible col_flexible_1">
 
         <?php
-           foreach ($client as $liste_des_clients_a_afficher) : 
+           foreach ($liste_des_clients_a_afficher as $client) : 
                 print_r($client);
            endforeach;
         ?>

@@ -35,7 +35,6 @@ if (is_singular('post')) : ?>
 	</div>
 <?php endif; ?>
 
-
 <!-- Single offres -->
 <?php
 if (is_singular('offres')) : ?>
@@ -71,7 +70,6 @@ if (is_singular('offres')) : ?>
 		</nav>
 	</div>
 <?php endif; ?>
-
 
 <!-- Single clients -->
 <?php
@@ -160,8 +158,8 @@ if (is_singular('logiciel')) : ?>
 				<?php endif; ?>
 			</div>
 			<div id="nav_blog_center" class="nav_blog_item">
-				<?php $texte_bouton_de_retour_aux_logiciels = get_field('texte_bouton_de_retour_clients', 'option');
-				$page_qui_liste_les_logiciels = get_field('page_qui_liste_les_clients', 'option');
+				<?php $texte_bouton_de_retour_aux_logiciels = get_field('texte_bouton_de_retour_logiciels', 'option');
+				$page_qui_liste_les_logiciels = get_field('page_qui_liste_les_logiciels', 'option');
 				$page_qui_liste_les_logiciels_id = $page_qui_liste_les_logiciels->ID;
 				$page_qui_liste_les_logiciels_permalink = get_permalink($page_qui_liste_les_logiciels_id); ?>
 				<a href="<?php echo $page_qui_liste_les_logiciels_permalink; ?>" class="nav_blog_link_item">
