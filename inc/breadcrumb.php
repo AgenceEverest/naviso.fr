@@ -39,7 +39,7 @@ if (is_singular('offres')) : ?>
 <?php
 if (is_singular('client')) : ?>
 	<?php $page_qui_liste_les_clients = get_field('page_qui_liste_les_clients', 'option');
-	$page_qui_liste_les_clients_id = $page_qui_liste_les_offres->ID;
+	$page_qui_liste_les_clients_id = $page_qui_liste_les_clients->ID;
 	$page_qui_liste_les_clients_permalink = get_permalink($page_qui_liste_les_clients_id);
 	$page_qui_liste_les_clients_title = get_the_title($page_qui_liste_les_clients_id);
 	?>
