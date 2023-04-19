@@ -1,0 +1,18 @@
+.extraits-clients-container {
+    display: flex;
+    flex-wrap: wrap;
+    .extrait-client {
+        width: 25%;
+        .extrait-client__image{
+    
+        }
+        .extrait-client__content {
+            .extrait-client__title{
+    
+            }
+            .extrait-client__description {
+    
+            }
+        }
+    }
+}

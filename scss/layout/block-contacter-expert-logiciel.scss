@@ -1,0 +1,18 @@
+.block-contacter-expert{
+    .col-gauche {
+        .col_flexible_item_picto {
+            width: 1.5rem;
+        }
+        .col_flexible_item_wrapper {
+            display: flex;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .block-contacter-expert {
+        .col-gauche {
+            margin-bottom: 1rem;
+        }
+    }
+}

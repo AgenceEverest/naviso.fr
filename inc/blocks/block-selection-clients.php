@@ -65,12 +65,26 @@ endif;
 
 <!-- colonnes -->
 <div class="content_width col_flexible col_flexible_1">
-
-        <?php
-           foreach ($liste_des_clients_a_afficher as $client) : 
-                echo $client;
-           endforeach;
-        ?>
+    <div class="extraits-clients-container">
+        <?php foreach ($liste_des_clients_a_afficher as $client) :
+            $client = $client['client_selectionne'];
+            $title_client = $client->post_title;
+            $clientId = $client->ID;
+            $desc = get_field('description_extrait_de_la_page', $clientId);
+            $permalink = get_permalink($clientId);
+            $featured_image = get_the_post_thumbnail($clientId, 'thumbnail'); ?>
+            <div class="extrait-client">
+                <div class="extrait-client__image">
+                    <?php echo $featured_image; ?>
+                </div>
+                <div class="extrait-client__content">
+                    <h3 class="extrait-client__title"><?php echo $title_client; ?></h3>
+                    <div class="extrait-client__description"><?php echo $desc; ?></div>
+                    <a href="<?php echo $permalink; ?>" class="extrait-client__link">En savoir plus</a>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
 
     <!-- Lien page contact pré-remplie -->
     <?php if ($cb_calltoaction_interne_externe == 'page_contact') : ?>
