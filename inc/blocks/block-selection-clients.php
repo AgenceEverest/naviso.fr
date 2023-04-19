@@ -23,7 +23,6 @@ if (have_rows('block_selection_clients')) : the_row(); // il s'agit du nom du ch
 endif;
 ?>
 
-
 <?php echo "<div "; ?>
 <?php if ($ajouter_un_id_pour_le_css) : ?>
     <?php echo " id='" . $ajouter_un_id_pour_le_css . "'"; ?>
