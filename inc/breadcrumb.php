@@ -35,7 +35,7 @@ if (is_singular('offres')) : ?>
 	</nav>
 <?php endif; ?>
 
-<!-- Single offres -->
+<!-- Single clients -->
 <?php
 if (is_singular('client')) : ?>
 	<?php $page_qui_liste_les_clients = get_field('page_qui_liste_les_clients', 'option');
@@ -45,6 +45,34 @@ if (is_singular('client')) : ?>
 	?>
 	<nav class="breadcrumb_top content_large">
 		<p class="legende"><a href="<?php bloginfo('url'); ?>"><?php echo $fil_ariane_accueil; ?></a><span class="breadcrumb_separator">›</span><a href="<?php echo $page_qui_liste_les_clients_permalink; ?>"><?php echo $page_qui_liste_les_clients_title; ?></a><span class="breadcrumb_separator">›</span><span aria-current='location'><?php the_title(); ?></span>
+		</p>
+	</nav>
+<?php endif; ?>
+
+<!-- Single formation -->
+<?php
+if (is_singular('formation')) : ?>
+	<?php $page_qui_liste_les_formations = get_field('page_qui_liste_les_formations', 'option');
+	$page_qui_liste_les_formations_id = $page_qui_liste_les_formations->ID;
+	$page_qui_liste_les_formations_permalink = get_permalink($page_qui_liste_les_formations_id);
+	$page_qui_liste_les_formations_title = get_the_title($page_qui_liste_les_formations_id);
+	?>
+	<nav class="breadcrumb_top content_large">
+		<p class="legende"><a href="<?php bloginfo('url'); ?>"><?php echo $fil_ariane_accueil; ?></a><span class="breadcrumb_separator">›</span><a href="<?php echo $page_qui_liste_les_formations_permalink; ?>"><?php echo $page_qui_liste_les_formations_title; ?></a><span class="breadcrumb_separator">›</span><span aria-current='location'><?php the_title(); ?></span>
+		</p>
+	</nav>
+<?php endif; ?>
+
+<!-- Single logiciel -->
+<?php
+if (is_singular('logiciel')) : ?>
+	<?php $page_qui_liste_les_logiciels = get_field('page_qui_liste_les_logiciels', 'option');
+	$page_qui_liste_les_logiciels_id = $page_qui_liste_les_logiciels->ID;
+	$page_qui_liste_les_logiciels_permalink = get_permalink($page_qui_liste_les_logiciels_id);
+	$page_qui_liste_les_logiciels_title = get_the_title($page_qui_liste_les_logiciels_id);
+	?>
+	<nav class="breadcrumb_top content_large">
+		<p class="legende"><a href="<?php bloginfo('url'); ?>"><?php echo $fil_ariane_accueil; ?></a><span class="breadcrumb_separator">›</span><a href="<?php echo $page_qui_liste_les_logiciels_permalink; ?>"><?php echo $page_qui_liste_les_logiciels_title; ?></a><span class="breadcrumb_separator">›</span><span aria-current='location'><?php the_title(); ?></span>
 		</p>
 	</nav>
 <?php endif; ?>
