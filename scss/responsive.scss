@@ -1,0 +1,12 @@
+@media (max-width: 1024px) {}
+
+@media (max-width: 768px) {
+    .double-cta {
+        .cta_btn_lead:nth-child(1) {
+            left: 20%;
+        }
+        .cta_btn_lead:nth-child(2) {
+            right: 0%;
+        }
+    }
+}

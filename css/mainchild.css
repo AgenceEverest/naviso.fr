@@ -8,6 +8,19 @@
 /*
 Fichier de customisation du CSS
 */
+.cta-container {
+  width: 100%;
+}
+.double-cta {
+  display: flex;
+  justify-content: space-around;
+}
+.double-cta .cta_btn_lead:nth-child(1) {
+  left: 33%;
+}
+.double-cta .cta_btn_lead:nth-child(2) {
+  left: 66%;
+}
 .extraits-clients-container {
   display: flex;
   flex-wrap: wrap;
@@ -24,6 +37,14 @@ Fichier de customisation du CSS
 @media (max-width: 1024px) {
   .block-contacter-expert .col-gauche {
     margin-bottom: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .double-cta .cta_btn_lead:nth-child(1) {
+    left: 20%;
+  }
+  .double-cta .cta_btn_lead:nth-child(2) {
+    right: 0%;
   }
 }
 /*# sourceMappingURL=D:\wamp64\www\naviso/wp-content/themes/nanosite-proefficace-child/css/mainchild.css.map */
