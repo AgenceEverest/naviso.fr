@@ -95,7 +95,7 @@ echo "'>"; ?>
             $afficher_le_bouton = $colonne_2['afficher_le_bouton'];
             $texte_du_bouton_de_la_colonne = $colonne_2['texte_du_bouton_de_la_colonne'];
             $lien_du_bouton_de_la_colonne = $colonne_2['lien_du_bouton_de_la_colonne'];
-            $url_du_bouton = $lien_du_bouton_de_la_colonne['url'];
+            $url_du_bouton = $lien_du_bouton_de_la_colonne ? $lien_du_bouton_de_la_colonne['url'] : '';
             ?>
             <h3><?= $titre_de_la_colonne ?></h3>
             <p><?= $texte_de_la_colonne ?></p>
