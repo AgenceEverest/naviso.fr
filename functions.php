@@ -43,8 +43,8 @@ function my_acf_init_child()
         )); 
         acf_register_block(array(
             'name'                => 'block-listant-les-metiers',
-            'title'                => __('Bloc contacter un expert logiciel'),
-            'description'        => __('Un bloc avec un bouton de contact.'),
+            'title'                => __('Bloc listant les métiers'),
+            'description'        => __('Un bloc listant les métiers.'),
             'render_callback'    => 'block_callback_child',
             'category'            => 'layout',
             'icon'                => 'image-flip-vertical',
