@@ -20,13 +20,13 @@ $gris: #000; // < Couleur des textes de base = du noir ou presque
 $clair: $greenNaviso !default; // < Couleur qui peut découler de la couleur primaire, ou être complètement différente
 $clair2: $bleuNaviso !default; // < Couleur $clair mais en peu plus foncé
 
-$primaire1: $bleuNaviso !default;
-$primaire: $bleuNaviso !default;
-$primaire2: $bleuNaviso !default;
+$primaire1: $greenNaviso !default;
+$primaire: $greenNaviso !default;
+$primaire2: $greenNaviso !default;
 
-$secondaire1: $greenNaviso !default;
-$secondaire: $greenNaviso !default;
-$secondaire2: $greenNaviso !default;
+$secondaire1: $bleuNaviso !default;
+$secondaire: $bleuNaviso !default;
+$secondaire2: $bleuNaviso !default;
 
 //alertes
 $red: #ff0000;
