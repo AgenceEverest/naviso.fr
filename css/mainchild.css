@@ -30,6 +30,12 @@ Fichier de customisation du CSS
   justify-content: center;
   width: 50%;
 }
+.element-liste-naviso {
+  display: flex;
+}
+.element-liste-naviso .picto-liste-naviso {
+  width: 1rem;
+}
 .extraits-clients-container {
   display: flex;
   flex-wrap: wrap;

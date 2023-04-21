@@ -29,3 +29,10 @@ Fichier de customisation du CSS
     }
 
 }
+.element-liste-naviso{
+    display: flex;
+    .picto-liste-naviso{
+        width: 1rem;
+        height: 1rem;
+    }
+}
