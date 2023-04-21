@@ -92,18 +92,20 @@ Fichier de customisation du CSS
     }
 }
 
-.fond_clair {
+.fond_clair2 {
     p, ul, li, a, span {
-        color: white;
+        color: white !important;
         strong {
             color: $greenNaviso;
+            font-weight: normal !important;
         }
     }
     .entry-content {
         p, ul, li, a, span {
-            color: white;
+            color: white !important;
             strong {
                 color: $greenNaviso;
+                font-weight: normal !important;
             }
         }
     }
