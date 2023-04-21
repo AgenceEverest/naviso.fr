@@ -76,19 +76,35 @@ Fichier de customisation du CSS
 }
 
 .fond_clair {
-    p, ul, li, a {
+    p, ul, li, a, span {
         color: white;
         strong {
             color: $bleuNaviso;
         }
     }
+    .entry-content {
+        p, ul, li, a, span {
+            color: white;
+            strong {
+                color: $bleuNaviso;
+            }
+        }
+    }
 }
 
 .fond_clair {
-    p, ul, li, a {
+    p, ul, li, a, span {
         color: white;
         strong {
             color: $greenNaviso;
+        }
+    }
+    .entry-content {
+        p, ul, li, a, span {
+            color: white;
+            strong {
+                color: $greenNaviso;
+            }
         }
     }
 }
