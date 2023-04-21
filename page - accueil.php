@@ -37,7 +37,9 @@ get_header(); ?>
 						</div>
 			
 					</div>
+					<div class="filtre-image-header">
 
+					</div>		
 					<figure>
 
 
