@@ -63,6 +63,20 @@ if (is_singular('formation')) : ?>
 	</nav>
 <?php endif; ?>
 
+<!-- Single formation -->
+<?php
+if (is_singular('metier')) : ?>
+	<?php $page_qui_liste_les_metiers = get_field('page_qui_liste_les_metiers', 'option');
+	$page_qui_liste_les_metiers_id = $page_qui_liste_les_metiers->ID;
+	$page_qui_liste_les_metiers_permalink = get_permalink($page_qui_liste_les_metiers_id);
+	$page_qui_liste_les_metiers_title = get_the_title($page_qui_liste_les_metiers_id);
+	?>
+	<nav class="breadcrumb_top content_large">
+		<p class="legende"><a href="<?php bloginfo('url'); ?>"><?php echo $fil_ariane_accueil; ?></a><span class="breadcrumb_separator">›</span><a href="<?php echo $page_qui_liste_les_metiers_permalink; ?>"><?php echo $page_qui_liste_les_metiers_title; ?></a><span class="breadcrumb_separator">›</span><span aria-current='location'><?php the_title(); ?></span>
+		</p>
+	</nav>
+<?php endif; ?>
+
 <!-- Single logiciel -->
 <?php
 if (is_singular('logiciel')) : ?>
