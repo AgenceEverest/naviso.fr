@@ -64,3 +64,11 @@ add_filter('allowed_block_types_all', 'my_plugin_allowed_block_types_child', 11,
 
 
 
+function showSvg($url)
+{
+    $response = wp_remote_get($url);
+    if (is_array($response) && !is_wp_error($response)) {
+        $svg    = $response['body']; // use the content
+    }
+    return $svg;
+}

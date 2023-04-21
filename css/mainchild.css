@@ -35,6 +35,33 @@ Fichier de customisation du CSS
 }
 .element-liste-naviso .picto-liste-naviso {
   width: 1rem;
+  height: 1rem;
+}
+.fond-header {
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#entry_title_image_home img {
+  object-fit: contain;
+  height: auto;
+}
+.cta_primaire a {
+  background-color: #4AB8A5;
+  color: white;
+}
+.cta_primaire a:hover {
+  background-color: white;
+  color: #4AB8A5;
+}
+.cta_secondaire a {
+  background-color: #1F2D46;
+  color: white;
+}
+.cta_secondaire a:hover {
+  background-color: white;
+  color: #1F2D46;
 }
 .extraits-clients-container {
   display: flex;
@@ -61,6 +88,46 @@ Fichier de customisation du CSS
   .double-cta .cta_btn_lead:nth-child(2) {
     right: 0%;
   }
+}
+.header-home {
+  position: relative;
+}
+.header-home .text-header-wrapper {
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  z-index: 3;
+}
+.header-home .text-header-wrapper .text-header-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.header-home .text-header-wrapper .text-header-container .text-header-homepage {
+  width: 50%;
+}
+.header-home .text-header-wrapper .text-header-container .text-header-homepage #entry_title_home_accroche {
+  font-size: 50px;
+  color: white;
+}
+.header-home .text-header-wrapper .text-header-container .text-header-homepage #entry_title_home_description p {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+.header-home .text-header-wrapper .text-header-container .text-header-homepage .cta_btn_lead {
+  text-align: left;
+}
+.header-home .text-header-wrapper .text-header-container .empty-50 {
+  width: 50%;
+}
+.header-home figure {
+  position: relative;
+  margin: 0 !important;
+}
+.header-home figure .text-header-homepage {
+  position: absolute;
+  left: 0;
 }
 /*# sourceMappingURL=D:\wamp64\www\naviso/wp-content/themes/nanosite-proefficace-child/css/mainchild.css.map */
 /*# sourceMappingURL=mainchild.css.map */

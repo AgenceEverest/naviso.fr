@@ -12,18 +12,21 @@ $dark: #333333;
 $medium: #777777;
 $orange: #666666;
 
+$greenNaviso: #4AB8A5;
+$bleuNaviso: #1F2D46;
+
 $gris: #000; // < Couleur des textes de base = du noir ou presque
 
-$clair: #FAF5F5 !default; // < Couleur qui peut découler de la couleur primaire, ou être complètement différente
-$clair2: #F0EAEA !default; // < Couleur $clair mais en peu plus foncé
+$clair: $greenNaviso !default; // < Couleur qui peut découler de la couleur primaire, ou être complètement différente
+$clair2: $bleuNaviso !default; // < Couleur $clair mais en peu plus foncé
 
-$primaire1: #4C73DD !default;
-$primaire: #1E3288 !default;
-$primaire2: #0D0A33 !default;
+$primaire1: $bleuNaviso !default;
+$primaire: $bleuNaviso !default;
+$primaire2: $bleuNaviso !default;
 
-$secondaire1: #39C474 !default;
-$secondaire: #047C4E !default;
-$secondaire2: #193C2B !default;
+$secondaire1: $greenNaviso !default;
+$secondaire: $greenNaviso !default;
+$secondaire2: $greenNaviso !default;
 
 //alertes
 $red: #ff0000;

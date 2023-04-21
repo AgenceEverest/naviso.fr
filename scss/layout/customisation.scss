@@ -36,3 +36,41 @@ Fichier de customisation du CSS
         height: 1rem;
     }
 }
+
+.fond-header {
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#entry_title_home_image {
+
+}
+#entry_title_image_home img {
+    object-fit: contain;
+    height: auto;
+}
+
+.cta_primaire {
+    a {
+        background-color: $greenNaviso;
+        color: white;
+        &:hover {
+            background-color: white;
+            color: $greenNaviso;
+        }
+    }
+
+}
+
+.cta_secondaire {
+    a {
+        background-color: $bleuNaviso;
+        color: white;
+        &:hover {
+            background-color: white;
+            color: $bleuNaviso;
+        }
+    }
+  
+}

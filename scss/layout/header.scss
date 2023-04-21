@@ -1,0 +1,50 @@
+.header-home {
+    position: relative;
+
+    .text-header-wrapper {
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        z-index: 3;
+
+        .text-header-container {
+            display: flex;
+            align-items: center;
+            height: 100%;
+
+            .text-header-homepage {
+                width: 50%;
+                #entry_title_home_accroche {
+                    font-size: 50px;
+                    color: white;
+                }
+                #entry_title_home_description {
+                    p {
+                        font-size: 24px;
+                        font-weight: bold;
+                        color: white;
+                    }
+ 
+                }
+                .cta_btn_lead {
+                    text-align: left;
+                }
+            }
+
+            .empty-50 {
+                width: 50%;
+            }
+        }
+    }
+
+    figure {
+        position: relative;
+        margin: 0 !important;
+
+        .text-header-homepage {
+            position: absolute;
+            left: 0;
+        }
+
+    }
+}
