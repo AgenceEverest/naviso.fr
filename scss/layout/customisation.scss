@@ -17,3 +17,15 @@ Fichier de customisation du CSS
     }
 }
 
+.deux-cta-sous-bloc {
+    .cta-sous-bloc-container {
+        display: flex;
+        width: 100%;
+        .cta_sous_colonnes_flex {
+            display: flex;
+            justify-content: center;
+            width: 50%;
+        }
+    }
+
+}

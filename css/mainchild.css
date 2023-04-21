@@ -21,6 +21,15 @@ Fichier de customisation du CSS
 .double-cta .cta_btn_lead:nth-child(2) {
   left: 66%;
 }
+.deux-cta-sous-bloc .cta-sous-bloc-container {
+  display: flex;
+  width: 100%;
+}
+.deux-cta-sous-bloc .cta-sous-bloc-container .cta_sous_colonnes_flex {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
 .extraits-clients-container {
   display: flex;
   flex-wrap: wrap;
