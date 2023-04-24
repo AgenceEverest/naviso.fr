@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Gilroy-Black";
   src: url("../fonts/subset-AlwynNewRounded-Bold.woff2") format("woff2"), url("../fonts/subset-AlwynNewRounded-Bold.woff") format("woff");
@@ -205,6 +206,7 @@ Fichier de customisation du CSS
   background-color: #4AB8A5;
   border-radius: 25px;
   padding: 3% 10%;
+  overflow: hidden;
 }
 .newsletter-container .newsletter-wrapper h2 {
   color: white;
@@ -222,11 +224,14 @@ Fichier de customisation du CSS
 }
 .newsletter-container .newsletter-wrapper #visuel-newsletter {
   position: absolute;
-  top: 0;
-  right: 0;
+  width: 500px;
+  height: 500px;
+  top: -60%;
+  right: -10%;
+  overflow: hidden;
 }
-.newsletter-container #Rectangle_3223, .newsletter-container #Rectangle_3092 {
-  fill: white;
+.newsletter-container .newsletter-wrapper #visuel-newsletter #Tracé_1009, .newsletter-container .newsletter-wrapper #visuel-newsletter #Tracé_1010 {
+  fill: #ffffff7a;
 }
 @media (max-width: 1400px) {
   .fond-header {
