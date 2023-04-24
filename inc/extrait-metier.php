@@ -1,9 +1,9 @@
+<?php $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'thumbnail'); ?>
+<?php $image_alt = get_post_thumbnail_id($post->ID)  ? get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', TRUE) : null; ?>
+<?php $image_weight = $thumbnail ? apply_filters('get_weight_of_img', $thumbnail['0']) : '0kb'; ?>
+<?php $couleur_lie_au_metier = get_field('choix_de_couleur_pour_le_metier', $post->ID); ?>
 <div class="offre_extrait extrait_metier" style="border-bottom: 6px solid <?= $couleur_lie_au_metier ?>">
 	<div class="offre_extrait_photo">
-		<?php $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'thumbnail'); ?>
-		<?php $image_alt = get_post_thumbnail_id($post->ID)  ? get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', TRUE) : null; ?>
-		<?php $image_weight = $thumbnail ? apply_filters('get_weight_of_img', $thumbnail['0']) : '0kb'; ?>
-		<?php $couleur_lie_au_metier = get_field('choix_de_couleur_pour_le_metier', $post->ID); ?>
 		<a href="<?php the_permalink(); ?>">
 			<figure>
 				<div class="poids-image"><span class="poids-image-icone"><?php get_template_part('svg/symbole-feuille-nanosite'); ?></span><span class="poids-image-data"><?= $image_weight ?></span></div>
