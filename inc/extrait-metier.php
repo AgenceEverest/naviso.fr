@@ -1,4 +1,4 @@
-<div class="offre_extrait extrait_metier">
+<div class="offre_extrait extrait_metier" style="border-bottom: 6px solid <?= $couleur_lie_au_metier ?>">
 	<div class="offre_extrait_photo">
 		<?php $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'thumbnail'); ?>
 		<?php $image_alt = get_post_thumbnail_id($post->ID)  ? get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', TRUE) : null; ?>
@@ -22,7 +22,7 @@
 			</a>
 		</h3> -->
 	</div>
-	<div class="offre_extrait_content" style="background-color: <?= $couleur_lie_au_metier ?>">
+	<div class="offre_extrait_content">
 		<!-- <h3 class="anim_left_right">
 			<a href="<?php the_permalink(); ?>">
 				<?php the_title(); ?>
