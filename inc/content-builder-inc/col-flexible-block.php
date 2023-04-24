@@ -48,3 +48,8 @@
 <?php if (get_row_layout() == 'bloc_liste_naviso') : ?>
     <?php get_template_part('inc/content-builder-inc/col-flexible-block-liste-naviso'); ?>
 <?php endif; ?>
+
+<!-- Bloc liste déroulante -->
+<?php if (get_row_layout() == 'bloc_liste_deroulante') : ?>
+    <?php get_template_part('inc/content-builder-inc/col-flexible-block-liste-deroulante'); ?>
+<?php endif; ?>
