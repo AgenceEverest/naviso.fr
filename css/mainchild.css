@@ -63,6 +63,45 @@ Fichier de customisation du CSS
   background-color: white;
   color: #1F2D46;
 }
+.cta_ternaire a {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+.cta_ternaire a:hover {
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+}
+.fond_clair p, .fond_clair ul, .fond_clair li, .fond_clair a, .fond_clair span {
+  color: white;
+}
+.fond_clair p strong, .fond_clair ul strong, .fond_clair li strong, .fond_clair a strong, .fond_clair span strong {
+  color: #1F2D46;
+}
+.fond_clair .entry-content p, .fond_clair .entry-content ul, .fond_clair .entry-content li, .fond_clair .entry-content a, .fond_clair .entry-content span {
+  color: white;
+}
+.fond_clair .entry-content p strong, .fond_clair .entry-content ul strong, .fond_clair .entry-content li strong, .fond_clair .entry-content a strong, .fond_clair .entry-content span strong {
+  color: #1F2D46;
+}
+.fond_clair2 p, .fond_clair2 ul, .fond_clair2 li, .fond_clair2 a, .fond_clair2 span {
+  color: white !important;
+}
+.fond_clair2 p strong, .fond_clair2 ul strong, .fond_clair2 li strong, .fond_clair2 a strong, .fond_clair2 span strong {
+  color: #4AB8A5;
+  font-weight: normal !important;
+}
+.fond_clair2 .entry-content p, .fond_clair2 .entry-content ul, .fond_clair2 .entry-content li, .fond_clair2 .entry-content a, .fond_clair2 .entry-content span {
+  color: white !important;
+}
+.fond_clair2 .entry-content p strong, .fond_clair2 .entry-content ul strong, .fond_clair2 .entry-content li strong, .fond_clair2 .entry-content a strong, .fond_clair2 .entry-content span strong {
+  color: #4AB8A5;
+  font-weight: normal !important;
+}
+.fond_blanc h1, .fond_blanc h2, .fond_blanc h3, .fond_blanc h4, .fond_blanc h5, .fond_blanc h6 {
+  color: #4AB8A5;
+}
 .extraits-clients-container {
   display: flex;
   flex-wrap: wrap;
@@ -81,16 +120,20 @@ Fichier de customisation du CSS
     margin-bottom: 1rem;
   }
 }
-@media (max-width: 768px) {
-  .double-cta .cta_btn_lead:nth-child(1) {
-    left: 20%;
-  }
-  .double-cta .cta_btn_lead:nth-child(2) {
-    right: 0%;
-  }
-}
 .header-home {
   position: relative;
+}
+.header-home .fond-header {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.header-home .filtre-image-header {
+  width: 100%;
+  height: 100%;
+  background-color: #132b4478;
+  z-index: 2;
+  position: absolute;
 }
 .header-home .text-header-wrapper {
   width: 100%;
@@ -128,6 +171,44 @@ Fichier de customisation du CSS
 .header-home figure .text-header-homepage {
   position: absolute;
   left: 0;
+}
+.extrait_metier {
+  background-color: white;
+  width: 31%;
+  margin-right: 1rem;
+  padding: 2rem;
+  box-shadow: 0px 10px 50px 20px #6868683d;
+  border-radius: 0px !important;
+}
+.extrait_metier h3 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.extrait_metier .desc {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+@media (max-width: 1400px) {
+  .fond-header {
+    width: 50%;
+  }
+}
+@media (max-width: 1024px) {
+  .extrait_metier {
+    width: 47%;
+  }
+}
+@media (max-width: 768px) {
+  .extrait_metier {
+    width: 100%;
+  }
+  .double-cta .cta_btn_lead:nth-child(1) {
+    left: 20%;
+  }
+  .double-cta .cta_btn_lead:nth-child(2) {
+    right: 0%;
+  }
 }
 /*# sourceMappingURL=D:\wamp64\www\naviso/wp-content/themes/nanosite-proefficace-child/css/mainchild.css.map */
 /*# sourceMappingURL=mainchild.css.map */

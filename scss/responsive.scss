@@ -4,9 +4,16 @@
     }
 }
 
-@media (max-width: 1024px) {}
+@media (max-width: 1024px) {
+    .extrait_metier {
+        width: 47%;
+    }
+}
 
 @media (max-width: 768px) {
+    .extrait_metier {
+        width: 100%;
+    }
     .double-cta {
         .cta_btn_lead:nth-child(1) {
             left: 20%;
