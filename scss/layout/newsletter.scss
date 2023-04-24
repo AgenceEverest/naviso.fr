@@ -3,6 +3,7 @@
   .newsletter-container{
     .newsletter-wrapper {
       display: flex;
+      position: relative;
       flex-direction: column;
       justify-content: space-between;
       background-color: $greenNaviso;
@@ -24,5 +25,13 @@
         text-align: left;
        
       }
+      #visuel-newsletter {
+        position: absolute;
+        top: 0;
+        right:0
+      }
+    }
+    #Rectangle_3223, #Rectangle_3092 {
+      fill: white;
     }
   }

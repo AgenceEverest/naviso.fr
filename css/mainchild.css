@@ -199,6 +199,7 @@ Fichier de customisation du CSS
 }
 .newsletter-container .newsletter-wrapper {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: space-between;
   background-color: #4AB8A5;
@@ -218,6 +219,14 @@ Fichier de customisation du CSS
 }
 .newsletter-container .newsletter-wrapper .cta_btn_lead {
   text-align: left;
+}
+.newsletter-container .newsletter-wrapper #visuel-newsletter {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.newsletter-container #Rectangle_3223, .newsletter-container #Rectangle_3092 {
+  fill: white;
 }
 @media (max-width: 1400px) {
   .fond-header {
