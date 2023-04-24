@@ -197,6 +197,28 @@ Fichier de customisation du CSS
   margin-bottom: 1rem;
   text-align: center;
 }
+.newsletter-container .newsletter-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #4AB8A5;
+  border-radius: 25px;
+  padding: 3% 10%;
+}
+.newsletter-container .newsletter-wrapper h2 {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.newsletter-container .newsletter-wrapper .text_block {
+  color: white;
+  font-size: 16px;
+  margin-bottom: 1rem;
+}
+.newsletter-container .newsletter-wrapper .cta_btn_lead {
+  text-align: left;
+}
 @media (max-width: 1400px) {
   .fond-header {
     width: 50%;

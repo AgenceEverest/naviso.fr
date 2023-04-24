@@ -49,7 +49,16 @@ function my_acf_init_child()
             'category'            => 'layout',
             'icon'                => 'image-flip-vertical',
             'mode'                => 'edit', // permet d'ouvrir le bloc immédiatement, l'autre mode est "preview"
-        )); 
+        ));
+        acf_register_block(array(
+            'name'                => 'block-newsletter',
+            'title'                => __('Bloc newsletter'),
+            'description'        => __('Un bloc pour la newsletter.'),
+            'render_callback'    => 'block_callback_child',
+            'category'            => 'layout',
+            'icon'                => 'image-flip-vertical',
+            'mode'                => 'edit', // permet d'ouvrir le bloc immédiatement, l'autre mode est "preview"
+        ));  
     }
 }
 function block_callback_child($block)
@@ -66,7 +75,7 @@ function block_callback_child($block)
 // Il faut rajouter le bloc de notre thème enfant dans cette liste 
 function my_plugin_allowed_block_types_child($allowed_block_types_all, $post)
 {
-    return array('core/paragraph', 'acf/block-separateur', 'acf/block-2-colonnes-textevisuel', 'acf/block-2-colonnes-textevisuel-large', 'acf/block-multicolonnes', 'acf/block-2-colonnes', 'acf/block-3-colonnes', 'acf/block-1-colonne', 'acf/block-ancres', 'acf/block-cpt-list-filterable', 'acf/block-liste-de-termes', 'acf/block-2-colonnes-superposition', 'acf/block-selection-clients', 'acf/block-contacter-expert-logiciel', 'acf/block-listant-les-metiers');
+    return array('core/paragraph', 'acf/block-separateur', 'acf/block-2-colonnes-textevisuel', 'acf/block-2-colonnes-textevisuel-large', 'acf/block-multicolonnes', 'acf/block-2-colonnes', 'acf/block-3-colonnes', 'acf/block-1-colonne', 'acf/block-ancres', 'acf/block-cpt-list-filterable', 'acf/block-liste-de-termes', 'acf/block-2-colonnes-superposition', 'acf/block-selection-clients', 'acf/block-contacter-expert-logiciel', 'acf/block-listant-les-metiers', 'acf/block-more-informations', 'acf/block-newsletter');
 }
 add_filter('allowed_block_types_all', 'my_plugin_allowed_block_types_child', 11, 3);
 
