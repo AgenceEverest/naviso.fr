@@ -31,6 +31,8 @@ if (have_rows('block_2_colonnes_superposition')) : the_row(); // il s'agit du no
     $cb_calltoaction_url_2 = get_sub_field('cb_call-to-action_url_2');
     $cb_calltoaction_fichier_2 = get_sub_field('cb_call-to-action_fichier_2');
     $style_du_bouton_2 = get_sub_field('style_du_bouton_2');
+
+    $afficher_le_visuel_naviso = get_sub_field('afficher_le_visuel_naviso');
 endif;
 ?>
 <?php echo "<div "; ?>
@@ -103,6 +105,9 @@ endif;
                     <?php get_template_part('inc/content-builder-inc/col-flexible-block'); ?>
                 <?php endwhile; ?>
             <?php endif; ?>
+            <?php if ($afficher_le_visuel_naviso) :
+                 echo showSvg(get_stylesheet_directory_uri() . '/svg/element-visuel-deux-col.svg'); 
+            endif; ?>
         </div>
     </div>
 

@@ -1,0 +1,25 @@
+<svg id="element-visuel-deux-col" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="350.013" height="158.359" viewBox="0 0 350.013 158.359">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_152" data-name="Rectangle 152" width="350.013" height="158.359" fill="#4ab8a5"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="Rectangle_151" data-name="Rectangle 151" width="350.013" height="158.36" fill="#4ab8a5"/>
+    </clipPath>
+  </defs>
+  <g id="Groupe_671" data-name="Groupe 671" transform="translate(0 0)" clip-path="url(#clip-path)">
+    <g id="Groupe_670" data-name="Groupe 670" transform="translate(0 -0.001)">
+      <g id="Groupe_669" data-name="Groupe 669" clip-path="url(#clip-path-2)">
+        <g id="Groupe_668" data-name="Groupe 668" transform="translate(0 0.001)" opacity="0.7">
+          <g id="Groupe_667" data-name="Groupe 667">
+            <g id="Groupe_666" data-name="Groupe 666" clip-path="url(#clip-path)">
+              <path id="Tracé_1008" data-name="Tracé 1008" d="M156.3,158.36,78.067,111.641,0,158.352,77.976,0ZM78.017,47.623l-27.57,55.986L78.058,87.09,105.7,103.6Z" transform="translate(0 0)" fill="#4ab8a5"/>
+              <path id="Tracé_1009" data-name="Tracé 1009" d="M23.673,0l78.233,46.719L179.972.008,102,158.36Zm78.282,110.737,27.57-55.986-27.612,16.52L74.269,54.763Z" transform="translate(74.488 0)" fill="#4ab8a5"/>
+              <path id="Tracé_1010" data-name="Tracé 1010" d="M203.016,158.36l-78.233-46.719L46.717,158.352,124.693,0ZM124.734,47.623l-27.57,55.986,27.612-16.52L152.42,103.6Z" transform="translate(146.997 0)" fill="#4ab8a5"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

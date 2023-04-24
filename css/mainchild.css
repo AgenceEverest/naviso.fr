@@ -102,6 +102,14 @@ Fichier de customisation du CSS
 .fond_blanc h1, .fond_blanc h2, .fond_blanc h3, .fond_blanc h4, .fond_blanc h5, .fond_blanc h6 {
   color: #4AB8A5;
 }
+.col-droite {
+  position: relative;
+}
+.col-droite #element-visuel-deux-col {
+  position: absolute;
+  bottom: 0;
+  right: -40%;
+}
 .extraits-clients-container {
   display: flex;
   flex-wrap: wrap;
