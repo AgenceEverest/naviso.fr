@@ -1,19 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="418.822" height="283.616" viewBox="0 0 418.822 283.616">
+<svg id="Groupe_20167" data-name="Groupe 20167" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="319.586" height="223.64" viewBox="0 0 319.586 223.64">
   <defs>
     <clipPath id="clip-path">
-      <path id="Tracé_11575" data-name="Tracé 11575" d="M266.737,270.256l-133.51-79.73L0,270.242,133.071,0ZM133.142,81.273,86.091,176.819l47.122-28.193L180.391,176.8Z" transform="translate(1213.914 3854.507) rotate(180)" fill="#fff" opacity="0.28"/>
+      <rect id="Rectangle_3230" data-name="Rectangle 3230" width="319.585" height="223.64" fill="none"/>
     </clipPath>
-    <clipPath id="clip-path-2">
-      <path id="Tracé_11769" data-name="Tracé 11769" d="M266.737,270.256l-133.51-79.73L0,270.242,133.071,0ZM133.142,81.273,86.091,176.819l47.122-28.193L180.391,176.8Z" transform="translate(-10955.738 9705.67)" fill="#fff" opacity="0.28"/>
+    <clipPath id="clip-path-3">
+      <rect id="Rectangle_3228" data-name="Rectangle 3228" width="165.87" height="222.64" transform="translate(153.195 0.5)" fill="none"/>
     </clipPath>
   </defs>
-  <g id="visuel-newsletter" transform="translate(-1087.23 -3270.658)">
-    <path id="Tracé_11574" data-name="Tracé 11574" d="M266.737,270.256l-133.51-79.73L0,270.242,133.071,0ZM133.142,81.273,86.091,176.819l47.122-28.193L180.391,176.8Z" transform="translate(1239.314 3284.019)" fill="#fff" opacity="0.28"/>
-    <g id="Groupe_de_masques_13" data-name="Groupe de masques 13" transform="translate(140.053 -313.593)" clip-path="url(#clip-path)">
-      <rect id="Rectangle_3092" data-name="Rectangle 3092" width="1197" height="223.353" rx="37" transform="translate(86 3614.383)" fill="#49c5aa"/>
-    </g>
-    <g id="Groupe_de_masques_14" data-name="Groupe de masques 14" transform="translate(12195.053 -6421.651)" clip-path="url(#clip-path-2)">
-      <rect id="Rectangle_3223" data-name="Rectangle 3223" width="1197" height="223.353" rx="37" transform="translate(-11969 9722.441)" fill="#49c5aa"/>
+  <g id="Groupe_20166" data-name="Groupe 20166" clip-path="url(#clip-path)">
+    <g id="Groupe_20165" data-name="Groupe 20165">
+      <g id="Groupe_20164" data-name="Groupe 20164" clip-path="url(#clip-path)">
+        <g id="Groupe_20163" data-name="Groupe 20163" opacity="0.28" style="isolation: isolate">
+          <g id="Groupe_20162" data-name="Groupe 20162">
+            <g id="Groupe_20161" data-name="Groupe 20161" clip-path="url(#clip-path-3)">
+              <path id="Tracé_11782" data-name="Tracé 11782" d="M279.345.5h-16.52L153.2,223.14h36.38l81.65-48.85,47.84,28.57V80.81ZM271.2,132.39l-47.12,28.19,47.05-95.55,47.25,95.53Z" fill="#fff"/>
+            </g>
+          </g>
+        </g>
+        <path id="Tracé_11783" data-name="Tracé 11783" d="M202.365.5l-82.94,49.63L36.315.5H.805l110.11,222.64h17.29L237.825.5ZM119.5,159.38,72.255,63.86l47.18,28.17,47.12-28.19Z" fill="#4ab8a5"/>
+        <path id="Tracé_11784" data-name="Tracé 11784" d="M279.345.5h-16.52L153.2,223.14h36.38l81.65-48.85,47.84,28.57V80.81ZM271.2,132.39l-47.12,28.19,47.05-95.55,47.25,95.53Z" fill="#4ab8a5"/>
+      </g>
     </g>
   </g>
 </svg>

@@ -50,8 +50,8 @@ $urlContact = get_field('url_du_bouton_contact', 'option');
             <?= $texte_du_bouton ?>
         </a>
     </p>
-<!--     <?= showSvg(get_stylesheet_directory_uri() . '/svg/visuel-newsletter.svg') ?>      
- --></div>
+    <?= showSvg(get_stylesheet_directory_uri() . '/svg/visuel-newsletter.svg') ?>      
+ </div>
 </div>
 
 <div style="display: none">
