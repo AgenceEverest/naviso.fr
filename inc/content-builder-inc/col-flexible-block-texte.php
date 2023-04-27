@@ -10,12 +10,12 @@
              <div class="cta-container <?php if ($ajouter_un_deuxieme_call_to_action): echo ' double-cta'; endif;?>" >
                  <?php if (have_rows('call-to-action')) : ?>
                      <?php while (have_rows('call-to-action')) : the_row(); ?>
-                         <?php get_template_part('inc/content-builder-inc/call-to-action'); ?>
+                         <?php get_template_part('inc/content-builder-inc/cta-col'); ?>
                      <?php endwhile; ?>
                  <?php endif; ?>
                  <?php if (have_rows('call-to-action_2')  && $ajouter_un_deuxieme_call_to_action) : ?>
                      <?php while (have_rows('call-to-action_2')) : the_row(); ?>
-                         <?php get_template_part('inc/content-builder-inc/call-to-action'); ?>
+                         <?php get_template_part('inc/content-builder-inc/cta-col'); ?>
                      <?php endwhile; ?>
                  <?php endif; ?>
              </div>
@@ -25,12 +25,12 @@
         <div class="cta-container <?php if ($ajouter_un_deuxieme_call_to_action): echo ' double-cta'; endif;?>">
              <?php if (have_rows('call-to-action')) : ?>
                  <?php while (have_rows('call-to-action')) : the_row(); ?>
-                     <?php get_template_part('inc/content-builder-inc/call-to-action'); ?>
+                     <?php get_template_part('inc/content-builder-inc/cta-col'); ?>
                  <?php endwhile; ?>
              <?php endif; ?>
              <?php if (have_rows('call-to-action_2') && $ajouter_un_deuxieme_call_to_action) : ?>
                  <?php while (have_rows('call-to-action_2')) : the_row(); ?>
-                     <?php get_template_part('inc/content-builder-inc/call-to-action'); ?>
+                     <?php get_template_part('inc/content-builder-inc/cta-col'); ?>
                  <?php endwhile; ?>
              <?php endif; ?>
          </div>

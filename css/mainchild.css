@@ -86,17 +86,17 @@ Fichier de customisation du CSS
 .fond_clair .entry-content p strong, .fond_clair .entry-content ul strong, .fond_clair .entry-content li strong, .fond_clair .entry-content a strong, .fond_clair .entry-content span strong {
   color: #1F2D46;
 }
-.fond_clair2 p, .fond_clair2 ul, .fond_clair2 li, .fond_clair2 a, .fond_clair2 span {
+.fond_clair2 h1, .fond_clair2 h2, .fond_clair2 h3, .fond_clair2 h4, .fond_clair2 h5, .fond_clair2 h6, .fond_clair2 p, .fond_clair2 ul, .fond_clair2 li, .fond_clair2 a, .fond_clair2 span {
   color: white !important;
 }
-.fond_clair2 p strong, .fond_clair2 ul strong, .fond_clair2 li strong, .fond_clair2 a strong, .fond_clair2 span strong {
+.fond_clair2 h1 strong, .fond_clair2 h2 strong, .fond_clair2 h3 strong, .fond_clair2 h4 strong, .fond_clair2 h5 strong, .fond_clair2 h6 strong, .fond_clair2 p strong, .fond_clair2 ul strong, .fond_clair2 li strong, .fond_clair2 a strong, .fond_clair2 span strong {
   color: #4AB8A5;
   font-weight: normal !important;
 }
-.fond_clair2 .entry-content p, .fond_clair2 .entry-content ul, .fond_clair2 .entry-content li, .fond_clair2 .entry-content a, .fond_clair2 .entry-content span {
+.fond_clair2 .entry-content h1, .fond_clair2 .entry-content h2, .fond_clair2 .entry-content h3, .fond_clair2 .entry-content h4, .fond_clair2 .entry-content h5, .fond_clair2 .entry-content h6, .fond_clair2 .entry-content p, .fond_clair2 .entry-content ul, .fond_clair2 .entry-content li, .fond_clair2 .entry-content a, .fond_clair2 .entry-content span {
   color: white !important;
 }
-.fond_clair2 .entry-content p strong, .fond_clair2 .entry-content ul strong, .fond_clair2 .entry-content li strong, .fond_clair2 .entry-content a strong, .fond_clair2 .entry-content span strong {
+.fond_clair2 .entry-content h1 strong, .fond_clair2 .entry-content h2 strong, .fond_clair2 .entry-content h3 strong, .fond_clair2 .entry-content h4 strong, .fond_clair2 .entry-content h5 strong, .fond_clair2 .entry-content h6 strong, .fond_clair2 .entry-content p strong, .fond_clair2 .entry-content ul strong, .fond_clair2 .entry-content li strong, .fond_clair2 .entry-content a strong, .fond_clair2 .entry-content span strong {
   color: #4AB8A5;
   font-weight: normal !important;
 }
@@ -232,6 +232,100 @@ Fichier de customisation du CSS
 }
 .newsletter-container .newsletter-wrapper #visuel-newsletter #Tracé_1009, .newsletter-container .newsletter-wrapper #visuel-newsletter #Tracé_1010 {
   fill: #ffffff7a;
+}
+.bloc_liste_deroulante .question_reponse_title {
+  background-color: #1F2D46;
+  border: none;
+  transition: none;
+  padding-left: 1rem;
+}
+.bloc_liste_deroulante .question_reponse_title:hover {
+  background-color: #1F2D46;
+  border: none;
+}
+.bloc_liste_deroulante .question_reponse_title.active {
+  background-color: white;
+  transition: none;
+  border-radius: 25px;
+}
+.bloc_liste_deroulante .question_reponse_title.active h3 {
+  color: #1F2D46 !important;
+}
+.bloc_liste_deroulante .question_reponse_title_icone {
+  right: 0 !important;
+  left: inherit !important;
+  background-color: rgba(255, 255, 255, 0);
+  border-right: none;
+}
+.bloc_liste_deroulante .question_reponse_item {
+  border-bottom: 2px solid white;
+}
+.bloc_liste_deroulante .question_reponse_item:has(.active) {
+  background-color: white;
+  color: #1F2D46;
+  border-radius: 25px;
+}
+.bloc_liste_deroulante .question_reponse_wysiwyg {
+  border: none;
+  color: #1F2D46 !important;
+}
+.bloc_liste_deroulante .entry-content p {
+  color: #1F2D46 !important;
+}
+.question_reponse_title_icone_plus svg path, .question_reponse_title_icone_moins svg path {
+  fill: none;
+}
+.block {
+  position: relative;
+}
+.double-boucle {
+  position: absolute;
+}
+.milieu-droit {
+  position: absolute;
+}
+.bas-droit {
+  position: absolute;
+}
+.vague-milieu.colle-en-haut-du-bloc {
+  top: 0;
+}
+.vague-milieu.milieu-du-bloc {
+  top: 0;
+  transform: translate(0%, 50%);
+}
+.vague-milieu {
+  width: 100%;
+  z-index: 0;
+}
+.vague-milieu svg {
+  width: 120%;
+  position: relative;
+  left: -10%;
+  fill: #4AB8A5;
+}
+.svg-container {
+  position: absolute;
+}
+.bas-droit {
+  bottom: 0;
+  right: -5%;
+}
+.milieu-droit {
+  right: -7%;
+  transform: translate(0%, 50%);
+  top: 0;
+}
+.double-boucle {
+  top: 0;
+  width: 100%;
+}
+.double-boucle svg {
+  width: 100%;
+}
+.content_width {
+  z-index: 1;
+  position: relative;
 }
 @media (max-width: 1400px) {
   .fond-header {

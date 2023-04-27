@@ -1,0 +1,62 @@
+.block {
+    position: relative;
+}
+
+.double-boucle {
+    position: absolute;
+}
+
+.milieu-droit {
+    position: absolute;
+    
+}
+
+.bas-droit {
+    position: absolute;
+    
+}
+.vague-milieu.colle-en-haut-du-bloc {
+    top: 0;
+}
+.vague-milieu.milieu-du-bloc {
+    top: 0;
+    transform: translate(0%, 50%);
+}
+.vague-milieu {
+    width: 100%;
+    z-index: 0;
+    svg {
+        width: 120%;
+        position: relative;
+        left: -10%;
+        fill: #4AB8A5;
+    }
+}
+
+.svg-container {
+    position: absolute;
+}
+
+.bas-droit {
+    bottom: 0;
+    right: -5%;
+}
+
+.milieu-droit {
+    right: -7%;
+    transform: translate(0%, 50%);
+    top: 0;
+}
+
+.double-boucle {
+    top: 0;
+    width:100%;
+    svg {
+        width: 100%;
+    }
+}
+
+.content_width {
+    z-index: 1;
+    position: relative;
+}

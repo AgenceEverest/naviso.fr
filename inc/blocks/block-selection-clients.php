@@ -41,7 +41,7 @@ endif;
 <?php if ($cb_ajouter_une_classe_css) : ?>
     <?php echo " " . $cb_ajouter_une_classe_css . ""; ?>
 <?php endif; ?>
-<?php echo "'>"; ?>
+<?php echo " block '>" ?>
 
 <!-- titre avant les colonnes-->
 <?php $titre_avant_les_colonnes = get_sub_field('titre_avant_les_colonnes'); ?>
@@ -115,4 +115,6 @@ endif;
     <?php endif; ?>
 
 </div>
+<?php get_template_part('inc/content-builder-inc/visuel-fond-du-bloc') ?>
+
 </div>

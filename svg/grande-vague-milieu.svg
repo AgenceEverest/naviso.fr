@@ -1,0 +1,23 @@
+<svg preserveAspectRatio="none" id="Grande-vague-milieu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1634.426" height="513.749" viewBox="0 0 1634.426 513.749">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_10" data-name="Rectangle 10" width="1634.426" height="513.749"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="Rectangle_9" data-name="Rectangle 9" width="1634.426" height="513.752" />
+    </clipPath>
+  </defs>
+  <g id="Groupe_16" data-name="Groupe 16" clip-path="url(#clip-path)">
+    <g id="Groupe_15" data-name="Groupe 15" transform="translate(0 -0.004)">
+      <g id="Groupe_14" data-name="Groupe 14" clip-path="url(#clip-path-2)">
+        <g id="Groupe_13" data-name="Groupe 13" transform="translate(0 0.004)">
+          <g id="Groupe_12" data-name="Groupe 12">
+            <g id="Groupe_11" data-name="Groupe 11" clip-path="url(#clip-path)">
+              <path id="Tracé_40" data-name="Tracé 40" d="M446.5,513.749C205.219,513.749,8.632,334.19,0,326.191L99.859,218.244C101.609,219.861,278.4,380.216,471,365.8c95.816-7.124,182.492-57.922,257.648-150.98,132.577-164.17,425.267-383.572,895.941-8.36,3.846,3.059,7.132,5.683,9.83,7.779l-90.279,116.071c-3.073-2.39-6.823-5.375-11.2-8.874-283.139-225.695-515.252-230.5-689.885-14.227C741.086,433.469,619.222,502.544,480.843,512.521q-17.293,1.246-34.343,1.228" transform="translate(0 0.003)" />
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

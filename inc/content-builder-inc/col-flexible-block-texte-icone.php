@@ -24,12 +24,12 @@ $image_weight = $url_ajouter_une_icone ? apply_filters('get_weight_of_img', $url
                                         endif; ?>">
                 <?php if (have_rows('call-to-action')) : ?>
                     <?php while (have_rows('call-to-action')) : the_row(); ?>
-                        <?php get_template_part('inc/content-builder-inc/call-to-action'); ?>
+                    <?php get_template_part('inc/content-builder-inc/cta-col'); ?>
                     <?php endwhile; ?>
                 <?php endif; ?>
                 <?php if (have_rows('call-to-action_2')  && $ajouter_un_deuxieme_call_to_action) : ?>
                     <?php while (have_rows('call-to-action_2')) : the_row(); ?>
-                        <?php get_template_part('inc/content-builder-inc/call-to-action'); ?>
+                    <?php get_template_part('inc/content-builder-inc/cta-col'); ?>
                     <?php endwhile; ?>
                 <?php endif; ?>
             </div>
@@ -40,12 +40,12 @@ $image_weight = $url_ajouter_une_icone ? apply_filters('get_weight_of_img', $url
                                     endif; ?>">
             <?php if (have_rows('call-to-action')) : ?>
                 <?php while (have_rows('call-to-action')) : the_row(); ?>
-                    <?php get_template_part('inc/content-builder-inc/call-to-action'); ?>
+                <?php get_template_part('inc/content-builder-inc/cta-col'); ?>
                 <?php endwhile; ?>
             <?php endif; ?>
             <?php if (have_rows('call-to-action_2') && $ajouter_un_deuxieme_call_to_action) : ?>
                 <?php while (have_rows('call-to-action_2')) : the_row(); ?>
-                    <?php get_template_part('inc/content-builder-inc/call-to-action'); ?>
+                <?php get_template_part('inc/content-builder-inc/cta-col'); ?>
                 <?php endwhile; ?>
             <?php endif; ?>
         </div>
