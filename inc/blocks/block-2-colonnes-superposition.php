@@ -76,7 +76,9 @@ endif;
 <?php endif; ?>
 
 <!-- colonnes -->
-<div class="content_width col_flexible col_flexible_2">
+<div class="content_width col_flexible col_flexible_2<?php if ($afficher_un_deuxieme_bouton_sous_le_bloc) :
+    echo ' deux-cta-sous-bloc';
+endif; ?>">
     <!-- Les 2 colonnes -->
     <?php $proportions_des_colonnes = get_sub_field('proportions_des_colonnes'); ?>
     <div class="col_flexible_wrapper col_flexible_superposition <?php echo $proportions_des_colonnes; ?>">
@@ -105,13 +107,11 @@ endif;
                     <?php get_template_part('inc/content-builder-inc/col-flexible-block'); ?>
                 <?php endwhile; ?>
             <?php endif; ?>
-            <?php if ($afficher_le_visuel_naviso) :
-                 echo showSvg(get_stylesheet_directory_uri() . '/svg/element-visuel-deux-col.svg'); 
-            endif; ?>
         </div>
     </div>
+    <?php $position_CTA = get_sub_field('position_des_deux_cta_sous_le_bloc') ?>
 
-    <div class="cta-sous-bloc-container">
+    <div class="cta-sous-bloc-container <?= $position_CTA ?>">
     <?php if ($afficher_un_premier_bouton_sous_le_bloc) : ?>
             <?php get_template_part('inc/content-builder-inc/cta-sous-bloc-1') ?>
         <?php endif; ?>

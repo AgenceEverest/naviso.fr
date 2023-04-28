@@ -72,7 +72,9 @@ endif;
     <?php endif; ?>
 <?php endif; ?>
 <!-- colonnes -->
-<div class="content_width col_flexible col_flexible_3">
+<div class="content_width col_flexible col_flexible_3<?php if ($afficher_un_deuxieme_bouton_sous_le_bloc) :
+    echo ' deux-cta-sous-bloc';
+endif; ?>">
     <!-- Les 2 colonnes -->
     <div class="col_flexible_wrapper">
         <!-- Colonne 1 -->
@@ -95,8 +97,9 @@ endif;
         <?php endif; ?>
 
     </div>
+    <?php $position_CTA = get_sub_field('position_des_deux_cta_sous_le_bloc') ?>
 
-    <div class="cta-sous-bloc-container">
+    <div class="cta-sous-bloc-container <?= $position_CTA ?>">
     <?php if ($afficher_un_premier_bouton_sous_le_bloc) : ?>
             <?php get_template_part('inc/content-builder-inc/cta-sous-bloc-1') ?>
         <?php endif; ?>

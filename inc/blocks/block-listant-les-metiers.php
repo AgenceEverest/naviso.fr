@@ -26,7 +26,7 @@ endif; ?>
 		endif;
 		if ($couleur_de_fond_bloc) : echo $couleur_de_fond_bloc;
 		endif;
-		echo " block '>" ?>>
+		echo ' block">' ?>>
 	<?php $the_query = new WP_Query(array(
 		'post_type' => 'metier',
 		'posts_per_page' => $nombre_articles_liste,

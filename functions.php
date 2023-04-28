@@ -25,8 +25,8 @@ function my_acf_init_child()
         // register block test
          acf_register_block(array(
             'name'                => 'block-selection-clients',
-            'title'                => __('Bloc sélection clients'),
-            'description'        => __('Un bloc permettant de sélectionner des clients.'),
+            'title'                => __('Bloc sélection de cas clients'),
+            'description'        => __('Un bloc permettant de sélectionner des cas clients.'),
             'render_callback'    => 'block_callback_child',
             'category'            => 'layout',
             'icon'                => 'image-flip-vertical',

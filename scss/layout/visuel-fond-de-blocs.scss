@@ -13,6 +13,7 @@
 
 .bas-droit {
     position: absolute;
+    z-index: 2;
     
 }
 .vague-milieu.colle-en-haut-du-bloc {
@@ -40,6 +41,10 @@
 .bas-droit {
     bottom: 0;
     right: -5%;
+}
+
+.svg-container.bas-droit {
+    bottom: 3.5rem;
 }
 
 .milieu-droit {

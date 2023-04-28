@@ -120,7 +120,9 @@ endif;
 		<?php echo " " . $cb_ajouter_une_classe_css . ""; ?>
 	<?php endif; ?>
 	<?php echo " block '>"; ?>
-	<div class="content_width col_double">
+	<div class="content_width col_double<?php if ($afficher_un_deuxieme_bouton_sous_le_bloc) :
+    echo ' deux-cta-sous-bloc';
+endif; ?>">
 		<!-- col left -->
 		<div class="col_left">
 			<div class="col_left_wrapper entry-content col_left_wrapper_padding">

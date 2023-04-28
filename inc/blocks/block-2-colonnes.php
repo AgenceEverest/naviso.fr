@@ -93,6 +93,7 @@ endif; ?>">
             <?php endwhile; ?>
         <?php endif; ?>
     </div>
+    <?php $position_CTA = get_sub_field('position_des_deux_cta_sous_le_bloc') ?>
 
     <div class="cta-sous-bloc-container">
     <?php if ($afficher_un_premier_bouton_sous_le_bloc) : ?>

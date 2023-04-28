@@ -26,10 +26,26 @@ Fichier de customisation du CSS
   display: flex;
   width: 100%;
 }
-.deux-cta-sous-bloc .cta-sous-bloc-container .cta_sous_colonnes_flex {
-  display: flex;
+.deux-cta-sous-bloc .alignes-a-droite {
+  justify-content: flex-end;
+}
+.deux-cta-sous-bloc .alignes-a-droite .cta_sous_colonnes_flex:nth-child(2) {
+  margin-left: 1rem;
+}
+.deux-cta-sous-bloc .alignes-a-gauche {
+  justify-content: flex-start;
+}
+.deux-cta-sous-bloc .alignes-a-gauche .cta_sous_colonnes_flex:nth-child(1) {
+  margin-right: 1rem;
+}
+.deux-cta-sous-bloc .centres-sous-le-bloc {
   justify-content: center;
-  width: 50%;
+}
+.deux-cta-sous-bloc .centres-sous-le-bloc .cta_sous_colonnes_flex:nth-child(1) {
+  margin-right: 0.5rem;
+}
+.deux-cta-sous-bloc .centres-sous-le-bloc .cta_sous_colonnes_flex:nth-child(2) {
+  margin-left: 0.5rem;
 }
 .element-liste-naviso {
   display: flex;
@@ -49,30 +65,34 @@ Fichier de customisation du CSS
   height: auto;
 }
 .cta_primaire a {
-  background-color: #4AB8A5;
-  color: white;
+  background-color: #4AB8A5 !important;
+  color: white !important;
+  border: 2px solid #4AB8A5 !important;
 }
 .cta_primaire a:hover {
-  background-color: white;
-  color: #4AB8A5;
+  background-color: white !important;
+  color: #4AB8A5 !important;
+  border: 2px solid #4AB8A5 !important;
 }
 .cta_secondaire a {
-  background-color: #1F2D46;
-  color: white;
+  background-color: #1F2D46 !important;
+  color: white !important;
+  border: 2px solid #1F2D46 !important;
 }
 .cta_secondaire a:hover {
-  background-color: white;
-  color: #1F2D46;
+  background-color: white !important;
+  color: #1F2D46 !important;
+  border: 2px solid #1F2D46 !important;
 }
 .cta_ternaire a {
-  background-color: white;
-  color: black;
-  border: 2px solid black;
+  background-color: white !important;
+  color: black !important;
+  border: 2px solid black !important;
 }
 .cta_ternaire a:hover {
-  background-color: black;
-  color: white;
-  border: 2px solid black;
+  background-color: black !important;
+  color: white !important;
+  border: 2px solid black !important;
 }
 .fond_clair p, .fond_clair ul, .fond_clair li, .fond_clair a, .fond_clair span {
   color: white;
@@ -110,6 +130,24 @@ Fichier de customisation du CSS
   position: absolute;
   bottom: 0;
   right: -40%;
+}
+.poids-image {
+  background-color: white;
+}
+.poids-image .poids-image-data {
+  color: black;
+}
+.cta-sous-bloc-container {
+  display: flex;
+}
+.col_flexible_superposition .cta_align_left {
+  left: 0rem !important;
+}
+.col_flexible_superposition .cta_align_right {
+  right: 0rem !important;
+}
+.col_flexible_superposition .cta_align_center {
+  margin-left: 0rem !important;
 }
 .extraits-clients-container {
   display: flex;
@@ -286,6 +324,7 @@ Fichier de customisation du CSS
 }
 .bas-droit {
   position: absolute;
+  z-index: 2;
 }
 .vague-milieu.colle-en-haut-du-bloc {
   top: 0;
@@ -311,6 +350,9 @@ Fichier de customisation du CSS
   bottom: 0;
   right: -5%;
 }
+.svg-container.bas-droit {
+  bottom: 3.5rem;
+}
 .milieu-droit {
   right: -7%;
   transform: translate(0%, 50%);
@@ -326,6 +368,50 @@ Fichier de customisation du CSS
 .content_width {
   z-index: 1;
   position: relative;
+}
+.quotes {
+  position: absolute;
+  right: 0;
+  top: -2.3rem;
+}
+.quotes-container {
+  position: relative;
+  padding: 50px 0px 180px 0px;
+  margin-top: 3rem;
+  box-shadow: 0px 10px 50px 20px #6868683d;
+}
+.quotes-container .entry-content {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.formateur {
+  background-color: #4AB8A5;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  height: 150px;
+  width: 100%;
+}
+.formateur .image {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  margin-right: 2rem;
+}
+.formateur .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.formateur .titre {
+  color: white;
+  font-size: 20px;
+  font-weight: normal;
+}
+.formateur .identite {
+  color: white;
 }
 @media (max-width: 1400px) {
   .fond-header {

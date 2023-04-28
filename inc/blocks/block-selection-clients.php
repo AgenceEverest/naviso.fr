@@ -21,7 +21,11 @@ if (have_rows('block_selection_clients')) : the_row(); // il s'agit du nom du ch
     $alignement_du_bouton = get_sub_field('alignement_du_bouton');
     $style_du_bouton = get_sub_field('style_du_bouton');
     $liste_des_clients_a_afficher = get_sub_field('liste_des_clients_a_afficher');
+    $cta_url_video = get_sub_field('cta_url_video');
+    $cta_texte_video_cas_client = get_sub_field('cta_texte_video_cas_client');
+    $cta_cas_client_en_savoir_plus = get_sub_field('cta_cas_client_en_savoir_plus');
 endif;
+
 ?>
 
 <?php echo "<div "; ?>
@@ -70,17 +74,17 @@ endif;
             $client = $client['client_selectionne'];
             $title_client = $client->post_title;
             $clientId = $client->ID;
+            $cta_url_video = get_field('cta_url_video', $clientID);
             $desc = get_field('description_extrait_de_la_page', $clientId);
-            $permalink = get_permalink($clientId);
-            $featured_image = get_the_post_thumbnail($clientId, 'thumbnail'); ?>
+            $permalink = get_permalink($clientId); ?>
             <div class="extrait-client">
-                <div class="extrait-client__image">
-                    <?php echo $featured_image; ?>
-                </div>
                 <div class="extrait-client__content">
                     <h3 class="extrait-client__title"><?php echo $title_client; ?></h3>
                     <div class="extrait-client__description"><?php echo $desc; ?></div>
-                    <a href="<?php echo $permalink; ?>" class="extrait-client__link">En savoir plus</a>
+                    <div class="cta-container-cas-client">
+                        <a href="<?= $cta_url_video ?>" class="extrait-client__link cta_ternaire"><?= $cta_texte_video_cas_client ?></a>
+                        <a href="<?= $permalink; ?>" class="extrait-client__link"><?= $cta_cas_client_en_savoir_plus ?></a>
+                    </div>
                 </div>
             </div>
         <?php endforeach; ?>

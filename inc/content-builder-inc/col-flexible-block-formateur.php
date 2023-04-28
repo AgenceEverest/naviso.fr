@@ -8,7 +8,7 @@
 <?php $prenom = get_sub_field('prenom') ?>
 <?php $image = get_sub_field('image') ?>
 
-<div class="col_flexible_item">
+<div class="col_flexible_item quotes-container">
     <?= showSvg(get_stylesheet_directory_uri() . '/svg/quotes.svg') ?>
     <?php if ($ajouter_une_bordure) : ?><div class="col_flexible_bordure"><?php endif; ?>
         <?php if (!$ajouter_une_bordure) : ?><div class="col_flexible_sansbordure"><?php endif; ?>
