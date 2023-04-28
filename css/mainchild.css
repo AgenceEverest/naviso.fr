@@ -313,32 +313,41 @@ Fichier de customisation du CSS
 .bloc_liste_deroulante .question_reponse_wysiwyg {
   border: none;
 }
-.fond_clair2 .bloc_liste_deroulante .question_reponse_title {
-  background-color: #1F2D46;
-}
-.fond_clair2 .bloc_liste_deroulante .question_reponse_title:hover {
-  background-color: #1F2D46;
-}
-.fond_clair2 .bloc_liste_deroulante .question_reponse_title.active {
+.fond_blanc .bloc_liste_deroulante .question_reponse_title {
   background-color: white;
 }
-.fond_clair2 .bloc_liste_deroulante .question_reponse_title.active h3 {
+.fond_blanc .bloc_liste_deroulante .question_reponse_title:hover {
+  background-color: white;
+}
+.fond_blanc .bloc_liste_deroulante .question_reponse_title.active {
+  background-color: white;
+}
+.fond_blanc .bloc_liste_deroulante .question_reponse_title.active h3 {
   color: #1F2D46 !important;
 }
-.fond_clair2 .bloc_liste_deroulante .question_reponse_title_icone {
+.fond_blanc .bloc_liste_deroulante .question_reponse_title_icone {
   background-color: rgba(255, 255, 255, 0);
 }
-.fond_clair2 .bloc_liste_deroulante .question_reponse_item {
+.fond_blanc .bloc_liste_deroulante .question_reponse_item {
   border-bottom: 2px solid white;
 }
-.fond_clair2 .bloc_liste_deroulante .question_reponse_item:has(.active) {
+.fond_blanc .bloc_liste_deroulante .question_reponse_item #Tracé_11659 {
+  stroke: #1F2D46;
+}
+.fond_blanc .bloc_liste_deroulante .question_reponse_item:has(.active) {
   background-color: white;
   color: #1F2D46;
+  border-radius: 25px;
+  border: 1px solid #1F2D46;
+  overflow: hidden;
 }
-.fond_clair2 .bloc_liste_deroulante .question_reponse_wysiwyg {
+.fond_blanc .bloc_liste_deroulante .question_reponse_wysiwyg {
   color: #1F2D46 !important;
 }
-.fond_clair2 .bloc_liste_deroulante .entry-content p {
+.fond_blanc .bloc_liste_deroulante .entry-content h3 {
+  color: #1F2D46 !important;
+}
+.fond_blanc .bloc_liste_deroulante .entry-content p {
   color: #1F2D46 !important;
 }
 .fond_clair .bloc_liste_deroulante .question_reponse_title {
@@ -370,6 +379,34 @@ Fichier de customisation du CSS
   color: white;
 }
 .fond_clair .bloc_liste_deroulante .entry-content p {
+  color: #1F2D46 !important;
+}
+.fond_clair2 .bloc_liste_deroulante .question_reponse_title {
+  background-color: #1F2D46;
+}
+.fond_clair2 .bloc_liste_deroulante .question_reponse_title:hover {
+  background-color: #1F2D46;
+}
+.fond_clair2 .bloc_liste_deroulante .question_reponse_title.active {
+  background-color: white;
+}
+.fond_clair2 .bloc_liste_deroulante .question_reponse_title.active h3 {
+  color: #1F2D46 !important;
+}
+.fond_clair2 .bloc_liste_deroulante .question_reponse_title_icone {
+  background-color: rgba(255, 255, 255, 0);
+}
+.fond_clair2 .bloc_liste_deroulante .question_reponse_item {
+  border-bottom: 2px solid white;
+}
+.fond_clair2 .bloc_liste_deroulante .question_reponse_item:has(.active) {
+  background-color: white;
+  color: #1F2D46;
+}
+.fond_clair2 .bloc_liste_deroulante .question_reponse_wysiwyg {
+  color: #1F2D46 !important;
+}
+.fond_clair2 .bloc_liste_deroulante .entry-content p {
   color: #1F2D46 !important;
 }
 .question_reponse_title_icone_plus svg path, .question_reponse_title_icone_moins svg path {

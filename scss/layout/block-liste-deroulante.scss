@@ -24,12 +24,12 @@
     }
  }
 
-.fond_clair2 {
+.fond_blanc {
     .bloc_liste_deroulante {
         .question_reponse_title {
-            background-color: $bleuNaviso;
+            background-color: white;
             &:hover {
-                background-color: $bleuNaviso;
+                background-color: white;
             }
             &.active {
                 background-color: white;
@@ -43,16 +43,24 @@
         }
         .question_reponse_item {
             border-bottom: 2px solid white;
+            #Tracé_11659 {
+                stroke: $bleuNaviso;
+            }
         }
         .question_reponse_item:has(.active) {
             background-color: white;
             color: $bleuNaviso;
-    
+            border-radius: 25px;
+            border: 1px solid $bleuNaviso;
+            overflow: hidden;
         }
         .question_reponse_wysiwyg {
             color: $bleuNaviso !important;
         }
         .entry-content {
+            h3 {
+                color: $bleuNaviso !important;
+            }
             p {
                 color: $bleuNaviso !important;
             }
@@ -92,6 +100,42 @@
             h3 {
                 color: white;
             }
+            p {
+                color: $bleuNaviso !important;
+            }
+        }
+     }
+}
+
+.fond_clair2 {
+    .bloc_liste_deroulante {
+        .question_reponse_title {
+            background-color: $bleuNaviso;
+            &:hover {
+                background-color: $bleuNaviso;
+            }
+            &.active {
+                background-color: white;
+                h3 {
+                    color: $bleuNaviso !important;
+                }
+            }
+        }
+        .question_reponse_title_icone {
+            background-color: rgba(255, 255, 255, 0);
+        }
+        .question_reponse_item {
+            border-bottom: 2px solid white;
+        }
+        .question_reponse_item:has(.active) {
+            background-color: white;
+            color: $bleuNaviso;
+    
+        }
+        .question_reponse_wysiwyg {
+            color: $bleuNaviso !important;
+        }
+        .entry-content {
             p {
                 color: $bleuNaviso !important;
             }
