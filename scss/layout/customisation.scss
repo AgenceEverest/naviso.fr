@@ -186,8 +186,9 @@ Fichier de customisation du CSS
         p,
         ul,
         li,
+        a,
         span {
-            color: white !important;
+            color: white;
 
             strong {
                 color: $greenNaviso;
