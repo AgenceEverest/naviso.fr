@@ -149,6 +149,9 @@ Fichier de customisation du CSS
 .col_flexible_superposition .cta_align_center {
   margin-left: 0rem !important;
 }
+.col_flexible_image_wrapper img {
+  border-radius: 0rem !important;
+}
 .extraits-clients-container {
   display: flex;
   flex-wrap: wrap;
@@ -288,42 +291,85 @@ Fichier de customisation du CSS
   fill: #ffffff7a;
 }
 .bloc_liste_deroulante .question_reponse_title {
-  background-color: #1F2D46;
   border: none;
   transition: none;
   padding-left: 1rem;
 }
 .bloc_liste_deroulante .question_reponse_title:hover {
-  background-color: #1F2D46;
   border: none;
 }
 .bloc_liste_deroulante .question_reponse_title.active {
-  background-color: white;
   transition: none;
   border-radius: 25px;
-}
-.bloc_liste_deroulante .question_reponse_title.active h3 {
-  color: #1F2D46 !important;
 }
 .bloc_liste_deroulante .question_reponse_title_icone {
   right: 0 !important;
   left: inherit !important;
-  background-color: rgba(255, 255, 255, 0);
   border-right: none;
 }
-.bloc_liste_deroulante .question_reponse_item {
-  border-bottom: 2px solid white;
-}
 .bloc_liste_deroulante .question_reponse_item:has(.active) {
-  background-color: white;
-  color: #1F2D46;
   border-radius: 25px;
 }
 .bloc_liste_deroulante .question_reponse_wysiwyg {
   border: none;
+}
+.fond_clair2 .bloc_liste_deroulante .question_reponse_title {
+  background-color: #1F2D46;
+}
+.fond_clair2 .bloc_liste_deroulante .question_reponse_title:hover {
+  background-color: #1F2D46;
+}
+.fond_clair2 .bloc_liste_deroulante .question_reponse_title.active {
+  background-color: white;
+}
+.fond_clair2 .bloc_liste_deroulante .question_reponse_title.active h3 {
   color: #1F2D46 !important;
 }
-.bloc_liste_deroulante .entry-content p {
+.fond_clair2 .bloc_liste_deroulante .question_reponse_title_icone {
+  background-color: rgba(255, 255, 255, 0);
+}
+.fond_clair2 .bloc_liste_deroulante .question_reponse_item {
+  border-bottom: 2px solid white;
+}
+.fond_clair2 .bloc_liste_deroulante .question_reponse_item:has(.active) {
+  background-color: white;
+  color: #1F2D46;
+}
+.fond_clair2 .bloc_liste_deroulante .question_reponse_wysiwyg {
+  color: #1F2D46 !important;
+}
+.fond_clair2 .bloc_liste_deroulante .entry-content p {
+  color: #1F2D46 !important;
+}
+.fond_clair .bloc_liste_deroulante .question_reponse_title {
+  background-color: #4AB8A5;
+}
+.fond_clair .bloc_liste_deroulante .question_reponse_title:hover {
+  background-color: #4AB8A5;
+}
+.fond_clair .bloc_liste_deroulante .question_reponse_title.active {
+  background-color: white;
+}
+.fond_clair .bloc_liste_deroulante .question_reponse_title.active h3 {
+  color: #1F2D46 !important;
+}
+.fond_clair .bloc_liste_deroulante .question_reponse_title_icone {
+  background-color: rgba(255, 255, 255, 0);
+}
+.fond_clair .bloc_liste_deroulante .question_reponse_item {
+  border-bottom: 2px solid white;
+}
+.fond_clair .bloc_liste_deroulante .question_reponse_item:has(.active) {
+  background-color: white;
+  color: #4AB8A5;
+}
+.fond_clair .bloc_liste_deroulante .question_reponse_wysiwyg {
+  color: #4AB8A5 !important;
+}
+.fond_clair .bloc_liste_deroulante .entry-content h3 {
+  color: white;
+}
+.fond_clair .bloc_liste_deroulante .entry-content p {
   color: #1F2D46 !important;
 }
 .question_reponse_title_icone_plus svg path, .question_reponse_title_icone_moins svg path {
