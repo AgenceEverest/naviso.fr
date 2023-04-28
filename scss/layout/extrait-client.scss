@@ -2,17 +2,26 @@
     display: flex;
     flex-wrap: wrap;
     .extrait-client {
-        width: 25%;
-        .extrait-client__image{
-    
-        }
+        width: 31%;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        box-shadow: 0px 10px 50px 20px #6868683d;
+        padding: 2rem 1.5rem 1rem 1.5rem;
         .extrait-client__content {
+            .cta-container-cas-client {
+                display: flex;
+                justify-content: space-around;
+            }
             .extrait-client__title{
-    
+                text-align: center;
             }
-            .extrait-client__description {
-    
+
+            .problematique {
+                text-align: center;
+                font-weight: 600;
+                margin-bottom: 1rem;
             }
+         
         }
     }
 }

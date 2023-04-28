@@ -95,7 +95,7 @@ endif; ?>">
     </div>
     <?php $position_CTA = get_sub_field('position_des_deux_cta_sous_le_bloc') ?>
 
-    <div class="cta-sous-bloc-container">
+    <div class="cta-sous-bloc-container <?= $position_CTA ?>">
     <?php if ($afficher_un_premier_bouton_sous_le_bloc) : ?>
             <?php get_template_part('inc/content-builder-inc/cta-sous-bloc-1') ?>
         <?php endif; ?>
