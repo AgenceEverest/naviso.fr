@@ -97,14 +97,14 @@ Fichier de customisation du CSS
 
 .cta_secondaire {
     a {
-        background-color: $bleuNaviso !important;;
+        background-color: black !important;;
         color: white !important;
-        border: 2px solid $bleuNaviso !important;
+        border: 2px solid black !important;
 
         &:hover {
             background-color: white !important;;
-            color: $bleuNaviso !important;
-            border: 2px solid $bleuNaviso !important;
+            color: black !important;
+            border: 2px solid black !important;
 
         }
     }
@@ -122,6 +122,28 @@ Fichier de customisation du CSS
             color: white !important;
             border: 2px solid black  !important;;
         }
+    }
+}
+
+.cta-dans-repeteur {
+    text-align: left;
+    margin-top: 1rem !important;
+}
+.buttons-align-center {
+    .cta-dans-repeteur {
+        text-align: center;
+    }
+}
+
+.buttons-align-left {
+    .cta-dans-repeteur {
+        text-align: left;
+    }
+}
+
+.buttons-align-right {
+    .cta-dans-repeteur {
+        text-align: right;
     }
 }
 

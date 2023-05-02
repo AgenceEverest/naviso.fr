@@ -167,6 +167,10 @@ endif; ?>
 						get_template_part('inc/extrait-offre');
 					elseif ($typeExtrait === 'extrait_avec_bandeau') :
 						get_template_part('inc/extrait-avec-bandeau');
+					elseif ($typeExtrait === 'extrait_metier') :
+						get_template_part('inc/extrait-metier');
+					elseif ($typeExtrait === 'extrait_formation') :
+						get_template_part('inc/extrait-formation');
 					endif;
 				endwhile; ?>
 			</div>

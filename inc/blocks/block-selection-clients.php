@@ -12,7 +12,6 @@ if (have_rows('block_selection_clients')) : the_row(); // il s'agit du nom du ch
     $marge_en_haut_du_bloc = get_sub_field('marge_en_haut_du_bloc');
     $marge_en_bas_du_bloc = get_sub_field('marge_en_bas_du_bloc');
 
-
     $liste_des_clients_a_afficher = get_sub_field('liste_des_clients_a_afficher');
     $cta_url_video = get_sub_field('cta_url_video');
     $cta_texte_video_cas_client = get_sub_field('cta_texte_video_cas_client');

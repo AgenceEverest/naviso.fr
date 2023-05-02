@@ -75,14 +75,14 @@ Fichier de customisation du CSS
   border: 2px solid #4AB8A5 !important;
 }
 .cta_secondaire a {
-  background-color: #1F2D46 !important;
+  background-color: black !important;
   color: white !important;
-  border: 2px solid #1F2D46 !important;
+  border: 2px solid black !important;
 }
 .cta_secondaire a:hover {
   background-color: white !important;
-  color: #1F2D46 !important;
-  border: 2px solid #1F2D46 !important;
+  color: black !important;
+  border: 2px solid black !important;
 }
 .cta_ternaire a {
   background-color: white !important;
@@ -93,6 +93,19 @@ Fichier de customisation du CSS
   background-color: black !important;
   color: white !important;
   border: 2px solid black !important;
+}
+.cta-dans-repeteur {
+  text-align: left;
+  margin-top: 1rem !important;
+}
+.buttons-align-center .cta-dans-repeteur {
+  text-align: center;
+}
+.buttons-align-left .cta-dans-repeteur {
+  text-align: left;
+}
+.buttons-align-right .cta-dans-repeteur {
+  text-align: right;
 }
 .fond_clair p, .fond_clair ul, .fond_clair li, .fond_clair a, .fond_clair span {
   color: white;
@@ -107,14 +120,14 @@ Fichier de customisation du CSS
   color: #1F2D46;
 }
 .fond_clair2 h1, .fond_clair2 h2, .fond_clair2 h3, .fond_clair2 h4, .fond_clair2 h5, .fond_clair2 h6, .fond_clair2 p, .fond_clair2 ul, .fond_clair2 li, .fond_clair2 a, .fond_clair2 span {
-  color: white !important;
+  color: white;
 }
 .fond_clair2 h1 strong, .fond_clair2 h2 strong, .fond_clair2 h3 strong, .fond_clair2 h4 strong, .fond_clair2 h5 strong, .fond_clair2 h6 strong, .fond_clair2 p strong, .fond_clair2 ul strong, .fond_clair2 li strong, .fond_clair2 a strong, .fond_clair2 span strong {
   color: #4AB8A5;
   font-weight: normal !important;
 }
 .fond_clair2 .entry-content h1, .fond_clair2 .entry-content h2, .fond_clair2 .entry-content h3, .fond_clair2 .entry-content h4, .fond_clair2 .entry-content h5, .fond_clair2 .entry-content h6, .fond_clair2 .entry-content p, .fond_clair2 .entry-content ul, .fond_clair2 .entry-content li, .fond_clair2 .entry-content a, .fond_clair2 .entry-content span {
-  color: white !important;
+  color: white;
 }
 .fond_clair2 .entry-content h1 strong, .fond_clair2 .entry-content h2 strong, .fond_clair2 .entry-content h3 strong, .fond_clair2 .entry-content h4 strong, .fond_clair2 .entry-content h5 strong, .fond_clair2 .entry-content h6 strong, .fond_clair2 .entry-content p strong, .fond_clair2 .entry-content ul strong, .fond_clair2 .entry-content li strong, .fond_clair2 .entry-content a strong, .fond_clair2 .entry-content span strong {
   color: #4AB8A5;
@@ -250,10 +263,12 @@ Fichier de customisation du CSS
   width: 100%;
   text-align: center;
   margin-bottom: 1rem;
+  color: black !important;
 }
 .extrait_metier .desc {
   margin-bottom: 1rem;
   text-align: center;
+  color: black !important;
 }
 .newsletter-container .newsletter-wrapper {
   display: flex;

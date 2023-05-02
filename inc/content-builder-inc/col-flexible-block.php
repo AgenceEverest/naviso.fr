@@ -52,3 +52,8 @@
 <?php if (get_row_layout() == 'bloc_formateur') : ?>
     <?php get_template_part('inc/content-builder-inc/col-flexible-block-formateur'); ?>
 <?php endif; ?>
+
+<!-- Bloc liste de boutons -->
+<?php if (get_row_layout() == 'bloc_liste_de_boutons') : ?>
+    <?php get_template_part('inc/content-builder-inc/col-flexible-block-liste-cta'); ?>
+<?php endif; ?>
