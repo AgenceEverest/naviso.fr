@@ -527,6 +527,69 @@ Fichier de customisation du CSS
 .formateur .identite {
   color: white;
 }
+.extrait_formation {
+  width: 32%;
+  box-shadow: 0px 10px 50px 20px #6868683d;
+  margin-right: 1rem;
+  padding: 3rem 1rem 1rem 1rem;
+  position: relative;
+}
+.extrait_formation .terms {
+  display: flex;
+  justify-content: center;
+}
+.extrait_formation .terms .term {
+  border-radius: 25px;
+  padding: 0.3rem 0.5rem;
+  font-size: 14px;
+  font-weight: bold;
+}
+.extrait_formation .terms .term-1 {
+  border: 1px solid #4AB8A5;
+  color: #4AB8A5;
+  margin-right: 0.5rem;
+}
+.extrait_formation .terms .term-2 {
+  border: 1px solid black;
+  margin-left: 0.5rem;
+}
+.extrait_formation .terms .nouveaute-formation {
+  position: absolute;
+  top: 0;
+  background: #1F2D46;
+  color: white;
+  padding: 2px 20px;
+  width: 100%;
+  text-align: center;
+}
+.extrait_formation h3 {
+  text-align: center;
+  margin-top: 1rem !important;
+}
+.extrait_formation .cta-container-formation-extrait {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.extrait_formation .cta-container-formation-extrait .cta_btn_lead {
+  /*          display: inherit;
+            left: inherit;
+            transform: inherit;
+            position: inherit; */
+}
+.extrait_formation .duree, .extrait_formation .formation {
+  font-weight: bold;
+}
+.extrait_formation .entry-content a {
+  border-bottom: none;
+  box-shadow: none;
+}
+.extrait_formation .entry-content a:hover {
+  box-shadow: none;
+  transition: none;
+}
 @media (max-width: 1400px) {
   .fond-header {
     width: 50%;
