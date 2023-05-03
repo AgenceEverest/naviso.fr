@@ -17,8 +17,7 @@ $texte_pour_le_bandeau_nouveau = get_sub_field('texte_pour_le_bandeau_nouveau');
 $texte_pour_le_bouton_en_savoir_plus = get_sub_field('texte_pour_le_bouton_en_savoir_plus');
 $texte_bouton_telechargement = get_sub_field('texte_bouton_telechargement');
 ?>
-<!-- <?php print_r(get_post_taxonomies($post_id)) ?>
-<?php print_r(wp_get_post_terms($post_id)); ?> -->
+
 
 <?php
 $terms = array();
