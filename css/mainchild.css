@@ -169,6 +169,17 @@ Fichier de customisation du CSS
   display: flex;
   justify-content: center;
 }
+.multicolonnes_item {
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 2rem 4rem 2rem;
+  box-shadow: 0px 10px 50px 20px #68686829;
+}
+.multicolonnes_item .visuel-naviso-multicol {
+  position: absolute;
+  bottom: -20%;
+  right: -15%;
+}
 .extraits-clients-container {
   display: flex;
   flex-wrap: wrap;

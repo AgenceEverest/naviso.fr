@@ -160,6 +160,7 @@ endif;
 										<?php endif; ?>
 									<?php } ?>
 								</div><?php endif; ?>
+								<?= showSvg(get_stylesheet_directory_uri() . '/svg/visuel-naviso-multicol.svg') ?>
 				</div>
 			<?php endwhile; ?>
 		</div>
