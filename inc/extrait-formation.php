@@ -18,7 +18,6 @@ $texte_pour_le_bouton_en_savoir_plus = get_sub_field('texte_pour_le_bouton_en_sa
 $texte_bouton_telechargement = get_sub_field('texte_bouton_telechargement');
 ?>
 
-
 <?php
 $terms = array();
 foreach (get_post_taxonomies($post_id) as $taxonomy) {
@@ -27,17 +26,16 @@ foreach (get_post_taxonomies($post_id) as $taxonomy) {
     }
 }
 
-
 ?>
 <div class="extrait_formation">
     <div class="extrait_content">
         <div class="terms">
-        <?php if ($terms[0]) : ?>
+        <?php if (isset($terms[0])) : ?>
             <p class="term term-1">
                 <?= $terms[0] ?>
             </p>
         <?php endif; ?>
-        <?php if ($terms[1]) : ?>
+        <?php if (isset($terms[1])) : ?>
             <p class="term term-2">
                 <?= $terms[1] ?>
             </p>
