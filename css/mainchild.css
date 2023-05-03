@@ -192,15 +192,97 @@ Fichier de customisation du CSS
   font-weight: 600;
   margin-bottom: 1rem;
 }
+.block-contacter-expert {
+  position: relative;
+  background-color: #4AB8A5;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+  padding-bottom: 3.5rem;
+  padding-top: 7rem;
+}
+.block-contacter-expert .col-gauche .col_flexible_item {
+  margin-bottom: 2rem !important;
+}
 .block-contacter-expert .col-gauche .col_flexible_item_picto {
-  width: 1.5rem;
+  margin-right: 2rem;
+}
+.block-contacter-expert .col-gauche .col_flexible_item_picto img {
+  width: 2.5rem;
 }
 .block-contacter-expert .col-gauche .col_flexible_item_wrapper {
   display: flex;
 }
+.block-contacter-expert .col-gauche .col_flexible_item_wrapper .col_flexible_item_texte {
+  color: white;
+}
+.block-contacter-expert .col-droite {
+  border-radius: 25px;
+  background-color: #1F2D46;
+  position: absolute;
+  right: 0;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: -10rem;
+}
+.block-contacter-expert .col-droite h3 {
+  text-align: center;
+  font-size: 38px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.block-contacter-expert .col-droite h3, .block-contacter-expert .col-droite p {
+  color: white;
+  text-align: center;
+}
+.block-contacter-expert .col-droite svg {
+  margin-bottom: 1rem;
+}
+.vague-expert-logiciel {
+  height: 100%;
+  overflow: hidden;
+  bottom: 0;
+}
+.vague-expert-logiciel svg {
+  fill: #91E3D6 !important;
+  position: absolute !important;
+  bottom: 0;
+}
 @media (max-width: 1024px) {
+  .block-contacter-expert {
+    padding-bottom: 0rem;
+  }
   .block-contacter-expert .col-gauche {
     margin-bottom: 1rem;
+  }
+  .block-contacter-expert .col-gauche .col_flexible_item {
+    width: 85% !important;
+    margin: auto;
+  }
+  .block-contacter-expert .col-droite {
+    position: relative;
+    top: inherit;
+    border-radius: inherit;
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+  .block-contacter-expert .col-droite .col_flexible_item {
+    width: 85% !important;
+  }
+  .block-contacter-expert .content_width {
+    width: 100%;
+  }
+  .vague-expert-logiciel {
+    width: 240% !important;
+    z-index: 0;
+    left: -35%;
+  }
+  .vague-expert-logiciel svg {
+    top: 0;
   }
 }
 .header-home {
