@@ -1,0 +1,32 @@
+.trois-derniers-webinars {
+    .titre-accroche-bloc-webinar {
+        z-index: 1;
+    }
+    h2 {
+        color: $greenNaviso;
+        font-weight: bold;  
+    }
+    h3 a {
+        font-weight: bold;
+    }
+    .nom-animateur {
+        color: $greenNaviso;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+    .vague-webinar {
+        width: 100%;
+        z-index: 0;
+        top: 10rem;
+        svg {
+            width: 120%;
+            position: relative;
+            left: -10%;
+            fill: #4AB8A5;
+        }
+    }
+    .desc {
+        text-align:left;
+    }
+}

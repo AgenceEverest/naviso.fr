@@ -68,6 +68,17 @@ function my_acf_init_child()
             'icon'                => 'image-flip-vertical',
             'mode'                => 'edit', // permet d'ouvrir le bloc immédiatement, l'autre mode est "preview"
         )); 
+        acf_register_block(array(
+            'name'                => 'block-trois-derniers-webinaires',
+            'title'                => __('Bloc 3 derniers webinaires'),
+            'description'        => __('Un bloc listant les trois derniers webinaires.'),
+            'render_callback'    => 'block_callback_child',
+            'category'            => 'layout',
+            'icon'                => 'image-flip-vertical',
+            'mode'                => 'edit', // permet d'ouvrir le bloc immédiatement, l'autre mode est "preview"
+        )); 
+
+        
     }
 }
 function block_callback_child($block)
@@ -84,7 +95,7 @@ function block_callback_child($block)
 // Il faut rajouter le bloc de notre thème enfant dans cette liste 
 function my_plugin_allowed_block_types_child($allowed_block_types_all, $post)
 {
-    return array('core/paragraph', 'acf/block-separateur', 'acf/block-2-colonnes-textevisuel', 'acf/block-2-colonnes-textevisuel-large', 'acf/block-multicolonnes', 'acf/block-2-colonnes', 'acf/block-3-colonnes', 'acf/block-1-colonne', 'acf/block-ancres', 'acf/block-cpt-list-filterable', 'acf/block-liste-de-termes', 'acf/block-2-colonnes-superposition', 'acf/block-selection-clients', 'acf/block-contacter-expert-logiciel', 'acf/block-listant-les-metiers', 'acf/block-more-informations', 'acf/block-newsletter', 'acf/block-app');
+    return array('core/paragraph', 'acf/block-separateur', 'acf/block-2-colonnes-textevisuel', 'acf/block-2-colonnes-textevisuel-large', 'acf/block-multicolonnes', 'acf/block-2-colonnes', 'acf/block-3-colonnes', 'acf/block-1-colonne', 'acf/block-ancres', 'acf/block-cpt-list-filterable', 'acf/block-liste-de-termes', 'acf/block-2-colonnes-superposition', 'acf/block-selection-clients', 'acf/block-contacter-expert-logiciel', 'acf/block-listant-les-metiers', 'acf/block-more-informations', 'acf/block-newsletter', 'acf/block-app', 'acf/block-trois-derniers-webinaires');
 }
 add_filter('allowed_block_types_all', 'my_plugin_allowed_block_types_child', 11, 3);
 

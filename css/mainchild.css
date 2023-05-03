@@ -165,6 +165,10 @@ Fichier de customisation du CSS
 .col_flexible_image_wrapper img {
   border-radius: 0rem !important;
 }
+.form-vers-page-contact {
+  display: flex;
+  justify-content: center;
+}
 .extraits-clients-container {
   display: flex;
   flex-wrap: wrap;
@@ -173,7 +177,7 @@ Fichier de customisation du CSS
   width: 31%;
   margin-right: 1rem;
   margin-bottom: 1rem;
-  box-shadow: 0px 10px 50px 20px #6868683d;
+  box-shadow: 0px 10px 50px 20px #68686829;
   padding: 2rem 1.5rem 1rem 1.5rem;
 }
 .extraits-clients-container .extrait-client .extrait-client__content .cta-container-cas-client {
@@ -256,7 +260,7 @@ Fichier de customisation du CSS
   width: 31%;
   margin-right: 1rem;
   padding: 2rem;
-  box-shadow: 0px 10px 50px 20px #6868683d;
+  box-shadow: 0px 10px 50px 20px #68686829;
   border-radius: 0px !important;
 }
 .extrait_metier h3 {
@@ -492,7 +496,7 @@ Fichier de customisation du CSS
   position: relative;
   padding: 50px 0px 180px 0px;
   margin-top: 3rem;
-  box-shadow: 0px 10px 50px 20px #6868683d;
+  box-shadow: 0px 10px 50px 20px #68686829;
 }
 .quotes-container .entry-content {
   padding-left: 2rem;
@@ -529,8 +533,9 @@ Fichier de customisation du CSS
 }
 .extrait_formation {
   width: 32%;
-  box-shadow: 0px 10px 50px 20px #6868683d;
+  box-shadow: 0px 10px 50px 20px #68686829;
   margin-right: 1rem;
+  margin-bottom: 1rem;
   padding: 3rem 1rem 1rem 1rem;
   position: relative;
 }
@@ -540,7 +545,7 @@ Fichier de customisation du CSS
 }
 .extrait_formation .terms .term {
   border-radius: 25px;
-  padding: 0.3rem 0.5rem;
+  padding: 0rem 0.5rem;
   font-size: 14px;
   font-weight: bold;
 }
@@ -561,6 +566,7 @@ Fichier de customisation du CSS
   padding: 2px 20px;
   width: 100%;
   text-align: center;
+  font-weight: bold;
 }
 .extrait_formation h3 {
   text-align: center;
@@ -589,6 +595,36 @@ Fichier de customisation du CSS
 .extrait_formation .entry-content a:hover {
   box-shadow: none;
   transition: none;
+}
+.trois-derniers-webinars .titre-accroche-bloc-webinar {
+  z-index: 1;
+}
+.trois-derniers-webinars h2 {
+  color: #4AB8A5;
+  font-weight: bold;
+}
+.trois-derniers-webinars h3 a {
+  font-weight: bold;
+}
+.trois-derniers-webinars .nom-animateur {
+  color: #4AB8A5;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.trois-derniers-webinars .vague-webinar {
+  width: 100%;
+  z-index: 0;
+  top: 10rem;
+}
+.trois-derniers-webinars .vague-webinar svg {
+  width: 120%;
+  position: relative;
+  left: -10%;
+  fill: #4AB8A5;
+}
+.trois-derniers-webinars .desc {
+  text-align: left;
 }
 @media (max-width: 1400px) {
   .fond-header {
