@@ -20,6 +20,7 @@ if (have_rows('block_multicolonnes')) : the_row(); // il s'agit du nom du champ 
 	$ouvrir_dans_un_nouvel_onglet = get_sub_field('ouvrir_dans_un_nouvel_onglet');
 	$alignement_du_bouton = get_sub_field('alignement_du_bouton');
 	$style_du_bouton = get_sub_field('style_du_bouton');
+	$rajouter_le_visuel_naviso_sur_les_colonnes = get_sub_field('rajouter_le_visuel_naviso_sur_les_colonnes');
 endif;
 ?>
 <?php echo "<div "; ?>
@@ -160,7 +161,9 @@ endif;
 										<?php endif; ?>
 									<?php } ?>
 								</div><?php endif; ?>
-								<?= showSvg(get_stylesheet_directory_uri() . '/svg/visuel-naviso-multicol.svg') ?>
+								<?php if ($rajouter_le_visuel_naviso_sur_les_colonnes): ?>
+									<?= showSvg(get_stylesheet_directory_uri() . '/svg/visuel-naviso-multicol.svg') ?>
+								<?php endif; ?>
 				</div>
 			<?php endwhile; ?>
 		</div>
