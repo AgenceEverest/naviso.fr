@@ -1,11 +1,19 @@
 /*
 Fichier de customisation du CSS
 */
+.search_icon_cls {
+    stroke: $bleuNaviso;
+}
 
+#search_trigger {
+    margin-right: 1rem;
+}
 .cta-container {
     width: 100%;
 }
-
+#burger span {
+    background-color: black;
+}
 .double-cta {
     display: flex;
     justify-content: space-around;
