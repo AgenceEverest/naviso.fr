@@ -87,7 +87,7 @@ endif; ?>
 					</svg><?php echo $cb_calltoaction; ?> <span class="download_doc_size">- <?php echo size_format($cb_calltoaction_fichier_size, $decimals = 0); ?></span></a></p>
 		<?php endif; ?>
 	<?php endif; ?>
-<div class="svg-container vague-webinar">
-    <?= showSvg(get_stylesheet_directory_uri() . '/svg/grande-vague-milieu.svg'); ?>
-</div>
+	<div class="svg-container vague-webinar">
+		<?= showSvg(get_stylesheet_directory_uri() . '/svg/grande-vague-milieu.svg'); ?>
+	</div>
 </div>
