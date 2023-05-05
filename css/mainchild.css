@@ -13,8 +13,17 @@ h2 {
 /*
 Fichier de customisation du CSS
 */
+.search_icon_cls {
+  stroke: #1F2D46;
+}
+#search_trigger {
+  margin-right: 1rem;
+}
 .cta-container {
   width: 100%;
+}
+#burger span {
+  background-color: black;
 }
 .double-cta {
   display: flex;
@@ -143,7 +152,7 @@ Fichier de customisation du CSS
 .col-droite {
   position: relative;
 }
-.col-droite #element-visuel-deux-col {
+.col-droite .element-visuel-deux-col {
   position: absolute;
   bottom: 0;
   right: -40%;
@@ -411,7 +420,7 @@ Fichier de customisation du CSS
 .newsletter-container .newsletter-wrapper .cta_btn_lead {
   text-align: left;
 }
-.newsletter-container .newsletter-wrapper #visuel-newsletter {
+.newsletter-container .newsletter-wrapper .visuel-newsletter {
   position: absolute;
   width: 500px;
   height: 500px;
@@ -419,7 +428,7 @@ Fichier de customisation du CSS
   right: -10%;
   overflow: hidden;
 }
-.newsletter-container .newsletter-wrapper #visuel-newsletter #Tracé_1009, .newsletter-container .newsletter-wrapper #visuel-newsletter #Tracé_1010 {
+.newsletter-container .newsletter-wrapper .visuel-newsletter #Tracé_1009, .newsletter-container .newsletter-wrapper .visuel-newsletter #Tracé_1010 {
   fill: #ffffff7a;
 }
 .bloc_liste_deroulante .question_reponse_title {
