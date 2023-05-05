@@ -198,6 +198,7 @@ Fichier de customisation du CSS
   margin: auto;
   font-size: 38px;
   color: #4AB8A5;
+  width: auto;
 }
 .extraits-clients-container {
   display: flex;
