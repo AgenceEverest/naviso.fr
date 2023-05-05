@@ -6,6 +6,10 @@
   font-style: normal;
   font-display: swap;
 }
+h2 {
+  color: #4AB8A5;
+  font-size: 38px;
+}
 /*
 Fichier de customisation du CSS
 */
@@ -182,6 +186,18 @@ Fichier de customisation du CSS
 }
 .aside_prefooter_col p.coordonnees_p_i svg {
   color: white !important;
+}
+#aside_actualites_header {
+  position: relative;
+}
+#aside_actualites_header #charger_les_images_wrapper {
+  position: absolute;
+  right: 0;
+}
+#aside_actualites_header #aside_actualites_title {
+  margin: auto;
+  font-size: 38px;
+  color: #4AB8A5;
 }
 .extraits-clients-container {
   display: flex;
@@ -798,6 +814,9 @@ Fichier de customisation du CSS
 .prefooter_col_1 #logo_footer {
   margin: 0rem 0rem 1rem 0rem;
 }
+.prefooter_col_1 .titre-coordonnees {
+  color: white !important;
+}
 .prefooter_col_1, .prefooter_col_3 {
   width: 23%;
 }
@@ -819,6 +838,7 @@ Fichier de customisation du CSS
   color: white;
   text-align: left;
   padding-top: 0 !important;
+  margin-bottom: 2rem;
 }
 #footer_content {
   display: flex;
@@ -832,15 +852,12 @@ Fichier de customisation du CSS
   display: flex;
 }
 #footer_content #menu-footer a {
-  margin-left: 1rem;
-}
-#footer_content #menu-footer a:nth-child(2) {
   margin-right: 1rem;
 }
 #footer_content .rs_link_item {
   background: #4AB8A5;
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -849,6 +866,7 @@ Fichier de customisation du CSS
 }
 #footer_content .rs_link_item svg {
   color: white;
+  height: 1.6rem;
 }
 #footer_content .rs_link_item:hover {
   background-color: white;
@@ -866,6 +884,25 @@ Fichier de customisation du CSS
   flex-wrap: wrap;
   height: 100%;
   flex-direction: column;
+}
+#footer_certification_wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+/* #aside_prefooter_wrapper {
+    position: relative; 
+    .logo-bzh-footer {
+        position: absolute;
+        right: 0;
+        top: 3rem;
+    }
+} */
+.logo-bzh-footer {
+  width: 180px;
+  position: absolute;
+  right: 0;
 }
 @media (max-width: 1400px) {
   .fond-header {

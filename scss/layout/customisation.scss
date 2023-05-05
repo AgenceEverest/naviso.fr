@@ -291,3 +291,20 @@ Fichier de customisation du CSS
 .aside_prefooter_col p.coordonnees_p_i svg {
     color: white !important;
 }
+
+
+#aside_actualites_header {
+    position: relative;
+    #charger_les_images_wrapper{
+        position: absolute;
+        right: 0;
+    }
+
+    #aside_actualites_title {
+        margin: auto;
+        font-size: 38px;
+        color: $greenNaviso;
+        width: auto;
+    }
+
+}
