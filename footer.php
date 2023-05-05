@@ -79,13 +79,14 @@
     </div>
 <?php endif; ?>
 
-
+<?php $copyright_text = get_field('copyright_text', 'option') ?>
 <footer id="footer">
     <div id="footer_wrapper">
-        <p id="footer_content" class="legende">
+        <p id="footer_content" class="legende content_width">
             <span>
                 <?php $signature_footer = get_field('signature_footer', 'option'); ?>
-                © <?php echo date("Y") ?> <?php bloginfo('name'); ?>
+                © <?php echo date("Y") ?> <?php bloginfo('name'); ?> - 
+                <?= $copyright_text ?>
             </span>
             <span id="menu-footer">
                 <?php $menuParameters = array(

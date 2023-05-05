@@ -790,9 +790,10 @@ Fichier de customisation du CSS
   margin: inherit;
   color: inherit;
 }
-#footer_content {
-  display: flex;
-  justify-content: space-between;
+#footer_wrapper {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100%;
 }
 .prefooter_col_1 #logo_footer {
   margin: 0rem 0rem 1rem 0rem;
@@ -818,6 +819,14 @@ Fichier de customisation du CSS
   color: white;
   text-align: left;
   padding-top: 0 !important;
+}
+#footer_content {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+#footer_content span {
+  text-decoration: underline;
 }
 #footer_content #menu-footer {
   display: flex;
