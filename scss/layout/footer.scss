@@ -1,0 +1,19 @@
+#aside_prefooter{
+    background-color: $bleuNaviso;
+}
+
+#footer {
+    background-color: $bleuNaviso;
+
+}
+
+#menu-footer a:after {
+    content: inherit;
+    margin: inherit;
+    color: inherit;
+}
+
+#footer_content {
+    display: flex;
+    justify-content: space-between;
+}

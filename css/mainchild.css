@@ -719,6 +719,75 @@ Fichier de customisation du CSS
 .trois-derniers-webinars .desc {
   text-align: left;
 }
+#aside_actualites {
+  border-top: none;
+}
+#aside_actualites_wrapper .article_extrait {
+  background-color: white;
+  border-radius: inherit;
+  box-shadow: 0px 10px 50px 20px #68686829;
+  /* 
+        .sep_terms {
+            display: none;
+        }
+        .term_link {
+            display: none;
+        } */
+}
+#aside_actualites_wrapper .article_extrait .entry_title_date {
+  display: flex;
+  justify-content: center;
+}
+#aside_actualites_wrapper .article_extrait .entry_title_date .date_jour, #aside_actualites_wrapper .article_extrait .entry_title_date .date_mois, #aside_actualites_wrapper .article_extrait .entry_title_date .date_annee {
+  color: #001D2C;
+}
+#aside_actualites_wrapper .article_extrait .article_extrait_post_title {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+#aside_actualites_wrapper .article_extrait .article_extrait_post_title a {
+  color: #001D2C;
+}
+#aside_actualites_wrapper .article_extrait .btn_article_extrait {
+  right: 2rem;
+  left: inherit;
+}
+#charger_les_images_switch #charger_les_images_switch_label {
+  height: 22px;
+}
+#charger_les_images_switch:has(input:checked) .slider {
+  background-color: #4AB8A5;
+}
+#charger_les_images_switch:has(input:checked) .slider.round:before {
+  background-color: white;
+  transform: translateX(17px);
+}
+#charger_les_images_switch .slider {
+  background-color: white;
+  border: 1px solid #4AB8A5;
+}
+#charger_les_images_switch .slider.round:before {
+  height: 18px;
+  width: 19px;
+  left: 1px;
+  bottom: 1px;
+}
+#aside_prefooter {
+  background-color: #1F2D46;
+}
+#footer {
+  background-color: #1F2D46;
+}
+#menu-footer a:after {
+  content: inherit;
+  margin: inherit;
+  color: inherit;
+}
+#footer_content {
+  display: flex;
+  justify-content: space-between;
+}
 @media (max-width: 1400px) {
   .fond-header {
     width: 50%;
