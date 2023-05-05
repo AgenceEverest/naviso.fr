@@ -52,8 +52,6 @@ get_header(); ?>
 						<?= showSvg(get_stylesheet_directory_uri() . '/svg/svg-fond-header.svg') ?>
 					</div>
 				<?php endif; ?>
-
-
 			</header>
 			<?php
 			if (the_content()) :

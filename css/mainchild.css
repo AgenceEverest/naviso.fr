@@ -180,6 +180,9 @@ Fichier de customisation du CSS
   bottom: -20%;
   right: -15%;
 }
+.aside_prefooter_col p.coordonnees_p_i svg {
+  color: white !important;
+}
 .extraits-clients-container {
   display: flex;
   flex-wrap: wrap;
@@ -777,7 +780,10 @@ Fichier de customisation du CSS
   background-color: #1F2D46;
 }
 #footer {
-  background-color: #1F2D46;
+  background-color: white;
+}
+#footer span, #footer #menu-footer a {
+  color: #1F2D46;
 }
 #menu-footer a:after {
   content: inherit;
@@ -787,6 +793,70 @@ Fichier de customisation du CSS
 #footer_content {
   display: flex;
   justify-content: space-between;
+}
+.prefooter_col_1 #logo_footer {
+  margin: 0rem 0rem 1rem 0rem;
+}
+.prefooter_col_1, .prefooter_col_3 {
+  width: 23%;
+}
+.prefooter_col_2 {
+  width: 46%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.prefooter_col_2 .cta_btn_lead {
+  text-align: left;
+  margin-bottom: 3rem;
+}
+.prefooter_col_3 .footer_certification {
+  width: 100% !important;
+  height: auto !important;
+}
+#aside_prefooter_baseline {
+  color: white;
+  text-align: left;
+  padding-top: 0 !important;
+}
+#footer_content #menu-footer {
+  display: flex;
+}
+#footer_content #menu-footer a {
+  margin-left: 1rem;
+}
+#footer_content #menu-footer a:nth-child(2) {
+  margin-right: 1rem;
+}
+#footer_content .rs_link_item {
+  background: #4AB8A5;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0rem 1rem 0rem 0rem !important;
+}
+#footer_content .rs_link_item svg {
+  color: white;
+}
+#footer_content .rs_link_item:hover {
+  background-color: white;
+}
+#footer_content .rs_link_item:hover svg {
+  color: #4AB8A5;
+}
+.menu-menu-footer-2-container {
+  display: flex;
+  height: 100px;
+}
+.menu-menu-footer-2-container #menu-menu-footer-2 {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  flex-direction: column;
 }
 @media (max-width: 1400px) {
   .fond-header {

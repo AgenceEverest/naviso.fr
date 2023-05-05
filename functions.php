@@ -108,3 +108,11 @@ function showSvg($url)
     return $svg;
 }
 
+function register_custom_menus() {
+    register_nav_menus(
+        array(
+            'menu-footer-2' => __( 'Menu Footer 2' ),
+        )
+    );
+}
+add_action( 'after_setup_theme', 'register_custom_menus' );
