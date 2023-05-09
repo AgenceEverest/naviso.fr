@@ -74,7 +74,7 @@
             flex-direction: row;
             display: flex;
             flex-wrap: wrap;
-
+            margin-bottom: 0.5rem;
             .button {
                 cursor: pointer;
                 border-radius: 25px;
@@ -84,7 +84,7 @@
                 background-color: white;
                 color: $bleuNaviso;
                 white-space: nowrap;
-                margin-bottom: 1rem;
+                margin-bottom: 0.5rem;
 
                 &.active {
                     background-color: $bleuNaviso;
