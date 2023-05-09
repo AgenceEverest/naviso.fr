@@ -20,14 +20,15 @@
             display: flex;
 
             .button {
+                cursor: pointer;
                 border-radius: 25px;
-                padding: 0.5rem 2rem;
+                padding: 0rem 1rem;
                 margin-right: 1rem;
                 border: 2px solid $bleuNaviso;
                 background-color: white;
                 color: $bleuNaviso;
 
-                &:active {
+                &.active {
                     background-color: $bleuNaviso;
                     color: white;
                 }
@@ -39,7 +40,7 @@
                     background-color: white;
                     color: $greenNaviso;
 
-                    &:active {
+                    &.active {
                         background-color: $greenNaviso;
                         color: white;
                     }
