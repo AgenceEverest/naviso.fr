@@ -3,6 +3,7 @@
     .results {
         flex-wrap: wrap;
         display: flex;
+        justify-content: space-around;
         .terms {
             display: flex;
             width: 100%;
@@ -60,6 +61,9 @@
             border-radius: 25px;
             padding-left: 1rem; 
             width: 60%;
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
             input {
                 border: none;
                 width: 90%;
