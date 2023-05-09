@@ -38,8 +38,8 @@ export default {
 </script>
 
 <template>
-  <div>testgr
-    <template v-if="cpt.hasOwnProperty('_embedded')">
+  <div>
+    <div class="terms" v-if="cpt.hasOwnProperty('_embedded')">
       <div v-if="cpt.acf.afficher_banniere_avec_du_texte_libre" class="banner-texte-libre">
         {{ cpt.acf.banniere_avec_du_texte_libre }}
       </div>
@@ -49,7 +49,7 @@ export default {
           {{ term.name }}
         </span>
       </div>
-    </template>
+    </div>
     <h2>{{ cpt.title.rendered }}</h2>
     <p v-if="cpt.acf.hasOwnProperty('nom_employeur')" class="employeur">
       {{ cpt.acf.nom_employeur }}

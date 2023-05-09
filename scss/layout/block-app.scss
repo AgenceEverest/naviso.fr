@@ -3,7 +3,28 @@
     .results {
         flex-wrap: wrap;
         display: flex;
-
+        .terms {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            .term {
+                font-size: 14px;
+                border-radius: 25px;
+                padding: 0rem 1rem;
+                &.taxo-1 {
+                    background-color: white;
+                    color: $greenNaviso;
+                    border: 2px solid $greenNaviso;
+                    margin-right: 0.5rem;
+                }
+                &.taxo-2 {
+                    background-color: white;
+                    color: $bleuNaviso;
+                    border: 2px solid $bleuNaviso;
+                    margin-left: 0.5rem;
+                }
+            }
+        }
         .cpt-extrait {
             width: 31%;
             margin-right: 1rem;
