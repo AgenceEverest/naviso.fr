@@ -8,6 +8,15 @@
     .extrait_metier {
         width: 47%;
     }
+
+    #block-app  {
+        .results {
+            .cpt-extrait {
+                width: 48%;
+                margin-right: 1rem;
+            }
+        }
+    }
 }
 
 @media (max-width: 768px) {
@@ -20,6 +29,16 @@
         }
         .cta_btn_lead:nth-child(2) {
             right: 0%;
+        }
+    }
+
+    
+    #block-app  {
+        .results {
+            .cpt-extrait {
+                width: 100%;
+                margin-right: 0rem;
+            }
         }
     }
 }
