@@ -47,7 +47,20 @@
     .filters {
         flex-direction: column;
         display: flex;
-
+        .text-filter-container {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            border: 2px solid black;
+            border-radius: 25px;
+            padding-left: 1rem; 
+            width: 60%;
+            input {
+                border: none;
+                width: 90%;
+                height: 100%;
+                margin-left: 1%;
+            } 
+        }
         .buttons {
             flex-direction: row;
             display: flex;
