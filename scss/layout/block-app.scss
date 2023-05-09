@@ -1,8 +1,8 @@
 #block-app {
-    display: flex;
 
     .results {
         flex-wrap: wrap;
+        display: flex;
 
         .cpt-extrait {
             width: 32%;
@@ -13,9 +13,11 @@
 
     .filters {
         flex-direction: column;
+        display: flex;
 
         .buttons {
             flex-direction: row;
+            display: flex;
 
             .button {
                 border-radius: 25px;
