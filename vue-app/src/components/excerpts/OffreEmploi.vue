@@ -39,6 +39,17 @@ export default {
 
 <template>
   <div>
+    <template v-if="cpt.hasOwnProperty('_embedded')">
+      <div v-if="cpt.acf.afficher_banniere_avec_du_texte_libre" class="banner-texte-libre">
+        {{ cpt.acf.banniere_avec_du_texte_libre }}
+      </div>
+      <div v-for="(terms, indexTaxo) in cpt._embedded['wp:term']" :key="indexTaxo" :class="'term taxo-' + indexTaxo"
+        v-show="showTaxonomies[`${indexTaxo + 1}`]">
+        <span :class="' term-' + indexTerm" v-for="(term, indexTerm) in terms.slice(0, 1)" :key="term.id">
+          {{ term.name }}
+        </span>
+      </div>
+    </template>
     <h2>{{ cpt.title.rendered }}</h2>
     <p v-if="cpt.acf.hasOwnProperty('nom_employeur')" class="employeur">
       {{ cpt.acf.nom_employeur }}
@@ -51,17 +62,7 @@ export default {
       {{ convertToFrenchDate(cpt.acf.date_de_fin_de_candidature) }}
     </p>
     <!--      <p>{{ cpt.acf.lieu }}</p> -->
-    <template v-if="cpt.hasOwnProperty('_embedded')">
-      <div v-if="cpt.acf.afficher_banniere_avec_du_texte_libre" class="banner-texte-libre">
-        {{ cpt.acf.banniere_avec_du_texte_libre }}
-      </div>
-      <div v-for="(terms, indexTaxo) in cpt._embedded['wp:term']" :key="indexTaxo" :class="'term taxo-' + indexTaxo"
-        v-show="showTaxonomies[`${indexTaxo + 1}`]">
-        <span :class="' term-' + indexTerm" v-for="(term, indexTerm) in terms.slice(0, 1)" :key="term.id">
-          {{ term.name }}
-        </span>
-      </div>
-    </template>
+
     <div class="buttons-extrait">
       <p v-if="cpt.acf.lien_bouton_en_savoir_plus != '' || cpt.acf.url_pour_le_lien_en_savoir_plus != ''"
         class="cta_btn_lead cta_secondaire" :class="{ cta_center: !afficherBoutonFicheDePoste }">
