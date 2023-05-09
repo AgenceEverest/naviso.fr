@@ -47,6 +47,9 @@
     .filters {
         flex-direction: column;
         display: flex;
+        #loupe {
+            margin-bottom: 0.1rem;
+        }
         .text-filter-container {
             margin-top: 1rem;
             margin-bottom: 1rem;
