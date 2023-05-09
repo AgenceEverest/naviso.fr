@@ -4,11 +4,7 @@
     }
 }
 
-@media (max-width: 1024px) {
-    .extrait_metier {
-        width: 47%;
-    }
-
+@media (max-width: 1200px) {
     #block-app  {
         .results {
             .cpt-extrait {
@@ -17,6 +13,14 @@
             }
         }
     }
+}
+
+@media (max-width: 1024px) {
+    .extrait_metier {
+        width: 47%;
+    }
+
+    
 }
 
 @media (max-width: 768px) {
