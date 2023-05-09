@@ -1,5 +1,6 @@
 $paddingTopBottomBlock: 7rem;
 $paddingTopBottomColDroite: 5rem;
+$paddingBottomColDroite: 2rem;
 
 .block-contacter-expert{
     position: relative;
@@ -34,7 +35,7 @@ $paddingTopBottomColDroite: 5rem;
         position: absolute;
         right: 0;
         padding-top: $paddingTopBottomColDroite;
-        padding-bottom: $paddingTopBottomColDroite;
+        padding-bottom: $paddingBottomColDroite;
         padding-left: 2rem;
         padding-right: 2rem;
         display: flex;
