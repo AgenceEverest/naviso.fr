@@ -43,10 +43,7 @@ export default {
     <p v-if="cpt.acf.hasOwnProperty('nom_employeur')" class="employeur">
       {{ cpt.acf.nom_employeur }}
     </p>
-    <p
-      v-if="cpt.acf.hasOwnProperty('description_extrait_de_la_page')"
-      class="desc-page"
-    >
+    <p v-if="cpt.acf.hasOwnProperty('description_extrait_de_la_page')" class="desc-page">
       {{ cpt.acf.description_extrait_de_la_page }}
     </p>
     <p v-if="cpt.acf.hasOwnProperty('date_de_fin_de_candidature')">
@@ -55,50 +52,28 @@ export default {
     </p>
     <!--      <p>{{ cpt.acf.lieu }}</p> -->
     <template v-if="cpt.hasOwnProperty('_embedded')">
-      <div
-        v-if="cpt.acf.afficher_banniere_avec_du_texte_libre"
-        class="banner-texte-libre"
-      >
+      <div v-if="cpt.acf.afficher_banniere_avec_du_texte_libre" class="banner-texte-libre">
         {{ cpt.acf.banniere_avec_du_texte_libre }}
       </div>
-      <div
-        v-for="(terms, indexTaxo) in cpt._embedded['wp:term']"
-        :key="indexTaxo"
-        :class="'term taxo-' + indexTaxo"
-        v-show="showTaxonomies[`${indexTaxo + 1}`]"
-      >
-        <span
-          :class="' term-' + indexTerm"
-          v-for="(term, indexTerm) in terms.slice(0, 1)"
-          :key="term.id"
-        >
+      <div v-for="(terms, indexTaxo) in cpt._embedded['wp:term']" :key="indexTaxo" :class="'term taxo-' + indexTaxo"
+        v-show="showTaxonomies[`${indexTaxo + 1}`]">
+        <span :class="' term-' + indexTerm" v-for="(term, indexTerm) in terms.slice(0, 1)" :key="term.id">
           {{ term.name }}
         </span>
       </div>
     </template>
     <div class="buttons-extrait">
-      <p
-        v-if="cpt.acf.lien_bouton_en_savoir_plus != '' || cpt.acf.url_pour_le_lien_en_savoir_plus != ''"
-        class="cta_btn_lead cta_secondaire"
-        :class="{ cta_center: !afficherBoutonFicheDePoste }"
-      >
+      <p v-if="cpt.acf.lien_bouton_en_savoir_plus != '' || cpt.acf.url_pour_le_lien_en_savoir_plus != ''"
+        class="cta_btn_lead cta_secondaire" :class="{ cta_center: !afficherBoutonFicheDePoste }">
         <a target="_blank" :href="cpt.acf.lien_bouton_en_savoir_plus || cpt.acf.url_pour_le_lien_en_savoir_plus">{{
           texteEnSavoirPlus
         }}</a>
       </p>
-      <p
-        v-if="
-          afficherBoutonFicheDePoste &&
+      <p v-if="afficherBoutonFicheDePoste &&
           cpt.acf.lien_vers_la_fiche_de_poste !== ''
-        "
-        class="cta_btn_lead cta_primaire"
-      >
-        <a
-          target="_blank"
-          v-if="cpt.acf.hasOwnProperty('lien_vers_la_fiche_de_poste')"
-          :href="cpt.acf.lien_vers_la_fiche_de_poste"
-          >{{ texteBoutonFicheDePoste }}</a
-        >
+          " class="cta_btn_lead cta_primaire">
+        <a target="_blank" v-if="cpt.acf.hasOwnProperty('lien_vers_la_fiche_de_poste')"
+          :href="cpt.acf.lien_vers_la_fiche_de_poste">{{ texteBoutonFicheDePoste }}</a>
       </p>
     </div>
   </div>
