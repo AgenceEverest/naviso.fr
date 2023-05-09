@@ -129,6 +129,7 @@ export default {
     <div v-if="searchInput" class="text-filter-container">
       <SvgLoop />
       <input
+        placeholder="Recherche"
         v-if="searchInput"
         type="text"
         v-model="userEntry"
