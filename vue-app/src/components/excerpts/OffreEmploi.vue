@@ -65,7 +65,7 @@ export default {
 
     <div class="buttons-extrait">
       <p v-if="cpt.acf.lien_bouton_en_savoir_plus != '' || cpt.acf.url_pour_le_lien_en_savoir_plus != ''"
-        class="cta_btn_lead cta_secondaire" :class="{ cta_center: !afficherBoutonFicheDePoste }">
+        class="cta_btn_lead cta_primaire" :class="{ cta_center: !afficherBoutonFicheDePoste }">
         <a target="_blank" :href="cpt.acf.lien_bouton_en_savoir_plus || cpt.acf.url_pour_le_lien_en_savoir_plus">{{
           texteEnSavoirPlus
         }}</a>
