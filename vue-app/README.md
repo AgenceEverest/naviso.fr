@@ -6,6 +6,8 @@ Attention : il s'agit de la version utilisée à l'origine pour le site Reseaugr
 
 Vous pouvez modifier cette application en toute sécurité à votre convenance dans votre thème enfant.
 
+Index.css n'est pas compilé car il ajoute des propriétés CSS indésirable. Tout CSS doit être ajouté dans le dossier scss du thème enfant
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
