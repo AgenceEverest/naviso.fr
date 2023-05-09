@@ -1,0 +1,16 @@
+.logiciel {
+    header {
+        background-color: $bleuNaviso !important;
+        display: flex;
+        justify-content: center;
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+        h1 {
+            color: white !important;
+            font-size: 38px;
+            svg {
+                height: 38px;
+            }
+        }
+    }
+}

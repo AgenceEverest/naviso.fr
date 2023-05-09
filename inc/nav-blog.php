@@ -146,7 +146,7 @@ if (is_singular('formation')) : ?>
 <!-- Single logiciels -->
 <?php
 if (is_singular('logiciel')) : ?>
-	<div class="nav_blog_wrapper">
+	<div class="nav_blog_wrapper nav-blog-logiciel">
 		<nav id="nav_blog" class="content_width">
 			<div id="nav_blog_left" class="nav_blog_item">
 				<?php $prev_post = get_next_post(); ?>
@@ -181,7 +181,7 @@ if (is_singular('logiciel')) : ?>
 
 <!-- Single metiers -->
 <?php
-if (is_singular('logiciel')) : ?>
+if (is_singular('metier')) : ?>
 	<div class="nav_blog_wrapper">
 		<nav id="nav_blog" class="content_width">
 			<div id="nav_blog_left" class="nav_blog_item">

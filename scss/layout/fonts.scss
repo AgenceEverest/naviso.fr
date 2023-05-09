@@ -1,3 +1,24 @@
+h1, h2, h3, h4, h4, h5, h6, p, ul, li, a, div, strong {
+    font-family :'Montserrat' !important;
+}
+
+h1 {
+    font-weight: bolder;
+}
+
+h2, h3 {
+    font-weight: bold;
+}
+
+p, h3, h4, h5, h6  {
+    font-weight: normal;
+}
+.entry-title {
+    h1 {
+        font-family: 'Montserrat';
+    }
+}
+
 h2 {
     color: $greenNaviso;
     font-size: 38px;

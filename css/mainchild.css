@@ -1,14 +1,56 @@
 @charset "UTF-8";
 @font-face {
-  font-family: "Gilroy-Black";
-  src: url("../fonts/subset-AlwynNewRounded-Bold.woff2") format("woff2"), url("../fonts/subset-AlwynNewRounded-Bold.woff") format("woff");
+  font-family: "Montserrat";
+  src: url("../fonts/subset-Montserrat-Bold.woff2") format("woff2"), url("../fonts/subset-Montserrat-Bold.woff") format("woff");
+  font-weight: bolder;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/subset-Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/subset-Montserrat-SemiBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/subset-Montserrat-Medium.woff2") format("woff2"), url("../fonts/subset-Montserrat-Medium.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/subset-Montserrat-Regular.woff2") format("woff2"), url("../fonts/subset-Montserrat-Regular.woff") format("woff");
+  font-weight: lighter;
+  font-style: normal;
+  font-display: swap;
+}
+h1, h2, h3, h4, h5, h6, p, ul, li, a, div, strong {
+  font-family: "Montserrat" !important;
+}
+h1 {
+  font-weight: bolder;
+}
+h2, h3 {
+  font-weight: bold;
+}
+p, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+.entry-title h1 {
+  font-family: "Montserrat";
+}
 h2 {
   color: #4AB8A5;
   font-size: 38px;
+}
+.fond_clair h2, .fond_clair h3, .fond_clair h4, .fond_clair h5, .fond_clair h6, .fond_clair2 h2, .fond_clair2 h3, .fond_clair2 h4, .fond_clair2 h5, .fond_clair2 h6 {
+  color: white;
+}
+.fond_clair2 h2 strong, .fond_clair2 h3 strong, .fond_clair2 h4 strong, .fond_clair2 h5 strong, .fond_clair2 h6 strong {
+  color: #4AB8A5;
 }
 /*
 Fichier de customisation du CSS
@@ -802,6 +844,148 @@ Fichier de customisation du CSS
   left: 1px;
   bottom: 1px;
 }
+#block-app .filters {
+  flex-direction: column;
+  display: flex;
+}
+#block-app .filters #loupe {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  height: 16px;
+}
+#block-app .filters .text-filter-container {
+  margin-bottom: 1rem;
+  border: 2px solid black;
+  border-radius: 25px;
+  padding-left: 1rem;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+#block-app .filters .text-filter-container input {
+  border: none;
+  width: 90%;
+  height: 100%;
+  margin-left: 1%;
+}
+#block-app .filters .text-filter-container input:focus-visible {
+  outline: none;
+}
+#block-app .filters .buttons {
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+#block-app .filters .buttons .button {
+  cursor: pointer;
+  border-radius: 25px;
+  padding: 0rem 1rem;
+  margin-right: 1rem;
+  border: 2px solid #1F2D46;
+  background-color: white;
+  color: #1F2D46;
+  white-space: nowrap;
+  margin-bottom: 0.5rem;
+}
+#block-app .filters .buttons .button.active {
+  background-color: #1F2D46;
+  color: white;
+}
+#block-app .filters .buttons:nth-child(2) .button {
+  border: 2px solid #4AB8A5;
+  background-color: white;
+  color: #4AB8A5;
+}
+#block-app .filters .buttons:nth-child(2) .button.active {
+  background-color: #4AB8A5;
+  color: white;
+}
+#block-app .extraits-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#block-app .extraits-container .results {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+}
+#block-app .extraits-container .results .terms {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+#block-app .extraits-container .results .terms .term {
+  font-size: 14px;
+  border-radius: 25px;
+  padding: 0rem 1rem;
+  white-space: nowrap;
+}
+#block-app .extraits-container .results .terms .term.taxo-0 {
+  background-color: white;
+  color: #4AB8A5;
+  border: 2px solid #4AB8A5;
+  margin-right: 0.5rem;
+}
+#block-app .extraits-container .results .terms .term.taxo-1 {
+  background-color: white;
+  color: #1F2D46;
+  border: 2px solid #1F2D46;
+  margin-left: 0.5rem;
+}
+#block-app .extraits-container .results .cpt-extrait {
+  width: 31%;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0px 10px 50px 20px #68686829;
+  padding: 2rem 2rem 1.4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#block-app .extraits-container .results .cpt-extrait h2 {
+  text-align: center;
+  color: black;
+  font-size: 24px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+#block-app .extraits-container .results .cpt-extrait .desc-page {
+  text-align: center;
+}
+#block-app .extraits-container .results .cpt-extrait .buttons-extrait {
+  margin-top: 1rem;
+}
+#block-app .extraits-container .load-more {
+  background-color: white !important;
+  color: black !important;
+  border: 2px solid black !important;
+  padding: 0.7rem 1.6rem 0.8rem 1.6rem !important;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border-radius: 25px;
+}
+#block-app .extraits-container .load-more:hover {
+  background-color: black !important;
+  color: white !important;
+  border: 2px solid black !important;
+}
+.logiciel header {
+  background-color: #1F2D46 !important;
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+.logiciel header h1 {
+  color: white !important;
+  font-size: 38px;
+}
+.logiciel header h1 svg {
+  height: 38px;
+}
 #aside_prefooter {
   background-color: #1F2D46;
 }
@@ -839,6 +1023,9 @@ Fichier de customisation du CSS
 .prefooter_col_2 .cta_btn_lead {
   text-align: left;
   margin-bottom: 3rem;
+}
+.prefooter_col_2 li a {
+  color: white;
 }
 .prefooter_col_3 .footer_certification {
   width: 100% !important;
@@ -919,6 +1106,12 @@ Fichier de customisation du CSS
     width: 50%;
   }
 }
+@media (max-width: 1200px) {
+  #block-app .results .cpt-extrait {
+    width: 47%;
+    margin-right: 1rem;
+  }
+}
 @media (max-width: 1024px) {
   .extrait_metier {
     width: 47%;
@@ -933,6 +1126,10 @@ Fichier de customisation du CSS
   }
   .double-cta .cta_btn_lead:nth-child(2) {
     right: 0%;
+  }
+  #block-app .results .cpt-extrait {
+    width: 100%;
+    margin-right: 0rem;
   }
 }
 /*# sourceMappingURL=D:\wamp64\www\naviso/wp-content/themes/nanosite-proefficace-child/css/mainchild.css.map */
