@@ -329,21 +329,3 @@ Fichier de customisation du CSS
     }
 
 }
-
-.breadcrumb_container {
-    background-color: $bleuNaviso;
-
-    nav,
-    p,
-    a,
-    span {
-        color: white;
-
-        a {
-            color: white !important;
-        }
-        .breadcrumb_separator {
-            color: white !important;
-        }
-    }
-}
