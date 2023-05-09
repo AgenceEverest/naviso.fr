@@ -11,6 +11,7 @@
                 font-size: 14px;
                 border-radius: 25px;
                 padding: 0rem 1rem;
+                white-space: nowrap;
                 &.taxo-0 {
                     background-color: white;
                     color: $greenNaviso;
@@ -30,7 +31,10 @@
             margin-right: 1rem;
             margin-bottom: 1rem;
             box-shadow: 0px 10px 50px 20px #68686829;
-            padding: 2rem;
+            padding: 2rem 2rem 1.4rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             h2 {
                 text-align: center;
             }
