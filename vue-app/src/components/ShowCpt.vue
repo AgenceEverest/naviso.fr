@@ -534,32 +534,63 @@ export default {
 </script>
 
 <template>
-  <FiltersCpts v-show="isLoaded" :filters="filters" :search-input="searchInput" :filter-type="filterType"
-    @handleClick="handleClick" @filterElementsByKeyword="filterElementsByKeyword"
-    :texteTouslesFiltres1="texteTouslesFiltres1" :texteTouslesFiltres2="texteTouslesFiltres2"
-    :texteTouslesFiltres3="texteTouslesFiltres3" :texteTouslesFiltres4="texteTouslesFiltres4" />
-  <div v-show="isLoaded" :class="extraitPaddingTop">
+  <FiltersCpts
+    v-show="isLoaded"
+    :filters="filters"
+    :search-input="searchInput"
+    :filter-type="filterType"
+    @handleClick="handleClick"
+    @filterElementsByKeyword="filterElementsByKeyword"
+    :texteTouslesFiltres1="texteTouslesFiltres1"
+    :texteTouslesFiltres2="texteTouslesFiltres2"
+    :texteTouslesFiltres3="texteTouslesFiltres3"
+    :texteTouslesFiltres4="texteTouslesFiltres4"
+  />
+  <div v-show="isLoaded" :class="'extraits-container ' + extraitPaddingTop">
     <template v-if="cptName === 'evenement'">
       <div class="evenements">
         <h2 class="events-title-agenda">{{ texteEventsAVenir }}</h2>
         <div class="a-venir results">
-          <ExcerptAgenda v-show="cpt.show && cpt.display && cpt.toCome" class="cpt-extrait" v-for="cpt in cpts"
-            :key="cpt.id" :cpt="cpt" :texteFinCandidature="texteFinCandidature"
-            :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste" :texteEnSavoirPlus="texteEnSavoirPlus"
-            :texteBoutonFicheDePoste="texteBoutonFicheDePoste" :showTaxonomies="showTaxonomies"
-            :afficherBoutonTelechargement="afficherBoutonTelechargement" :texteBoutonTelecharger="texteBoutonTelecharger"
-            :texteDateDeLevenement="texteDateDeLevenement" />
+          <ExcerptAgenda
+            v-show="cpt.show && cpt.display && cpt.toCome"
+            class="cpt-extrait"
+            v-for="cpt in cpts"
+            :key="cpt.id"
+            :cpt="cpt"
+            :texteFinCandidature="texteFinCandidature"
+            :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
+            :texteEnSavoirPlus="texteEnSavoirPlus"
+            :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
+            :showTaxonomies="showTaxonomies"
+            :afficherBoutonTelechargement="afficherBoutonTelechargement"
+            :texteBoutonTelecharger="texteBoutonTelecharger"
+            :texteDateDeLevenement="texteDateDeLevenement"
+          />
         </div>
-        <div @click="incrementmaxDisplayable" v-if="hasMoreContent" class="load-more">
+        <div
+          @click="incrementmaxDisplayable"
+          v-if="hasMoreContent"
+          class="load-more"
+        >
           {{ loadMoreText }}
         </div>
         <h2 class="events-title-agenda">{{ texteEventsPasses }}</h2>
         <div class="passe results">
-          <ExcerptAgenda v-show="cpt.show && !cpt.toCome" class="cpt-extrait" v-for="cpt in cpts" :key="cpt.id" :cpt="cpt"
-            :texteFinCandidature="texteFinCandidature" :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
-            :texteEnSavoirPlus="texteEnSavoirPlus" :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
-            :showTaxonomies="showTaxonomies" :afficherBoutonTelechargement="afficherBoutonTelechargement"
-            :texteBoutonTelecharger="texteBoutonTelecharger" :texteDateDeLevenement="texteDateDeLevenement" />
+          <ExcerptAgenda
+            v-show="cpt.show && !cpt.toCome"
+            class="cpt-extrait"
+            v-for="cpt in cpts"
+            :key="cpt.id"
+            :cpt="cpt"
+            :texteFinCandidature="texteFinCandidature"
+            :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
+            :texteEnSavoirPlus="texteEnSavoirPlus"
+            :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
+            :showTaxonomies="showTaxonomies"
+            :afficherBoutonTelechargement="afficherBoutonTelechargement"
+            :texteBoutonTelecharger="texteBoutonTelecharger"
+            :texteDateDeLevenement="texteDateDeLevenement"
+          />
         </div>
       </div>
     </template>
@@ -567,49 +598,97 @@ export default {
       <div class="evenements">
         <h2 class="events-title-agenda">{{ texteEventsAVenir }}</h2>
         <div class="a-venir results">
-          <AppelAProjet v-show="cpt.show && cpt.display && cpt.toCome" class="cpt-extrait" v-for="cpt in cpts"
-            :key="cpt.id" :cpt="cpt" :texteFinCandidature="texteFinCandidature"
-            :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste" :texteEnSavoirPlus="texteEnSavoirPlus"
-            :texteBoutonFicheDePoste="texteBoutonFicheDePoste" :showTaxonomies="showTaxonomies"
-            :afficherBoutonTelechargement="afficherBoutonTelechargement" :texteBoutonTelecharger="texteBoutonTelecharger"
-            :texteDateDeLappelaProjet="texteDateDeLappelaProjet" />
+          <AppelAProjet
+            v-show="cpt.show && cpt.display && cpt.toCome"
+            class="cpt-extrait"
+            v-for="cpt in cpts"
+            :key="cpt.id"
+            :cpt="cpt"
+            :texteFinCandidature="texteFinCandidature"
+            :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
+            :texteEnSavoirPlus="texteEnSavoirPlus"
+            :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
+            :showTaxonomies="showTaxonomies"
+            :afficherBoutonTelechargement="afficherBoutonTelechargement"
+            :texteBoutonTelecharger="texteBoutonTelecharger"
+            :texteDateDeLappelaProjet="texteDateDeLappelaProjet"
+          />
         </div>
-        <div @click="incrementmaxDisplayable" v-if="hasMoreContent" class="load-more">
+        <div
+          @click="incrementmaxDisplayable"
+          v-if="hasMoreContent"
+          class="load-more"
+        >
           {{ loadMoreText }}
         </div>
         <h2 class="events-title-agenda">{{ texteEventsPasses }}</h2>
         <div class="passe results">
-          <AppelAProjet v-show="cpt.show && !cpt.toCome" class="cpt-extrait" v-for="cpt in cpts" :key="cpt.id" :cpt="cpt"
-            :texteFinCandidature="texteFinCandidature" :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
-            :texteEnSavoirPlus="texteEnSavoirPlus" :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
-            :showTaxonomies="showTaxonomies" :afficherBoutonTelechargement="afficherBoutonTelechargement"
-            :texteBoutonTelecharger="texteBoutonTelecharger" :texteDateDeLappelaProjet="texteDateDeLappelaProjet" />
+          <AppelAProjet
+            v-show="cpt.show && !cpt.toCome"
+            class="cpt-extrait"
+            v-for="cpt in cpts"
+            :key="cpt.id"
+            :cpt="cpt"
+            :texteFinCandidature="texteFinCandidature"
+            :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
+            :texteEnSavoirPlus="texteEnSavoirPlus"
+            :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
+            :showTaxonomies="showTaxonomies"
+            :afficherBoutonTelechargement="afficherBoutonTelechargement"
+            :texteBoutonTelecharger="texteBoutonTelecharger"
+            :texteDateDeLappelaProjet="texteDateDeLappelaProjet"
+          />
         </div>
       </div>
     </template>
     <template v-else-if="cptName === 'ressources-docu'">
       <div class="results ressources-docu-excercpts">
-        <RessourceDocumentaire v-show="cpt.show && cpt.display" class="cpt-extrait" v-for="cpt in cpts" :key="cpt.id"
-          :cpt="cpt" :texteFinCandidature="texteFinCandidature"
-          :afficherBoutonTelechargement="afficherBoutonTelechargement" :texteBoutonTelecharger="texteBoutonTelecharger"
-          :texteBoutonFicheDePoste="texteBoutonFicheDePoste" :protocol="protocol" :showTaxonomies="showTaxonomies"
-          :website="website" />
+        <RessourceDocumentaire
+          v-show="cpt.show && cpt.display"
+          class="cpt-extrait"
+          v-for="cpt in cpts"
+          :key="cpt.id"
+          :cpt="cpt"
+          :texteFinCandidature="texteFinCandidature"
+          :afficherBoutonTelechargement="afficherBoutonTelechargement"
+          :texteBoutonTelecharger="texteBoutonTelecharger"
+          :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
+          :protocol="protocol"
+          :showTaxonomies="showTaxonomies"
+          :website="website"
+        />
       </div>
-      <div @click="incrementmaxDisplayable" v-if="hasMoreContent" class="load-more">
+      <div
+        @click="incrementmaxDisplayable"
+        v-if="hasMoreContent"
+        class="load-more"
+      >
         {{ loadMoreText }}
       </div>
     </template>
     <template v-else>
       <div class="results">
-        <OffreEmploi v-show="cpt.show && cpt.display" class="cpt-extrait" v-for="cpt in cpts" :key="cpt.id" :cpt="cpt"
-          :texteFinCandidature="texteFinCandidature" :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
-          :texteEnSavoirPlus="texteEnSavoirPlus" :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
-          :showTaxonomies="showTaxonomies" />
+        <OffreEmploi
+          v-show="cpt.show && cpt.display"
+          class="cpt-extrait"
+          v-for="cpt in cpts"
+          :key="cpt.id"
+          :cpt="cpt"
+          :texteFinCandidature="texteFinCandidature"
+          :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
+          :texteEnSavoirPlus="texteEnSavoirPlus"
+          :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
+          :showTaxonomies="showTaxonomies"
+        />
+      </div>
+      <div
+        @click="incrementmaxDisplayable"
+        v-if="hasMoreContent"
+        class="load-more"
+      >
+        {{ loadMoreText }}
       </div>
     </template>
-    <div @click="incrementmaxDisplayable" v-if="hasMoreContent" class="load-more">
-      {{ loadMoreText }}
-    </div>
   </div>
   <div v-show="!isLoaded" class="loader-container">
     <div class="lds-ripple">
@@ -627,14 +706,12 @@ export default {
   width: 100%;
   height: 100vh;
 }
-
 .lds-ripple {
   display: inline-block;
   position: relative;
   width: 80px;
   height: 80px;
 }
-
 .lds-ripple div {
   position: absolute;
   border: 4px solid rgb(255, 255, 255);
@@ -642,11 +719,9 @@ export default {
   border-radius: 50%;
   animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
 }
-
 .lds-ripple div:nth-child(2) {
   animation-delay: -0.5s;
 }
-
 @keyframes lds-ripple {
   0% {
     top: 36px;
@@ -655,7 +730,6 @@ export default {
     height: 0;
     opacity: 0;
   }
-
   4.9% {
     top: 36px;
     left: 36px;
@@ -663,7 +737,6 @@ export default {
     height: 0;
     opacity: 0;
   }
-
   5% {
     top: 36px;
     left: 36px;
@@ -671,7 +744,6 @@ export default {
     height: 0;
     opacity: 1;
   }
-
   100% {
     top: 0px;
     left: 0px;
@@ -680,7 +752,6 @@ export default {
     opacity: 0;
   }
 }
-
 // le code scss se trouve dans le thème enfant
 
 // décommenter ce code uniquemet dans le contexte de npm run dev / npm run serve
