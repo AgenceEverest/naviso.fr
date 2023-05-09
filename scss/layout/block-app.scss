@@ -2,35 +2,41 @@
     .filters {
         flex-direction: column;
         display: flex;
+
         #loupe {
             margin-bottom: 5px;
             margin-top: 5px;
             height: 16px;
         }
+
         .text-filter-container {
             margin-bottom: 1rem;
             border: 2px solid black;
             border-radius: 25px;
-            padding-left: 1rem; 
+            padding-left: 1rem;
             width: 60%;
             display: flex;
             align-items: center;
             flex-wrap: nowrap;
+
             input {
                 border: none;
                 width: 90%;
                 height: 100%;
                 margin-left: 1%;
+
                 &:focus-visible {
                     outline: none;
                 }
-            } 
+            }
         }
+
         .buttons {
             flex-direction: row;
             display: flex;
             flex-wrap: wrap;
             margin-bottom: 0.5rem;
+
             .button {
                 cursor: pointer;
                 border-radius: 25px;
@@ -63,70 +69,85 @@
         }
     }
 
-    .results {
-        flex-wrap: wrap;
+    .extraits-container {
         display: flex;
-        justify-content: space-around;
-        .terms {
+        flex-direction: column;
+        align-items: center;
+        .results {
+            flex-wrap: wrap;
             display: flex;
-            width: 100%;
-            justify-content: center;
-            .term {
-                font-size: 14px;
-                border-radius: 25px;
-                padding: 0rem 1rem;
-                white-space: nowrap;
-                &.taxo-0 {
-                    background-color: white;
-                    color: $greenNaviso;
-                    border: 2px solid $greenNaviso;
-                    margin-right: 0.5rem;
+            justify-content: space-around;
+
+            .terms {
+                display: flex;
+                width: 100%;
+                justify-content: center;
+
+                .term {
+                    font-size: 14px;
+                    border-radius: 25px;
+                    padding: 0rem 1rem;
+                    white-space: nowrap;
+
+                    &.taxo-0 {
+                        background-color: white;
+                        color: $greenNaviso;
+                        border: 2px solid $greenNaviso;
+                        margin-right: 0.5rem;
+                    }
+
+                    &.taxo-1 {
+                        background-color: white;
+                        color: $bleuNaviso;
+                        border: 2px solid $bleuNaviso;
+                        margin-left: 0.5rem;
+                    }
                 }
-                &.taxo-1 {
-                    background-color: white;
-                    color: $bleuNaviso;
-                    border: 2px solid $bleuNaviso;
-                    margin-left: 0.5rem;
+            }
+
+            .cpt-extrait {
+                width: 31%;
+                margin-right: 1rem;
+                margin-bottom: 1rem;
+                box-shadow: 0px 10px 50px 20px #68686829;
+                padding: 2rem 2rem 1.4rem 2rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                h2 {
+                    text-align: center;
+                    color: black;
+                    font-size: 24px;
+                    margin-top: 1rem;
+                    margin-bottom: 1rem;
+                }
+
+                .desc-page {
+                    text-align: center;
+                }
+
+                .buttons-extrait {
+                    margin-top: 1rem;
                 }
             }
         }
-        .cpt-extrait {
-            width: 31%;
-            margin-right: 1rem;
-            margin-bottom: 1rem;
-            box-shadow: 0px 10px 50px 20px #68686829;
-            padding: 2rem 2rem 1.4rem 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            h2 {
-                text-align: center;
-                color: black;
-                font-size: 24px;
-                margin-top: 1rem;
-                margin-bottom: 1rem;
-            }
-            .desc-page {
-                text-align: center;
-            }
-            .buttons-extrait {
-                margin-top: 1rem;
+
+        .load-more {
+            background-color: white !important;
+            color: black !important;
+            border: 2px solid black !important;
+            padding: 0.7rem 1.6rem 0.8rem 1.6rem !important;
+            font-size: 0.85rem;
+            cursor: pointer;
+            border-radius: 25px;
+
+            &:hover {
+                background-color: black !important;
+                color: white !important;
+                border: 2px solid black !important;
             }
         }
     }
 
-    .load-more {
-        background-color: white !important;
-        color: black !important;
-        border: 2px solid black  !important;
-        padding: 0.7rem 1.6rem 0.8rem 1.6rem !important;
-        font-size: 0.85rem;
-        cursor: pointer;
-        border-radius: 25px;
-        &:hover {
-            background-color: black !important;
-            color: white !important;
-            border: 2px solid black  !important;
-        }
-    }
 }
