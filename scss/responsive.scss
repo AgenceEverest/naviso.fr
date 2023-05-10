@@ -64,6 +64,9 @@
 }
 
 @media (max-width: 768px) {
+    h2 {
+        font-size: 30px !important;
+    }
     .hauteur-fixe-visuel-large {
         figure {
             height: 100%;
