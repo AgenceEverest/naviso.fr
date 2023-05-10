@@ -5,7 +5,7 @@
 }
 
 @media (max-width: 1200px) {
-    #block-app  {
+    #block-app {
         .results {
             .cpt-extrait {
                 width: 47%;
@@ -19,11 +19,15 @@
     .extrait_metier {
         width: 47%;
     }
+
     .col_flexible_superposition {
         flex-direction: column;
-        .col-gauche, .col-droite {
+
+        .col-gauche,
+        .col-droite {
             width: 100% !important;
         }
+
         .col-gauche {
             margin-bottom: 1rem;
         }
@@ -34,17 +38,18 @@
     .extrait_metier {
         width: 100%;
     }
+
     .double-cta {
         .cta_btn_lead:nth-child(1) {
             left: 20%;
         }
+
         .cta_btn_lead:nth-child(2) {
             right: 0%;
         }
     }
 
-    
-    #block-app  {
+    #block-app {
         .results {
             .cpt-extrait {
                 width: 100%;
@@ -52,9 +57,17 @@
             }
         }
     }
+
     .header-home {
         height: 100vh;
-        img  {
+
+        .fond-header {
+            width: 175%;
+            right: -90%;
+            z-index: 2;
+        }
+
+        img {
             height: 100%;
             width: auto;
         }
