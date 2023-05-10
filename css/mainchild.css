@@ -34,7 +34,10 @@ h1 {
   font-weight: bolder;
 }
 h2, h3 {
-  font-weight: bold;
+  font-weight: bold !important;
+}
+h2 strong, h3 strong {
+  font-weight: bold !important;
 }
 p, h3, h4, h5, h6 {
   font-weight: normal;
@@ -55,6 +58,9 @@ h2 {
 /*
 Fichier de customisation du CSS
 */
+.cta_btn_lead {
+  font-weight: bold;
+}
 .search_icon_cls {
   stroke: #1F2D46;
 }
@@ -123,6 +129,7 @@ Fichier de customisation du CSS
   background-color: #4AB8A5 !important;
   color: white !important;
   border: 2px solid #4AB8A5 !important;
+  font-weight: bold;
 }
 .cta_primaire a:hover {
   background-color: white !important;
@@ -133,6 +140,7 @@ Fichier de customisation du CSS
   background-color: black !important;
   color: white !important;
   border: 2px solid black !important;
+  font-weight: bold;
 }
 .cta_secondaire a:hover {
   background-color: white !important;
@@ -143,11 +151,23 @@ Fichier de customisation du CSS
   background-color: white !important;
   color: black !important;
   border: 2px solid black !important;
+  font-weight: bold;
 }
 .cta_ternaire a:hover {
   background-color: black !important;
   color: white !important;
   border: 2px solid black !important;
+}
+.cta_header a {
+  background-color: white !important;
+  color: #4AB8A5 !important;
+  border: 2px solid #4AB8A5 !important;
+  font-weight: bold;
+}
+.cta_header a:hover {
+  background-color: #4AB8A5 !important;
+  color: white !important;
+  border: 2px solid #4AB8A5 !important;
 }
 .cta-dans-repeteur {
   text-align: left;
@@ -256,6 +276,33 @@ Fichier de customisation du CSS
 }
 .margin_section_bottom {
   margin-bottom: 3.5rem;
+}
+.hauteur_fixe figure {
+  background-color: transparent;
+}
+.hauteur_fixe figure img {
+  height: 373px;
+  width: auto;
+  margin: auto;
+}
+.hauteur-fixe-visuel {
+  display: flex;
+  align-items: center;
+}
+.hauteur-fixe-visuel figure {
+  height: 373px;
+  position: relative;
+}
+.hauteur-fixe-visuel-large {
+  display: flex;
+  align-items: center;
+}
+.hauteur-fixe-visuel-large figure {
+  height: 373px;
+  position: relative;
+}
+.col_left_wide_imgleft {
+  background-color: transparent;
 }
 .extraits-clients-container {
   display: flex;
@@ -1140,8 +1187,34 @@ Fichier de customisation du CSS
   }
 }
 @media (max-width: 1024px) {
+  /*     .hauteur-fixe-visuel-large {
+        display: inherit;
+        align-items: inherit;
+        figure {
+            height: inherit;
+            position: inherit;
+        }
+    }  */
+  .hauteur-fixe-visuel {
+    /*         display: inherit;
+        align-items: inherit; */
+  }
+  .hauteur-fixe-visuel figure {
+    /*             height: inherit;
+ */
+    position: absolute;
+  }
   .extrait_metier {
     width: 47%;
+  }
+  .col_flexible_superposition {
+    flex-direction: column;
+  }
+  .col_flexible_superposition .col-gauche, .col_flexible_superposition .col-droite {
+    width: 100% !important;
+  }
+  .col_flexible_superposition .col-gauche {
+    margin-bottom: 1rem;
   }
 }
 @media (max-width: 768px) {
@@ -1157,6 +1230,23 @@ Fichier de customisation du CSS
   #block-app .results .cpt-extrait {
     width: 100%;
     margin-right: 0rem;
+  }
+  .header-home {
+    height: 100vh;
+  }
+  .header-home .fond-header {
+    width: 175%;
+    right: -90%;
+    z-index: 2;
+  }
+  .header-home img {
+    height: 100%;
+    width: auto;
+  }
+}
+@media (max-width: 480px) {
+  #header_contact {
+    display: none !important;
   }
 }
 /*# sourceMappingURL=D:\wamp64\www\naviso/wp-content/themes/nanosite-proefficace-child/css/mainchild.css.map */

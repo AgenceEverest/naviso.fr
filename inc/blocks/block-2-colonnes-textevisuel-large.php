@@ -79,8 +79,9 @@ endif;
 					$image_weight =  $url_image_de_fond ? apply_filters('get_weight_of_img', $url_image_de_fond) : '0kb';
 					$copyright_image_de_fond = get_sub_field('copyright_image_de_fond');
 					$phrase_sur_limage = get_sub_field('phrase_sur_limage');
+					$hauteur_fixe_visuel_large = get_sub_field('hauteur_fixe_visuel_large');
 				?>
-					<div class="col_left_wide_imgleft_img">
+					<div class="<?= $hauteur_fixe_visuel_large ? 'hauteur-fixe-visuel-large' : '' ?> col_left_wide_imgleft_img">
 
 						<figure>
 							<div class="poids-image"><span class="poids-image-icone"><?php get_template_part('svg/symbole-feuille-nanosite'); ?></span><span class="poids-image-data"><?= $image_weight ?></span></div>

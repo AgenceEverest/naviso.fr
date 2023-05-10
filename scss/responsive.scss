@@ -16,6 +16,25 @@
 }
 
 @media (max-width: 1024px) {
+
+     .hauteur-fixe-visuel {
+/*         display: inherit;
+        align-items: inherit; */
+        figure {
+/*             height: inherit;
+ */            position: absolute;
+        }
+    }  
+    
+
+/*     .hauteur-fixe-visuel-large {
+        display: inherit;
+        align-items: inherit;
+        figure {
+            height: inherit;
+            position: inherit;
+        }
+    }  */
     .extrait_metier {
         width: 47%;
     }
@@ -70,6 +89,15 @@
         img {
             height: 100%;
             width: auto;
+        }
+    }
+
+    #entry_title_home_accroche {
+        text-align: left;
+    }
+    #entry_title_home_description {
+        p {
+            text-align: left;
         }
     }
 }

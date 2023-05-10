@@ -30,7 +30,7 @@ get_header(); ?>
 									</div>
 								<?php endif; ?>
 								<?php if (get_field('call-to-action_dentete_texte')) : ?>
-									<p class="cta_btn_lead cta_primaire"><a href="<?php the_field('call-to-action_dentete_hyperlien') ?>"><?php the_field('call-to-action_dentete_texte') ?></a></p>
+									<p class="cta_btn_lead cta_header"><a href="<?php the_field('call-to-action_dentete_hyperlien') ?>"><?php the_field('call-to-action_dentete_texte') ?></a></p>
 								<?php endif; ?>
 							</div>
 							<div class="empty-50"></div>

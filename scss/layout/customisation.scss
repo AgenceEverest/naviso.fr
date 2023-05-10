@@ -144,6 +144,21 @@ Fichier de customisation du CSS
     }
 }
 
+.cta_header {
+    a {
+        background-color: white !important;
+        color: $greenNaviso !important;
+        border: 2px solid $greenNaviso !important;
+        font-weight: bold;
+
+        &:hover {
+            background-color: $greenNaviso !important;
+            color: white !important;
+            border: 2px solid $greenNaviso !important;
+        }
+    }
+}
+
 .cta-dans-repeteur {
     text-align: left;
     margin-top: 1rem !important;
@@ -346,9 +361,31 @@ Fichier de customisation du CSS
     figure {
         background-color: transparent;
         img {
-            height: 376px;
+            height: 373px;
             width: auto;
             margin: auto;
         }
     }
+}
+
+.hauteur-fixe-visuel {
+    display: flex;
+    align-items: center;
+    figure {
+        height: 373px;
+        position: relative;
+    }
+}
+
+ .hauteur-fixe-visuel-large {
+    display: flex;
+    align-items: center;
+    figure {
+        height: 373px;
+        position: relative;
+    }
+} 
+
+.col_left_wide_imgleft {
+    background-color: transparent;
 }
