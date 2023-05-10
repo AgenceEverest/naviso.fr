@@ -19,8 +19,12 @@
     .extrait_metier {
         width: 47%;
     }
-
-    
+    .col_flexible_superposition {
+        flex-direction: column;
+        .col-gauche, .col-droite {
+            width: 100%;
+        }
+    }
 }
 
 @media (max-width: 768px) {
