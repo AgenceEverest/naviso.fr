@@ -16,7 +16,10 @@
 }
 
 @media (max-width: 1024px) {
-
+    #charger_les_images_wrapper {
+        position: relative;
+        justify-content: center;
+    }
     .hauteur-fixe-visuel {
 
         /*         display: inherit;
@@ -53,6 +56,11 @@
             margin-bottom: 1rem;
         }
     }
+
+    #aside_actualites_header {
+        position: relative;
+    }
+ 
 }
 
 @media (max-width: 768px) {
