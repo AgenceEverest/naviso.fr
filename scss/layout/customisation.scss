@@ -341,3 +341,14 @@ Fichier de customisation du CSS
 .margin_section_bottom {
     margin-bottom: $marginsection;
 }
+
+.hauteur_fixe {
+    figure {
+        background-color: transparent;
+        img {
+            height: 376px;
+            width: auto;
+            margin: auto;
+        }
+    }
+}
