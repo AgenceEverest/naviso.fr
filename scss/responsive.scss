@@ -22,7 +22,7 @@
     .col_flexible_superposition {
         flex-direction: column;
         .col-gauche, .col-droite {
-            width: 100%;
+            width: 100% !important;
         }
     }
 }
