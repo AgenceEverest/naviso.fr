@@ -87,8 +87,6 @@ Fichier de customisation du CSS
     right: 0;
 }
 
-#entry_title_home_image {}
-
 #entry_title_image_home img {
     object-fit: contain;
     height: auto;
@@ -328,4 +326,12 @@ Fichier de customisation du CSS
         width: auto;
     }
 
+}
+
+.margin_section_top {
+    margin-top: $marginsection;
+}
+
+.margin_section_bottom {
+    margin-bottom: $marginsection;
 }

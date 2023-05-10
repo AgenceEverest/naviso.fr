@@ -9,8 +9,12 @@ if (have_rows('block_2_colonnes_superposition')) : the_row(); // il s'agit du no
     $cb_ajouter_une_classe_css = get_sub_field('cb_ajouter_une_classe_css');
     $ajouter_un_id_pour_le_css = get_sub_field('ajouter_un_id_pour_le_css');
     $couleur_de_fond_bloc = get_sub_field('couleur_de_fond_bloc');
-    $marge_en_haut_du_bloc = get_sub_field('marge_en_haut_du_bloc');
-    $marge_en_bas_du_bloc = get_sub_field('marge_en_bas_du_bloc');
+    
+    $marge_externe_en_haut_du_bloc = get_sub_field('marge_externe_en_haut_du_bloc');
+    $marge_externe_en_bas_du_bloc = get_sub_field('marge_externe_en_bas_du_bloc');
+    $marge_interne_en_haut_du_bloc = get_sub_field('marge_interne_en_haut_du_bloc');
+    $marge_interne_en_bas_du_bloc = get_sub_field('marge_interne_en_bas_du_bloc');
+
     $cb_calltoaction = get_sub_field('cb_call-to-action');
     $cb_calltoaction_lien = get_sub_field('cb_call-to-action_lien');
     $cb_calltoaction_url = get_sub_field('cb_call-to-action_url');
@@ -40,12 +44,20 @@ endif;
     <?php echo " id='" . $ajouter_un_id_pour_le_css . "'"; ?>
 <?php endif; ?>
 <?php echo " class='"; ?>
-<?php if ($marge_en_haut_du_bloc) : ?>
-    <?php echo " padding_section_top"; ?>
-<?php endif; ?>
-<?php if ($marge_en_bas_du_bloc) : ?>
-    <?php echo " padding_section_bottom"; ?>
-<?php endif; ?>
+<?php
+if ($marge_interne_en_haut_du_bloc) :
+    echo " padding_section_top";
+endif;
+if ($marge_interne_en_bas_du_bloc) :
+    echo " padding_section_bottom";
+endif;
+if ($marge_externe_en_haut_du_bloc) :
+    echo " margin_section_top";
+endif;
+if ($marge_externe_en_bas_du_bloc) :
+    echo " margin_section_bottom";
+endif;
+?>
 <?php if ($couleur_de_fond_bloc) : ?>
     <?php echo " " . $couleur_de_fond_bloc; ?>
 <?php endif; ?>

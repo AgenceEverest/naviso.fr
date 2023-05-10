@@ -9,8 +9,10 @@ if (have_rows('block_3_colonnes')) : the_row(); // il s'agit du nom du champ dan
     $cb_ajouter_une_classe_css = get_sub_field('cb_ajouter_une_classe_css');
     $ajouter_un_id_pour_le_css = get_sub_field('ajouter_un_id_pour_le_css');
     $couleur_de_fond_bloc = get_sub_field('couleur_de_fond_bloc');
-    $marge_en_haut_du_bloc = get_sub_field('marge_en_haut_du_bloc');
-    $marge_en_bas_du_bloc = get_sub_field('marge_en_bas_du_bloc');
+    $marge_externe_en_haut_du_bloc = get_sub_field('marge_externe_en_haut_du_bloc');
+    $marge_externe_en_bas_du_bloc = get_sub_field('marge_externe_en_bas_du_bloc');
+    $marge_interne_en_haut_du_bloc = get_sub_field('marge_interne_en_haut_du_bloc');
+    $marge_interne_en_bas_du_bloc = get_sub_field('marge_interne_en_bas_du_bloc');
     $cb_calltoaction = get_sub_field('cb_call-to-action');
     $cb_calltoaction_lien = get_sub_field('cb_call-to-action_lien');
     $cb_calltoaction_url = get_sub_field('cb_call-to-action_url');
@@ -38,18 +40,26 @@ endif;
     <?php echo " id='" . $ajouter_un_id_pour_le_css . "'"; ?>
 <?php endif; ?>
 <?php echo " class='"; ?>
-<?php if ($marge_en_haut_du_bloc) : ?>
-    <?php echo " padding_section_top"; ?>
-<?php endif; ?>
-<?php if ($marge_en_bas_du_bloc) : ?>
-    <?php echo " padding_section_bottom"; ?>
-<?php endif; ?>
 <?php if ($couleur_de_fond_bloc) : ?>
     <?php echo " " . $couleur_de_fond_bloc; ?>
 <?php endif; ?>
 <?php if ($cb_ajouter_une_classe_css) : ?>
     <?php echo " " . $cb_ajouter_une_classe_css . ""; ?>
 <?php endif; ?>
+<?php
+if ($marge_interne_en_haut_du_bloc) :
+    echo " padding_section_top";
+endif;
+if ($marge_interne_en_bas_du_bloc) :
+    echo " padding_section_bottom";
+endif;
+if ($marge_externe_en_haut_du_bloc) :
+    echo " margin_section_top";
+endif;
+if ($marge_externe_en_bas_du_bloc) :
+    echo " margin_section_bottom";
+endif;
+?>
 <?php echo " block '>" ?>
 <!-- titre avant les colonnes-->
 <?php $titre_avant_les_colonnes = get_sub_field('titre_avant_les_colonnes'); ?>
@@ -73,8 +83,8 @@ endif;
 <?php endif; ?>
 <!-- colonnes -->
 <div class="content_width col_flexible col_flexible_3<?php if ($afficher_un_deuxieme_bouton_sous_le_bloc) :
-    echo ' deux-cta-sous-bloc';
-endif; ?>">
+                                                            echo ' deux-cta-sous-bloc';
+                                                        endif; ?>">
     <!-- Les 2 colonnes -->
     <div class="col_flexible_wrapper">
         <!-- Colonne 1 -->
@@ -100,7 +110,7 @@ endif; ?>">
     <?php $position_CTA = get_sub_field('position_des_deux_cta_sous_le_bloc') ?>
 
     <div class="cta-sous-bloc-container <?= $position_CTA ?>">
-    <?php if ($afficher_un_premier_bouton_sous_le_bloc) : ?>
+        <?php if ($afficher_un_premier_bouton_sous_le_bloc) : ?>
             <?php get_template_part('inc/content-builder-inc/cta-sous-bloc-1') ?>
         <?php endif; ?>
         <?php if ($afficher_un_deuxieme_bouton_sous_le_bloc) : ?>

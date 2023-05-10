@@ -251,6 +251,12 @@ Fichier de customisation du CSS
   color: #4AB8A5;
   width: auto;
 }
+.margin_section_top {
+  margin-top: 3.5rem;
+}
+.margin_section_bottom {
+  margin-bottom: 3.5rem;
+}
 .extraits-clients-container {
   display: flex;
   flex-wrap: wrap;
@@ -303,7 +309,7 @@ Fichier de customisation du CSS
   position: absolute;
   right: 0;
   padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-bottom: 2rem;
   padding-left: 2rem;
   padding-right: 2rem;
   display: flex;
@@ -844,6 +850,9 @@ Fichier de customisation du CSS
   left: 1px;
   bottom: 1px;
 }
+#block-app {
+  margin-top: 1rem;
+}
 #block-app .filters {
   flex-direction: column;
   display: flex;
@@ -985,6 +994,24 @@ Fichier de customisation du CSS
 }
 .logiciel header h1 svg {
   height: 38px;
+}
+.breadcrumb_container {
+  background-color: #1F2D46;
+}
+.breadcrumb_container nav, .breadcrumb_container p, .breadcrumb_container a, .breadcrumb_container span {
+  color: white;
+}
+.breadcrumb_container nav a, .breadcrumb_container p a, .breadcrumb_container a a, .breadcrumb_container span a {
+  color: white !important;
+}
+.breadcrumb_container nav .breadcrumb_separator, .breadcrumb_container p .breadcrumb_separator, .breadcrumb_container a .breadcrumb_separator, .breadcrumb_container span .breadcrumb_separator {
+  color: white !important;
+}
+.bandeau-header-page, .bandeau-header-post {
+  background-color: #1F2D46;
+}
+.bandeau-header-page h1, .bandeau-header-post h1 {
+  color: white !important;
 }
 #aside_prefooter {
   background-color: #1F2D46;

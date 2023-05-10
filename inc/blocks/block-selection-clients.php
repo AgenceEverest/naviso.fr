@@ -9,8 +9,10 @@ if (have_rows('block_selection_clients')) : the_row(); // il s'agit du nom du ch
     $cb_ajouter_une_classe_css = get_sub_field('cb_ajouter_une_classe_css');
     $ajouter_un_id_pour_le_css = get_sub_field('ajouter_un_id_pour_le_css');
     $couleur_de_fond_bloc = get_sub_field('couleur_de_fond_bloc');
-    $marge_en_haut_du_bloc = get_sub_field('marge_en_haut_du_bloc');
-    $marge_en_bas_du_bloc = get_sub_field('marge_en_bas_du_bloc');
+    $marge_externe_en_haut_du_bloc = get_sub_field('marge_externe_en_haut_du_bloc');
+    $marge_externe_en_bas_du_bloc = get_sub_field('marge_externe_en_bas_du_bloc');
+    $marge_interne_en_haut_du_bloc = get_sub_field('marge_interne_en_haut_du_bloc');
+    $marge_interne_en_bas_du_bloc = get_sub_field('marge_interne_en_bas_du_bloc');
 
     $liste_des_clients_a_afficher = get_sub_field('liste_des_clients_a_afficher');
     $cta_url_video = get_sub_field('cta_url_video');
@@ -25,12 +27,18 @@ endif;
     <?php echo " id='" . $ajouter_un_id_pour_le_css . "'"; ?>
 <?php endif; ?>
 <?php echo " class='"; ?>
-<?php if ($marge_en_haut_du_bloc) : ?>
-    <?php echo " padding_section_top"; ?>
-<?php endif; ?>
-<?php if ($marge_en_bas_du_bloc) : ?>
-    <?php echo " padding_section_bottom"; ?>
-<?php endif; ?>
+<?php if ($marge_interne_en_haut_du_bloc) :
+    echo " padding_section_top";
+endif;
+if ($marge_interne_en_bas_du_bloc) :
+    echo " padding_section_bottom";
+endif;
+if ($marge_externe_en_haut_du_bloc) :
+    echo " margin_section_top";
+endif;
+if ($marge_externe_en_bas_du_bloc) :
+    echo " margin_section_bottom";
+endif; ?>
 <?php if ($couleur_de_fond_bloc) : ?>
     <?php echo " " . $couleur_de_fond_bloc; ?>
 <?php endif; ?>
@@ -76,10 +84,10 @@ endif;
                     <p class="problematique"><?= $problematique ?></p>
                     <div class="extrait-client__description"><?php echo $desc; ?></div>
                     <div class="cta-container-cas-client">
-                        <p class="cta_btn_lead cta_ternaire"> 
+                        <p class="cta_btn_lead cta_ternaire">
                             <a href="<?= $lien_vers_la_video ?>" class="extrait-client__link cta_ternaire"><?= $cta_texte_video_cas_client ?></a>
                         </p>
-                        <p class="cta_btn_lead cta_primaire"> 
+                        <p class="cta_btn_lead cta_primaire">
                             <a href="<?= $permalink; ?>" class="extrait-client__link"><?= $cta_cas_client_en_savoir_plus ?></a>
                         </p>
                     </div>

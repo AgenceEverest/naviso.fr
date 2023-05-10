@@ -9,8 +9,8 @@ if (have_rows('block_app')) : the_row(); // il s'agit du nom du champ dans ACF q
     $cb_ajouter_une_classe_css = get_sub_field('cb_ajouter_une_classe_css');
     $ajouter_un_id_pour_le_css = get_sub_field('ajouter_un_id_pour_le_css');
     $couleur_de_fond_bloc = get_sub_field('couleur_de_fond_bloc');
-    $marge_en_haut_du_bloc = get_sub_field('marge_en_haut_du_bloc');
-    $marge_en_bas_du_bloc = get_sub_field('marge_en_bas_du_bloc');
+    $marge_interne_en_haut_du_bloc = get_sub_field('marge_interne_en_haut_du_bloc');
+    $marge_interne_en_bas_du_bloc = get_sub_field('marge_interne_en_bas_du_bloc');
     $publication_liste_app = get_sub_field('publication_liste_app');
     $type_de_filtre = get_sub_field('type_de_filtre');
     $champ_recherche = get_sub_field('champs_texte_pour_affiner');
@@ -51,9 +51,9 @@ wp_enqueue_script('vue-app-js', get_stylesheet_directory_uri() . '/vue-app/dist/
 wp_enqueue_style('vue-app-css', get_stylesheet_directory_uri() . '/vue-app/dist/assets/index.css');
 ?>
 <div id="block-app" class="<?php
-                            if ($marge_en_haut_du_bloc) :  echo " padding_section_top";
+                            if ($marge_interne_en_haut_du_bloc) :  echo " padding_section_top";
                             endif;
-                            if ($marge_en_bas_du_bloc) :  echo " padding_section_bottom";
+                            if ($marge_interne_en_bas_du_bloc) :  echo " padding_section_bottom";
                             endif;
                             if ($couleur_de_fond_bloc) :  echo " " . $couleur_de_fond_bloc;
                             endif;

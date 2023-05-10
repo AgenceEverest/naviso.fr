@@ -9,8 +9,10 @@ if (have_rows('block_contacter_expert_logiciel')) : the_row(); // il s'agit du n
     $cb_ajouter_une_classe_css = get_sub_field('cb_ajouter_une_classe_css');
     $ajouter_un_id_pour_le_css = get_sub_field('ajouter_un_id_pour_le_css');
     $couleur_de_fond_bloc = get_sub_field('couleur_de_fond_bloc');
-    $marge_en_haut_du_bloc = get_sub_field('marge_en_haut_du_bloc');
-    $marge_en_bas_du_bloc = get_sub_field('marge_en_bas_du_bloc');
+    $marge_externe_en_haut_du_bloc = get_sub_field('marge_externe_en_haut_du_bloc');
+    $marge_externe_en_bas_du_bloc = get_sub_field('marge_externe_en_bas_du_bloc');
+    $marge_interne_en_haut_du_bloc = get_sub_field('marge_interne_en_haut_du_bloc');
+    $marge_interne_en_bas_du_bloc = get_sub_field('marge_interne_en_bas_du_bloc');
     $cb_calltoaction = get_sub_field('cb_call-to-action');
     $cb_calltoaction_lien = get_sub_field('cb_call-to-action_lien');
     $cb_calltoaction_url = get_sub_field('cb_call-to-action_url');
@@ -31,11 +33,17 @@ endif;
             echo " id='" . $ajouter_un_id_pour_le_css . "'";
         endif;
         echo " class='";
-        if ($marge_en_haut_du_bloc) :
+        if ($marge_interne_en_haut_du_bloc) :
             echo " padding_section_top";
         endif;
-        if ($marge_en_bas_du_bloc) :
+        if ($marge_interne_en_bas_du_bloc) :
             echo " padding_section_bottom";
+        endif;
+        if ($marge_externe_en_haut_du_bloc) :
+            echo " margin_section_top";
+        endif;
+        if ($marge_externe_en_bas_du_bloc) :
+            echo " margin_section_bottom";
         endif;
         if ($couleur_de_fond_bloc) :
             echo " " . $couleur_de_fond_bloc;
@@ -43,6 +51,7 @@ endif;
         if ($cb_ajouter_une_classe_css) :
             echo " " . $cb_ajouter_une_classe_css . "";
         endif;
+        
         echo " block-contacter-expert ";
         echo " block '" ?>>
 
