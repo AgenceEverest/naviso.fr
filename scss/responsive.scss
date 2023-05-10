@@ -17,17 +17,19 @@
 
 @media (max-width: 1024px) {
 
-     .hauteur-fixe-visuel {
-/*         display: inherit;
+    .hauteur-fixe-visuel {
+
+        /*         display: inherit;
         align-items: inherit; */
         figure {
-/*             height: inherit;
- */            position: absolute;
+            /*             height: inherit;
+ */
+            position: absolute;
         }
-    }  
-    
+    }
 
-/*     .hauteur-fixe-visuel-large {
+
+    /*     .hauteur-fixe-visuel-large {
         display: inherit;
         align-items: inherit;
         figure {
@@ -54,6 +56,18 @@
 }
 
 @media (max-width: 768px) {
+    .hauteur-fixe-visuel-large {
+        figure {
+            height: 100%;
+        }
+    }
+
+    .hauteur-fixe-visuel {
+        figure {
+            height: 100%;
+        }
+    }
+
     .extrait_metier {
         width: 100%;
     }
@@ -95,6 +109,7 @@
     #entry_title_home_accroche {
         text-align: left;
     }
+
     #entry_title_home_description {
         p {
             text-align: left;

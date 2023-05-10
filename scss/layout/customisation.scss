@@ -1,6 +1,13 @@
 /*
 Fichier de customisation du CSS
 */
+figure {
+    border-radius: 0 !important; 
+    img {
+        border-radius: 0 !important; 
+    }
+}
+
 .cta_btn_lead {
     font-weight: bold;
 }

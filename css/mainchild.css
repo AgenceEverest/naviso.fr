@@ -58,6 +58,12 @@ h2 {
 /*
 Fichier de customisation du CSS
 */
+figure {
+  border-radius: 0 !important;
+}
+figure img {
+  border-radius: 0 !important;
+}
 .cta_btn_lead {
   font-weight: bold;
 }
@@ -452,6 +458,9 @@ Fichier de customisation du CSS
 .header-home .text-header-wrapper .text-header-container .text-header-homepage #entry_title_home_accroche {
   font-size: 50px;
   color: white;
+}
+.header-home .text-header-wrapper .text-header-container .text-header-homepage #entry_title_home_description {
+  margin-bottom: 1rem;
 }
 .header-home .text-header-wrapper .text-header-container .text-header-homepage #entry_title_home_description p {
   font-size: 24px;
@@ -1218,6 +1227,12 @@ Fichier de customisation du CSS
   }
 }
 @media (max-width: 768px) {
+  .hauteur-fixe-visuel-large figure {
+    height: 100%;
+  }
+  .hauteur-fixe-visuel figure {
+    height: 100%;
+  }
   .extrait_metier {
     width: 100%;
   }
@@ -1242,6 +1257,12 @@ Fichier de customisation du CSS
   .header-home img {
     height: 100%;
     width: auto;
+  }
+  #entry_title_home_accroche {
+    text-align: left;
+  }
+  #entry_title_home_description p {
+    text-align: left;
   }
 }
 @media (max-width: 480px) {
