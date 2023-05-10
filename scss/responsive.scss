@@ -17,8 +17,8 @@
 
 @media (max-width: 1024px) {
     #charger_les_images_wrapper {
-        position: relative;
-        justify-content: center;
+        position: relative !important;
+        justify-content: center !important;
     }
     .hauteur-fixe-visuel {
 
