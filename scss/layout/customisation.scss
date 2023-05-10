@@ -97,7 +97,7 @@ Fichier de customisation du CSS
         background-color: $greenNaviso !important;
         color: white !important;
         border: 2px solid $greenNaviso !important;
-
+        font-weight: bold;
         &:hover {
             background-color: white !important;
             color: $greenNaviso !important;
@@ -113,6 +113,7 @@ Fichier de customisation du CSS
         background-color: black !important;
         color: white !important;
         border: 2px solid black !important;
+        font-weight: bold;
 
         &:hover {
             background-color: white !important;
@@ -129,6 +130,7 @@ Fichier de customisation du CSS
         background-color: white !important;
         color: black !important;
         border: 2px solid black !important;
+        font-weight: bold;
 
         &:hover {
             background-color: black !important;
