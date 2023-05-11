@@ -116,3 +116,31 @@ function register_custom_menus() {
     );
 }
 add_action( 'after_setup_theme', 'register_custom_menus' );
+
+
+function borderRound($arrondir_les_bords_de_limage ) {
+    $class1 = '';
+    $class2 = '';
+    $class3 = '';
+    $class4 = '';
+
+    foreach ($arrondir_les_bords_de_limage as $value) {
+        switch ($value) {
+            case 'haut_gauche':
+                $class1 = ' border-top-left-radius ';
+                break;
+            case 'haut_droit':
+                $class2 = ' border-top-right-radius ';
+                break;
+            case 'bas_gauche':
+                $class3 = ' border-bottom-left-radius ';
+                break;
+            case 'bas_droit':
+                $class4 = ' border-bottom-right-radius ';
+                default: 
+                break;
+        }
+    }
+    return $class1 . $class2 . $class3 . $class4;
+}
+

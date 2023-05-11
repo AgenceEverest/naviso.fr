@@ -78,30 +78,24 @@ endif;
 			<div class="col_right_wrapper entry-content col_right_wrapper_padding">
 				<?php the_sub_field('cb_contenu_texte'); ?>
 
-				<!-- Lien page contact pré-remplie -->
-				<?php if ($cb_calltoaction_interne_externe == 'page_contact') : ?>
-					<?php get_template_part('inc/content-builder-inc/cb-form-to-prefilled-form'); ?>
-				<?php endif; ?>
-
-				<!-- Lien interne  -->
-				<?php if ($cb_calltoaction_interne_externe == 'lien_interne') : ?>
-					<?php if ($cb_calltoaction_lien) : ?>
-						<p class="cta_btn_lead <?php echo $alignement_du_bouton; ?> <?php echo $style_du_bouton; ?>"><a href="<?php echo $cb_calltoaction_lien; ?>" <?php if ($ouvrir_dans_un_nouvel_onglet) : ?> target="_blank" <?php endif; ?>><?php echo $cb_calltoaction; ?></a></p>
-					<?php endif; ?>
-				<?php endif; ?>
-
-				<!-- Lien externe  -->
-				<?php if ($cb_calltoaction_interne_externe == 'lien_externe') : ?>
-					<?php if ($cb_calltoaction_url) : ?>
-						<p class="cta_btn_lead <?php echo $alignement_du_bouton; ?> <?php echo $style_du_bouton; ?>"><a href="<?php echo $cb_calltoaction_url; ?>" <?php if ($ouvrir_dans_un_nouvel_onglet) : ?> target="_blank" <?php endif; ?>><?php echo $cb_calltoaction; ?></a></p>
-					<?php endif; ?>
-				<?php endif; ?>
-
-				<!-- Fichier à télécharger  -->
-				<?php if ($cb_calltoaction_interne_externe == 'fichier_telechargement') : ?>
-					<?php if ($cb_calltoaction_fichier) : ?>
-						<p class="cta_btn_lead <?php echo $alignement_du_bouton; ?> <?php echo $style_du_bouton; ?>"><a href="<?php echo wp_get_attachment_url($cb_calltoaction_fichier); ?>" <?php if ($ouvrir_dans_un_nouvel_onglet) : ?> target="_blank" <?php endif; ?>><?php get_template_part('inc/arrow-download'); ?><?php echo $cb_calltoaction; ?> <span class="download_doc_size">- <?php echo size_format($cb_calltoaction_fichier_size, $decimals = 0); ?></span></a></p>
-					<?php endif; ?>
+				<?php
+				$ajouter_un_call_to_action = get_sub_field('ajouter_un_call-to-action');
+				$position_du_bouton = get_sub_field('position_du_bouton');
+				$ajouter_un_deuxieme_call_to_action = get_sub_field('ajouter_un_deuxieme_call-to-action'); ?>
+				<?php if ($ajouter_un_call_to_action) : ?>
+					<div class="cta-container <?php if ($ajouter_un_deuxieme_call_to_action) : echo ' double-cta';
+												endif; ?>">
+						<?php if (have_rows('call-to-action')) : ?>
+							<?php while (have_rows('call-to-action')) : the_row(); ?>
+								<?php get_template_part('inc/content-builder-inc/cta-col'); ?>
+							<?php endwhile; ?>
+						<?php endif; ?>
+						<?php if (have_rows('call-to-action_2') && $ajouter_un_deuxieme_call_to_action) : ?>
+							<?php while (have_rows('call-to-action_2')) : the_row(); ?>
+								<?php get_template_part('inc/content-builder-inc/cta-col'); ?>
+							<?php endwhile; ?>
+						<?php endif; ?>
+					</div>
 				<?php endif; ?>
 			</div>
 		</div>
@@ -130,38 +124,29 @@ endif;
 		<?php echo " " . $cb_ajouter_une_classe_css . ""; ?>
 	<?php endif; ?>
 	<?php echo " block '>"; ?>
-	<div class="content_width col_double<?php if ($afficher_un_deuxieme_bouton_sous_le_bloc) :
-											echo ' deux-cta-sous-bloc';
-										endif; ?>">
+	<div class="content_width col_double">
 		<!-- col left -->
 		<div class="col_left">
 			<div class="col_left_wrapper entry-content col_left_wrapper_padding">
 				<?php the_sub_field('cb_contenu_texte'); ?>
-
-				<!-- Lien page contact pré-remplie -->
-				<?php if ($cb_calltoaction_interne_externe == 'page_contact') : ?>
-					<?php get_template_part('inc/content-builder-inc/cb-form-to-prefilled-form'); ?>
-				<?php endif; ?>
-
-				<!-- Lien interne  -->
-				<?php if ($cb_calltoaction_interne_externe == 'lien_interne') : ?>
-					<?php if ($cb_calltoaction_lien) : ?>
-						<p class="cta_btn_lead <?php echo $alignement_du_bouton; ?> <?php echo $style_du_bouton; ?>"><a href="<?php echo $cb_calltoaction_lien; ?>" <?php if ($ouvrir_dans_un_nouvel_onglet) : ?> target="_blank" <?php endif; ?>><?php echo $cb_calltoaction; ?></a></p>
-					<?php endif; ?>
-				<?php endif; ?>
-
-				<!-- Lien externe  -->
-				<?php if ($cb_calltoaction_interne_externe == 'lien_externe') : ?>
-					<?php if ($cb_calltoaction_url) : ?>
-						<p class="cta_btn_lead <?php echo $alignement_du_bouton; ?> <?php echo $style_du_bouton; ?>"><a href="<?php echo $cb_calltoaction_url; ?>" <?php if ($ouvrir_dans_un_nouvel_onglet) : ?> target="_blank" <?php endif; ?>><?php echo $cb_calltoaction; ?></a></p>
-					<?php endif; ?>
-				<?php endif; ?>
-
-				<!-- Fichier à télécharger  -->
-				<?php if ($cb_calltoaction_interne_externe == 'fichier_telechargement') : ?>
-					<?php if ($cb_calltoaction_fichier) : ?>
-						<p class="cta_btn_lead <?php echo $alignement_du_bouton; ?> <?php echo $style_du_bouton; ?>"><a href="<?php echo wp_get_attachment_url($cb_calltoaction_fichier); ?>" <?php if ($ouvrir_dans_un_nouvel_onglet) : ?> target="_blank" <?php endif; ?>><?php get_template_part('inc/arrow-download'); ?><?php echo $cb_calltoaction; ?> <span class="download_doc_size">- <?php echo size_format($cb_calltoaction_fichier_size, $decimals = 0); ?></span></a></p>
-					<?php endif; ?>
+				<?php
+				$ajouter_un_call_to_action = get_sub_field('ajouter_un_call-to-action');
+				$position_du_bouton = get_sub_field('position_du_bouton');
+				$ajouter_un_deuxieme_call_to_action = get_sub_field('ajouter_un_deuxieme_call-to-action'); ?>
+				<?php if ($ajouter_un_call_to_action) : ?>
+					<div class="cta-container <?php if ($ajouter_un_deuxieme_call_to_action) : echo ' double-cta';
+												endif; ?>">
+						<?php if (have_rows('call-to-action')) : ?>
+							<?php while (have_rows('call-to-action')) : the_row(); ?>
+								<?php get_template_part('inc/content-builder-inc/cta-col'); ?>
+							<?php endwhile; ?>
+						<?php endif; ?>
+						<?php if (have_rows('call-to-action_2') && $ajouter_un_deuxieme_call_to_action) : ?>
+							<?php while (have_rows('call-to-action_2')) : the_row(); ?>
+								<?php get_template_part('inc/content-builder-inc/cta-col'); ?>
+							<?php endwhile; ?>
+						<?php endif; ?>
+					</div>
 				<?php endif; ?>
 			</div>
 		</div>

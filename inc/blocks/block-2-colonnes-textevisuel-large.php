@@ -26,7 +26,6 @@ if (have_rows('block_2_colonnes_textevisuel_large')) : the_row(); // il s'agit d
 	$style_du_bouton = get_sub_field('style_du_bouton');
 	$ajouter_un_deuxieme_call_to_action = get_sub_field('ajouter_un_deuxieme_call-to-action');
 
-
 	$afficher_un_premier_bouton_sous_le_bloc = get_sub_field('afficher_un_premier_bouton_sous_le_bloc');
 	$afficher_un_deuxieme_bouton_sous_le_bloc = get_sub_field('afficher_un_deuxieme_bouton_sous_le_bloc');
 	$cb_calltoaction_lien_2 = get_sub_field('cb_call-to-action_lien_2');
@@ -80,10 +79,15 @@ endif;
 					$copyright_image_de_fond = get_sub_field('copyright_image_de_fond');
 					$phrase_sur_limage = get_sub_field('phrase_sur_limage');
 					$hauteur_fixe_visuel_large = get_sub_field('hauteur_fixe_visuel_large');
+					$classBorderRound = '';
+					$arrondir_les_bords_de_limage = get_sub_field('arrondir_les_bords_de_limage');
+					if ($arrondir_les_bords_de_limage) {
+						$classBorderRound = borderRound($arrondir_les_bords_de_limage);
+					}
 				?>
 					<div class="<?= $hauteur_fixe_visuel_large ? 'hauteur-fixe-visuel-large' : '' ?> col_left_wide_imgleft_img">
 
-						<figure>
+						<figure class="<?= $classBorderRound ?>">
 							<div class="poids-image"><span class="poids-image-icone"><?php get_template_part('svg/symbole-feuille-nanosite'); ?></span><span class="poids-image-data"><?= $image_weight ?></span></div>
 							<?php $image_large = wp_get_attachment_image_src($image_de_fond, $size_image_de_fond);
 							$alt_text = get_post_meta($image_de_fond, '_wp_attachment_image_alt', true); ?>
@@ -110,19 +114,25 @@ endif;
 			<div class="col_right_wide_imgleft_wrapper entry-content">
 				<?php the_sub_field('cb_contenu_texte'); ?>
 
-				<div class="cta-container <?php if ($ajouter_un_deuxieme_call_to_action) : echo ' double-cta';
-											endif; ?>">
-					<?php if (have_rows('call-to-action')) : ?>
-						<?php while (have_rows('call-to-action')) : the_row(); ?>
-							<?php get_template_part('inc/content-builder-inc/call-to-action'); ?>
-						<?php endwhile; ?>
-					<?php endif; ?>
-					<?php if (have_rows('call-to-action_2') && $ajouter_un_deuxieme_call_to_action) : ?>
-						<?php while (have_rows('call-to-action_2')) : the_row(); ?>
-							<?php get_template_part('inc/content-builder-inc/call-to-action'); ?>
-						<?php endwhile; ?>
-					<?php endif; ?>
-				</div>
+				<?php
+				$ajouter_un_call_to_action = get_sub_field('ajouter_un_call-to-action');
+				$position_du_bouton = get_sub_field('position_du_bouton');
+				$ajouter_un_deuxieme_call_to_action = get_sub_field('ajouter_un_deuxieme_call-to-action'); ?>
+				<?php if ($ajouter_un_call_to_action) : ?>
+					<div class="cta-container <?php if ($ajouter_un_deuxieme_call_to_action) : echo ' double-cta';
+												endif; ?>">
+						<?php if (have_rows('call-to-action')) : ?>
+							<?php while (have_rows('call-to-action')) : the_row(); ?>
+								<?php get_template_part('inc/content-builder-inc/cta-col'); ?>
+							<?php endwhile; ?>
+						<?php endif; ?>
+						<?php if (have_rows('call-to-action_2') && $ajouter_un_deuxieme_call_to_action) : ?>
+							<?php while (have_rows('call-to-action_2')) : the_row(); ?>
+								<?php get_template_part('inc/content-builder-inc/cta-col'); ?>
+							<?php endwhile; ?>
+						<?php endif; ?>
+					</div>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>
@@ -177,19 +187,25 @@ endif;
 		<div class="col_left_wide_imgright padding_section">
 			<div class="col_left_wide_imgright_wrapper entry-content">
 				<?php the_sub_field('cb_contenu_texte'); ?>
-				<div class="cta-container <?php if ($ajouter_un_deuxieme_call_to_action) : echo ' double-cta';
-											endif; ?>">
-					<?php if (have_rows('call-to-action')) : ?>
-						<?php while (have_rows('call-to-action')) : the_row(); ?>
-							<?php get_template_part('inc/content-builder-inc/call-to-action'); ?>
-						<?php endwhile; ?>
-					<?php endif; ?>
-					<?php if (have_rows('call-to-action_2') && $ajouter_un_deuxieme_call_to_action) : ?>
-						<?php while (have_rows('call-to-action_2')) : the_row(); ?>
-							<?php get_template_part('inc/content-builder-inc/call-to-action'); ?>
-						<?php endwhile; ?>
-					<?php endif; ?>
-				</div>
+				<?php
+				$ajouter_un_call_to_action = get_sub_field('ajouter_un_call-to-action');
+				$position_du_bouton = get_sub_field('position_du_bouton');
+				$ajouter_un_deuxieme_call_to_action = get_sub_field('ajouter_un_deuxieme_call-to-action'); ?>
+				<?php if ($ajouter_un_call_to_action) : ?>
+					<div class="cta-container <?php if ($ajouter_un_deuxieme_call_to_action) : echo ' double-cta';
+												endif; ?>">
+						<?php if (have_rows('call-to-action')) : ?>
+							<?php while (have_rows('call-to-action')) : the_row(); ?>
+								<?php get_template_part('inc/content-builder-inc/cta-col'); ?>
+							<?php endwhile; ?>
+						<?php endif; ?>
+						<?php if (have_rows('call-to-action_2') && $ajouter_un_deuxieme_call_to_action) : ?>
+							<?php while (have_rows('call-to-action_2')) : the_row(); ?>
+								<?php get_template_part('inc/content-builder-inc/cta-col'); ?>
+							<?php endwhile; ?>
+						<?php endif; ?>
+					</div>
+				<?php endif; ?>
 			</div>
 		</div>
 		<div class="col_right_wide_imgright">
@@ -202,10 +218,15 @@ endif;
 					$copyright_image_de_fond = get_sub_field('copyright_image_de_fond');
 					$phrase_sur_limage = get_sub_field('phrase_sur_limage');
 					$hauteur_fixe_visuel_large = get_sub_field('hauteur_fixe_visuel_large');
+					$classBorderRound = '';
+					$arrondir_les_bords_de_limage = get_sub_field('arrondir_les_bords_de_limage');
+					if ($arrondir_les_bords_de_limage) {
+						$classBorderRound = borderRound($arrondir_les_bords_de_limage);
+					}
 
 				?>
 					<div class="<?= $hauteur_fixe_visuel_large ? 'hauteur-fixe-visuel-large' : '' ?> col_right_wide_imgright_img">
-						<figure>
+						<figure class="<?= $classBorderRound ?>">
 							<div class="poids-image"><span class="poids-image-icone"><?php get_template_part('svg/symbole-feuille-nanosite'); ?></span><span class="poids-image-data"><?= $image_weight ?></span></div>
 							<?php $image_large = wp_get_attachment_image_src($image_de_fond, $size_image_de_fond);
 							$alt_text = get_post_meta($image_de_fond, '_wp_attachment_image_alt', true); ?>

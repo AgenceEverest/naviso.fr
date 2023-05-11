@@ -55,6 +55,9 @@ h2 {
 .fond_clair2 h2 strong, .fond_clair2 h3 strong, .fond_clair2 h4 strong, .fond_clair2 h5 strong, .fond_clair2 h6 strong {
   color: #4AB8A5;
 }
+.entry_title_date.legende span {
+  font-family: "Montserrat";
+}
 /*
 Fichier de customisation du CSS
 */
@@ -310,6 +313,21 @@ figure img {
 .col_left_wide_imgleft {
   background-color: transparent;
 }
+.col_right_wide_imgright {
+  background-color: transparent;
+}
+.border-top-left-radius img {
+  border-top-left-radius: 25px !important;
+}
+.border-top-right-radius img {
+  border-top-right-radius: 25px !important;
+}
+.border-bottom-left-radius img {
+  border-bottom-left-radius: 25px !important;
+}
+.border-bottom-right-radius img {
+  border-bottom-right-radius: 25px !important;
+}
 .extraits-clients-container {
   display: flex;
   flex-wrap: wrap;
@@ -493,7 +511,7 @@ figure img {
   width: 100%;
   text-align: center;
   margin-bottom: 1rem;
-  color: black !important;
+  color: #4AB8A5 !important;
 }
 .extrait_metier .desc {
   margin-bottom: 1rem;
@@ -919,7 +937,8 @@ figure img {
   height: 16px;
 }
 #block-app .filters .text-filter-container {
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
   border: 2px solid black;
   border-radius: 25px;
   padding-left: 1rem;
@@ -933,6 +952,7 @@ figure img {
   width: 90%;
   height: 100%;
   margin-left: 1%;
+  padding: 0.4rem 1rem;
 }
 #block-app .filters .text-filter-container input:focus-visible {
   outline: none;
@@ -946,17 +966,22 @@ figure img {
 #block-app .filters .buttons .button {
   cursor: pointer;
   border-radius: 25px;
-  padding: 0rem 1rem;
+  padding: 0.4rem 1rem;
   margin-right: 1rem;
   border: 2px solid #1F2D46;
   background-color: white;
   color: #1F2D46;
   white-space: nowrap;
   margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 #block-app .filters .buttons .button.active {
   background-color: #1F2D46;
   color: white;
+}
+#block-app .filters .buttons .button:nth-child(1) {
+  width: 230px;
+  text-align: center;
 }
 #block-app .filters .buttons:nth-child(2) .button {
   border: 2px solid #4AB8A5;
@@ -976,6 +1001,7 @@ figure img {
   flex-wrap: wrap;
   display: flex;
   justify-content: space-around;
+  width: 100%;
 }
 #block-app .extraits-container .results .terms {
   display: flex;
@@ -1029,6 +1055,7 @@ figure img {
   border: 2px solid black !important;
   padding: 0.7rem 1.6rem 0.8rem 1.6rem !important;
   font-size: 0.85rem;
+  font-weight: bold;
   cursor: pointer;
   border-radius: 25px;
 }
@@ -1204,6 +1231,10 @@ figure img {
             position: inherit;
         }
     }  */
+  #charger_les_images_wrapper {
+    position: relative !important;
+    justify-content: center !important;
+  }
   .hauteur-fixe-visuel {
     /*         display: inherit;
         align-items: inherit; */
@@ -1225,8 +1256,15 @@ figure img {
   .col_flexible_superposition .col-gauche {
     margin-bottom: 1rem;
   }
+  #aside_actualites_header {
+    position: relative;
+  }
 }
 @media (max-width: 768px) {
+  h2 {
+    font-size: 30px !important;
+    line-height: normal !important;
+  }
   .hauteur-fixe-visuel-large figure {
     height: 100%;
   }
