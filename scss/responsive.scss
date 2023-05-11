@@ -42,7 +42,7 @@
         }
     }  */
     .extrait_metier {
-        width: 47%;
+        width: 48%;
     }
 
     .col_flexible_superposition {
@@ -64,25 +64,36 @@
 
     .extraits-clients-container {
         .extrait-client {
-            width: 47%;
+            width: 48%;
         }
 
         &.clients-2 {
             .extrait-client {
-                width: 47%;
+                width: 48%;
+                &:nth-child(2) {
+                    margin-right: 0 !important;
+                }
             }
         }
 
         &.clients-3 {
             .extrait-client {
-                width: 47%;
+                width: 48%;
+                &:nth-child(2) {
+                    margin-right: 0 !important;
+                }
             }
         }
 
         &.clients-4 {
             .extrait-client {
-                width: 47%;
-
+                width: 48%;
+                &:nth-child(2) {
+                    margin-right: 0 !important;
+                }
+                &:nth-child(4) {
+                    margin-right: 0 !important;
+                }
                 .cta-container-cas-client {
                     flex-direction: row;
                 }
