@@ -54,6 +54,10 @@
                     background-color: $bleuNaviso;
                     color: white;
                 }
+                &:nth-child(0) {
+                    width: 230px;
+                    text-align: center;
+                }
             }
 
             &:nth-child(2) {
