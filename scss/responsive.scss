@@ -20,6 +20,7 @@
         position: relative !important;
         justify-content: center !important;
     }
+
     .hauteur-fixe-visuel {
 
         /*         display: inherit;
@@ -60,7 +61,41 @@
     #aside_actualites_header {
         position: relative;
     }
- 
+
+    .extraits-clients-container {
+        .extrait-client {
+            width: 47%;
+        }
+
+        &.clients-2 {
+            .extrait-client {
+                width: 47%;
+            }
+        }
+
+        &.clients-3 {
+            .extrait-client {
+                width: 47%;
+            }
+        }
+
+        &.clients-4 {
+            .extrait-client {
+                width: 47%;
+
+                .cta-container-cas-client {
+                    flex-direction: row;
+                }
+            }
+        }
+
+        &.clients-5 {
+            .extrait-client {
+                width: 31%;
+            }
+        }
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -68,6 +103,7 @@
         font-size: 30px !important;
         line-height: normal !important;
     }
+
     .hauteur-fixe-visuel-large {
         figure {
             height: 100%;
@@ -125,6 +161,45 @@
     #entry_title_home_description {
         p {
             text-align: left;
+        }
+    }
+
+    .extraits-clients-container {
+        .extrait-client {
+            width: 100%;
+            margin-right: 0rem;
+        }
+
+        &.clients-2 {
+            .extrait-client {
+                width: 100%;
+                margin-right: 0rem;
+            }
+        }
+
+        &.clients-3 {
+            .extrait-client {
+                width: 100%;
+                margin-right: 0rem;
+            }
+        }
+
+        &.clients-4 {
+            .extrait-client {
+                width: 100%;
+                margin-right: 0rem;
+
+                .cta-container-cas-client {
+                    flex-direction: row;
+                }
+            }
+        }
+
+        &.clients-5 {
+            .extrait-client {
+                width: 100%;
+                margin-right: 0rem;
+            }
         }
     }
 }

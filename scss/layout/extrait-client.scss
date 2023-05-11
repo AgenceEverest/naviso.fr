@@ -37,6 +37,9 @@
     &.clients-4 {
         .extrait-client {
             width: 22%;
+            .cta-container-cas-client {
+                flex-direction: column;
+            }
         }
     }
     &.clients-5 {
