@@ -66,7 +66,7 @@ export default {
     <div class="buttons-extrait">
       <p v-if="cpt.acf.landing_page_hubspot" class="cta_btn_lead cta_primaire"
         :class="{ cta_center: !afficherBoutonFicheDePoste }">
-        <a target="_blank" :href="cpt.acf.landing_page_hubspot">{{
+        <a target="_blank" :href="cpt.acf.landing_page_hubspot.url">{{
           texteEnSavoirPlus
         }}</a>
       </p>
