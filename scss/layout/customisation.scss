@@ -84,10 +84,11 @@ figure {
 
 .element-liste-naviso {
     display: flex;
-
+    align-items: center;
     .picto-liste-naviso {
         width: 1rem;
         height: 1rem;
+        margin-right: 1rem;
     }
 }
 
