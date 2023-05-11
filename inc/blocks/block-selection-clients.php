@@ -69,7 +69,13 @@ endif; ?>
 
 <!-- colonnes -->
 <div class="content_width col_flexible col_flexible_1">
-    <div class="extraits-clients-container">
+    <?php
+    $nombreItems = 0;
+    if (isset($liste_des_clients_a_afficher)) {
+        $nombreItems = count($liste_des_clients_a_afficher);
+    }
+    ?>
+    <div class="extraits-clients-container clients-<?= $nombreItems ?>">
         <?php foreach ($liste_des_clients_a_afficher as $client) :
             $client = $client['client_selectionne'];
             $title_client = $client->post_title;
