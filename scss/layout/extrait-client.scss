@@ -32,7 +32,7 @@
     &.clients-2 {
         .extrait-client {
             width: 48%;
-            :nth-child(2) {
+            &:nth-child(2) {
                 margin-right: 0 !important;
             }
         }
@@ -41,7 +41,7 @@
     &.clients-3 {
         .extrait-client {
             width: 32%;
-            :nth-child(3) {
+            &:nth-child(3) {
                 margin-right: 0 !important;
             }
         }
@@ -50,7 +50,7 @@
     &.clients-4 {
         .extrait-client {
             width: 23%;
-            :nth-child(4) {
+            &:nth-child(4) {
                 margin-right: 0 !important;
             }
            .cta-container-cas-client {
@@ -62,7 +62,7 @@
     &.clients-5 {
         .extrait-client {
             width: 31%;
-            :nth-child(3) {
+            &:nth-child(3) {
                 margin-right: 0 !important;
             }
         }
