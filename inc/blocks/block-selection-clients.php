@@ -101,10 +101,7 @@ endif; ?>
             </div>
         <?php endforeach; ?>
     </div>
-
     <?php get_template_part('inc/content-builder-inc/cta.php'); ?>
-
 </div>
 <?php get_template_part('inc/content-builder-inc/visuel-fond-du-bloc') ?>
-
 </div>
