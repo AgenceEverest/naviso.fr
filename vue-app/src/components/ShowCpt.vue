@@ -4,9 +4,7 @@ dans le thème enfant, et redéclarez un bloc avec l'app copiée -->
 <script>
 import FiltersCpts from "./FiltersCpts.vue";
 import OffreEmploi from "./excerpts/OffreEmploi.vue";
-import ExcerptAgenda from "./excerpts/ExcerptAgenda.vue";
-import RessourceDocumentaire from "./excerpts/RessourceDocumentaire.vue";
-import AppelAProjet from "./excerpts/AppelAProjet.vue";
+import WebinaireExcerpt from "./excerpts/WebinaireExcerpt.vue";
 import he from "he";
 import { getApiData } from "../utils/getApi";
 export default {
@@ -14,9 +12,7 @@ export default {
   components: {
     FiltersCpts,
     OffreEmploi,
-    ExcerptAgenda,
-    AppelAProjet,
-    RessourceDocumentaire,
+    WebinaireExcerpt,
   },
   data() {
     return {
@@ -547,115 +543,19 @@ export default {
     :texteTouslesFiltres4="texteTouslesFiltres4"
   />
   <div v-show="isLoaded" :class="'extraits-container ' + extraitPaddingTop">
-    <template v-if="cptName === 'evenement'">
-      <div class="evenements">
-        <h2 class="events-title-agenda">{{ texteEventsAVenir }}</h2>
-        <div class="a-venir results">
-          <ExcerptAgenda
-            v-show="cpt.show && cpt.display && cpt.toCome"
-            class="cpt-extrait"
-            v-for="cpt in cpts"
-            :key="cpt.id"
-            :cpt="cpt"
-            :texteFinCandidature="texteFinCandidature"
-            :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
-            :texteEnSavoirPlus="texteEnSavoirPlus"
-            :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
-            :showTaxonomies="showTaxonomies"
-            :afficherBoutonTelechargement="afficherBoutonTelechargement"
-            :texteBoutonTelecharger="texteBoutonTelecharger"
-            :texteDateDeLevenement="texteDateDeLevenement"
-          />
-        </div>
-        <div
-          @click="incrementmaxDisplayable"
-          v-if="hasMoreContent"
-          class="load-more"
-        >
-          {{ loadMoreText }}
-        </div>
-        <h2 class="events-title-agenda">{{ texteEventsPasses }}</h2>
-        <div class="passe results">
-          <ExcerptAgenda
-            v-show="cpt.show && !cpt.toCome"
-            class="cpt-extrait"
-            v-for="cpt in cpts"
-            :key="cpt.id"
-            :cpt="cpt"
-            :texteFinCandidature="texteFinCandidature"
-            :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
-            :texteEnSavoirPlus="texteEnSavoirPlus"
-            :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
-            :showTaxonomies="showTaxonomies"
-            :afficherBoutonTelechargement="afficherBoutonTelechargement"
-            :texteBoutonTelecharger="texteBoutonTelecharger"
-            :texteDateDeLevenement="texteDateDeLevenement"
-          />
-        </div>
-      </div>
-    </template>
-    <template v-else-if="cptName === 'appel_a_projet'">
-      <div class="evenements">
-        <h2 class="events-title-agenda">{{ texteEventsAVenir }}</h2>
-        <div class="a-venir results">
-          <AppelAProjet
-            v-show="cpt.show && cpt.display && cpt.toCome"
-            class="cpt-extrait"
-            v-for="cpt in cpts"
-            :key="cpt.id"
-            :cpt="cpt"
-            :texteFinCandidature="texteFinCandidature"
-            :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
-            :texteEnSavoirPlus="texteEnSavoirPlus"
-            :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
-            :showTaxonomies="showTaxonomies"
-            :afficherBoutonTelechargement="afficherBoutonTelechargement"
-            :texteBoutonTelecharger="texteBoutonTelecharger"
-            :texteDateDeLappelaProjet="texteDateDeLappelaProjet"
-          />
-        </div>
-        <div
-          @click="incrementmaxDisplayable"
-          v-if="hasMoreContent"
-          class="load-more"
-        >
-          {{ loadMoreText }}
-        </div>
-        <h2 class="events-title-agenda">{{ texteEventsPasses }}</h2>
-        <div class="passe results">
-          <AppelAProjet
-            v-show="cpt.show && !cpt.toCome"
-            class="cpt-extrait"
-            v-for="cpt in cpts"
-            :key="cpt.id"
-            :cpt="cpt"
-            :texteFinCandidature="texteFinCandidature"
-            :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
-            :texteEnSavoirPlus="texteEnSavoirPlus"
-            :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
-            :showTaxonomies="showTaxonomies"
-            :afficherBoutonTelechargement="afficherBoutonTelechargement"
-            :texteBoutonTelecharger="texteBoutonTelecharger"
-            :texteDateDeLappelaProjet="texteDateDeLappelaProjet"
-          />
-        </div>
-      </div>
-    </template>
-    <template v-else-if="cptName === 'ressources-docu'">
-      <div class="results ressources-docu-excercpts">
-        <RessourceDocumentaire
+    <template v-if="cptName === 'webinaire'">
+      <div class="results">
+        <WebinaireExcerpt
           v-show="cpt.show && cpt.display"
           class="cpt-extrait"
           v-for="cpt in cpts"
           :key="cpt.id"
           :cpt="cpt"
           :texteFinCandidature="texteFinCandidature"
-          :afficherBoutonTelechargement="afficherBoutonTelechargement"
-          :texteBoutonTelecharger="texteBoutonTelecharger"
+          :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
+          :texteEnSavoirPlus="texteEnSavoirPlus"
           :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
-          :protocol="protocol"
           :showTaxonomies="showTaxonomies"
-          :website="website"
         />
       </div>
       <div
