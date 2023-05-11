@@ -61,15 +61,15 @@
     #aside_actualites_header {
         position: relative;
     }
-
+    $widthExtrait: 48.5%;
     .extraits-clients-container {
         .extrait-client {
-            width: 49%;
+            width: $widthExtrait;
         }
 
         &.clients-2 {
             .extrait-client {
-                width: 49%;
+                width: $widthExtrait;
                 &:nth-child(2) {
                     margin-right: 0 !important;
                 }
@@ -78,7 +78,7 @@
 
         &.clients-3 {
             .extrait-client {
-                width: 49%;
+                width: $widthExtrait;
                 &:nth-child(2) {
                     margin-right: 0 !important;
                 }
@@ -87,7 +87,7 @@
 
         &.clients-4 {
             .extrait-client {
-                width: 49%;
+                width: $widthExtrait;
                 &:nth-child(2) {
                     margin-right: 0 !important;
                 }
