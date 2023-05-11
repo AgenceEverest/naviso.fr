@@ -154,6 +154,20 @@ endif;
 	<?php if ($cb_ajouter_une_classe_css) : ?>
 		<?php echo " " . $cb_ajouter_une_classe_css . ""; ?>
 	<?php endif; ?>
+	<?php
+	if ($marge_interne_en_haut_du_bloc) :
+		echo " padding_section_top";
+	endif;
+	if ($marge_interne_en_bas_du_bloc) :
+		echo " padding_section_bottom";
+	endif;
+	if ($marge_externe_en_haut_du_bloc) :
+		echo " margin_section_top";
+	endif;
+	if ($marge_externe_en_bas_du_bloc) :
+		echo " margin_section_bottom";
+	endif;
+	?>
 	<?php if ($afficher_un_deuxieme_bouton_sous_le_bloc) :
 		echo ' deux-cta-sous-bloc';
 	endif; ?>
