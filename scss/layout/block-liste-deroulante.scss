@@ -9,6 +9,7 @@
         &.active {
             transition: none;
             border-radius: 25px;
+            padding-top: 1rem;
         }
     }
     .question_reponse_title_icone {
@@ -21,6 +22,7 @@
     }
     .question_reponse_wysiwyg {
         border: none;
+        padding: 1rem 4rem 4rem 4rem;
     }
  }
 
