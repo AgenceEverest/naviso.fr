@@ -61,7 +61,9 @@
     #aside_actualites_header {
         position: relative;
     }
+
     $widthExtrait: 48.5%;
+
     .extraits-clients-container {
         .extrait-client {
             width: $widthExtrait;
@@ -70,6 +72,7 @@
         &.clients-2 {
             .extrait-client {
                 width: $widthExtrait;
+
                 &:nth-child(2) {
                     margin-right: 0 !important;
                 }
@@ -79,6 +82,7 @@
         &.clients-3 {
             .extrait-client {
                 width: $widthExtrait;
+
                 &:nth-child(2) {
                     margin-right: 0 !important;
                 }
@@ -88,12 +92,15 @@
         &.clients-4 {
             .extrait-client {
                 width: $widthExtrait;
+
                 &:nth-child(2) {
                     margin-right: 0 !important;
                 }
+
                 &:nth-child(4) {
                     margin-right: 0 !important;
                 }
+
                 .cta-container-cas-client {
                     flex-direction: row;
                 }
@@ -113,12 +120,17 @@
 
     .newsletter-container {
         .newsletter-wrapper {
-          .content-newsletter-block {
-            flex-direction: column;
-            text-align: center;
-          }
+            h2 {
+                text-align: center;
+            }
+
+            .content-newsletter-block {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     }
+
     h2 {
         font-size: 30px !important;
         line-height: normal !important;
