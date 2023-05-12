@@ -263,6 +263,8 @@ export default {
             };
           }
         });
+
+        console.log(this.filters);
         this.isLoaded = true;
       } catch (err) {
         console.log(err);
