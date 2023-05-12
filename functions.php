@@ -160,4 +160,6 @@ if (!function_exists('acf_load_post_types_child')) {
 	}
 
 	add_filter('acf/load_field/name=publication_liste_app_child', 'acf_load_post_types_child', 20);
+    add_filter('acf/load_field/name=publication_choisie_child', 'acf_load_post_types_child', 20);
+
 }

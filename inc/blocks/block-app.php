@@ -63,7 +63,6 @@ wp_enqueue_script('vue-app-js', get_stylesheet_directory_uri() . '/vue-app/dist/
                             if ($faire_passer_le_bloc_au_dessus_des_autres) :
                                 echo " z-index-1";
                             endif;
-                            echo ' " ';
                             ?>">
     <div class="block">
         <div class="content_width" id="app" <?php

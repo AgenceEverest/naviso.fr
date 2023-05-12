@@ -16,7 +16,7 @@ if (have_rows('block_filtre')) : the_row();
     $marge_interne_en_bas_du_bloc = get_sub_field('marge_interne_en_bas_du_bloc');
 
 	// Choix d'une publication / taxo / nombre de posts à afficher
-	$publication_choisie = get_sub_field('publication_choisie');
+	$publication_choisie_child = get_sub_field('publication_choisie_child');
 	$choisir_une_taxonomie = get_sub_field('choisir_une_taxonomie');
 	$taxonomie_choisie = get_sub_field('taxonomie_choisie');
 	$numberOfPosts = get_sub_field('nombre_articles_liste');
@@ -76,7 +76,7 @@ endif; ?>
 	<?php if ($afficher_le_filtre) : ?>
 
 		<!-- Premier étage de filtres -->
-		<div class="filters-section padding_section_top" data-post-numbers="<?= $numberOfPosts  ?>" data-post-type="<?= $publication_choisie ?>" type-extrait="<?= $typeExtrait ?>">
+		<div class="filters-section padding_section_top" data-post-numbers="<?= $numberOfPosts  ?>" data-post-type="<?= $publication_choisie_child ?>" type-extrait="<?= $typeExtrait ?>">
 			<div class="content_width">
 				<p class="filtre_elements">
 					<span class="filter-item-link filter-secteur-item filtre_element" data-category="default-filter"><span class="filtre_element_all"></span><?= $texte_tous_les_filtres ?></span>
@@ -97,7 +97,7 @@ endif; ?>
 
 		<!-- deuxième étage de filtres -->
 		<?php if ($afficher_le_sous_filtre) : ?>
-			<div class="filters-section sous_filtre" data-post-numbers="<?= $numberOfPosts  ?>" data-post-type="<?= $publication_choisie ?>">
+			<div class="filters-section sous_filtre" data-post-numbers="<?= $numberOfPosts  ?>" data-post-type="<?= $publication_choisie_child ?>">
 				<div class="content_width">
 					<p class="filtre_elements">
 						<span class="filter-item-link filter-secteur-item filtre_element" data-category="default-sub-filter"><span class="filtre_element_all"></span><?= $texte_tous_les_sous_filtres ?></span>
@@ -121,7 +121,7 @@ endif; ?>
 		</div>
 
 	<?php else :
-		$post_type = $publication_choisie;
+		$post_type = $publication_choisie_child;
 		$terms = [];
 		if ($taxonomie_choisie) {
 			foreach (get_terms($taxonomie_choisie) as $term) {
