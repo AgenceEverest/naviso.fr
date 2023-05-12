@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Accessibilité
+ * Template Name: Actualités
  */ ?>
 <?php get_header(); ?>
 <?php get_template_part('inc/header/header-main'); ?>
