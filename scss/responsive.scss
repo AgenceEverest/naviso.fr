@@ -110,6 +110,15 @@
 }
 
 @media (max-width: 768px) {
+
+    .newsletter-container {
+        .newsletter-wrapper {
+          .content-newsletter-block {
+            flex-direction: column;
+            text-align: center;
+          }
+        }
+    }
     h2 {
         font-size: 30px !important;
         line-height: normal !important;
