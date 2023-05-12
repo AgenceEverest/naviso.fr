@@ -121,9 +121,7 @@ export default {
       "texte-tous-les-filtres-4"
     );
 
-    this.texteBoutonVideo = this.app.getAttribute(
-      "texte-bouton-video"
-    );
+    this.texteBoutonVideo = this.app.getAttribute("texte-bouton-video");
 
     for (let i = 0; i < taxoInExcerptAttribute.length; i++) {
       const taxoInExcerpt = this.app.getAttribute(taxoInExcerptAttribute[i]);
@@ -538,41 +536,86 @@ export default {
 </script>
 
 <template>
-  <FiltersCpts v-show="isLoaded" :filters="filters" :search-input="searchInput" :filter-type="filterType"
-    @handleClick="handleClick" @filterElementsByKeyword="filterElementsByKeyword"
-    :texteTouslesFiltres1="texteTouslesFiltres1" :texteTouslesFiltres2="texteTouslesFiltres2"
-    :texteTouslesFiltres3="texteTouslesFiltres3" :texteTouslesFiltres4="texteTouslesFiltres4" />
+  <FiltersCpts
+    v-show="isLoaded"
+    :filters="filters"
+    :search-input="searchInput"
+    :filter-type="filterType"
+    @handleClick="handleClick"
+    @filterElementsByKeyword="filterElementsByKeyword"
+    :texteTouslesFiltres1="texteTouslesFiltres1"
+    :texteTouslesFiltres2="texteTouslesFiltres2"
+    :texteTouslesFiltres3="texteTouslesFiltres3"
+    :texteTouslesFiltres4="texteTouslesFiltres4"
+  />
   <div v-show="isLoaded" :class="'extraits-container ' + extraitPaddingTop">
     <template v-if="cptName === 'webinaire'">
       <div class="results">
-        <WebinaireExcerpt v-show="cpt.show && cpt.display" class="cpt-extrait" v-for="cpt in cpts" :key="cpt.id"
-          :cpt="cpt" :texteFinCandidature="texteFinCandidature" :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
-          :texteEnSavoirPlus="texteEnSavoirPlus" :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
-          :showTaxonomies="showTaxonomies" />
+        <WebinaireExcerpt
+          v-show="cpt.show && cpt.display"
+          class="cpt-extrait"
+          v-for="cpt in cpts"
+          :key="cpt.id"
+          :cpt="cpt"
+          :texteFinCandidature="texteFinCandidature"
+          :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
+          :texteEnSavoirPlus="texteEnSavoirPlus"
+          :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
+          :showTaxonomies="showTaxonomies"
+        />
       </div>
-      <div @click="incrementmaxDisplayable" v-if="hasMoreContent" class="load-more">
+      <div
+        @click="incrementmaxDisplayable"
+        v-if="hasMoreContent"
+        class="load-more"
+      >
         {{ loadMoreText }}
       </div>
     </template>
     <template v-else-if="cptName === 'client'">
       <div class="results">
-        <CasClient v-show="cpt.show && cpt.display" class="cpt-extrait" v-for="cpt in cpts" :key="cpt.id" :cpt="cpt"
-          :texteFinCandidature="texteFinCandidature" :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
-          :texteEnSavoirPlus="texteEnSavoirPlus" :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
-          :showTaxonomies="showTaxonomies" />
+        <CasClient
+          v-show="cpt.show && cpt.display"
+          class="cpt-extrait"
+          v-for="cpt in cpts"
+          :key="cpt.id"
+          :cpt="cpt"
+          :texteFinCandidature="texteFinCandidature"
+          :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
+          :texteEnSavoirPlus="texteEnSavoirPlus"
+          :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
+          :showTaxonomies="showTaxonomies"
+          :texteBoutonVideo="texteBoutonVideo"
+        />
       </div>
-      <div @click="incrementmaxDisplayable" v-if="hasMoreContent" class="load-more">
+      <div
+        @click="incrementmaxDisplayable"
+        v-if="hasMoreContent"
+        class="load-more"
+      >
         {{ loadMoreText }}
       </div>
     </template>
     <template v-else>
       <div class="results">
-        <OffreEmploi v-show="cpt.show && cpt.display" class="cpt-extrait" v-for="cpt in cpts" :key="cpt.id" :cpt="cpt"
-          :texteFinCandidature="texteFinCandidature" :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
-          :texteEnSavoirPlus="texteEnSavoirPlus" :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
-          :showTaxonomies="showTaxonomies" />
+        <OffreEmploi
+          v-show="cpt.show && cpt.display"
+          class="cpt-extrait"
+          v-for="cpt in cpts"
+          :key="cpt.id"
+          :cpt="cpt"
+          :texteFinCandidature="texteFinCandidature"
+          :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
+          :texteEnSavoirPlus="texteEnSavoirPlus"
+          :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
+          :showTaxonomies="showTaxonomies"
+        />
       </div>
-      <div @click="incrementmaxDisplayable" v-if="hasMoreContent" class="load-more">
+      <div
+        @click="incrementmaxDisplayable"
+        v-if="hasMoreContent"
+        class="load-more"
+      >
         {{ loadMoreText }}
       </div>
     </template>

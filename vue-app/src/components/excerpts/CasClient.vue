@@ -60,7 +60,7 @@ export default {
     </p>
 
     <!-- Boutons de fins de bloc -->
-    <div class="buttons-extrait">
+    <div class="buttons-extrait buttons-cas-clients">
       <p v-if="cpt.acf.lien_landing_page_hubspot !== null" class="cta_btn_lead cta_primaire"
         :class="{ cta_center: !cpt.acf.lien_vers_la_video }">
         <a target="_blank" :href="cpt.acf.lien_landing_page_hubspot.url">{{
