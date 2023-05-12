@@ -144,3 +144,20 @@ function borderRound($arrondir_les_bords_de_limage ) {
     return $class1 . $class2 . $class3 . $class4;
 }
 
+
+
+if (!function_exists('acf_load_post_types_child')) {
+	function acf_load_post_types_child($field)
+	{
+		$field['choices'] = array();
+		$args = array(
+			'public'   => true,
+		);
+		foreach (get_post_types($args, 'objects') as $post_type) {
+			$field['choices'][$post_type->name] = $post_type->label;
+		}
+		return $field;
+	}
+
+	add_filter('acf/load_field/name=publication_liste_app_child', 'acf_load_post_types_child', 20);
+}
