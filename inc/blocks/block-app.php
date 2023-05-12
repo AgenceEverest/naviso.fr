@@ -11,7 +11,7 @@ if (have_rows('block_app')) : the_row(); // il s'agit du nom du champ dans ACF q
     $couleur_de_fond_bloc = get_sub_field('couleur_de_fond_bloc');
     $marge_interne_en_haut_du_bloc = get_sub_field('marge_interne_en_haut_du_bloc');
     $marge_interne_en_bas_du_bloc = get_sub_field('marge_interne_en_bas_du_bloc');
-    $publication_liste_app = get_sub_field('publication_liste_app');
+    $publication_liste_app = get_sub_field('publication_liste_app_child');
     $type_de_filtre = get_sub_field('type_de_filtre');
     $champ_recherche = get_sub_field('champs_texte_pour_affiner');
     $filtre_etage_1_activation = get_sub_field('filtre_etage_1_activation');
