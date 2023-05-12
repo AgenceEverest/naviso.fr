@@ -1,3 +1,8 @@
+<?php
+
+/**
+ * Template Name: Accessibilité
+ */ ?>
 <?php get_header(); ?>
 <?php get_template_part('inc/header/header-main'); ?>
 <?php get_template_part('inc/breadcrumb'); ?>
