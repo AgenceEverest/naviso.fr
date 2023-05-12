@@ -8,7 +8,9 @@
     border-radius: 25px;
     padding: 3% 10%;
     overflow: hidden;
-
+    .content-newsletter-block {
+      display: flex;
+    }
     h2 {
       color: white;
       font-size: 30px;
@@ -33,6 +35,7 @@
       top: -60%;
       right: -10%;
       overflow: hidden;
+      z-index: -1;
       #Tracé_1009,
       #Tracé_1010 {
         fill: #ffffff7a;
