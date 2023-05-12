@@ -5,6 +5,7 @@ dans le thème enfant, et redéclarez un bloc avec l'app copiée -->
 import FiltersCpts from "./FiltersCpts.vue";
 import OffreEmploi from "./excerpts/OffreEmploi.vue";
 import WebinaireExcerpt from "./excerpts/WebinaireExcerpt.vue";
+import CasClient from "./excerpts/CasClient.vue";
 import he from "he";
 import { getApiData } from "../utils/getApi";
 export default {
@@ -13,6 +14,7 @@ export default {
     FiltersCpts,
     OffreEmploi,
     WebinaireExcerpt,
+    CasClient,
   },
   data() {
     return {
@@ -60,6 +62,8 @@ export default {
       texteTouslesFiltres4: "",
       texteDateDeLappelaProjet: "",
       texteDateDeLevenement: "",
+      texteBoutonVideo: "",
+      texteEnSavoirPlus: "",
       website: "",
     };
   },
@@ -115,6 +119,10 @@ export default {
     );
     this.texteTouslesFiltres4 = this.app.getAttribute(
       "texte-tous-les-filtres-4"
+    );
+
+    this.texteBoutonVideo = this.app.getAttribute(
+      "texte-bouton-video"
     );
 
     for (let i = 0; i < taxoInExcerptAttribute.length; i++) {
@@ -530,62 +538,41 @@ export default {
 </script>
 
 <template>
-  <FiltersCpts
-    v-show="isLoaded"
-    :filters="filters"
-    :search-input="searchInput"
-    :filter-type="filterType"
-    @handleClick="handleClick"
-    @filterElementsByKeyword="filterElementsByKeyword"
-    :texteTouslesFiltres1="texteTouslesFiltres1"
-    :texteTouslesFiltres2="texteTouslesFiltres2"
-    :texteTouslesFiltres3="texteTouslesFiltres3"
-    :texteTouslesFiltres4="texteTouslesFiltres4"
-  />
+  <FiltersCpts v-show="isLoaded" :filters="filters" :search-input="searchInput" :filter-type="filterType"
+    @handleClick="handleClick" @filterElementsByKeyword="filterElementsByKeyword"
+    :texteTouslesFiltres1="texteTouslesFiltres1" :texteTouslesFiltres2="texteTouslesFiltres2"
+    :texteTouslesFiltres3="texteTouslesFiltres3" :texteTouslesFiltres4="texteTouslesFiltres4" />
   <div v-show="isLoaded" :class="'extraits-container ' + extraitPaddingTop">
     <template v-if="cptName === 'webinaire'">
       <div class="results">
-        <WebinaireExcerpt
-          v-show="cpt.show && cpt.display"
-          class="cpt-extrait"
-          v-for="cpt in cpts"
-          :key="cpt.id"
-          :cpt="cpt"
-          :texteFinCandidature="texteFinCandidature"
-          :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
-          :texteEnSavoirPlus="texteEnSavoirPlus"
-          :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
-          :showTaxonomies="showTaxonomies"
-        />
+        <WebinaireExcerpt v-show="cpt.show && cpt.display" class="cpt-extrait" v-for="cpt in cpts" :key="cpt.id"
+          :cpt="cpt" :texteFinCandidature="texteFinCandidature" :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
+          :texteEnSavoirPlus="texteEnSavoirPlus" :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
+          :showTaxonomies="showTaxonomies" />
       </div>
-      <div
-        @click="incrementmaxDisplayable"
-        v-if="hasMoreContent"
-        class="load-more"
-      >
+      <div @click="incrementmaxDisplayable" v-if="hasMoreContent" class="load-more">
+        {{ loadMoreText }}
+      </div>
+    </template>
+    <template v-else-if="cptName === 'client'">
+      <div class="results">
+        <CasClient v-show="cpt.show && cpt.display" class="cpt-extrait" v-for="cpt in cpts" :key="cpt.id" :cpt="cpt"
+          :texteFinCandidature="texteFinCandidature" :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
+          :texteEnSavoirPlus="texteEnSavoirPlus" :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
+          :showTaxonomies="showTaxonomies" />
+      </div>
+      <div @click="incrementmaxDisplayable" v-if="hasMoreContent" class="load-more">
         {{ loadMoreText }}
       </div>
     </template>
     <template v-else>
       <div class="results">
-        <OffreEmploi
-          v-show="cpt.show && cpt.display"
-          class="cpt-extrait"
-          v-for="cpt in cpts"
-          :key="cpt.id"
-          :cpt="cpt"
-          :texteFinCandidature="texteFinCandidature"
-          :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
-          :texteEnSavoirPlus="texteEnSavoirPlus"
-          :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
-          :showTaxonomies="showTaxonomies"
-        />
+        <OffreEmploi v-show="cpt.show && cpt.display" class="cpt-extrait" v-for="cpt in cpts" :key="cpt.id" :cpt="cpt"
+          :texteFinCandidature="texteFinCandidature" :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
+          :texteEnSavoirPlus="texteEnSavoirPlus" :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
+          :showTaxonomies="showTaxonomies" />
       </div>
-      <div
-        @click="incrementmaxDisplayable"
-        v-if="hasMoreContent"
-        class="load-more"
-      >
+      <div @click="incrementmaxDisplayable" v-if="hasMoreContent" class="load-more">
         {{ loadMoreText }}
       </div>
     </template>
@@ -606,12 +593,14 @@ export default {
   width: 100%;
   height: 100vh;
 }
+
 .lds-ripple {
   display: inline-block;
   position: relative;
   width: 80px;
   height: 80px;
 }
+
 .lds-ripple div {
   position: absolute;
   border: 4px solid rgb(111, 111, 111);
@@ -619,9 +608,11 @@ export default {
   border-radius: 50%;
   animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
 }
+
 .lds-ripple div:nth-child(2) {
   animation-delay: -0.5s;
 }
+
 @keyframes lds-ripple {
   0% {
     top: 36px;
@@ -630,6 +621,7 @@ export default {
     height: 0;
     opacity: 0;
   }
+
   4.9% {
     top: 36px;
     left: 36px;
@@ -637,6 +629,7 @@ export default {
     height: 0;
     opacity: 0;
   }
+
   5% {
     top: 36px;
     left: 36px;
@@ -644,6 +637,7 @@ export default {
     height: 0;
     opacity: 1;
   }
+
   100% {
     top: 0px;
     left: 0px;
@@ -652,6 +646,7 @@ export default {
     opacity: 0;
   }
 }
+
 // le code scss se trouve dans le thème enfant
 
 // décommenter ce code uniquemet dans le contexte de npm run dev / npm run serve
