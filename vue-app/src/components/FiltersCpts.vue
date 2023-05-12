@@ -67,8 +67,8 @@ export default {
     },
   },
   updated() {
-    console.log(this.$props[`texteTouslesFiltres${1}`]);
-    console.log(this.$props);
+  //  console.log(this.$props[`texteTouslesFiltres${1}`]);
+   // console.log(this.$props);
   },
 };
 </script>

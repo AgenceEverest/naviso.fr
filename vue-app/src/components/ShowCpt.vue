@@ -43,6 +43,8 @@ export default {
       searchInput: false,
       protocol: "",
       perPage: 0,
+      post: 'post',
+      posts: 'posts',
       postsFilteredByKeyword: false,
       postsFoundByKeyword: 0,
       lastKeyword: "",
@@ -178,7 +180,7 @@ export default {
         let pathname = location.pathname;
         if (location.pathname === "/") {
           // dans le cas d'un localhost avec la commande NPM run dev
-          pathname = "/grabuge";
+          pathname = "/naviso";
         }
         pathname = pathname.split("/");
         pathname = pathname[1];
@@ -204,16 +206,15 @@ export default {
       console.log("récupération des CPTS");
       this.cleanUrl();
       this.cptName = cptName;
-      console.log(this.cptName);
-      this.cptName =
-        this.cptName === "post" ? (this.cptName = "posts") : this.cptName;
-
+      if (this.cptName === 'post') {
+        cptName = 'posts';
+      }
       try {
         console.log(
-          `${this.protocol}://${this.website}/wp-json/wp/v2/${this.cptName}?per_page=100&_embed`
+          `${this.protocol}://${this.website}/wp-json/wp/v2/${cptName}?per_page=100&_embed`
         );
         this.cpts = await getApiData(
-          `${this.protocol}://${this.website}/wp-json/wp/v2/${this.cptName}?per_page=100&_embed`
+          `${this.protocol}://${this.website}/wp-json/wp/v2/${cptName}?per_page=100&_embed`
         );
         this.cpts.forEach(async (cpt) => {
           cpt.show = true;
@@ -254,6 +255,8 @@ export default {
           `${this.protocol}://${this.website}/wp-json/wp/v2/taxonomies-and-terms/`
         );
         this.taxonomiesAndTerms = taxonomiesAndTerms;
+        console.log(this.filters);
+
         this.filters = this.filters.map((filter) => {
           if (this.taxonomiesAndTerms[this.cptName][filter]) {
             return {
@@ -264,7 +267,6 @@ export default {
           }
         });
 
-        console.log(this.filters);
         this.isLoaded = true;
       } catch (err) {
         console.log(err);
@@ -554,7 +556,7 @@ export default {
     :texteTouslesFiltres4="texteTouslesFiltres4"
   />
   <div v-show="isLoaded" :class="'extraits-container ' + extraitPaddingTop">
-    <template v-if="this.cptName === 'webinaire'">
+    <template v-if="cptName === 'webinaire'">
       <div class="results">
         <WebinaireExcerpt
           v-show="cpt.show && cpt.display"
@@ -577,7 +579,7 @@ export default {
         {{ loadMoreText }}
       </div>
     </template>
-    <template v-else-if="this.cptName === 'client'">
+    <template v-else-if="cptName === 'client'">
       <div class="results">
         <CasClient
           v-show="cpt.show && cpt.display"
