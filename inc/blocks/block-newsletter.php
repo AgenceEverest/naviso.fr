@@ -41,17 +41,19 @@ $urlContact = get_field('url_du_bouton_contact', 'option');
     <?php $largeur_de_la_colonne_contenu = get_sub_field('largeur_de_la_colonne_contenu'); ?>
     <h2><?= $titre_du_bloc ?></h2>
     <!-- Les 2 colonnes -->
-    <div class="text_block">
-        <?= $texte_du_bloc ?>
+    <div class="content-newsletter-block">
+        <div class="text_block">
+            <?= $texte_du_bloc ?>
+        </div>
+        <!-- Lien page contact pré-remplie -->
+        <p class="cta_btn_lead cta_secondaire">
+            <a href="<?= get_field('link_button_more_information', 'option') ?>">
+                <?= $texte_du_bouton ?>
+            </a>
+        </p>
     </div>
-    <!-- Lien page contact pré-remplie -->
-    <p class="cta_btn_lead cta_secondaire">
-        <a href="<?= get_field('link_button_more_information', 'option') ?>">
-            <?= $texte_du_bouton ?>
-        </a>
-    </p>
-    <?= showSvg(get_stylesheet_directory_uri() . '/svg/visuel-newsletter.svg') ?>      
- </div>
+    <?= showSvg(get_stylesheet_directory_uri() . '/svg/visuel-newsletter.svg') ?>
+</div>
 </div>
 
 <div style="display: none">
