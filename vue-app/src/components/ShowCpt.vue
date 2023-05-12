@@ -204,14 +204,17 @@ export default {
       console.log("récupération des CPTS");
       this.cleanUrl();
       this.cptName = cptName;
+      console.log(this.cptName);
+      this.cptName =
+        this.cptName === "post" ? (this.cptName = "posts") : this.cptName;
+
       try {
         console.log(
-          `${this.protocol}://${this.website}/wp-json/wp/v2/${cptName}?per_page=100&_embed`
+          `${this.protocol}://${this.website}/wp-json/wp/v2/${this.cptName}?per_page=100&_embed`
         );
         this.cpts = await getApiData(
-          `${this.protocol}://${this.website}/wp-json/wp/v2/${cptName}?per_page=100&_embed`
+          `${this.protocol}://${this.website}/wp-json/wp/v2/${this.cptName}?per_page=100&_embed`
         );
-        console.log(this.cpts);
         this.cpts.forEach(async (cpt) => {
           cpt.show = true;
           if ("_embedded" in cpt) {
@@ -549,7 +552,7 @@ export default {
     :texteTouslesFiltres4="texteTouslesFiltres4"
   />
   <div v-show="isLoaded" :class="'extraits-container ' + extraitPaddingTop">
-    <template v-if="cptName === 'webinaire'">
+    <template v-if="this.cptName === 'webinaire'">
       <div class="results">
         <WebinaireExcerpt
           v-show="cpt.show && cpt.display"
@@ -572,7 +575,7 @@ export default {
         {{ loadMoreText }}
       </div>
     </template>
-    <template v-else-if="cptName === 'client'">
+    <template v-else-if="this.cptName === 'client'">
       <div class="results">
         <CasClient
           v-show="cpt.show && cpt.display"
