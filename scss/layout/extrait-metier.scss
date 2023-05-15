@@ -8,6 +8,11 @@
     .extrait-metier-container {
         display: flex;
         justify-content: center;
+        flex-direction: column;
+        .cta-extrait-container {
+            position: absolute;
+            bottom: 1rem;
+        }
     }
     h3 {
         width: 100%;
@@ -21,9 +26,6 @@
         color: black !important;
     }
 
-    .cta-extrait-container {
-        position: absolute;
-        bottom: 1rem;
-    }
+
 }
 
