@@ -337,8 +337,11 @@ figure {
 
     .visuel-naviso-multicol {
         position: absolute;
-        bottom: -20%;
+        bottom: -10%;
         right: -15%;
+    }
+    h3 {
+        color: $greenNaviso;
     }
 }
 
