@@ -23,7 +23,7 @@ function my_acf_init_child()
     // check function exists
     if (function_exists('acf_register_block')) {
         // register block test
-         acf_register_block(array(
+        acf_register_block(array(
             'name'                => 'block-selection-clients',
             'title'                => __('Bloc sélection de cas clients'),
             'description'        => __('Un bloc permettant de sélectionner des cas clients.'),
@@ -31,7 +31,7 @@ function my_acf_init_child()
             'category'            => 'layout',
             'icon'                => 'image-flip-vertical',
             'mode'                => 'edit', // permet d'ouvrir le bloc immédiatement, l'autre mode est "preview"
-        )); 
+        ));
         acf_register_block(array(
             'name'                => 'block-contacter-expert-logiciel',
             'title'                => __('Bloc contacter un expert logiciel'),
@@ -40,7 +40,7 @@ function my_acf_init_child()
             'category'            => 'layout',
             'icon'                => 'image-flip-vertical',
             'mode'                => 'edit', // permet d'ouvrir le bloc immédiatement, l'autre mode est "preview"
-        )); 
+        ));
         acf_register_block(array(
             'name'                => 'block-listant-les-metiers',
             'title'                => __('Bloc listant les métiers'),
@@ -67,7 +67,7 @@ function my_acf_init_child()
             'category'            => 'layout',
             'icon'                => 'image-flip-vertical',
             'mode'                => 'edit', // permet d'ouvrir le bloc immédiatement, l'autre mode est "preview"
-        )); 
+        ));
         acf_register_block(array(
             'name'                => 'block-trois-derniers-webinaires',
             'title'                => __('Bloc 3 derniers webinaires'),
@@ -76,9 +76,7 @@ function my_acf_init_child()
             'category'            => 'layout',
             'icon'                => 'image-flip-vertical',
             'mode'                => 'edit', // permet d'ouvrir le bloc immédiatement, l'autre mode est "preview"
-        )); 
-
-        
+        ));
     }
 }
 function block_callback_child($block)
@@ -108,17 +106,19 @@ function showSvg($url)
     return $svg;
 }
 
-function register_custom_menus() {
+function register_custom_menus()
+{
     register_nav_menus(
         array(
-            'menu-footer-2' => __( 'Menu Footer 2' ),
+            'menu-footer-2' => __('Menu Footer 2'),
         )
     );
 }
-add_action( 'after_setup_theme', 'register_custom_menus' );
+add_action('after_setup_theme', 'register_custom_menus');
 
 
-function borderRound($arrondir_les_bords_de_limage ) {
+function borderRound($arrondir_les_bords_de_limage)
+{
     $class1 = '';
     $class2 = '';
     $class3 = '';
@@ -137,7 +137,7 @@ function borderRound($arrondir_les_bords_de_limage ) {
                 break;
             case 'bas_droit':
                 $class4 = ' border-bottom-right-radius ';
-                default: 
+            default:
                 break;
         }
     }
@@ -147,19 +147,41 @@ function borderRound($arrondir_les_bords_de_limage ) {
 
 
 if (!function_exists('acf_load_post_types_child')) {
-	function acf_load_post_types_child($field)
-	{
-		$field['choices'] = array();
-		$args = array(
-			'public'   => true,
-		);
-		foreach (get_post_types($args, 'objects') as $post_type) {
-			$field['choices'][$post_type->name] = $post_type->label;
-		}
-		return $field;
-	}
+    function acf_load_post_types_child($field)
+    {
+        $field['choices'] = array();
+        $args = array(
+            'public'   => true,
+        );
+        foreach (get_post_types($args, 'objects') as $post_type) {
+            $field['choices'][$post_type->name] = $post_type->label;
+        }
+        return $field;
+    }
 
-	add_filter('acf/load_field/name=publication_liste_app_child', 'acf_load_post_types_child', 20);
+    add_filter('acf/load_field/name=publication_liste_app_child', 'acf_load_post_types_child', 20);
     add_filter('acf/load_field/name=publication_choisie_child', 'acf_load_post_types_child', 20);
+}
 
+
+
+if (!function_exists('acf_load_icons')) {
+    function acf_load_icons($field)
+    {
+        $theme = wp_get_theme();
+        $chemin_dossier = $theme->get_stylesheet_directory() . '/img/icons';
+        $fichiers = glob($chemin_dossier . '/*');
+        foreach ($fichiers as $fichier) {
+            // Création de la structure de données pour le champ ACF
+            $valeur = [
+                'nom_fichier' => basename($fichier),
+                'chemin_fichier' => $fichier
+            ];
+
+            $field['choices'][$valeur['chemin_fichier']] = $valeur['nom_fichier'];
+        } 
+        return $field;
+
+    }
+    add_filter('acf/load_field/name=icone_svg', 'acf_load_icons', 20);
 }
