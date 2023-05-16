@@ -1,13 +1,13 @@
 @charset "UTF-8";
 @font-face {
-  font-family: "Montserrat";
+  font-family: "Montserrat-bolder";
   src: url("../fonts/subset-Montserrat-Bold.woff2") format("woff2"), url("../fonts/subset-Montserrat-Bold.woff") format("woff");
   font-weight: bolder;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Montserrat";
+  font-family: "Montserrat-bold";
   src: url("../fonts/subset-Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/subset-Montserrat-SemiBold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
@@ -27,17 +27,26 @@
   font-style: normal;
   font-display: swap;
 }
-h1, h2, h3, h4, h5, h6, p, ul, li, a, div, strong {
+h4, h5, h6, p, ul, li, a, div {
   font-family: "Montserrat" !important;
+}
+.article_share_date .date_jour, .article_share_date .date_mois, .article_share_date .date_annee {
+  font-family: "Montserrat" !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1.5rem !important;
 }
 h1 {
   font-weight: bolder;
+  font-family: "Montserrat-bold" !important;
 }
 h2, h3 {
+  font-family: "Montserrat-bolder" !important;
   font-weight: bold !important;
 }
 h2 strong, h3 strong {
   font-weight: bold !important;
+  font-family: "Montserrat-bolder" !important;
 }
 p, h3, h4, h5, h6 {
   font-weight: normal;
@@ -51,6 +60,13 @@ h2 {
 }
 .fond_clair h2, .fond_clair h3, .fond_clair h4, .fond_clair h5, .fond_clair h6, .fond_clair2 h2, .fond_clair2 h3, .fond_clair2 h4, .fond_clair2 h5, .fond_clair2 h6 {
   color: white;
+}
+.fond_clair .col_flexible_bordure p, .fond_clair .col_flexible_bordure ul, .fond_clair .col_flexible_bordure li, .fond_clair .col_flexible_bordure a, .fond_clair2 .col_flexible_bordure p, .fond_clair2 .col_flexible_bordure ul, .fond_clair2 .col_flexible_bordure li, .fond_clair2 .col_flexible_bordure a {
+  color: #1F2D46 !important;
+}
+.fond_clair .col_flexible_bordure p strong, .fond_clair .col_flexible_bordure ul strong, .fond_clair .col_flexible_bordure li strong, .fond_clair .col_flexible_bordure a strong, .fond_clair2 .col_flexible_bordure p strong, .fond_clair2 .col_flexible_bordure ul strong, .fond_clair2 .col_flexible_bordure li strong, .fond_clair2 .col_flexible_bordure a strong {
+  color: #4AB8A5;
+  font-family: "Montserrat";
 }
 .fond_clair2 h2 strong, .fond_clair2 h3 strong, .fond_clair2 h4 strong, .fond_clair2 h5 strong, .fond_clair2 h6 strong {
   color: #4AB8A5;
@@ -66,6 +82,12 @@ figure {
 }
 figure img {
   border-radius: 0 !important;
+}
+#menu {
+  background-color: white;
+}
+ul#menu-menu-principal li a {
+  font-family: "Montserrat-bold" !important;
 }
 .cta_btn_lead {
   font-weight: bold;
@@ -205,19 +227,23 @@ figure img {
 .fond_clair .entry-content p strong, .fond_clair .entry-content ul strong, .fond_clair .entry-content li strong, .fond_clair .entry-content a strong, .fond_clair .entry-content span strong {
   color: #1F2D46;
 }
+.fond_clair .vague-milieu svg {
+  fill: #add1cb !important;
+}
 .fond_clair2 h1, .fond_clair2 h2, .fond_clair2 h3, .fond_clair2 h4, .fond_clair2 h5, .fond_clair2 h6, .fond_clair2 p, .fond_clair2 ul, .fond_clair2 li, .fond_clair2 a, .fond_clair2 span {
   color: white;
 }
 .fond_clair2 h1 strong, .fond_clair2 h2 strong, .fond_clair2 h3 strong, .fond_clair2 h4 strong, .fond_clair2 h5 strong, .fond_clair2 h6 strong, .fond_clair2 p strong, .fond_clair2 ul strong, .fond_clair2 li strong, .fond_clair2 a strong, .fond_clair2 span strong {
   color: #4AB8A5;
-  font-weight: normal !important;
 }
 .fond_clair2 .entry-content h1, .fond_clair2 .entry-content h2, .fond_clair2 .entry-content h3, .fond_clair2 .entry-content h4, .fond_clair2 .entry-content h5, .fond_clair2 .entry-content h6, .fond_clair2 .entry-content p, .fond_clair2 .entry-content ul, .fond_clair2 .entry-content li, .fond_clair2 .entry-content a, .fond_clair2 .entry-content span {
   color: white;
 }
 .fond_clair2 .entry-content h1 strong, .fond_clair2 .entry-content h2 strong, .fond_clair2 .entry-content h3 strong, .fond_clair2 .entry-content h4 strong, .fond_clair2 .entry-content h5 strong, .fond_clair2 .entry-content h6 strong, .fond_clair2 .entry-content p strong, .fond_clair2 .entry-content ul strong, .fond_clair2 .entry-content li strong, .fond_clair2 .entry-content a strong, .fond_clair2 .entry-content span strong {
   color: #4AB8A5;
-  font-weight: normal !important;
+}
+.fond_clair2 .vague-milieu svg {
+  fill: #add1cb !important;
 }
 .fond_blanc h1, .fond_blanc h2, .fond_blanc h3, .fond_blanc h4, .fond_blanc h5, .fond_blanc h6 {
   color: #4AB8A5;
@@ -248,6 +274,12 @@ figure img {
 .col_flexible_superposition .cta_align_center {
   margin-left: 0rem !important;
 }
+.col_flexible_superposition .col_flexible_cta {
+  padding-bottom: 4rem;
+}
+.col_flexible_wrapper .col_flexible_cta {
+  padding-bottom: 4rem;
+}
 .col_flexible_image_wrapper img {
   border-radius: 0rem !important;
 }
@@ -263,8 +295,11 @@ figure img {
 }
 .multicolonnes_item .visuel-naviso-multicol {
   position: absolute;
-  bottom: -20%;
+  bottom: -10%;
   right: -15%;
+}
+.multicolonnes_item h3 {
+  color: #4AB8A5;
 }
 .aside_prefooter_col p.coordonnees_p_i svg {
   color: white !important;
@@ -332,6 +367,19 @@ figure img {
 }
 .col_flexible_image_wrapper figure {
   background-color: transparent;
+}
+.col_flexible_item:has(.figure_col_flex_icone) {
+  margin-top: 5.5rem;
+}
+.col_flexible_item .figure_col_flex_icone {
+  top: -3.5rem;
+}
+.col_flexible_icone {
+  padding-top: 80px;
+  margin-bottom: 2rem;
+}
+.col_flexible_icone_img {
+  border: none;
 }
 .extraits-clients-container {
   display: flex;
@@ -536,9 +584,18 @@ figure img {
   background-color: white;
   width: 31%;
   margin-right: 1rem;
-  padding: 2rem;
+  padding: 2rem 2rem 5rem 2rem;
   box-shadow: 0px 10px 50px 20px #68686829;
   border-radius: 0px !important;
+}
+.extrait_metier .extrait-metier-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.extrait_metier .extrait-metier-container .cta-extrait-container {
+  position: absolute;
+  bottom: 1.8rem;
 }
 .extrait_metier h3 {
   width: 100%;
@@ -561,6 +618,10 @@ figure img {
   padding: 3% 10%;
   overflow: hidden;
 }
+.newsletter-container .newsletter-wrapper .content-newsletter-block {
+  display: flex;
+  align-items: center;
+}
 .newsletter-container .newsletter-wrapper h2 {
   color: white;
   font-size: 30px;
@@ -582,6 +643,7 @@ figure img {
   top: -60%;
   right: -10%;
   overflow: hidden;
+  z-index: -1;
 }
 .newsletter-container .newsletter-wrapper .visuel-newsletter #Tracé_1009, .newsletter-container .newsletter-wrapper .visuel-newsletter #Tracé_1010 {
   fill: #ffffff7a;
@@ -597,6 +659,7 @@ figure img {
 .bloc_liste_deroulante .question_reponse_title.active {
   transition: none;
   border-radius: 25px;
+  padding-top: 1rem;
 }
 .bloc_liste_deroulante .question_reponse_title_icone {
   right: 0 !important;
@@ -608,6 +671,7 @@ figure img {
 }
 .bloc_liste_deroulante .question_reponse_wysiwyg {
   border: none;
+  padding: 1rem 4rem 4rem 4rem;
 }
 .fond_blanc .bloc_liste_deroulante .question_reponse_title {
   background-color: white;
@@ -758,7 +822,7 @@ figure img {
   width: 100%;
 }
 .double-boucle svg {
-  width: 100%;
+  width: 105%;
 }
 .content_width {
   z-index: 1;
@@ -892,7 +956,7 @@ figure img {
 .trois-derniers-webinars .vague-webinar {
   width: 100%;
   z-index: 0;
-  top: 10rem;
+  top: 13rem;
 }
 .trois-derniers-webinars .vague-webinar svg {
   width: 120%;
@@ -963,6 +1027,7 @@ figure img {
 #block-app .filters {
   flex-direction: column;
   display: flex;
+  margin-bottom: 2rem;
 }
 #block-app .filters #loupe {
   margin-bottom: 5px;
@@ -1033,7 +1098,7 @@ figure img {
 #block-app .extraits-container .results {
   flex-wrap: wrap;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
 }
 #block-app .extraits-container .results .terms {
@@ -1061,7 +1126,7 @@ figure img {
   border: 2px solid #1F2D46;
 }
 #block-app .extraits-container .results .cpt-extrait {
-  width: 31%;
+  width: 31.6%;
   margin-right: 1rem;
   margin-bottom: 1rem;
   box-shadow: 0px 10px 50px 20px #68686829;
@@ -1134,6 +1199,17 @@ figure img {
 .bandeau-header-page h1, .bandeau-header-post h1 {
   color: white !important;
 }
+.article_blog .entry_title {
+  background-color: #1F2D46;
+  padding: 3.5rem 0;
+}
+.article_blog .entry_title .content_width {
+  display: flex;
+  justify-content: center;
+}
+.article_blog .entry_title h1 {
+  color: white !important;
+}
 #aside_prefooter {
   background-color: #1F2D46;
 }
@@ -1178,6 +1254,7 @@ figure img {
 .prefooter_col_3 .footer_certification {
   width: 100% !important;
   height: auto !important;
+  margin-bottom: 22%;
 }
 #aside_prefooter_baseline {
   color: white;
@@ -1329,6 +1406,13 @@ figure img {
   }
 }
 @media (max-width: 768px) {
+  .newsletter-container .newsletter-wrapper h2 {
+    text-align: center;
+  }
+  .newsletter-container .newsletter-wrapper .content-newsletter-block {
+    flex-direction: column;
+    text-align: center;
+  }
   h2 {
     font-size: 30px !important;
     line-height: normal !important;

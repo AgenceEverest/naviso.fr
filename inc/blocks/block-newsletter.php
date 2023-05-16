@@ -47,9 +47,7 @@ $urlContact = get_field('url_du_bouton_contact', 'option');
         </div>
         <!-- Lien page contact pré-remplie -->
         <p class="cta_btn_lead cta_secondaire">
-            <a href="<?= get_field('link_button_more_information', 'option') ?>">
-                <?= $texte_du_bouton ?>
-            </a>
+            <?= $texte_du_bouton ?>
         </p>
     </div>
     <?= showSvg(get_stylesheet_directory_uri() . '/svg/visuel-newsletter.svg') ?>
@@ -57,6 +55,6 @@ $urlContact = get_field('url_du_bouton_contact', 'option');
 </div>
 </div>
 
-<div class="newsletter" style="display: none">
+<div class="newsletter-container" id="newsletter" style="display: block">
     <?= $contenu_de_liframe ?>
 </div>
