@@ -75,19 +75,19 @@ h2 {
     }
 
     .col_flexible_bordure {
-        .entry-content {
-            p,
-            ul,
-            li,
-            a {
-                color: $bleuNaviso;
-    
-                strong {
-                    color: $greenNaviso;
-                }
+
+        p,
+        ul,
+        li,
+        a {
+            color: $bleuNaviso;
+
+            strong {
+                color: $greenNaviso;
+                font-family: 'Montserrat';
+
             }
         }
-      
     }
 }
 
@@ -100,8 +100,7 @@ h2 {
     h5,
     h6 {
         strong {
-            font-family: 'Montserrat' !important;
-            color: red;
+            color: $greenNaviso;
         }
     }
 }
