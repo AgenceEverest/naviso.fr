@@ -444,4 +444,11 @@ ul#menu-menu-principal li a {
     &:has(.figure_col_flex_icone) {
         margin-top: 2.5rem;
     }
+    .figure_col_flex_icone {
+        top: -3.5rem;
+    }
+}
+
+.col_flexible_icone {
+    padding-top: 80px;
 }
