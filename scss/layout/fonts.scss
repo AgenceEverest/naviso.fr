@@ -80,8 +80,7 @@ h2 {
         ul,
         li,
         a {
-            color: $bleuNaviso;
-
+            color: $bleuNaviso !important;
             strong {
                 color: $greenNaviso;
                 font-family: 'Montserrat';
