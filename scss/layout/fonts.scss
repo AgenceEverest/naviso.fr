@@ -1,33 +1,57 @@
-h4, h4, h5, h6, p, ul, li, a, div {
-    font-family :'Montserrat' !important;
+h4,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+a,
+div {
+    font-family: 'Montserrat' !important;
 }
 
 .article_share_date {
-    .date_jour, .date_mois, .date_annee {
-        font-family :'Montserrat' !important;
+
+    .date_jour,
+    .date_mois,
+    .date_annee {
+        font-family: 'Montserrat' !important;
     }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin-bottom: 1.5rem !important;
 }
+
 h1 {
     font-weight: bolder;
     font-family: 'Montserrat-bold' !important;
 }
 
-h2, h3 {
+h2,
+h3 {
     font-family: 'Montserrat-bolder' !important;
     font-weight: bold !important;
+
     strong {
         font-weight: bold !important;
         font-family: 'Montserrat-bolder' !important;
     }
 }
 
-p, h3, h4, h5, h6  {
+p,
+h3,
+h4,
+h5,
+h6 {
     font-weight: normal;
 }
+
 .entry-title {
     h1 {
         font-family: 'Montserrat';
@@ -39,21 +63,44 @@ h2 {
     font-size: 38px;
 }
 
-.fond_clair, .fond_clair2 {
-    h2, h3, h4, h5, h6 {
+.fond_clair,
+.fond_clair2 {
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         color: white;
     }
+
     .col_flexible_bordure {
-        color: $bleuNaviso;
+
+        p,
+        ul,
+        li,
+        a {
+            color: $bleuNaviso;
+
+            strong {
+                color: $greenNaviso;
+            }
+        }
     }
 }
 
+
 .fond_clair2 {
-    h2, h3, h4, h5, h6 {
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         strong {
-            color:$greenNaviso;
+            color: $greenNaviso;
         }
-    }  
+    }
 }
 
 .entry_title_date.legende {
