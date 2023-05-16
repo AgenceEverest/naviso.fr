@@ -439,3 +439,9 @@ ul#menu-menu-principal li a {
 .col_flexible_image_wrapper figure {
     background-color: transparent;
 }
+
+.col_flexible_item {
+    &:has(.figure_col_flex_icone) {
+        margin-top: 2.5rem;
+    }
+}
