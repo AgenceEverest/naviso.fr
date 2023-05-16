@@ -75,17 +75,19 @@ h2 {
     }
 
     .col_flexible_bordure {
-
-        p,
-        ul,
-        li,
-        a {
-            color: $bleuNaviso;
-
-            strong {
-                color: $greenNaviso;
+        .entry-content {
+            p,
+            ul,
+            li,
+            a {
+                color: $bleuNaviso;
+    
+                strong {
+                    color: $greenNaviso;
+                }
             }
         }
+      
     }
 }
 
