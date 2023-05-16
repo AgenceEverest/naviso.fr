@@ -4,6 +4,7 @@
     .filters {
         flex-direction: column;
         display: flex;
+        margin-bottom: 2rem;
 
         #loupe {
             margin-bottom: 5px;
@@ -85,7 +86,7 @@
         .results {
             flex-wrap: wrap;
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             width: 100%;
 
             .terms {
