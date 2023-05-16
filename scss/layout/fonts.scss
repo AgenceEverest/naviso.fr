@@ -1,6 +1,13 @@
 h4, h4, h5, h6, p, ul, li, a, div {
     font-family :'Montserrat' !important;
 }
+
+.article_share_date {
+    .date_jour, .date_mois, .date_annee {
+        font-family :'Montserrat' !important;
+    }
+}
+
 h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1.5rem !important;
 }
