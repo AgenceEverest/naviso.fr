@@ -9,7 +9,7 @@
 				<div class="element_liste_icones entry-content">
 					<div class="liste_icone_svg">
 						<div class="liste_icone_svg_wrapper">
-							<?php echo showSvg($icone_svg); ?>
+							<?= print_r($icone_svg) ?>
 						</div>
 					</div>
 					<div class="liste_icone_txt entry-content">

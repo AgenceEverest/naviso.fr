@@ -101,7 +101,7 @@ function showSvg($url)
 {
     $response = wp_remote_get($url);
     if (is_array($response) && !is_wp_error($response)) {
-        $svg    = $response['body']; // use the content
+        $svg = $response['body']; // use the content
     }
     return $svg;
 }
