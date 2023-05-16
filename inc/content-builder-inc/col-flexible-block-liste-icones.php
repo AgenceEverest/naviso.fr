@@ -6,13 +6,10 @@
 				$icone_texte = get_sub_field('icone_texte');
 				$icone_svg = get_sub_field('icone_svg');
 			?>
-
-				?>
-
 				<div class="element_liste_icones entry-content">
 					<div class="liste_icone_svg">
 						<div class="liste_icone_svg_wrapper">
-							<img src="<?= $iconeSVG; ?>">
+							<?php echo showSvg($icone_svg); ?>
 						</div>
 					</div>
 					<div class="liste_icone_txt entry-content">
