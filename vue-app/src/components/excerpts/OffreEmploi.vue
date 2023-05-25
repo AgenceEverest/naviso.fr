@@ -39,7 +39,7 @@ export default {
 
 <template>
   <div>
-    <div class="terms" v-if="cpt.hasOwnProperty('_embedded')">
+    <div class="terms offre-emploi-card" v-if="cpt.hasOwnProperty('_embedded')">
       <div v-if="cpt.acf.afficher_banniere_avec_du_texte_libre" class="banner-texte-libre">
         {{ cpt.acf.banniere_avec_du_texte_libre }}
       </div>
