@@ -3,18 +3,20 @@ dans le thème enfant, et redéclarez un bloc avec l'app copiée -->
 
 <script>
 import FiltersCpts from "./FiltersCpts.vue";
-import OffreEmploi from "./excerpts/OffreEmploi.vue";
+import ExtraitDefaut from "./excerpts/ExtraitDefaut.vue";
 import WebinaireExcerpt from "./excerpts/WebinaireExcerpt.vue";
 import CasClient from "./excerpts/CasClient.vue";
+import ExtraitActualite from "./excerpts/ExtraitActualite.vue";
 import he from "he";
 import { getApiData } from "../utils/getApi";
 export default {
   name: "ShowCpt",
   components: {
     FiltersCpts,
-    OffreEmploi,
+    ExtraitDefaut,
     WebinaireExcerpt,
     CasClient,
+    ExtraitActualite,
   },
   data() {
     return {
@@ -43,19 +45,13 @@ export default {
       searchInput: false,
       protocol: "",
       perPage: 0,
-      post: 'post',
-      posts: 'posts',
+      post: "post",
+      posts: "posts",
       postsFilteredByKeyword: false,
       postsFoundByKeyword: 0,
       lastKeyword: "",
       loadMore: "",
-      loadMoreText: "",
-      showTaxonomies: {
-        1: false,
-        2: false,
-        3: false,
-        4: false,
-      },
+      taxonomiesToShow: [],
       texteEventsAVenir: "",
       texteEventsPasses: "",
       texteTouslesFiltres1: "",
@@ -102,12 +98,6 @@ export default {
     this.afficherBoutonTelechargement = this.app.getAttribute(
       "afficher-bouton-telechargement"
     );
-    const taxoInExcerptAttribute = [
-      "taxo-1-extrait",
-      "taxo-2-extrait",
-      "taxo-3-extrait",
-      "taxo-4-extrait",
-    ];
 
     this.texteTouslesFiltres1 = this.app.getAttribute(
       "texte-tous-les-filtres-1"
@@ -125,11 +115,17 @@ export default {
 
     this.texteBoutonVideo = this.app.getAttribute("texte-bouton-video");
 
+    const taxoInExcerptAttribute = [
+      "taxo-1-extrait",
+      "taxo-2-extrait",
+      "taxo-3-extrait",
+      "taxo-4-extrait",
+    ];
+
     for (let i = 0; i < taxoInExcerptAttribute.length; i++) {
       const taxoInExcerpt = this.app.getAttribute(taxoInExcerptAttribute[i]);
-      if (taxoInExcerpt === "1") {
-        this.howManyTaxonomiesInExcerpt++;
-        this.showTaxonomies[`${i + 1}`] = true;
+      if (taxoInExcerpt !== null) {
+        this.taxonomiesToShow.push(taxoInExcerpt);
       }
     }
 
@@ -206,8 +202,8 @@ export default {
       console.log("récupération des CPTS");
       this.cleanUrl();
       this.cptName = cptName;
-      if (this.cptName === 'post') {
-        cptName = 'posts';
+      if (this.cptName === "post") {
+        cptName = "posts";
       }
       try {
         console.log(
@@ -255,7 +251,6 @@ export default {
           `${this.protocol}://${this.website}/wp-json/wp/v2/taxonomies-and-terms/`
         );
         this.taxonomiesAndTerms = taxonomiesAndTerms;
-        console.log(this.filters);
 
         this.filters = this.filters.map((filter) => {
           if (this.taxonomiesAndTerms[this.cptName][filter]) {
@@ -568,7 +563,7 @@ export default {
           :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
           :texteEnSavoirPlus="texteEnSavoirPlus"
           :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
-          :showTaxonomies="showTaxonomies"
+          :taxonomiesToShow="taxonomiesToShow"
         />
       </div>
       <div
@@ -591,8 +586,31 @@ export default {
           :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
           :texteEnSavoirPlus="texteEnSavoirPlus"
           :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
-          :showTaxonomies="showTaxonomies"
+          :taxonomiesToShow="taxonomiesToShow"
           :texteBoutonVideo="texteBoutonVideo"
+        />
+      </div>
+      <div
+        @click="incrementmaxDisplayable"
+        v-if="hasMoreContent"
+        class="load-more"
+      >
+        {{ loadMoreText }}
+      </div>
+    </template>
+    <template v-else-if="cptName === 'post'">
+      <div class="results">
+        <ExtraitActualite
+          v-show="cpt.show && cpt.display"
+          class="cpt-extrait"
+          v-for="cpt in cpts"
+          :key="cpt.id"
+          :cpt="cpt"
+          :texteFinCandidature="texteFinCandidature"
+          :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
+          :texteEnSavoirPlus="texteEnSavoirPlus"
+          :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
+          :taxonomiesToShow="taxonomiesToShow"
         />
       </div>
       <div
@@ -605,7 +623,7 @@ export default {
     </template>
     <template v-else>
       <div class="results">
-        <OffreEmploi
+        <ExtraitDefaut
           v-show="cpt.show && cpt.display"
           class="cpt-extrait"
           v-for="cpt in cpts"
@@ -615,7 +633,7 @@ export default {
           :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
           :texteEnSavoirPlus="texteEnSavoirPlus"
           :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
-          :showTaxonomies="showTaxonomies"
+          :taxonomiesToShow="taxonomiesToShow"
         />
       </div>
       <div

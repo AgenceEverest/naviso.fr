@@ -28,9 +28,21 @@ if (have_rows('block_app')) : the_row(); // il s'agit du nom du champ dans ACF q
     $texte_bouton_fiche_de_poste = get_sub_field('texte_bouton_fiche_de_poste');
     $texte_en_savoir_plus = get_sub_field('texte_en_savoir_plus');
     $afficher_la_taxonomie_dans_les_extraits_1 = get_sub_field('afficher_la_taxonomie_dans_les_extraits_1');
+    if ($afficher_la_taxonomie_dans_les_extraits_1) {
+        $afficher_la_taxonomie_dans_les_extraits_1 = $filtre_etage_1;
+    }
     $afficher_la_taxonomie_dans_les_extraits_2 = get_sub_field('afficher_la_taxonomie_dans_les_extraits_2');
+    if ($afficher_la_taxonomie_dans_les_extraits_2) {
+        $afficher_la_taxonomie_dans_les_extraits_2 = $filtre_etage_2;
+    }
     $afficher_la_taxonomie_dans_les_extraits_3 = get_sub_field('afficher_la_taxonomie_dans_les_extraits_3');
+    if ($afficher_la_taxonomie_dans_les_extraits_3) {
+        $afficher_la_taxonomie_dans_les_extraits_3 = $filtre_etage_3;
+    }
     $afficher_la_taxonomie_dans_les_extraits_4 = get_sub_field('afficher_la_taxonomie_dans_les_extraits_4');
+    if ($afficher_la_taxonomie_dans_les_extraits_4) {
+        $afficher_la_taxonomie_dans_les_extraits_4 = $filtre_etage_4;
+    }
     $afficher_le_bouton_lie_a_la_fiche_de_poste = get_sub_field('afficher_le_bouton_lie_a_la_fiche_de_poste');
     $afficher_bouton_de_telechargement = get_sub_field('afficher_le_bouton_de_telechargement');
     $texte_bouton_de_telechargement = get_sub_field('texte_du_bouton_de_telechargement');
