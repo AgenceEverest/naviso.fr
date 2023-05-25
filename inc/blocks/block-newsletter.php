@@ -37,7 +37,7 @@ $urlContact = get_field('url_du_bouton_contact', 'option');
 <?php get_template_part('inc/dessin-en-fond'); ?>
 
 <!-- colonnes -->
-<div class="content_width newsletter-wrapper">
+<div class="content_width">
     <?php $largeur_de_la_colonne_contenu = get_sub_field('largeur_de_la_colonne_contenu'); ?>
     <h2><?= $titre_du_bloc ?></h2>
     <!-- Les 2 colonnes -->
@@ -56,5 +56,7 @@ $urlContact = get_field('url_du_bouton_contact', 'option');
 </div>
 
 <div class="newsletter-container" id="newsletter" style="display: none">
-    <?= $contenu_de_liframe ?>
+    <div class=" newsletter-wrapper">
+        <?= $contenu_de_liframe ?>
+    </div>
 </div>
