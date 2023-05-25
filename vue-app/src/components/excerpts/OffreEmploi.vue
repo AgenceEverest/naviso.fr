@@ -43,7 +43,8 @@ export default {
       <div v-if="cpt.acf.afficher_banniere_avec_du_texte_libre" class="banner-texte-libre">
         {{ cpt.acf.banniere_avec_du_texte_libre }}
       </div>
-      <div v-for="(terms, indexTaxo) in cpt._embedded['wp:term']" :key="indexTaxo" :class="'term taxo-' + indexTaxo">
+      <div v-for="(terms, indexTaxo) in cpt._embedded['wp:term']" :key="indexTaxo" :class="'term taxo-' + indexTaxo"
+        v-show="showTaxonomies[`${indexTaxo + 1}`]">
         <span :class="' term-' + indexTerm" v-for="(term, indexTerm) in terms.slice(0, 1)" :key="term.id">
           {{ term.name }}
         </span>
