@@ -9,6 +9,7 @@ function styles2_css()
     );
     // Chargement de mainchild.css pour le thème enfant.
     wp_enqueue_style('mainchild', get_stylesheet_directory_uri() . '/css/mainchild.css', array(), filemtime(get_stylesheet_directory() . '/css/mainchild.css'), false);
+    wp_enqueue_script('mainchild', get_stylesheet_directory_uri() . '/js/main-child.js', array(), filemtime(get_stylesheet_directory() . '/js/main-child.js'), true);
 }
 
 //la priorité à 99, c'est pour que main2.css soit chargé après main.css, de cette manière les règles CSS du thème enfant peuvent écraser celles du thème parent.
