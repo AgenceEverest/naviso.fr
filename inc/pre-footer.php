@@ -68,11 +68,11 @@
 				?>
 			</div>
 
-
+			<?php $iframe_newsletter_footer = get_field('iframe_pour_la_newsletter', 'option'); ?>
 			<div class="newsletter-container-footer-feed" id="newsletter-footer" style="display: none">
 				<div class=" newsletter-wrapper-footer-feed">
 					<div id="close-button-footer">X</div>
-					<?= $contenu_de_liframe ?>
+					<?= $iframe_newsletter_footer ?>
 				</div>
 			</div>
 
