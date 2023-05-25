@@ -60,13 +60,24 @@
 						<?php endif; ?>
 			</div>
 			<div class="aside_prefooter_col prefooter_col_2">
-				<p class="cta_btn_lead cta_ternaire"><a><?= $texte_inscription_newsletter ?></a></p>
+				<p class="cta_btn_lead cta_ternaire"><a id="newsletter-button-footer"><?= $texte_inscription_newsletter ?></a></p>
 				<?php
 				wp_nav_menu(array(
 					'theme_location' => 'menu-footer-2',
 				));
 				?>
 			</div>
+
+
+			<div class="newsletter-container-footer-feed" id="newsletter-footer" style="display: none">
+				<div class=" newsletter-wrapper-footer-feed">
+					<div id="close-button-footer">X</div>
+					<?= $contenu_de_liframe ?>
+				</div>
+			</div>
+
+
+
 			<div class="aside_prefooter_col prefooter_col_3">
 				<?php if (!$masquer_les_certifications) : ?>
 					<?php $certifications_footer = get_field('certifications_footer', 'option'); ?>
