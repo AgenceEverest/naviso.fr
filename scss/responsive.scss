@@ -121,18 +121,19 @@
     .newsletter-container-feed {
 
         .newsletter-wrapper-feed {
-          width: 100%;
-          height: 100%;
+            width: 100%;
+            height: 100%;
             background-color: white;
-      
-          #close-button {
-            position: absolute;
-            top: 1%;
-            right: 1%;
-          
-          }
+            overflow: scroll;
+
+            #close-button {
+                position: absolute;
+                top: 1%;
+                right: 1%;
+
+            }
         }
-      }
+    }
 
     .newsletter-container {
         .newsletter-wrapper {
