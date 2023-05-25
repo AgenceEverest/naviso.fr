@@ -8,11 +8,12 @@
     border-radius: 25px;
     padding: 3% 10%;
     overflow: hidden;
+
     .content-newsletter-block {
       display: flex;
       align-items: center;
     }
-    
+
     h2 {
       color: white;
       font-size: 30px;
@@ -38,6 +39,7 @@
       right: -10%;
       overflow: hidden;
       z-index: -1;
+
       #Tracé_1009,
       #Tracé_1010 {
         fill: #ffffff7a;
@@ -49,16 +51,24 @@
 
 .newsletter-container-feed {
   position: fixed;
-  top:0;
+  top: 0;
   width: 100%;
   height: 100%;
   justify-content: center;
   align-items: center;
   z-index: 999;
+
   .newsletter-wrapper-feed {
     width: 90%;
     height: 90%;
     background-color: white;
     padding: 5%;
+    position: relative;
+
+    #close-button {
+      position: absolute;
+      top: 5%;
+      right: 5%;
+    }
   }
 }

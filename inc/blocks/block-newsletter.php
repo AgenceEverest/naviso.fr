@@ -57,6 +57,7 @@ $urlContact = get_field('url_du_bouton_contact', 'option');
 
 <div class="newsletter-container-feed" id="newsletter" style="display: none">
     <div class=" newsletter-wrapper-feed">
+        <div id="close-button">X</div>
         <?= $contenu_de_liframe ?>
     </div>
 </div>
