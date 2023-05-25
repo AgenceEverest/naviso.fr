@@ -5,6 +5,6 @@ boutonNewsletter.addEventListener('click', () => {
     if(newsletter.style.display == 'block') {
         newsletter.style.display = 'none';
     } else {
-        newsletter.style.display = 'block';
+        newsletter.style.display = 'flex';
     }
 })
