@@ -92,7 +92,7 @@
             .terms {
                 display: flex;
                 width: 100%;
-                justify-content: space-around;
+                justify-content: center;
                 flex-wrap: wrap;
 
                 .term {
@@ -106,12 +106,14 @@
                         background-color: white;
                         color: $greenNaviso;
                         border: 2px solid $greenNaviso;
+                        margin-right: 0.5rem;
                     }
 
                     &.taxo-1 {
                         background-color: white;
                         color: $bleuNaviso;
                         border: 2px solid $bleuNaviso;
+                        margin-left: 0.5rem;
                     }
                 }
             }
