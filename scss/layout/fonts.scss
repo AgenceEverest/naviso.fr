@@ -18,7 +18,6 @@ h6 {
     font-family: 'Montserrat-bold' !important;
 
     strong {
-        font-family: 'Montserrat-bolder' !important;
         color: $bleuNaviso !important;
     }
 }
@@ -81,7 +80,7 @@ h3 {
     h5,
     h6 {
         strong {
-            color: $greenNaviso;
+            color: $greenNaviso !important;
         }
     }
 }
