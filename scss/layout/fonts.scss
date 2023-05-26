@@ -5,7 +5,7 @@ a,
 div {
     font-family: 'Montserrat' !important;
     strong {
-        font-family: 'Montserrat' !important;
+        font-family: 'Montserrat-bold' !important;
     }
 }
 h1,
@@ -16,9 +16,9 @@ h5,
 h6 {
     margin-bottom: 1.5rem !important;
     font-family: 'Montserrat-bold' !important;
-
     strong {
         color: $bleuNaviso !important;
+        font-family: 'Montserrat-bold' !important;
     }
 }
 
@@ -117,11 +117,6 @@ h3 {
     }
 }
 
-.entry-title {
-    h1 {
-        font-family: 'Montserrat';
-    }
-}
 
 .entry_title_date.legende {
     span {
