@@ -8,7 +8,6 @@ li,
 a,
 div {
     font-family: 'Montserrat' !important;
-    color: $bleuNaviso;
     strong {
         font-family: 'Montserrat' !important;
     }
@@ -30,6 +29,9 @@ h4,
 h5,
 h6 {
     margin-bottom: 1.5rem !important;
+    strong {
+        font-family: 'Montserrat-bolder' !important;
+    }
 }
 
 h1 {
