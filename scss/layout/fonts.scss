@@ -29,8 +29,11 @@ h4,
 h5,
 h6 {
     margin-bottom: 1.5rem !important;
+    font-family: 'Montserrat-bold' !important;
+
     strong {
         font-family: 'Montserrat-bolder' !important;
+        color: $bleuNaviso;
     }
 }
 
