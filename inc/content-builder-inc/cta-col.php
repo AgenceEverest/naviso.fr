@@ -8,9 +8,15 @@ $ouvrir_dans_un_nouvel_onglet_col = get_sub_field('ouvrir_dans_un_nouvel_onglet_
 $alignement_du_bouton = get_sub_field('alignement_du_bouton');
 $style_du_bouton = get_sub_field('style_du_bouton'); ?>
 
+
+
 <!-- Lien page contact pré-remplie -->
 <?php if ($cb_calltoaction_interne_externe_col == 'page_contact') : ?>
-    <?php get_template_part('inc/content-builder-inc/cb-form-to-prefilled-form-col'); ?>
+
+    <?php $url_de_la_page_contact = get_field('url_de_la_page_contact', 'option'); ?>
+    <?php $url_page_contact = the_permalink($url_de_la_page_contact->ID); ?>
+
+    <p class="cta_sous_colonnes_flex cta_btn_lead  <?php echo $style_du_bouton; ?><?php if (!$colonne1) : ?> cta_btn_lead_margintop<?php endif; ?>"><a href="<?php echo $url_page_contact; ?>" <?php if ($ouvrir_dans_un_nouvel_onglet) : ?> target="_blank" <?php endif; ?>><?php echo $cb_calltoaction; ?></a></p>
 <?php endif; ?>
 
 <!-- Lien interne  -->
