@@ -2,17 +2,21 @@
 Fichier de customisation du CSS
 */
 figure {
-    border-radius: 0 !important; 
+    border-radius: 0 !important;
+
     img {
-        border-radius: 0 !important; 
+        border-radius: 0 !important;
     }
 }
+
 #menu {
     background-color: white;
 }
+
 ul#menu-menu-principal li a {
     font-family: 'Montserrat-bold' !important;
 }
+
 .cta_btn_lead {
     font-weight: bold;
 }
@@ -90,6 +94,7 @@ ul#menu-menu-principal li a {
 .element-liste-naviso {
     display: flex;
     align-items: center;
+
     .picto-liste-naviso {
         width: 1rem;
         height: 1rem;
@@ -115,6 +120,7 @@ ul#menu-menu-principal li a {
         color: white !important;
         border: 2px solid $greenNaviso !important;
         font-weight: bold;
+
         &:hover {
             background-color: white !important;
             color: $greenNaviso !important;
@@ -156,6 +162,49 @@ ul#menu-menu-principal li a {
         }
     }
 }
+
+
+.submit-vers-page-contact.cta_primaire {
+    background-color: $greenNaviso !important;
+    color: white !important;
+    border: 2px solid $greenNaviso !important;
+    font-weight: bold;
+
+    &:hover {
+        background-color: white !important;
+        color: $greenNaviso !important;
+        border: 2px solid $greenNaviso !important;
+
+    }
+}
+
+.submit-vers-page-contact.cta_secondaire {
+    background-color: black !important;
+    color: white !important;
+    border: 2px solid black !important;
+    font-weight: bold;
+
+    &:hover {
+        background-color: white !important;
+        color: black !important;
+        border: 2px solid black !important;
+
+    }
+}
+
+.submit-vers-page-contact.cta_ternaire {
+    background-color: white !important;
+    color: black !important;
+    border: 2px solid black !important;
+    font-weight: bold;
+
+    &:hover {
+        background-color: black !important;
+        color: white !important;
+        border: 2px solid black !important;
+    }
+}
+
 
 .cta_header {
     a {
@@ -227,7 +276,7 @@ ul#menu-menu-principal li a {
     .vague-milieu {
         svg {
             fill: #add1cb !important;
-        }   
+        }
     }
 }
 
@@ -275,7 +324,7 @@ ul#menu-menu-principal li a {
     .vague-milieu {
         svg {
             fill: #add1cb !important;
-        }   
+        }
     }
 }
 
@@ -325,15 +374,18 @@ ul#menu-menu-principal li a {
     .cta_align_center {
         margin-left: 0rem !important;
     }
+
     .col_flexible_cta {
         padding-bottom: 4rem;
     }
 }
+
 .col_flexible_wrapper {
     .col_flexible_cta {
         padding-bottom: 4rem;
     }
 }
+
 .col_flexible_image_wrapper img {
     border-radius: 0rem !important;
 }
@@ -354,6 +406,7 @@ ul#menu-menu-principal li a {
         bottom: -10%;
         right: -15%;
     }
+
     h3 {
         color: $greenNaviso;
     }
@@ -392,6 +445,7 @@ ul#menu-menu-principal li a {
 .hauteur_fixe {
     figure {
         background-color: transparent;
+
         img {
             height: 373px;
             width: auto;
@@ -403,20 +457,22 @@ ul#menu-menu-principal li a {
 .hauteur-fixe-visuel {
     display: flex;
     align-items: center;
+
     figure {
         height: 373px;
         position: relative;
     }
 }
 
- .hauteur-fixe-visuel-large {
+.hauteur-fixe-visuel-large {
     display: flex;
     align-items: center;
+
     figure {
         height: 373px;
         position: relative;
     }
-} 
+}
 
 .col_left_wide_imgleft {
     background-color: transparent;
@@ -458,6 +514,7 @@ ul#menu-menu-principal li a {
     &:has(.figure_col_flex_icone) {
         margin-top: 5.5rem;
     }
+
     .figure_col_flex_icone {
         top: -3.5rem;
     }
