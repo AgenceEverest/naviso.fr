@@ -68,7 +68,35 @@ h2 {
     color: $greenNaviso;
     font-size: 38px;
 }
+.fond_clair {
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        strong {
 
+            color: $bleuNaviso;
+
+        }
+    }
+
+}
+
+.fond_clair2 {
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        strong {
+
+            color: $greenNaviso;
+
+        }
+    }
+
+}
 .fond_clair,
 .fond_clair2 {
 
