@@ -101,6 +101,7 @@
                 <?php $page_twitter = get_field('page_twitter', 'option'); ?>
                 <?php $page_linkedin = get_field('page_linkedin', 'option'); ?>
                 <?php $page_instagram = get_field('page_instagram', 'option'); ?>
+                <?php $page_youtube = get_field('page_youtube', 'option'); ?>
                 <?php $reseaux_sociaux_suivez_nous_sur = get_field('reseaux_sociaux_suivez-nous_sur', 'option'); ?>
                 
                 <?php if ($page_facebook) : ?>
@@ -128,7 +129,12 @@
                     <?= showSvg(get_stylesheet_directory_uri() . '/svg/instagram.svg') ?>
                     </a>
                 <?php endif; ?>
-
+                <?php if ($page_youtube) : ?><a href="<?php echo $page_youtube; ?>" class="rs_link_item" title="<?php if ($reseaux_sociaux_suivez_nous_sur) : ?>
+                    <?php echo $reseaux_sociaux_suivez_nous_sur; ?>
+                    <?php endif; ?> Youtube">
+                    <?= showSvg(get_stylesheet_directory_uri() . '/svg/youtube.svg') ?>
+                    </a>
+                <?php endif; ?>
                 
             </span>
         </p>
