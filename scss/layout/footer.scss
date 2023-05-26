@@ -94,7 +94,7 @@
         &:hover {
             background-color: white;
             svg {
-                color: $greenNaviso;
+                color: $greenNaviso !important;
             }
         }
     }
