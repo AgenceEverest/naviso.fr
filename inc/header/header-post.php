@@ -1,7 +1,7 @@
 <header class="entry_title bandeau-header-page">
 	<div class="post_thumbnail_bg"></div>
 	<?php $thumbnail = get_post_thumbnail_id($post->ID);
-	$size_thumbnail = "medium";
+	$size_thumbnail = "large";
 	$url_thumbnail = $thumbnail ? wp_get_attachment_image_url($thumbnail, $size_thumbnail) : null;
 	$image_weight = $url_thumbnail ? apply_filters('get_weight_of_img', $url_thumbnail) : '0kb' ?>
 	<div class="content_width post_thumbnail">
