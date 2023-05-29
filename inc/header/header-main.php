@@ -46,7 +46,9 @@
         <?php $texte_du_bouton_contact = get_field('texte_du_bouton_contact', 'option'); ?>
         <?php $url_du_bouton_contact = get_field('url_du_bouton_contact', 'option'); ?>
         <p class="cta_btn_lead cta_primaire">
-            <a href="<?php echo "$url_du_bouton_contact" ?>"><?php echo "$texte_du_bouton_contact" ?></a>
+            <?php print_r($url_du_bouton_contact) ?>
+            <!--             <a href="<?php echo "$url_du_bouton_contact" ?>"><?php echo "$texte_du_bouton_contact" ?></a>
+ -->
         </p>
     </div>
     <div id="search_trigger" class="content_hide_menu">
