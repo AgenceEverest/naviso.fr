@@ -5,13 +5,9 @@
 }
 
 @media (max-width: 1200px) {
-    #block-app {
-        .results {
-            .cpt-extrait {
-                width: 47% !important;
-                margin-right: 1rem;
-            }
-        }
+    .cpt-extrait {
+        width: 47% !important;
+        margin-right: 1rem;
     }
 }
 
@@ -200,15 +196,10 @@
         }
     }
 
-    #block-app {
-        .results {
-            .cpt-extrait {
-                width: 100% !important;
-                margin-right: 0rem !important;
-            }
-        }
+    .cpt-extrait {
+        width: 100% !important;
+        margin-right: 0rem !important;
     }
-
     .header-home {
         height: 100vh;
 

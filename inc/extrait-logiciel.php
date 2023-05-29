@@ -17,9 +17,8 @@ foreach (get_post_taxonomies($post_id) as $taxonomy) {
 }
 
 ?>
-<div class="extrait-logiciel">
-    <div class="extrait_content">
-        <div class="terms">
+<div class="cpt-extrait">
+    <div class="terms extrait-defaut">
         <?php if (isset($terms[0])) : ?>
             <p class="term term-1">
                 <?= $terms[0] ?>
@@ -30,17 +29,13 @@ foreach (get_post_taxonomies($post_id) as $taxonomy) {
                 <?= $terms[1] ?>
             </p>
         <?php endif; ?>
+    </div>
+    <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
-        </div>
-        <div class="entry-content">
-            <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-
-            <?php if ($description_courte) : ?>
-                <p><?php echo $description_courte; ?></p>
-            <?php endif; ?>
-        </div>
-        <div class="cta-container-formation-extrait">
-            <p class="cta_btn_lead cta_primaire"><a href="<?php the_permalink(); ?>"><?= $texte_pour_le_bouton_en_savoir_plus ?></a></p>
-        </div>
+    <?php if ($description_courte) : ?>
+        <p class="desc-page"><?php echo $description_courte; ?></p>
+    <?php endif; ?>
+    <div class="buttons-extrait">
+        <p class="cta_btn_lead cta_primaire cta_center"><a href="<?php the_permalink(); ?>"><?= $texte_pour_le_bouton_en_savoir_plus ?></a></p>
     </div>
 </div>

@@ -88,76 +88,7 @@
             display: flex;
             justify-content: center;
             width: 100%;
-
-            .terms {
-                display: flex;
-                width: 100%;
-                justify-content: center;
-                flex-wrap: wrap;
-
-                .term {
-                    font-size: 14px;
-                    border-radius: 25px;
-                    padding: 0.2rem 1rem;
-                    white-space: nowrap;
-                    font-weight: bolder;
-                    margin-bottom: 0.5rem;
-                    &.taxo-0 {
-                        background-color: white;
-                        color: $greenNaviso;
-                        border: 2px solid $greenNaviso;
-                        margin-right: 0.5rem;
-                    }
-
-                    &.taxo-1 {
-                        background-color: white;
-                        color: $bleuNaviso;
-                        border: 2px solid $bleuNaviso;
-                        margin-left: 0.5rem;
-                    }
-                    &.taxo-2 {
-                        background-color: white;
-                        color: $greenNaviso;
-                        border: 2px solid $greenNaviso;
-                        margin-right: 0.5rem;
-                    }
-                    &.taxo-3 {
-                        background-color: white;
-                        color: $bleuNaviso;
-                        border: 2px solid $bleuNaviso;
-                        margin-left: 0.5rem;
-                    }
-                }
-            }
-
-            .cpt-extrait {
-                width: 31.6%;
-                margin-right: 1rem;
-                margin-bottom: 1rem;
-                box-shadow: 0px 10px 50px 20px #68686829;
-                padding: 2rem 2rem 1.4rem 2rem;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-
-                h2 {
-                    text-align: center;
-                    color: black;
-                    font-size: 24px;
-                    margin-top: 1rem;
-                    margin-bottom: 1rem;
-                }
-
-                .desc-page {
-                    text-align: center;
-                }
-
-                .buttons-extrait {
-                    margin-top: 1rem;
-                }
-            }
         }
-
         .load-more {
             background-color: white !important;
             color: black !important;
@@ -179,5 +110,73 @@
     .buttons-cas-clients {
         display: flex;
         justify-content: space-around;
+    }
+}
+
+.cpt-extrait {
+    width: 31.6%;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0px 10px 50px 20px #68686829;
+    padding: 2rem 2rem 1.4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .terms {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .term {
+            font-size: 14px;
+            border-radius: 25px;
+            padding: 0.2rem 1rem;
+            white-space: nowrap;
+            font-weight: bolder;
+            margin-bottom: 0.5rem;
+            &.taxo-0 {
+                background-color: white;
+                color: $greenNaviso;
+                border: 2px solid $greenNaviso;
+                margin-right: 0.5rem;
+            }
+
+            &.taxo-1 {
+                background-color: white;
+                color: $bleuNaviso;
+                border: 2px solid $bleuNaviso;
+                margin-left: 0.5rem;
+            }
+            &.taxo-2 {
+                background-color: white;
+                color: $greenNaviso;
+                border: 2px solid $greenNaviso;
+                margin-right: 0.5rem;
+            }
+            &.taxo-3 {
+                background-color: white;
+                color: $bleuNaviso;
+                border: 2px solid $bleuNaviso;
+                margin-left: 0.5rem;
+            }
+        }
+    }
+
+    h2 {
+        text-align: center;
+        color: black;
+        font-size: 24px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .desc-page {
+        text-align: center;
+    }
+
+    .buttons-extrait {
+        margin-top: 1rem;
     }
 }
