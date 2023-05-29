@@ -52,7 +52,7 @@ export default {
         v-for="(taxo, indexTaxo) in cpt._embedded['wp:term']"
         :key="indexTaxo"
         :class="'term taxo-' + indexTaxo"
-        v-show="showTaxonomies[`${indexTaxo + 1}`]"
+        v-show="taxoIsShowable(taxo)"
       >
         <span
           :class="' term-' + indexTerm"
