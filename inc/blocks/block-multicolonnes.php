@@ -82,7 +82,13 @@ endif; ?>
 				<?php $multicolonnes_choix_visuel = get_sub_field('multicolonnes_choix_visuel'); ?>
 				<?php $image_multicolonnes = get_sub_field('image_multicolonnes'); ?>
 
-				<div class="multicolonnes_item <?php echo $rythme_de_la_grille; ?> <?php echo $colonnes_avec_sans_bordures; ?> <?= $image_multicolonnes ? 'round_border' : ''; ?>">
+				<div class="multicolonnes_item <?php 
+				if ($rajouter_le_visuel_naviso_sur_les_colonnes):
+					echo " overflow-hidden ";
+				endif;
+				?>
+				
+				<?php echo $rythme_de_la_grille; ?> <?php echo $colonnes_avec_sans_bordures; ?> <?= $image_multicolonnes ? 'round_border' : ''; ?>">
 					<!-- Image -->
 					<?php if ($multicolonnes_choix_visuel == 'multicolonne_visuel_image') : ?>
 						<?php
