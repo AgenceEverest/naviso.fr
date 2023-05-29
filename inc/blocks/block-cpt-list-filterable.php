@@ -186,9 +186,6 @@ endif; ?>
 		</div>
 
 		<?php
-		print_r('test-A');
-		print_r($post_type);
-		print_r('test-B');
 		$totalNumberOfPosts = intval(wp_count_posts($post_type)->publish);
 		$post_number = $numberOfPosts;
 
