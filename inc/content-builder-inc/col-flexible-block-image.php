@@ -1,7 +1,7 @@
 <div class="col_flexible_item">
     <?php
     $image_col_flexible = get_sub_field('image_col_flexible');
-    $size_image_col_flexible = 'large';
+    $size_image_col_flexible = 'medium';
     $image_col_flexible_url = wp_get_attachment_image_url($image_col_flexible, $size_image_col_flexible);
     $image_weight = apply_filters('get_weight_of_img', $image_col_flexible_url);
 
