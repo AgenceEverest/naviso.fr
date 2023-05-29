@@ -17,7 +17,7 @@ foreach (get_post_taxonomies($post_id) as $taxonomy) {
 }
 
 ?>
-<div class="extrait_formation">
+<div class="extrait-logiciel">
     <div class="extrait_content">
         <div class="terms">
         <?php if (isset($terms[0])) : ?>

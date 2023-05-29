@@ -180,7 +180,7 @@ endif; ?>
 						get_template_part('inc/extrait-metier');
 					elseif ($typeExtrait === 'extrait_formation') :
 						get_template_part('inc/extrait-formation');
-					elseif ($typeExtrait === 'inc/extrait_logiciel') :
+					elseif ($typeExtrait === 'extrait_logiciel') :
 						get_template_part('inc/extrait-logiciel');
 					endif;
 				endwhile; ?>
