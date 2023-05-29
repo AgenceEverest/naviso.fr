@@ -16,6 +16,10 @@
 }
 
 @media (max-width: 1024px) {
+
+    .flex-dir-row-reverse {
+        flex-direction: column-reverse !important;
+    }
     #charger_les_images_wrapper {
         position: relative !important;
         justify-content: center !important;

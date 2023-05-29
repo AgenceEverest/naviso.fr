@@ -24,7 +24,6 @@ if (have_rows('block_filtre')) : the_row();
 	$choisir_un_terme = get_sub_field('choisir_un_terme');
 	$terme_choisi = get_sub_field('terme_choisi');
 
-
 	// premier étage du filtre
 	$afficher_le_filtre = get_sub_field('afficher_le_filtre');
 	$taxonomie_choisie_premier_etage = get_sub_field('categorie_a_filtrer');
@@ -187,7 +186,9 @@ endif; ?>
 		</div>
 
 		<?php
-
+		print_r('test-A');
+		print_r($post_type);
+		print_r('test-B');
 		$totalNumberOfPosts = intval(wp_count_posts($post_type)->publish);
 		$post_number = $numberOfPosts;
 
