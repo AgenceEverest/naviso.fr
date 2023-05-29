@@ -10,10 +10,10 @@ if (have_rows('block_filtre')) : the_row();
 	$cb_ajouter_une_classe_css = get_sub_field('cb_ajouter_une_classe_css');
 	$ajouter_un_id_pour_le_css = get_sub_field('ajouter_un_id_pour_le_css');
 	$couleur_de_fond_bloc = get_sub_field('couleur_de_fond_bloc');
-    $marge_externe_en_haut_du_bloc = get_sub_field('marge_externe_en_haut_du_bloc');
-    $marge_externe_en_bas_du_bloc = get_sub_field('marge_externe_en_bas_du_bloc');
-    $marge_interne_en_haut_du_bloc = get_sub_field('marge_interne_en_haut_du_bloc');
-    $marge_interne_en_bas_du_bloc = get_sub_field('marge_interne_en_bas_du_bloc');
+	$marge_externe_en_haut_du_bloc = get_sub_field('marge_externe_en_haut_du_bloc');
+	$marge_externe_en_bas_du_bloc = get_sub_field('marge_externe_en_bas_du_bloc');
+	$marge_interne_en_haut_du_bloc = get_sub_field('marge_interne_en_haut_du_bloc');
+	$marge_interne_en_bas_du_bloc = get_sub_field('marge_interne_en_bas_du_bloc');
 
 	// Choix d'une publication / taxo / nombre de posts à afficher
 	$publication_choisie_child = get_sub_field('publication_choisie_child');
@@ -57,18 +57,18 @@ endif; ?>
 		echo 'class= "';
 		if ($cb_ajouter_une_classe_css) : echo $cb_ajouter_une_classe_css . ' ';
 		endif;
-        if ($marge_interne_en_haut_du_bloc) :
-            echo " padding_section_top";
-        endif;
-        if ($marge_interne_en_bas_du_bloc) :
-            echo " padding_section_bottom";
-        endif;
-        if ($marge_externe_en_haut_du_bloc) :
-            echo " margin_section_top";
-        endif;
-        if ($marge_externe_en_bas_du_bloc) :
-            echo " margin_section_bottom";
-        endif;
+		if ($marge_interne_en_haut_du_bloc) :
+			echo " padding_section_top";
+		endif;
+		if ($marge_interne_en_bas_du_bloc) :
+			echo " padding_section_bottom";
+		endif;
+		if ($marge_externe_en_haut_du_bloc) :
+			echo " margin_section_top";
+		endif;
+		if ($marge_externe_en_bas_du_bloc) :
+			echo " margin_section_bottom";
+		endif;
 		if ($couleur_de_fond_bloc) : echo $couleur_de_fond_bloc;
 		endif;
 		echo '"'; ?>>
@@ -180,6 +180,8 @@ endif; ?>
 						get_template_part('inc/extrait-metier');
 					elseif ($typeExtrait === 'extrait_formation') :
 						get_template_part('inc/extrait-formation');
+					elseif ($typeExtrait === 'inc/extrait_logiciel') :
+						get_template_part('inc/extrait-logiciel');
 					endif;
 				endwhile; ?>
 			</div>
