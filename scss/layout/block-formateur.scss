@@ -56,16 +56,6 @@
         background-color: white;
 
         .entry-content {
-
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6 {
-                color: $greenNaviso;
-            }
-
             p,
             ul,
             li,
@@ -74,5 +64,18 @@
                 color: black;
             }
         }
+    }
+}
+
+.fond_clair:has(.quotes-container) {
+    .quotes {
+        g {
+            path {
+                fill: $bleuNaviso;
+            }
+        }
+    }
+    .formateur {
+        background-color: $bleu;
     }
 }
