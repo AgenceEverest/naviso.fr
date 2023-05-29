@@ -123,7 +123,7 @@ endif;
 	<?php if ($cb_ajouter_une_classe_css) : ?>
 		<?php echo " " . $cb_ajouter_une_classe_css . ""; ?>
 	<?php endif; ?>
-	<?php echo " block '>"; ?>
+	<?php echo " block block-2-colonnes-textevisuel '>"; ?>
 	<div class="content_width col_double">
 		<!-- col left -->
 		<div class="col_left">

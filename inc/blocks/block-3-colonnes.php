@@ -60,7 +60,7 @@ if ($marge_externe_en_bas_du_bloc) :
     echo " margin_section_bottom";
 endif;
 ?>
-<?php echo " block '>" ?>
+<?php echo " block block-3-colonnes '>" ?>
 <!-- titre avant les colonnes-->
 <?php $titre_avant_les_colonnes = get_sub_field('titre_avant_les_colonnes'); ?>
 <?php $largeur_de_la_colonne_titre = get_sub_field('largeur_de_la_colonne_titre'); ?>

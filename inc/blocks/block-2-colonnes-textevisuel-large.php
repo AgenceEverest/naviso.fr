@@ -72,7 +72,7 @@ endif;
 if ($marge_externe_en_bas_du_bloc) :
 	echo " margin_section_bottom";
 endif;
-echo " block '>" ?>
+echo " block block-2-colonnes-textevisuel-large '>" ?>
 <div class="col_double_wide_imgleft <?= $flexDirection ?>">
 	<div class="col_left_wide_imgleft">
 		<?php if (have_rows('image_de_fond')) : ?>
