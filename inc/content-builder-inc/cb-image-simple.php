@@ -1,6 +1,6 @@
 <?php
 $cb_image_simple = get_sub_field('cb_image_simple_image');
-$size_cb_image_simple = 'medium';
+$size_cb_image_simple = 'large';
 $url_cb_image_simple = $cb_image_simple ? wp_get_attachment_image_url($cb_image_simple, $size_cb_image_simple) : null;
 $image_weight = $url_cb_image_simple ? apply_filters('get_weight_of_img', $url_cb_image_simple) : '0kb';
 $image_simple_copyright = get_sub_field('cb_image_simple_image_copyright');

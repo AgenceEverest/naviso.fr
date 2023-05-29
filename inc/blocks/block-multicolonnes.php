@@ -94,9 +94,9 @@ endif; ?>
 						<?php
 						$url_image_multicolonnes = $image_multicolonnes ? $image_multicolonnes['url'] : null; ?>
 						<?php if ($rythme_de_la_grille == 'rangee_de_4' || $rythme_de_la_grille == 'rangee_de_3') : ?>
-							<?php $size_image_multicolonnes = 'thumbnail'; ?>
-						<?php else : ?>
 							<?php $size_image_multicolonnes = 'medium'; ?>
+						<?php else : ?>
+							<?php $size_image_multicolonnes = 'large'; ?>
 						<?php endif; ?>
 						<?php $thumb_image_multicolonnes = $image_multicolonnes ? $image_multicolonnes['sizes'][$size_image_multicolonnes] : null;
 						$image_weight = $thumb_image_multicolonnes ? apply_filters('get_weight_of_img', $thumb_image_multicolonnes) : '0kb';
