@@ -391,7 +391,9 @@ ul#menu-menu-principal li a {
 .col_flexible_wrapper {
     .col_flexible_cta {
         padding-bottom: 4rem;
-        position: relative;
+        .cta_btn_lead {
+            position: relative;
+        }
     }
 }
 
