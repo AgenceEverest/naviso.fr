@@ -108,6 +108,12 @@ h3 {
                 font-family: 'Montserrat';
             }
         }
+        .cta_primaire a, .cta_secondaire a  {
+            color: white !important;
+        }
+        .cta_ternaire a {
+            color: $bleuNaviso !important;
+        }
     }
 }
 
