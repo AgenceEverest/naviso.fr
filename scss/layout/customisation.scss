@@ -337,6 +337,11 @@ ul#menu-menu-principal li a {
             fill: #add1cb !important;
         }
     }
+    .double-boucle {
+        path {
+            fill: white;
+        }
+    }
 }
 
 .fond_blanc {
@@ -574,7 +579,9 @@ input.cta_btn_lead.cta_align_right {
 .flex-dir-row-reverse {
     flex-direction: row-reverse;
 }
-
+.block:has(.double-boucle) {
+    overflow: hidden;
+}
 .block-2-colonnes,
 .block-3-colonnes,
 .block-2-colonnes-textevisuel,
