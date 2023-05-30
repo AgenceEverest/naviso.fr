@@ -537,11 +537,13 @@ input.cta_btn_lead.cta_align_right {
 }
 
 .block-2-colonnes, .block-3-colonnes, .block-2-colonnes-textevisuel, .block-2-colonnes-textevisuel-large, .block-2-colonnes-superposition { 
-    .cta_btn_lead:nth-child(1) {
-        left: 1.5rem;
-    }
-    .cta_btn_lead:nth-child(2) {
-        left: 33%;
+    .double-cta {
+        .cta_btn_lead:nth-child(1) {
+            left: 1.5rem;
+        }
+        .cta_btn_lead:nth-child(2) {
+            left: 33%;
+        }
     }
 }
 
