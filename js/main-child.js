@@ -47,3 +47,14 @@ if (closeButtonFooter) {
         htmlElement.style.overflow = 'visible';
     })
 }
+
+
+let afficherNumeroTelephone = document.querySelector('#afficher-numero-telephone');
+let numeroTelephone = document.querySelector('#numero-telephone');
+
+if (afficherNumeroTelephone && numeroTelephone) {
+    afficherNumeroTelephone.addEventListener('click', () => {
+            numeroTelephone.style.display = 'block';
+            afficherNumeroTelephone.style.display = 'none';
+    })
+}

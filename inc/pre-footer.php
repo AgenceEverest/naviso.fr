@@ -6,6 +6,7 @@
 <?php $texte_inscription_newsletter = get_field('texte_inscription_newsletter', 'option'); ?>
 <?php $texte_titre_coordonnees = get_field('texte_titre_coordonnees', 'option'); ?>
 <?php $logo_bretagne_a_droite_du_footer = get_field('logo_bretagne_a_droite_du_footer', 'option') ?>
+<?php $texte_afficher_le_numero = get_field('texte_afficher_le_numero', 'option'); ?> 
 
 <?php if (!$masquer_le_prefooter) : ?>
 	<aside id="aside_prefooter" class="padding_section">
@@ -34,7 +35,8 @@
 								<?php if ($numerodetelephone) : ?>
 									<p class="coordonnees_p_i legende phone_number">
 										<?= apply_filters('add_svg', 'phone') ?>
-										<?php echo $numerodetelephone ?>
+										<span id="afficherNumeroTelephone"><?php echo $texte_afficher_le_numero; ?></span>
+										<span id="numeroTelephone"><?php echo $numerodetelephone ?></span>
 									</p>
 								<?php endif; ?>
 								<p class="coordonnees_p_i legende">

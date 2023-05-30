@@ -2,6 +2,14 @@
     background-color: $bleuNaviso;
 }
 
+#numeroTelephone {
+    display: none;
+}
+
+#afficherNumeroTelephone {
+    text-decoration: underline;
+}
+
 #footer {
     background-color: white;
     span, #menu-footer a {
