@@ -16,7 +16,7 @@
 }
 
 .type-post {
-    header.entry_title {
+    .breadcrumb_top, header.entry_title {
         background-color: $greenNaviso;
     }
 }
