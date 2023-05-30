@@ -46,11 +46,10 @@ if (closeButtonFooter) {
     })
 }
 
-let afficherNumeroTelephone = document.querySelector('#afficher-numero-telephone');
-let numeroTelephone = document.querySelector('#numero-telephone');
+let afficherNumeroTelephone = document.querySelector('#afficherNumeroTelephone');
+let numeroTelephone = document.querySelector('#numeroTelephone');
 
 if (afficherNumeroTelephone && numeroTelephone) {
-    console.log('ok');
     afficherNumeroTelephone.addEventListener('click', () => {
             numeroTelephone.style.display = 'block';
             afficherNumeroTelephone.style.display = 'none';
