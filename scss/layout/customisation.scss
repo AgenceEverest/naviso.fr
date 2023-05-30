@@ -544,3 +544,9 @@ input.cta_btn_lead.cta_align_right {
         left: 33%;
     }
 }
+
+.double-cta {
+    .col_flexible_cta .cta_btn_lead.cta_align_center {
+        transform: inherit;
+    }
+}
