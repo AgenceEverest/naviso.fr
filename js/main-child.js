@@ -35,7 +35,6 @@ if (boutonNewsletterFooter) {
         } else {
             newsletterFooter.style.display = 'flex';
             htmlElement.style.overflow = 'hidden';
-
         }
     })
 }
@@ -47,11 +46,11 @@ if (closeButtonFooter) {
     })
 }
 
-
 let afficherNumeroTelephone = document.querySelector('#afficher-numero-telephone');
 let numeroTelephone = document.querySelector('#numero-telephone');
 
 if (afficherNumeroTelephone && numeroTelephone) {
+    console.log('ok');
     afficherNumeroTelephone.addEventListener('click', () => {
             numeroTelephone.style.display = 'block';
             afficherNumeroTelephone.style.display = 'none';
