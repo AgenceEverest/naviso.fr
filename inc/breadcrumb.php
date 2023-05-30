@@ -105,10 +105,15 @@ if (is_singular('logiciel')) : ?>
 <!-- Single post -->
 <?php
 if (is_singular('post')) : ?>
-	<?php $page_for_posts = get_field('page_for_posts', 'option'); ?>
+	<?php $page_for_posts = get_field('page_for_posts', 'option');
+	if (isset($page_for_posts)) {
+		$permalinkPosts = get_permalink($page_for_posts->ID);
+		$titlePosts = get_the_title($page_for_posts->ID);
+	}
+	?>
 	<div class="breadcrumb_container">
 		<nav class="breadcrumb_top content_width">
-			<p class="legende"><a href="<?php bloginfo('url'); ?>"><?php echo $fil_ariane_accueil; ?></a><span class="breadcrumb_separator">›</span><a href="<?php echo get_permalink($page_for_posts); ?>"><?php echo get_the_title($page_for_posts); ?></a><span class="breadcrumb_separator">›</span><span aria-current='location'><?php the_title(); ?></span>
+			<p class="legende"><a href="<?php bloginfo('url'); ?>"><?php echo $fil_ariane_accueil; ?></a><span class="breadcrumb_separator">›</span><a href="<?= $permalinkPosts; ?>"><?= $titlePosts; ?></a><span class="breadcrumb_separator">›</span><span aria-current='location'><?php the_title(); ?></span>
 			</p>
 		</nav>
 	</div>

@@ -4,7 +4,11 @@
 
 <?php the_post(); ?>
 <?php $term = get_queried_object(); ?>
-<?php $page_for_posts = get_option('page_for_posts'); ?>
+<?php $page_for_posts = get_field('page_for_posts', 'option');
+if (isset($page_for_posts)){
+	$page_for_posts = get_permalink($page_for_posts->ID);
+}
+?>
 <div id="global_content">
     <section class="page_les_actualites">
         <article id="post-container-<?php the_ID(); ?>" <?php post_class(); ?>>
