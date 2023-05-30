@@ -12,7 +12,9 @@
 }
 
 @media (max-width: 1024px) {
-
+    .col_right_wide_imgleft_wrapper_custom {
+        padding-left: 3rem;
+    }
     .flex-dir-row-reverse {
         flex-direction: column-reverse !important;
     }
