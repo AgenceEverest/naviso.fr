@@ -7,6 +7,17 @@
     }   
 }
 
+.fond_clair, .fond_clair2 {
+    .multicolonnes_item.avec_bordure {
+        h1, h2, h3, h4, h5, h6, p, ul, li, a {
+            color: $greenNaviso;
+            strong {
+                color: $bleuNaviso;
+            }
+        }   
+    }
+}
+
 .multicolonnes_item {
     position: relative;
     padding: 2rem 2rem 4rem 2rem;
