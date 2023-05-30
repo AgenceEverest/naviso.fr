@@ -136,30 +136,39 @@
             white-space: nowrap;
             font-weight: bolder;
             margin-bottom: 0.5rem;
+            
             &.taxo-0 {
-                background-color: white;
-                color: $greenNaviso;
-                border: 2px solid $greenNaviso;
-                margin-right: 0.5rem;
+                span {
+                    background-color: white;
+                    color: $greenNaviso;
+                    border: 2px solid $greenNaviso;
+                    margin-right: 0.5rem;
+                }
             }
 
             &.taxo-1 {
-                background-color: white;
-                color: $bleuNaviso;
-                border: 2px solid $bleuNaviso;
-                margin-left: 0.5rem;
+                span {
+                    background-color: white;
+                    color: $bleuNaviso;
+                    border: 2px solid $bleuNaviso;
+                    margin-right: 0.5rem;
+                }
             }
             &.taxo-2 {
-                background-color: white;
-                color: $greenNaviso;
-                border: 2px solid $greenNaviso;
-                margin-right: 0.5rem;
+                span {
+                    background-color: white;
+                    color: $greenNaviso;
+                    border: 2px solid $greenNaviso;
+                    margin-right: 0.5rem;
+                }
             }
             &.taxo-3 {
-                background-color: white;
-                color: $bleuNaviso;
-                border: 2px solid $bleuNaviso;
-                margin-left: 0.5rem;
+                span {
+                    background-color: white;
+                    color: $bleuNaviso;
+                    border: 2px solid $bleuNaviso;
+                    margin-right: 0.5rem;
+                }
             }
         }
     }
