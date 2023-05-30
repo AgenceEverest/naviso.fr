@@ -393,6 +393,10 @@ ul#menu-menu-principal li a {
         padding-bottom: 4rem;
         .cta_btn_lead {
             position: relative;
+            &.cta_align_center {
+                left: inherit;
+                transform: inherit;
+            }
         }
     }
 }
