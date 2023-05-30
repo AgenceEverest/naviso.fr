@@ -31,6 +31,12 @@
 							<?php $horaires = get_field('horaires', 'option'); ?>
 
 							<?php if ($adresseligne1 || $adresseligne2 || $adresseligne3) : ?>
+								<?php if ($numerodetelephone) : ?>
+									<p class="coordonnees_p_i legende phone_number">
+										<?= apply_filters('add_svg', 'phone') ?>
+										<?php echo $numerodetelephone ?>
+									</p>
+								<?php endif; ?>
 								<p class="coordonnees_p_i legende">
 									<?= apply_filters('add_svg', 'map-marker') ?>
 									<?php if ($adresseligne1) : ?>
@@ -44,12 +50,7 @@
 									<?php endif; ?>
 								</p>
 							<?php endif; ?>
-							<?php if ($numerodetelephone) : ?>
-								<p class="coordonnees_p_i legende">
-									<?= apply_filters('add_svg', 'phone') ?>
-									<?php echo $numerodetelephone ?>
-								</p>
-							<?php endif; ?>
+
 
 							<?php if ($horaires) : ?>
 								<p class="coordonnees_p_i legende">

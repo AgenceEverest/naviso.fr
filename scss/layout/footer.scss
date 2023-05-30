@@ -27,6 +27,7 @@
     }
     .titre-coordonnees {
         color: white !important;
+        margin-bottom: 0rem;
     }
 }
 
@@ -133,4 +134,8 @@
     width: 180px;
     position: absolute;
     right: 0;
+}
+
+.phone_number {
+    text-decoration: underline;
 }
