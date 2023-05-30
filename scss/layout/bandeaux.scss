@@ -18,6 +18,10 @@
 .type-post {
     header.entry_title {
         background-color: $greenNaviso;
+        h1 {
+            display: flex;
+            justify-content: center;
+        }
     }
 }
 .single-post {
