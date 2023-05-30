@@ -130,19 +130,20 @@
         flex-wrap: wrap;
 
         .term {
-            font-size: 14px;
-            border-radius: 25px;
-            padding: 0.2rem 1rem;
-            white-space: nowrap;
-            font-weight: bolder;
-            margin-bottom: 0.5rem;
-            
+
+
             &.taxo-0 {
                 span {
                     background-color: white;
                     color: $greenNaviso;
                     border: 2px solid $greenNaviso;
                     margin-right: 0.5rem;
+                    font-size: 14px;
+                    border-radius: 25px;
+                    padding: 0.2rem 1rem;
+                    white-space: nowrap;
+                    font-weight: bolder;
+                    margin-bottom: 0.5rem;
                 }
             }
 
@@ -152,6 +153,12 @@
                     color: $bleuNaviso;
                     border: 2px solid $bleuNaviso;
                     margin-right: 0.5rem;
+                    font-size: 14px;
+                    border-radius: 25px;
+                    padding: 0.2rem 1rem;
+                    white-space: nowrap;
+                    font-weight: bolder;
+                    margin-bottom: 0.5rem;
                 }
             }
             &.taxo-2 {
@@ -160,6 +167,12 @@
                     color: $greenNaviso;
                     border: 2px solid $greenNaviso;
                     margin-right: 0.5rem;
+                    font-size: 14px;
+                    border-radius: 25px;
+                    padding: 0.2rem 1rem;
+                    white-space: nowrap;
+                    font-weight: bolder;
+                    margin-bottom: 0.5rem;
                 }
             }
             &.taxo-3 {
@@ -168,6 +181,12 @@
                     color: $bleuNaviso;
                     border: 2px solid $bleuNaviso;
                     margin-right: 0.5rem;
+                    font-size: 14px;
+                    border-radius: 25px;
+                    padding: 0.2rem 1rem;
+                    white-space: nowrap;
+                    font-weight: bolder;
+                    margin-bottom: 0.5rem;
                 }
             }
         }
