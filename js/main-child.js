@@ -10,7 +10,6 @@ if (boutonNewsletter) {
         } else {
             newsletter.style.display = 'flex';
             htmlElement.style.overflow = 'hidden';
-
         }
     })
 }

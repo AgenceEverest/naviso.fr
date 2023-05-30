@@ -79,28 +79,19 @@
 				</div>
 			</div>
 
-
-
 			<div class="aside_prefooter_col prefooter_col_3">
 				<?php if (!$masquer_les_certifications) : ?>
 					<?php $certifications_footer = get_field('certifications_footer', 'option'); ?>
 					<h3><?php if ($certifications_footer) : ?><?php echo $certifications_footer; ?><?php endif; ?></h3>
 					<?php if (have_rows('logos_certifications', 'option')) : ?>
 						<div id="footer_certification_wrapper">
-
-
-
-
 							<?php while (have_rows('logos_certifications', 'option')) : the_row(); ?>
 								<?php $logo_de_la_certification = get_sub_field('logo_de_la_certification', 'option');
 								$size_logo_de_la_certification = 'thumbnail'; ?>
-
-
 								<?php if (have_rows('informations_certification', 'option')) : ?>
 									<?php while (have_rows('informations_certification', 'option')) : the_row();
 										$nom_de_la_certification = get_sub_field('nom_de_la_certification', 'option');
 										$lien_vers_la_certification = get_sub_field('lien_vers_la_certification', 'option'); ?>
-
 										<figure class="footer_certification">
 											<?php if ($lien_vers_la_certification) : ?><a href="<?php echo $lien_vers_la_certification; ?>" target="_blank"><?php endif; ?>
 												<?php if ($nom_de_la_certification) : ?>
@@ -119,12 +110,7 @@
 										<?php echo wp_get_attachment_image($logo_de_la_certification, $size_logo_de_la_certification, ""); ?>
 									</figure>
 								<?php endif; ?>
-
-
 							<?php endwhile; ?>
-
-
-
 						</div>
 					<?php else : endif; ?>
 				<?php endif; ?>
