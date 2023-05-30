@@ -5,8 +5,10 @@
 <div id="global_content">
 	<section class="page_defaut article_blog">
 		<article id="post-container-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<header class="entry_title padding_section">
-				<h1 class="content_width"><?= the_title() ?></h1>
+			<header class="entry_title padding_section bandeau-header-page">
+				<div class="content_width">
+					<h1><?= the_title() ?></h1>
+				</div>
 			</header>
 			<?php if (the_content()) :
 				the_content();
