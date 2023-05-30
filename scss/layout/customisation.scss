@@ -394,13 +394,17 @@ ul#menu-menu-principal li a {
     }
 
     .col_flexible_cta {
-        padding-bottom: 4rem;
+        .entry-content {
+            padding-bottom: 4rem;
+        }
     }
 }
 
 .col_flexible_wrapper {
     .col_flexible_cta {
-        padding-bottom: 4rem;
+        .entry-content {
+            padding-bottom: 4rem;
+        }
         .cta_btn_lead {
             position: relative;
             &.cta_align_center {
