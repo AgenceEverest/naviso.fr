@@ -17,7 +17,6 @@
 			<?php get_template_part('inc/share-post'); ?>
 
 		</article>
-		<?php get_template_part('inc/nav-blog'); ?>
 		<?php get_template_part('inc/aside-actualites'); ?>
 	</section>
 	<?php get_footer(); ?>
