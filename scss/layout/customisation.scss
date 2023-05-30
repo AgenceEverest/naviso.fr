@@ -417,6 +417,12 @@ ul#menu-menu-principal li a {
     }
 }
 
+.col_flexible_image_wrapper {
+    img {
+        object-fit: cover;
+    }
+}
+
 .col_flexible_image_wrapper img {
     border-radius: 0rem !important;
 }
