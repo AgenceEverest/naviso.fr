@@ -546,7 +546,7 @@ input.cta_btn_lead.cta_align_right {
 }
 
 .double-cta {
-    .col_flexible_cta .cta_btn_lead.cta_align_center {
-        transform: inherit;
+    .cta_btn_lead {
+        transform: inherit !important;
     }
 }
