@@ -7,16 +7,28 @@
     }   
 }
 
-.fond_clair, .fond_clair2 {
+.fond_clair {
     .multicolonnes_item.avec_bordure {
         h1, h2, h3, h4, h5, h6, p, ul, li, a {
-            color: $greenNaviso;
+            color: $bleuNaviso;
             strong {
-                color: $bleuNaviso;
+                color: $greenNaviso;
             }
         }   
     }
 }
+
+.fond_clair2 {
+    .multicolonnes_item.avec_bordure {
+        h1, h2, h3, h4, h5, h6, p, ul, li, a {
+            color: $bleuNaviso;
+            strong {
+                color: $greenNaviso;
+            }
+        }   
+    }
+}
+
 
 .multicolonnes_item {
     position: relative;
