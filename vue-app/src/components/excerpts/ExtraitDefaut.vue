@@ -59,7 +59,7 @@ export default {
       >
         <span
           :class="' term-' + indexTerm"
-          v-for="(term, indexTerm) in taxo.slice(0, 1)"
+          v-for="(term, indexTerm) in taxo.slice(0, 3)"
           :key="term.id"
         >
           {{ term.name }}
