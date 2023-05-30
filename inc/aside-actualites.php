@@ -1,9 +1,7 @@
 <?php $masquer_la_sidebar_blog = get_field('masquer_la_sidebar_blog', 'option'); ?>
 <?php $texte_du_bouton_pour_voir_tous_les_articles = get_field('texte_du_bouton_pour_voir_tous_les_articles', 'option'); ?>
 <?php $page_for_posts = get_field('page_for_posts', 'option');
-if ($page_for_posts) {
-	$page_for_posts = $page_for_posts['url'];
-}
+print_r($page_for_posts);
 ?>
 
 <?php if (!$masquer_la_sidebar_blog) : ?>
@@ -43,7 +41,7 @@ if ($page_for_posts) {
 		<div class="remove_margin"></div>
 
 		<?php $texte_du_bouton_pour_voir_tous_les_articles = get_field('texte_du_bouton_pour_voir_tous_les_articles', 'option'); ?>
-		<p class="cta_btn_lead cta_ternaire"><a href="<?= $page_for_posts ?>"><?php echo $texte_du_bouton_pour_voir_tous_les_articles; ?></a></p>
+		<p class="cta_btn_lead cta_ternaire"><a href=""><?php echo $texte_du_bouton_pour_voir_tous_les_articles; ?></a></p>
 
 	</aside>
 <?php endif; ?>
