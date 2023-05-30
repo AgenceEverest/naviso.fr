@@ -334,8 +334,14 @@ ul#menu-menu-principal li a {
 .col_flexible_superposition .cta_align_center {
   margin-left: 0rem !important;
 }
+.col_flexible_superposition .col_flexible_cta {
+  padding-bottom: 0;
+}
 .col_flexible_superposition .col_flexible_cta .entry-content {
   padding-bottom: 4rem;
+}
+.col_flexible_wrapper .col_flexible_cta {
+  padding-bottom: 0;
 }
 .col_flexible_wrapper .col_flexible_cta .entry-content {
   padding-bottom: 4rem;
