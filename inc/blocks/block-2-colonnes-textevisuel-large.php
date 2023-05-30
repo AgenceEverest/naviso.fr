@@ -115,7 +115,7 @@ echo " block block-2-colonnes-textevisuel-large '>" ?>
 		<?php endif; ?>
 	</div>
 	<div class="col_right_wide_imgleft padding_section">
-		<div class="col_right_wide_imgleft_wrapper entry-content">
+		<div class="col_right_wide_imgleft_wrapper_custom entry-content">
 			<?php the_sub_field('cb_contenu_texte'); ?>
 
 			<?php
