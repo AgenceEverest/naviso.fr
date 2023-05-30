@@ -568,6 +568,15 @@ input.cta_btn_lead.cta_align_right {
 .block-2-colonnes-textevisuel,
 .block-2-colonnes-textevisuel-large,
 .block-2-colonnes-superposition {
+    &:has(.hauteur-fixe-visuel-large) {
+        min-height: 371px;
+    }
+    &:has(.hauteur-fixe-visuel) {
+        min-height: 371px;
+    }
+    &:has(.hauteur_fixe) {
+        min-height: 371px;
+    }
     .double-cta {
         .cta_btn_lead:nth-child(1) {
             left: 1.5rem;
