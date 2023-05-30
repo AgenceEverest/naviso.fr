@@ -16,9 +16,12 @@ if (is_singular('post')) : ?>
 				<?php endif; ?>
 			</div>
 			<div id="nav_blog_center" class="nav_blog_item">
-				<?php $page_for_posts = get_option('page_for_posts');
+				<?php $page_for_posts = get_field('page_for_posts',  'option');
+				if (isset($page_for_posts)){
+					$page_for_posts_permalink= get_permalink($page_for_posts->ID);
+				}
 				$texte_bouton_de_retour_blog = get_field('texte_bouton_de_retour_blog', 'option'); ?>
-				<a href="<?php echo get_permalink($page_for_posts); ?>" class="nav_blog_link_item">
+				<a href="<?= $page_for_posts_permalink ?>" class="nav_blog_link_item">
 					<span><?php if ($blog_retour) : ?><?php echo $blog_retour; ?><?php endif; ?> <br><?php echo $texte_bouton_de_retour_blog; ?></span>
 				</a>
 			</div>
