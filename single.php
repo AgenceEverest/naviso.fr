@@ -5,9 +5,8 @@
 <div id="global_content">
 	<section class="page_defaut article_blog">
 		<article id="post-container-<?php the_ID(); ?>" <?php post_class(); ?>>
-
 			<header class="entry_title padding_section">
-				<h1><?= showSvg(get_stylesheet_directory_uri() . '/svg/naviso-h1-logiciel') ?><?= the_title() ?></h1>
+				<h1><?= the_title() ?></h1>
 			</header>
 			<?php if (the_content()) :
 				the_content();
