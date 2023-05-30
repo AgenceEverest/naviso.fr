@@ -1,7 +1,7 @@
 <?php $masquer_la_sidebar_blog = get_field('masquer_la_sidebar_blog', 'option'); ?>
 <?php $texte_du_bouton_pour_voir_tous_les_articles = get_field('texte_du_bouton_pour_voir_tous_les_articles', 'option'); ?>
 <?php $page_for_posts = get_field('page_for_posts', 'option');
-print_r($page_for_posts);
+print_r(get_permalink($page_for_posts->ID));
 ?>
 
 <?php if (!$masquer_la_sidebar_blog) : ?>
