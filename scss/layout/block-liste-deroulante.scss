@@ -102,7 +102,7 @@
             h3 {
                 color: white;
             }
-            p {
+            p, ul, li, a, div, span {
                 color: $bleuNaviso !important;
             }
         }
@@ -138,7 +138,7 @@
             color: $bleuNaviso !important;
         }
         .entry-content {
-            p {
+            p, ul, li, a, div, span {
                 color: $bleuNaviso !important;
             }
         }
