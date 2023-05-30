@@ -16,11 +16,15 @@
 }
 
 .type-post {
-    .breadcrumb_container, header.entry_title {
+    header.entry_title {
         background-color: $greenNaviso;
     }
 }
-
+.single-post {
+    .breadcrumb_container {
+        background-color: $greenNaviso;
+    }
+}
 .breadcrumb_top {
     padding-top: 1.5rem;
     padding-bottom: 1rem;
