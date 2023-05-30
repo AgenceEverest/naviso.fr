@@ -62,7 +62,7 @@ export default {
           v-for="(term, indexTerm) in taxo"
           :key="term.id"
         >
-          {{ term.name }} test
+          {{ term.name }}
         </span>
       </div>
     </div>
