@@ -79,11 +79,11 @@ export default {
     >
       {{ cpt.acf.description_extrait_de_la_page }}
     </p>
-    <p v-if="cpt.acf.hasOwnProperty('prochaine_session')">
+    <p v-if="cpt.acf.prochaine_session">
       {{ textCardChampProchaineSession }} :
       {{ cpt.acf.prochaine_session }}
     </p>
-    <p v-if="cpt.acf.hasOwnProperty('duree')">
+    <p v-if="cpt.acf.duree">
       {{ texteCardChampDuree }} :
       {{ cpt.acf.duree }}
     </p>
