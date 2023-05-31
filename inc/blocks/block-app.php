@@ -26,6 +26,7 @@ if (have_rows('block_app')) : the_row(); // il s'agit du nom du champ dans ACF q
     $increment_number = get_sub_field('increment_number');
     $texte_fin_candidature = get_sub_field('date_de_fin_de_candidature_texte');
     $texte_bouton_fiche_de_poste = get_sub_field('texte_bouton_fiche_de_poste');
+    $texte_du_bouton_fiche_formation = get_sub_field('texte_du_bouton_fiche_formation');
     $texte_en_savoir_plus = get_sub_field('texte_en_savoir_plus');
     $afficher_la_taxonomie_dans_les_extraits_1 = get_sub_field('afficher_la_taxonomie_dans_les_extraits_1');
     if ($afficher_la_taxonomie_dans_les_extraits_1) {
@@ -58,11 +59,13 @@ if (have_rows('block_app')) : the_row(); // il s'agit du nom du champ dans ACF q
     $loadMoreText = get_sub_field('load_more_text');
     $faire_passer_le_bloc_au_dessus_des_autres = get_sub_field('faire_passer_le_bloc_au_dessus_des_autres');
     $texte_bouton_video = get_sub_field('texte_bouton_video');
+    $texte_de_la_card_pour_le_champ_duree = get_sub_field('texte_de_la_card_pour_le_champ_duree');
+    $texte_de_la_card_pour_le_champ_prochaine_session = get_sub_field('texte_de_la_card_pour_le_champ_prochaine_session');
 endif;
 
 wp_enqueue_script('vue-app-js', get_stylesheet_directory_uri() . '/vue-app/dist/assets/index.js');
 /* wp_enqueue_style('vue-app-css', get_stylesheet_directory_uri() . '/vue-app/dist/assets/index.css');
- */?>
+ */ ?>
 <div id="block-app" class="<?php
                             if ($marge_interne_en_haut_du_bloc) :  echo " padding_section_top";
                             endif;
@@ -108,7 +111,10 @@ wp_enqueue_script('vue-app-js', get_stylesheet_directory_uri() . '/vue-app/dist/
                                             $attribut29 = $texte_date_de_levenement ? 'texte-date-de-levenement="' . $texte_date_de_levenement . '"' : '';
                                             $attribut30 = $loadMoreText ? 'load-more-text="' . $loadMoreText . '"' : '';
                                             $attribut31 = $texte_bouton_video ? 'texte-bouton-video="' . $texte_bouton_video . '"' : '';
-                                            echo $attribut1 . $attribut2 . $attribut3 . $attribut4 . $attribut5 . $attribut6 . $attribut7 . $attribut8 . $attribut9 . $attribut10 . $attribut11 . $attribut12 . $attribut13 . $attribut14 . $attribut15 . $attribut16 . $attribut17 . $attribut19 . $attribut20 . $attribut21 . $attribut22 . $attribut23 . $attribut24 . $attribut25 . $attribut26 . $attribut27 . $attribut28 . $attribut29 . $attribut30 . $attribut31;
+                                            $attribut32 = $texte_du_bouton_fiche_formation ? 'texte-du-bouton-fiche-formation="' . $texte_du_bouton_fiche_formation . '"' : '';
+                                            $attribut33 = $texte_de_la_card_pour_le_champ_duree ? 'texte-de-la-card-pour-le-champ-duree="' . $texte_de_la_card_pour_le_champ_duree . '"' : '';
+                                            $attribut34 = $texte_de_la_card_pour_le_champ_prochaine_session ? 'texte-de-la-card-pour-le-champ-prochaine-session="' . $texte_de_la_card_pour_le_champ_prochaine_session . '"' : '';
+                                            echo $attribut1 . $attribut2 . $attribut3 . $attribut4 . $attribut5 . $attribut6 . $attribut7 . $attribut8 . $attribut9 . $attribut10 . $attribut11 . $attribut12 . $attribut13 . $attribut14 . $attribut15 . $attribut16 . $attribut17 . $attribut19 . $attribut20 . $attribut21 . $attribut22 . $attribut23 . $attribut24 . $attribut25 . $attribut26 . $attribut27 . $attribut28 . $attribut29 . $attribut30 . $attribut31 . $attribut32 . $attribut33 . $attribut34;
                                             ?>></div>
         <?php get_template_part('inc/content-builder-inc/visuel-fond-du-bloc') ?>
     </div>

@@ -7,6 +7,7 @@ import ExtraitDefaut from "./excerpts/ExtraitDefaut.vue";
 import WebinaireExcerpt from "./excerpts/WebinaireExcerpt.vue";
 import CasClient from "./excerpts/CasClient.vue";
 import ExtraitActualite from "./excerpts/ExtraitActualite.vue";
+import ExtraitFormation from "./excerpts/ExtraitFormation.vue";
 import he from "he";
 import { getApiData } from "../utils/getApi";
 export default {
@@ -17,6 +18,7 @@ export default {
     WebinaireExcerpt,
     CasClient,
     ExtraitActualite,
+    ExtraitFormation,
   },
   data() {
     return {
@@ -111,6 +113,18 @@ export default {
     );
     this.texteTouslesFiltres4 = this.app.getAttribute(
       "texte-tous-les-filtres-4"
+    );
+
+    this.texteBoutonFicheFormation = this.app.getAttribute(
+      "texte-du-bouton-fiche-formation"
+    );
+
+    this.texteCardChampDuree = this.app.getAttribute(
+      "texte-de-la-card-pour-le-champ-duree"
+    );
+
+    this.textCardChampProchaineSession = this.app.getAttribute(
+      "texte-de-la-card-pour-le-champ-prochaine-session"
     );
 
     this.texteBoutonVideo = this.app.getAttribute("texte-bouton-video");
@@ -240,6 +254,7 @@ export default {
             }
           }
           if (cpt.acf.fichier_a_telecharger) {
+            console.log('fichier à télécharger');
             const fileObject = await getApiData(
               `${this.protocol}://${this.website}/wp-json/wp/v2/media/${cpt.acf.fichier_a_telecharger}`
             );
@@ -608,6 +623,32 @@ export default {
           :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
           :texteEnSavoirPlus="texteEnSavoirPlus"
           :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
+        />
+      </div>
+      <div
+        @click="incrementmaxDisplayable"
+        v-if="hasMoreContent"
+        class="load-more"
+      >
+        {{ loadMoreText }}
+      </div>
+    </template>
+    <template v-else-if="cptName === 'formation'">
+      <div class="results">
+        <ExtraitFormation
+          v-show="cpt.show && cpt.display"
+          class="cpt-extrait"
+          v-for="cpt in cpts"
+          :key="cpt.id"
+          :cpt="cpt"
+          :texteFinCandidature="texteFinCandidature"
+          :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
+          :texteEnSavoirPlus="texteEnSavoirPlus"
+          :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
+          :taxonomiesToShow="taxonomiesToShow"
+          :texteBoutonFicheFormation="texteBoutonFicheFormation"
+          :texteCardChampDuree="texteCardChampDuree"
+          :textCardChampProchaineSession="textCardChampProchaineSession"
         />
       </div>
       <div
