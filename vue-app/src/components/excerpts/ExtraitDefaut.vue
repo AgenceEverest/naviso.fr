@@ -51,20 +51,11 @@ export default {
       >
         {{ cpt.acf.banniere_avec_du_texte_libre }}
       </div>
-      <div
-        v-for="(taxo, indexTaxo) in cpt._embedded['wp:term']"
-        :key="indexTaxo"
-        :class="'term taxo-' + indexTaxo"
-        v-show="taxoIsShowable(taxo)"
-      >
-        <span
-          :class="' term-' + indexTerm"
-          v-for="(term, indexTerm) in taxo"
-          :key="term.id"
-        >
+      <template v-for="taxo in cpt._embedded['wp:term']" :key="taxo.id">
+        <span class="term" v-for="term in taxo" :key="term.id">
           {{ term.name }}
         </span>
-      </div>
+      </template>
     </div>
     <h2>{{ cpt.title.rendered }}</h2>
     <p v-if="cpt.acf.hasOwnProperty('nom_employeur')" class="employeur">

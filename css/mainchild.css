@@ -305,6 +305,9 @@ ul#menu-menu-principal li a {
 .fond_clair2 .vague-milieu svg {
   fill: #add1cb !important;
 }
+.fond_clair2 .double-boucle path {
+  fill: white;
+}
 .fond_blanc h1, .fond_blanc h2, .fond_blanc h3, .fond_blanc h4, .fond_blanc h5, .fond_blanc h6 {
   color: #4AB8A5;
 }
@@ -352,6 +355,9 @@ ul#menu-menu-principal li a {
 .col_flexible_wrapper .col_flexible_cta .cta_btn_lead.cta_align_center {
   left: inherit;
   transform: inherit;
+}
+.col_flexible_image_wrapper img {
+  object-fit: cover;
 }
 .col_flexible_image_wrapper img {
   border-radius: 0rem !important;
@@ -458,6 +464,9 @@ input.cta_btn_lead.cta_align_right {
 .flex-dir-row-reverse {
   flex-direction: row-reverse;
 }
+.block:has(.double-boucle) {
+  overflow: hidden;
+}
 .block-2-colonnes:has(.hauteur-fixe-visuel-large), .block-3-colonnes:has(.hauteur-fixe-visuel-large), .block-2-colonnes-textevisuel:has(.hauteur-fixe-visuel-large), .block-2-colonnes-textevisuel-large:has(.hauteur-fixe-visuel-large), .block-2-colonnes-superposition:has(.hauteur-fixe-visuel-large) {
   min-height: 371px;
 }
@@ -479,6 +488,16 @@ input.cta_btn_lead.cta_align_right {
 .col_right_wide_imgleft_wrapper_custom {
   padding-left: 8rem;
   padding-right: 2rem;
+}
+.grand_icone_carre.picto {
+  background-color: transparent;
+  border: none;
+}
+.icon_multicolonnes {
+  background-color: transparent;
+}
+.afficher_la_video_bg_wrapper img {
+  opacity: 1;
 }
 .extraits-clients-container {
   display: flex;
@@ -747,6 +766,9 @@ input.cta_btn_lead.cta_align_right {
 .newsletter-container .newsletter-wrapper .visuel-newsletter #Tracé_1009, .newsletter-container .newsletter-wrapper .visuel-newsletter #Tracé_1010 {
   fill: #ffffff7a;
 }
+.newsletter-container-feed {
+  background-color: #1f2d46a1;
+}
 .newsletter-container-feed, .newsletter-container-footer-feed {
   position: fixed;
   top: 0;
@@ -862,7 +884,7 @@ input.cta_btn_lead.cta_align_right {
 .fond_clair .bloc_liste_deroulante .entry-content h3 {
   color: white;
 }
-.fond_clair .bloc_liste_deroulante .entry-content p {
+.fond_clair .bloc_liste_deroulante .entry-content p, .fond_clair .bloc_liste_deroulante .entry-content ul, .fond_clair .bloc_liste_deroulante .entry-content li, .fond_clair .bloc_liste_deroulante .entry-content a, .fond_clair .bloc_liste_deroulante .entry-content div, .fond_clair .bloc_liste_deroulante .entry-content span {
   color: #1F2D46 !important;
 }
 .fond_clair2 .bloc_liste_deroulante .question_reponse_title {
@@ -890,7 +912,7 @@ input.cta_btn_lead.cta_align_right {
 .fond_clair2 .bloc_liste_deroulante .question_reponse_wysiwyg {
   color: #1F2D46 !important;
 }
-.fond_clair2 .bloc_liste_deroulante .entry-content p {
+.fond_clair2 .bloc_liste_deroulante .entry-content p, .fond_clair2 .bloc_liste_deroulante .entry-content ul, .fond_clair2 .bloc_liste_deroulante .entry-content li, .fond_clair2 .bloc_liste_deroulante .entry-content a, .fond_clair2 .bloc_liste_deroulante .entry-content div, .fond_clair2 .bloc_liste_deroulante .entry-content span {
   color: #1F2D46 !important;
 }
 .question_reponse_title_icone_plus svg path, .question_reponse_title_icone_moins svg path {
@@ -964,7 +986,7 @@ input.cta_btn_lead.cta_align_right {
   box-shadow: 0px 10px 50px 20px #68686829;
 }
 .quotes-container .entry-content {
-  padding-left: 2rem;
+  padding-left: 2rem !important;
   padding-right: 2rem;
 }
 .formateur {
@@ -1159,6 +1181,7 @@ input.cta_btn_lead.cta_align_right {
 }
 #block-app {
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 #block-app .filters {
   flex-direction: column;
@@ -1274,6 +1297,8 @@ input.cta_btn_lead.cta_align_right {
   flex-wrap: wrap;
 }
 .cpt-extrait .terms .term {
+  background-color: white;
+  margin-right: 0.5rem;
   font-size: 14px;
   border-radius: 25px;
   padding: 0.2rem 1rem;
@@ -1281,29 +1306,13 @@ input.cta_btn_lead.cta_align_right {
   font-weight: bolder;
   margin-bottom: 0.5rem;
 }
-.cpt-extrait .terms .term.taxo-0 {
-  background-color: white;
+.cpt-extrait .terms .term:nth-child(odd) {
   color: #4AB8A5;
   border: 2px solid #4AB8A5;
-  margin-right: 0.5rem;
 }
-.cpt-extrait .terms .term.taxo-1 {
-  background-color: white;
+.cpt-extrait .terms .term:nth-child(even) {
   color: #1F2D46;
   border: 2px solid #1F2D46;
-  margin-left: 0.5rem;
-}
-.cpt-extrait .terms .term.taxo-2 {
-  background-color: white;
-  color: #4AB8A5;
-  border: 2px solid #4AB8A5;
-  margin-right: 0.5rem;
-}
-.cpt-extrait .terms .term.taxo-3 {
-  background-color: white;
-  color: #1F2D46;
-  border: 2px solid #1F2D46;
-  margin-left: 0.5rem;
 }
 .cpt-extrait h2, .cpt-extrait h3 {
   text-align: center;
@@ -1384,6 +1393,18 @@ header.entry_title h1 {
 .multicolonnes_item.avec_bordure h1 strong, .multicolonnes_item.avec_bordure h2 strong, .multicolonnes_item.avec_bordure h3 strong, .multicolonnes_item.avec_bordure h4 strong, .multicolonnes_item.avec_bordure h5 strong, .multicolonnes_item.avec_bordure h6 strong, .multicolonnes_item.avec_bordure p strong, .multicolonnes_item.avec_bordure ul strong, .multicolonnes_item.avec_bordure li strong, .multicolonnes_item.avec_bordure a strong {
   color: #1F2D46;
 }
+.fond_clair .multicolonnes_item.avec_bordure h1, .fond_clair .multicolonnes_item.avec_bordure h2, .fond_clair .multicolonnes_item.avec_bordure h3, .fond_clair .multicolonnes_item.avec_bordure h4, .fond_clair .multicolonnes_item.avec_bordure h5, .fond_clair .multicolonnes_item.avec_bordure h6, .fond_clair .multicolonnes_item.avec_bordure p, .fond_clair .multicolonnes_item.avec_bordure ul, .fond_clair .multicolonnes_item.avec_bordure li, .fond_clair .multicolonnes_item.avec_bordure a {
+  color: #1F2D46;
+}
+.fond_clair .multicolonnes_item.avec_bordure h1 strong, .fond_clair .multicolonnes_item.avec_bordure h2 strong, .fond_clair .multicolonnes_item.avec_bordure h3 strong, .fond_clair .multicolonnes_item.avec_bordure h4 strong, .fond_clair .multicolonnes_item.avec_bordure h5 strong, .fond_clair .multicolonnes_item.avec_bordure h6 strong, .fond_clair .multicolonnes_item.avec_bordure p strong, .fond_clair .multicolonnes_item.avec_bordure ul strong, .fond_clair .multicolonnes_item.avec_bordure li strong, .fond_clair .multicolonnes_item.avec_bordure a strong {
+  color: #4AB8A5;
+}
+.fond_clair2 .multicolonnes_item.avec_bordure h1, .fond_clair2 .multicolonnes_item.avec_bordure h2, .fond_clair2 .multicolonnes_item.avec_bordure h3, .fond_clair2 .multicolonnes_item.avec_bordure h4, .fond_clair2 .multicolonnes_item.avec_bordure h5, .fond_clair2 .multicolonnes_item.avec_bordure h6, .fond_clair2 .multicolonnes_item.avec_bordure p, .fond_clair2 .multicolonnes_item.avec_bordure ul, .fond_clair2 .multicolonnes_item.avec_bordure li, .fond_clair2 .multicolonnes_item.avec_bordure a {
+  color: #1F2D46;
+}
+.fond_clair2 .multicolonnes_item.avec_bordure h1 strong, .fond_clair2 .multicolonnes_item.avec_bordure h2 strong, .fond_clair2 .multicolonnes_item.avec_bordure h3 strong, .fond_clair2 .multicolonnes_item.avec_bordure h4 strong, .fond_clair2 .multicolonnes_item.avec_bordure h5 strong, .fond_clair2 .multicolonnes_item.avec_bordure h6 strong, .fond_clair2 .multicolonnes_item.avec_bordure p strong, .fond_clair2 .multicolonnes_item.avec_bordure ul strong, .fond_clair2 .multicolonnes_item.avec_bordure li strong, .fond_clair2 .multicolonnes_item.avec_bordure a strong {
+  color: #4AB8A5;
+}
 .multicolonnes_item {
   position: relative;
   padding: 2rem 2rem 4rem 2rem;
@@ -1406,6 +1427,14 @@ header.entry_title h1 {
 #aside_prefooter {
   background-color: #1F2D46;
 }
+#numeroTelephone {
+  display: none;
+  text-decoration: none;
+}
+#afficherNumeroTelephone {
+  text-decoration: underline;
+  cursor: pointer;
+}
 #footer {
   background-color: white;
 }
@@ -1427,6 +1456,7 @@ header.entry_title h1 {
 }
 .prefooter_col_1 .titre-coordonnees {
   color: white !important;
+  margin-bottom: 0rem !important;
 }
 .prefooter_col_1, .prefooter_col_3 {
   width: 23%;
@@ -1518,6 +1548,9 @@ header.entry_title h1 {
   width: 180px;
   position: absolute;
   right: 0;
+}
+.phone_number {
+  text-decoration: underline;
 }
 @media (max-width: 1400px) {
   .fond-header {
