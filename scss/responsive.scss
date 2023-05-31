@@ -286,6 +286,12 @@ flex-direction: column;
     .vague-webinar {
         width: 230%;
     }
+    #footer_content {
+        flex-direction: column;
+    }
+    #menu-footer {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 480px) {
