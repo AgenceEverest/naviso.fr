@@ -1,6 +1,7 @@
 #block-app {
     margin-top: 1rem;
     margin-bottom: 1rem;
+
     .filters {
         flex-direction: column;
         display: flex;
@@ -23,6 +24,7 @@
             align-items: center;
             flex-wrap: nowrap;
             height: 38px;
+
             input {
                 border: none;
                 width: 90%;
@@ -53,10 +55,12 @@
                 white-space: nowrap;
                 margin-bottom: 0.5rem;
                 font-weight: bold;
+
                 &.active {
                     background-color: $bleuNaviso;
                     color: white;
                 }
+
                 &:nth-child(1) {
                     width: 230px;
                     text-align: center;
@@ -89,6 +93,7 @@
             justify-content: center;
             width: 100%;
         }
+
         .load-more {
             background-color: white !important;
             color: black !important;
@@ -140,19 +145,20 @@
                 font-weight: bolder;
                 margin-bottom: 0.5rem;
             }
-            .term {
-                span:nth-child(odd) {
-                    color: $greenNaviso;
-                    border: 2px solid $greenNaviso;
-                }
-                span:nth-child(even) {
-                    color: $bleuNaviso;
-                    border: 2px solid $bleuNaviso;
-                }
-            } 
-    
 
-/*             &.taxo-0 {
+            &:nth-child(odd) {
+                color: $greenNaviso;
+                border: 2px solid $greenNaviso;
+            }
+
+            &:nth-child(even) {
+                color: $bleuNaviso;
+                border: 2px solid $bleuNaviso;
+            }
+        }
+
+
+        /*             &.taxo-0 {
                 .term-0 {
                     color: $greenNaviso;
                     border: 2px solid $greenNaviso;
@@ -177,22 +183,23 @@
                     border: 2px solid $bleuNaviso;
                    }
             } */
-        }
     }
+}
 
-    h2, h3 {
-        text-align: center;
-        color: black;
-        font-size: 24px;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
+h2,
+h3 {
+    text-align: center;
+    color: black;
+    font-size: 24px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
 
-    .desc-page {
-        text-align: center;
-    }
+.desc-page {
+    text-align: center;
+}
 
-    .buttons-extrait {
-        margin-top: 1rem;
-    }
+.buttons-extrait {
+    margin-top: 1rem;
+}
 }
