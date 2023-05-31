@@ -119,6 +119,9 @@
 }
 
 @media (max-width: 968px) {
+    .menu-menu-footer-2-container{
+        height: auto;
+    }
     #aside_prefooter_wrapper {
 flex-direction: column;        
     }
@@ -133,9 +136,7 @@ flex-direction: column;
 }
 
 @media (max-width: 768px) {
-    .menu-menu-footer-2-container{
-        height: auto;
-    }
+
     h2 {
         font-size: 25px;
     }
