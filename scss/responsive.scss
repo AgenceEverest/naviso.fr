@@ -118,6 +118,15 @@
 
 }
 
+@media (max-width: 968px) {
+    #aside_prefooter_wrapper {
+        width:100%;
+    }
+    figure#logo_footer img {
+        width: 50%;
+    }
+}
+
 @media (max-width: 768px) {
     h2 {
         font-size: 25px;
