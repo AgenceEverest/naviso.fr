@@ -290,6 +290,9 @@ flex-direction: column;
 }
 
 @media (max-width: 480px) {
+    .aside_prefooter_col {
+        align-items: start;
+    }
     .col_flexible_wrapper {
         width: 90%;
         margin: auto;
