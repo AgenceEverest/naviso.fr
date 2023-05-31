@@ -254,10 +254,13 @@ export default {
             }
           }
           if (cpt.acf.fichier_a_telecharger) {
-            console.log('fichier à télécharger');
+            console.log("fichier à télécharger");
             const fileObject = await getApiData(
               `${this.protocol}://${this.website}/wp-json/wp/v2/media/${cpt.acf.fichier_a_telecharger}`
             );
+            console.log("requête lancée");
+
+            console.log(fileObject);
             cpt.acf.fichier_a_telecharger = fileObject.source_url;
           }
         });
