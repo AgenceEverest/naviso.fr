@@ -140,14 +140,17 @@
                 font-weight: bolder;
                 margin-bottom: 0.5rem;
             }
-            .term span:nth-child(odd) {
-                color: $greenNaviso;
-                border: 2px solid $greenNaviso;
-            }
-            .term span:nth-child(even) {
-                color: $bleuNaviso;
-                border: 2px solid $bleuNaviso;
-            }
+            .term {
+                span:nth-child(odd) {
+                    color: $greenNaviso;
+                    border: 2px solid $greenNaviso;
+                }
+                span:nth-child(even) {
+                    color: $bleuNaviso;
+                    border: 2px solid $bleuNaviso;
+                }
+            } 
+    
 
 /*             &.taxo-0 {
                 .term-0 {
