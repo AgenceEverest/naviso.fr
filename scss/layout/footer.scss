@@ -1,4 +1,4 @@
-#aside_prefooter{
+#aside_prefooter {
     background-color: $bleuNaviso;
 }
 
@@ -14,7 +14,9 @@
 
 #footer {
     background-color: white;
-    span, #menu-footer a {
+
+    span,
+    #menu-footer a {
         color: $bleuNaviso;
     }
 }
@@ -35,13 +37,15 @@
     #logo_footer {
         margin: 0rem 0rem 1rem 0rem;
     }
+
     .titre-coordonnees {
         color: white !important;
         margin-bottom: 0rem !important;
     }
 }
 
-.prefooter_col_1, .prefooter_col_3 {
+.prefooter_col_1,
+.prefooter_col_3 {
     width: 23%;
 }
 
@@ -50,12 +54,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     .cta_btn_lead {
         text-align: left;
         margin-bottom: 3rem;
     }
+
     li {
-        a{
+        a {
             color: white;
         }
     }
@@ -80,41 +86,52 @@
     display: flex;
     justify-content: space-between;
     margin: auto;
+
     span {
         text-decoration: underline;
     }
+
     #menu-footer {
         display: flex;
+
         a {
             margin-right: 1rem;
         }
     }
-    .rs_link_item {
-        background: $greenNaviso;
-        width: 36px;
-        height: 36px;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0rem 1rem 0rem 0rem !important;
-        svg {
-            color: white;
-            height: 1.6rem;
-        }
-        &:hover {
-            background-color: white;
+
+    .rs_link_item_container {
+        .rs_link_item {
+            background: $greenNaviso;
+            width: 36px;
+            height: 36px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0rem 1rem 0rem 0rem !important;
+
             svg {
-                color: $greenNaviso !important;
+                color: white;
+                height: 1.6rem;
+            }
+
+            &:hover {
+                background-color: white;
+
+                svg {
+                    color: $greenNaviso !important;
+                }
             }
         }
     }
+
 
 }
 
 .menu-menu-footer-2-container {
     display: flex;
     height: 100px;
+
     #menu-menu-footer-2 {
         width: 100%;
         display: flex;
@@ -140,7 +157,7 @@
     }
 } */
 
-.logo-bzh-footer{
+.logo-bzh-footer {
     width: 180px;
     position: absolute;
     right: 0;
