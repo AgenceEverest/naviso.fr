@@ -85,7 +85,7 @@
         <p id="footer_content" class="legende content_width">
             <span>
                 <?php $signature_footer = get_field('signature_footer', 'option'); ?>
-                © <?php echo date("Y") ?> <?php bloginfo('name'); ?> - 
+                © <?php echo date("Y") ?> <?php bloginfo('name'); ?> -
                 <?= $copyright_text ?>
             </span>
             <span id="menu-footer">
@@ -103,39 +103,41 @@
                 <?php $page_instagram = get_field('page_instagram', 'option'); ?>
                 <?php $page_youtube = get_field('page_youtube', 'option'); ?>
                 <?php $reseaux_sociaux_suivez_nous_sur = get_field('reseaux_sociaux_suivez-nous_sur', 'option'); ?>
-                
-                <?php if ($page_facebook) : ?>
-                    <a href="<?php echo $page_facebook; ?>" class="rs_link_item" title="<?php if ($reseaux_sociaux_suivez_nous_sur) : ?>
+                <div class="rs-links-container">
+                    <?php if ($page_facebook) : ?>
+                        <a href="<?php echo $page_facebook; ?>" class="rs_link_item" title="<?php if ($reseaux_sociaux_suivez_nous_sur) : ?>
                         <?php echo $reseaux_sociaux_suivez_nous_sur; ?>
                         <?php endif; ?> Facebook">
-                        <?= showSvg(get_stylesheet_directory_uri() . '/svg/facebook.svg') ?>
-                    </a>
-                <?php endif; ?>
-                <?php if ($page_twitter) : ?><a href="<?php echo $page_twitter; ?>" class="rs_link_item" title="<?php if ($reseaux_sociaux_suivez_nous_sur) : ?>
+                            <?= showSvg(get_stylesheet_directory_uri() . '/svg/facebook.svg') ?>
+                        </a>
+                    <?php endif; ?>
+                    <?php if ($page_twitter) : ?><a href="<?php echo $page_twitter; ?>" class="rs_link_item" title="<?php if ($reseaux_sociaux_suivez_nous_sur) : ?>
                     <?php echo $reseaux_sociaux_suivez_nous_sur; ?>
                     <?php endif; ?> Twitter">
-                    <?= showSvg(get_stylesheet_directory_uri() . '/svg/twitter.svg') ?>
-                    </a>
-                <?php endif; ?>
-                <?php if ($page_linkedin) : ?><a href="<?php echo $page_linkedin; ?>" class="rs_link_item" title="<?php if ($reseaux_sociaux_suivez_nous_sur) : ?>
+                            <?= showSvg(get_stylesheet_directory_uri() . '/svg/twitter.svg') ?>
+                        </a>
+                    <?php endif; ?>
+                    <?php if ($page_linkedin) : ?><a href="<?php echo $page_linkedin; ?>" class="rs_link_item" title="<?php if ($reseaux_sociaux_suivez_nous_sur) : ?>
                     <?php echo $reseaux_sociaux_suivez_nous_sur; ?>
                     <?php endif; ?> Linkedin">
-                    <?= showSvg(get_stylesheet_directory_uri() . '/svg/linkedin.svg') ?>
-                    </a>
-                <?php endif; ?>
-                <?php if ($page_instagram) : ?><a href="<?php echo $page_instagram; ?>" class="rs_link_item" title="<?php if ($reseaux_sociaux_suivez_nous_sur) : ?>
+                            <?= showSvg(get_stylesheet_directory_uri() . '/svg/linkedin.svg') ?>
+                        </a>
+                    <?php endif; ?>
+                    <?php if ($page_instagram) : ?><a href="<?php echo $page_instagram; ?>" class="rs_link_item" title="<?php if ($reseaux_sociaux_suivez_nous_sur) : ?>
                     <?php echo $reseaux_sociaux_suivez_nous_sur; ?>
                     <?php endif; ?> Instagram">
-                    <?= showSvg(get_stylesheet_directory_uri() . '/svg/instagram.svg') ?>
-                    </a>
-                <?php endif; ?>
-                <?php if ($page_youtube) : ?><a href="<?php echo $page_youtube; ?>" class="rs_link_item" title="<?php if ($reseaux_sociaux_suivez_nous_sur) : ?>
+                            <?= showSvg(get_stylesheet_directory_uri() . '/svg/instagram.svg') ?>
+                        </a>
+                    <?php endif; ?>
+                    <?php if ($page_youtube) : ?><a href="<?php echo $page_youtube; ?>" class="rs_link_item" title="<?php if ($reseaux_sociaux_suivez_nous_sur) : ?>
                     <?php echo $reseaux_sociaux_suivez_nous_sur; ?>
                     <?php endif; ?> Youtube">
-                    <?= showSvg(get_stylesheet_directory_uri() . '/svg/youtube.svg') ?>
-                    </a>
-                <?php endif; ?>
-                
+                            <?= showSvg(get_stylesheet_directory_uri() . '/svg/youtube.svg') ?>
+                        </a>
+                    <?php endif; ?>
+                </div>
+
+
             </span>
         </p>
     </div>
