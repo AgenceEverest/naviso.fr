@@ -43,7 +43,7 @@ if (isset($page_for_posts)){
 		<div class="remove_margin"></div>
 
 		<?php $texte_du_bouton_pour_voir_tous_les_articles = get_field('texte_du_bouton_pour_voir_tous_les_articles', 'option'); ?>
-		<p class="cta_btn_lead cta_ternaire"><a href="<?= $page ?>"><?php echo $texte_du_bouton_pour_voir_tous_les_articles; ?></a></p>
+		<p class="cta_btn_lead cta_ternaire"><a href="<?= $page_for_posts ?>"><?php echo $texte_du_bouton_pour_voir_tous_les_articles; ?></a></p>
 
 	</aside>
 <?php endif; ?>
