@@ -14,7 +14,7 @@ if (have_rows('block_newsletter')) : the_row(); // il s'agit du nom du champ dan
     $couleur_de_fond_bloc = get_sub_field('couleur_de_fond_bloc');
     $texte_du_bouton = get_sub_field('texte_du_bouton');
     $titre_du_bloc = get_sub_field('titre_du_bloc');
-    $contenu_de_liframe = get_sub_field('contenu_de_liframe');
+    $contenu_de_liframe = get_field('iframe_pour_la_newsletter', 'option');
 endif;
 
 $urlContact = get_field('url_du_bouton_contact', 'option');
