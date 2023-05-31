@@ -90,10 +90,7 @@ export default {
 
     <div class="buttons-extrait">
       <p
-        v-if="
-          afficherBoutonFicheDePoste &&
-          cpt.acf.lien_vers_la_fiche_de_poste !== ''
-        "
+        v-if="cpt.acf.fichier_a_telecharger !== ''"
         class="cta_btn_lead cta_primaire"
       >
         <a
