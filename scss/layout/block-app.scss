@@ -143,16 +143,26 @@
             white-space: nowrap;
             font-weight: bolder;
             margin-bottom: 0.5rem;
+        }
 
-            &:nth-child(odd) {
-                color: $greenNaviso;
-                border: 2px solid $greenNaviso;
-            }
+        .term-0 {
+            color: $greenNaviso;
+            border: 2px solid $greenNaviso;
+        }
 
-            &:nth-child(even) {
-                color: $bleuNaviso;
-                border: 2px solid $bleuNaviso;
-            }
+        .term-1 {
+            color: $bleuNaviso;
+            border: 2px solid $bleuNaviso;
+        }
+
+        .term-2 {
+            color: $greenNaviso;
+            border: 2px solid $greenNaviso;
+        }
+
+        .term-4 {
+            color: $bleuNaviso;
+            border: 2px solid $bleuNaviso;
         }
     }
 
