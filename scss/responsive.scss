@@ -133,6 +133,9 @@ flex-direction: column;
 }
 
 @media (max-width: 768px) {
+    .menu-menu-footer-2-container{
+        height: auto;
+    }
     h2 {
         font-size: 25px;
     }
@@ -286,6 +289,12 @@ flex-direction: column;
 }
 
 @media (max-width: 480px) {
+
+    .footer_certification {
+        img {
+            width: 100%;
+        }
+    }
     #header_contact {
         display: none !important;
     }
