@@ -563,7 +563,6 @@ export default {
           :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
           :texteEnSavoirPlus="texteEnSavoirPlus"
           :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
-          :taxonomiesToShow="taxonomiesToShow"
         />
       </div>
       <div
@@ -586,7 +585,6 @@ export default {
           :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
           :texteEnSavoirPlus="texteEnSavoirPlus"
           :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
-          :taxonomiesToShow="taxonomiesToShow"
           :texteBoutonVideo="texteBoutonVideo"
         />
       </div>
@@ -610,7 +608,6 @@ export default {
           :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
           :texteEnSavoirPlus="texteEnSavoirPlus"
           :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
-          :taxonomiesToShow="taxonomiesToShow"
         />
       </div>
       <div

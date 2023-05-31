@@ -30,11 +30,7 @@ export default {
         return new Intl.DateTimeFormat("fr-FR", options).format(date);
       }
     },
-    taxoIsShowable(taxo) {
-      if (taxo[0]) {
-        return this.taxonomiesToShow.find((t) => t == taxo[0].taxonomy);
-      }
-    },
+
   },
 };
 </script>
@@ -48,20 +44,14 @@ export default {
       >
         {{ cpt.acf.banniere_avec_du_texte_libre }}
       </div>
-      <div
-        v-for="(taxo, indexTaxo) in cpt._embedded['wp:term']"
-        :key="indexTaxo"
-        :class="'term taxo-' + indexTaxo"
-        v-show="taxoIsShowable(taxo)"
+      <template
+        v-for="(taxo, index) in cpt._embedded['wp:term']"
+        :key="taxo.id"
       >
-        <span
-          :class="' term-' + indexTerm"
-          v-for="(term, indexTerm) in taxo.slice(0, 1)"
-          :key="term.id"
-        >
+        <span :class="'term term-' + index" v-for="term in taxo" :key="term.id">
           {{ term.name }}
         </span>
-      </div>
+      </template>
     </div>
 
     <!-- Titre -->

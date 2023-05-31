@@ -33,11 +33,7 @@ export default {
         return new Intl.DateTimeFormat("fr-FR", options).format(date);
       }
     },
-    taxoIsShowable(taxo) {
-      if (taxo[0]) {
-        return this.taxonomiesToShow.find((t) => t == taxo[0].taxonomy);
-      }
-    },
+
   },
 };
 </script>
@@ -45,21 +41,29 @@ export default {
 <template>
   <div>
     <div class="terms" v-if="cpt.hasOwnProperty('_embedded')">
-      <div v-if="cpt.acf.afficher_banniere_avec_du_texte_libre" class="banner-texte-libre">
+      <div
+        v-if="cpt.acf.afficher_banniere_avec_du_texte_libre"
+        class="banner-texte-libre"
+      >
         {{ cpt.acf.banniere_avec_du_texte_libre }}
       </div>
-      <div v-for="(terms, indexTaxo) in cpt._embedded['wp:term']" :key="indexTaxo" :class="'term taxo-' + indexTaxo"
-        v-show="showTaxonomies[`${indexTaxo + 1}`]">
-        <span :class="' term-' + indexTerm" v-for="(term, indexTerm) in terms.slice(0, 1)" :key="term.id">
+      <template
+        v-for="(taxo, index) in cpt._embedded['wp:term']"
+        :key="taxo.id"
+      >
+        <span :class="'term term-' + index" v-for="term in taxo" :key="term.id">
           {{ term.name }}
         </span>
-      </div>
+      </template>
     </div>
     <h2>{{ cpt.title.rendered }}</h2>
     <p v-if="cpt.acf.hasOwnProperty('nom_employeur')" class="employeur">
       {{ cpt.acf.nom_employeur }}
     </p>
-    <p v-if="cpt.acf.hasOwnProperty('description_extrait_de_la_page')" class="desc-page">
+    <p
+      v-if="cpt.acf.hasOwnProperty('description_extrait_de_la_page')"
+      class="desc-page"
+    >
       {{ cpt.acf.description_extrait_de_la_page }}
     </p>
     <p v-if="cpt.acf.hasOwnProperty('date_de_fin_de_candidature')">
@@ -69,8 +73,11 @@ export default {
     <!--      <p>{{ cpt.acf.lieu }}</p> -->
 
     <div class="buttons-extrait">
-      <p v-if="cpt.acf.landing_page_hubspot" class="cta_btn_lead cta_primaire"
-        :class="{ cta_center: !afficherBoutonFicheDePoste }">
+      <p
+        v-if="cpt.acf.landing_page_hubspot"
+        class="cta_btn_lead cta_primaire"
+        :class="{ cta_center: !afficherBoutonFicheDePoste }"
+      >
         <a target="_blank" :href="cpt.acf.landing_page_hubspot.url">{{
           texteEnSavoirPlus
         }}</a>

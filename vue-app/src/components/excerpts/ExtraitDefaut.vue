@@ -33,11 +33,11 @@ export default {
         return new Intl.DateTimeFormat("fr-FR", options).format(date);
       }
     },
-    taxoIsShowable(taxo) {
+/*     taxoIsShowable(taxo) {
       if (taxo[0]) {
         return this.taxonomiesToShow.find((t) => t == taxo[0].taxonomy);
       }
-    },
+    }, */
   },
 };
 </script>
