@@ -51,8 +51,11 @@ export default {
       >
         {{ cpt.acf.banniere_avec_du_texte_libre }}
       </div>
-      <template v-for="taxo in cpt._embedded['wp:term']" :key="taxo.id">
-        <span class="term" v-for="term in taxo" :key="term.id">
+      <template
+        v-for="(taxo, index) in cpt._embedded['wp:term']"
+        :key="taxo.id"
+      >
+        <span :class="'term-' + index" v-for="term in taxo" :key="term.id">
           {{ term.name }}
         </span>
       </template>
