@@ -30,16 +30,21 @@
 }
 .fond_clair, .fond_clair2 {
     .multicolonnes_item {
+        box-shadow: none;
 
-    box-shadow: 0px 10px 50px 20px #68686829;
     }
 
+}
+
+.fond_clair {
+    .multicolonnes_item {
+        box-shadow: 0px 10px 50px 20px #68686829;
+    }
 }
 
 .multicolonnes_item {
     position: relative;
     padding: 2rem 2rem 4rem 2rem;
-    box-shadow: none;
 
     .visuel-naviso-multicol {
         position: absolute;
