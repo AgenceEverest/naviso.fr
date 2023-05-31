@@ -183,5 +183,9 @@
         margin-top: 1rem;
         display: flex;
         justify-content: space-around;
+        flex-wrap: wrap;
+        .cta_btn_lead {
+            margin-bottom:1rem;
+        }
     }
 }
