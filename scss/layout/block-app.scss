@@ -130,65 +130,50 @@
         flex-wrap: wrap;
 
         .term {
+            span {
+                background-color: white;
+                margin-right: 0.5rem;
+                font-size: 14px;
+                border-radius: 25px;
+                padding: 0.2rem 1rem;
+                white-space: nowrap;
+                font-weight: bolder;
+                margin-bottom: 0.5rem;
+            }
+            .term span:nth-child(odd) {
+                color: $greenNaviso;
+                border: 2px solid $greenNaviso;
+            }
+            .term span:nth-child(even) {
+                color: $bleuNaviso;
+                border: 2px solid $bleuNaviso;
+            }
 
-
-            &.taxo-0 {
-                span {
-                    background-color: white;
+/*             &.taxo-0 {
+                .term-0 {
                     color: $greenNaviso;
                     border: 2px solid $greenNaviso;
-                    margin-right: 0.5rem;
-                    font-size: 14px;
-                    border-radius: 25px;
-                    padding: 0.2rem 1rem;
-                    white-space: nowrap;
-                    font-weight: bolder;
-                    margin-bottom: 0.5rem;
                 }
             }
 
             &.taxo-1 {
                 span {
-                    background-color: white;
                     color: $bleuNaviso;
                     border: 2px solid $bleuNaviso;
-                    margin-right: 0.5rem;
-                    font-size: 14px;
-                    border-radius: 25px;
-                    padding: 0.2rem 1rem;
-                    white-space: nowrap;
-                    font-weight: bolder;
-                    margin-bottom: 0.5rem;
-                }
+                 }
             }
             &.taxo-2 {
                 span {
-                    background-color: white;
                     color: $greenNaviso;
                     border: 2px solid $greenNaviso;
-                    margin-right: 0.5rem;
-                    font-size: 14px;
-                    border-radius: 25px;
-                    padding: 0.2rem 1rem;
-                    white-space: nowrap;
-                    font-weight: bolder;
-                    margin-bottom: 0.5rem;
-                }
+                 }
             }
             &.taxo-3 {
                 span {
-                    background-color: white;
                     color: $bleuNaviso;
                     border: 2px solid $bleuNaviso;
-                    margin-right: 0.5rem;
-                    font-size: 14px;
-                    border-radius: 25px;
-                    padding: 0.2rem 1rem;
-                    white-space: nowrap;
-                    font-weight: bolder;
-                    margin-bottom: 0.5rem;
-                }
-            }
+                   }
+            } */
         }
     }
 
