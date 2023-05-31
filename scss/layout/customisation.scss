@@ -586,6 +586,11 @@ input.cta_btn_lead.cta_align_right {
 .block:has(.double-boucle) {
     overflow: hidden;
 }
+.block-2-colonnes-textevisuel-large {
+    &:has(.hauteur-fixe-visuel-large) {
+        padding-top: 4rem;
+    }
+}
 .block-2-colonnes,
 .block-3-colonnes,
 .block-2-colonnes-textevisuel,
