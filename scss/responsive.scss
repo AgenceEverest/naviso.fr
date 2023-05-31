@@ -290,7 +290,12 @@ flex-direction: column;
 }
 
 @media (max-width: 480px) {
-
+    .col-droite, .col-gauche {
+        .entry_content {
+            width: 90%;
+            margin: auto;
+        }
+    }
     .footer_certification {
         img {
             width: 100%;
