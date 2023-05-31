@@ -91,7 +91,7 @@ export default {
     <div class="buttons-extrait">
       <p
         v-if="cpt.acf.fichier_a_telecharger !== ''"
-        class="cta_btn_lead cta_primaire"
+        class="cta_btn_lead cta_ternaire"
       >
         <a
           target="_blank"
@@ -100,14 +100,7 @@ export default {
           >{{ texteBoutonFicheFormation }}</a
         >
       </p>
-      <p
-        v-if="
-          cpt.acf.lien_bouton_en_savoir_plus != '' ||
-          cpt.acf.url_pour_le_lien_en_savoir_plus != ''
-        "
-        class="cta_btn_lead cta_primaire"
-        :class="{ cta_center: !afficherBoutonFicheDePoste }"
-      >
+      <p class="cta_btn_lead cta_primaire">
         <a :href="cpt.link">{{ texteEnSavoirPlus }}</a>
       </p>
     </div>
