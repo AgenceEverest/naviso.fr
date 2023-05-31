@@ -55,7 +55,7 @@ export default {
         v-for="(taxo, index) in cpt._embedded['wp:term']"
         :key="taxo.id"
       >
-        <span :class="'term-' + index" v-for="term in taxo" :key="term.id">
+        <span :class="'term term-' + index" v-for="term in taxo" :key="term.id">
           {{ term.name }}
         </span>
       </template>
