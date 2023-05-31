@@ -120,8 +120,13 @@
 
 @media (max-width: 968px) {
     #aside_prefooter_wrapper {
-        width:100%;
+flex-direction: column;        
     }
+
+    .aside_prefooter_col  {
+        width: 100%;
+    }
+
     figure#logo_footer img {
         width: 50%;
     }
