@@ -144,45 +144,19 @@
                 white-space: nowrap;
                 font-weight: bolder;
                 margin-bottom: 0.5rem;
-            }
-
-            &:nth-child(odd) {
-                color: $greenNaviso;
-                border: 2px solid $greenNaviso;
-            }
-
-            &:nth-child(even) {
-                color: $bleuNaviso;
-                border: 2px solid $bleuNaviso;
-            }
-        }
-
-
-        /*             &.taxo-0 {
-                .term-0 {
+                &:nth-child(odd) {
                     color: $greenNaviso;
                     border: 2px solid $greenNaviso;
                 }
+    
+                &:nth-child(even) {
+                    color: $bleuNaviso;
+                    border: 2px solid $bleuNaviso;
+                }
             }
 
-            &.taxo-1 {
-                span {
-                    color: $bleuNaviso;
-                    border: 2px solid $bleuNaviso;
-                 }
-            }
-            &.taxo-2 {
-                span {
-                    color: $greenNaviso;
-                    border: 2px solid $greenNaviso;
-                 }
-            }
-            &.taxo-3 {
-                span {
-                    color: $bleuNaviso;
-                    border: 2px solid $bleuNaviso;
-                   }
-            } */
+         
+        }
     }
 
     h2,
