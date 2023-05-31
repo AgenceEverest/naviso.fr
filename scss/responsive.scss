@@ -290,7 +290,7 @@ flex-direction: column;
 }
 
 @media (max-width: 480px) {
-    .col-droite, .col-gauche {
+    .col-droite, .col-gauche, .col_flexible_item {
         .entry_content {
             width: 90%;
             margin: auto;
