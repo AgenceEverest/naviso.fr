@@ -341,6 +341,7 @@ ul#menu-menu-principal li a {
             fill: #add1cb !important;
         }
     }
+
     .double-boucle {
         path {
             fill: white;
@@ -358,15 +359,17 @@ ul#menu-menu-principal li a {
     h6 {
         color: $greenNaviso;
     }
+
     .col_flexible_bordure {
-            h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: white;
-    }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: white;
+        }
     }
 }
 
@@ -404,6 +407,7 @@ ul#menu-menu-principal li a {
 
     .col_flexible_cta {
         padding-bottom: 0;
+
         .entry-content {
             padding-bottom: 4rem;
         }
@@ -413,11 +417,14 @@ ul#menu-menu-principal li a {
 .col_flexible_wrapper {
     .col_flexible_cta {
         padding-bottom: 0;
+
         .entry-content {
             padding-bottom: 4rem;
         }
+
         .cta_btn_lead {
             position: relative;
+
             &.cta_align_center {
                 left: inherit;
                 transform: inherit;
@@ -583,15 +590,18 @@ input.cta_btn_lead.cta_align_right {
 .flex-dir-row-reverse {
     flex-direction: row-reverse;
 }
+
 .block:has(.double-boucle) {
     overflow: hidden;
 }
+
 .block-2-colonnes-textevisuel-large {
     &:has(.hauteur-fixe-visuel-large) {
         padding-top: 6rem;
         padding-bottom: 7.5rem;
     }
 }
+
 .block-2-colonnes,
 .block-3-colonnes,
 .block-2-colonnes-textevisuel,
@@ -600,12 +610,15 @@ input.cta_btn_lead.cta_align_right {
     &:has(.hauteur-fixe-visuel-large) {
         min-height: 371px;
     }
+
     &:has(.hauteur-fixe-visuel) {
         min-height: 371px;
     }
+
     &:has(.hauteur_fixe) {
         min-height: 371px;
     }
+
     .double-cta {
         .cta_btn_lead:nth-child(1) {
             left: 1.5rem;
@@ -633,7 +646,7 @@ input.cta_btn_lead.cta_align_right {
     border: none;
 }
 
-.icon_multicolonnes{
+.icon_multicolonnes {
     background-color: transparent;
 }
 

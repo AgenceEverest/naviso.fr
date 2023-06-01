@@ -51,7 +51,7 @@
 }
 
 
-.fond_clair:has(.quotes-container), .fond_clair2:has(.quotes-container) {
+.fond_clair, .fond_clair2 {
     .quotes-container {
         background-color: white;
 
@@ -67,15 +67,18 @@
     }
 }
 
-.fond_clair:has(.quotes-container) {
-    .quotes {
-        g {
-            path {
-                fill: $bleuNaviso;
+.fond_clair {
+    .quotes-container {
+        .quotes {
+            g {
+                path {
+                    fill: $bleuNaviso;
+                }
             }
         }
+        .formateur {
+            background-color: $bleuNaviso;
+        }
     }
-    .formateur {
-        background-color: $bleuNaviso;
-    }
+
 }
