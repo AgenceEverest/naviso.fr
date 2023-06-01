@@ -81,24 +81,8 @@
     padding-top: 0 !important;
     margin-bottom: 2rem;
 }
-
-#footer_content {
+.rs_link_wrapper {
     display: flex;
-    justify-content: space-between;
-    margin: auto;
-
-    span {
-        text-decoration: underline;
-    }
-
-    #menu-footer {
-        display: flex;
-
-        a {
-            margin-right: 1rem;
-        }
-    }
-
     .rs_link_item {
         background: $greenNaviso;
         width: 36px;
@@ -108,6 +92,9 @@
         justify-content: center;
         align-items: center;
         margin: 0rem 1rem 0rem 0rem !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         svg {
             color: white;
@@ -122,6 +109,26 @@
             }
         }
     }
+}
+
+#footer_content {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 80%;
+    span {
+        text-decoration: underline;
+    }
+
+    #menu-footer {
+        display: flex;
+
+        a {
+            margin-right: 1rem;
+        }
+    }
+
+ 
 
 
 

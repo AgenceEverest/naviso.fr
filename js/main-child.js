@@ -22,8 +22,6 @@ if (closeButton) {
 }
 
 
-
-
 let boutonNewsletterFooter = document.querySelector('#newsletter-button-footer');
 let newsletterFooter = document.querySelector('#newsletter-footer');
 let closeButtonFooter = document.querySelector('#close-button-footer');
@@ -38,8 +36,6 @@ if (boutonNewsletterFooter) {
         }
     })
 }
-
-
 
 if (closeButtonFooter) {
     closeButtonFooter.addEventListener('click', () => {

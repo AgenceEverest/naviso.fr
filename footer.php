@@ -104,8 +104,7 @@
                 <?php $page_youtube = get_field('page_youtube', 'option'); ?>
                 <?php $reseaux_sociaux_suivez_nous_sur = get_field('reseaux_sociaux_suivez-nous_sur', 'option'); ?>
 
-
-
+                <div class="rs_link_wrapper">
                     <?php if ($page_facebook) : ?>
                         <a target="_blank" href="<?php echo $page_facebook; ?>" class="rs_link_item" title="<?php if ($reseaux_sociaux_suivez_nous_sur) : ?>
                         <?php echo $reseaux_sociaux_suivez_nous_sur; ?>
@@ -137,7 +136,7 @@
                             <?= showSvg(get_stylesheet_directory_uri() . '/svg/youtube.svg') ?>
                         </a>
                     <?php endif; ?>
-           
+                </div>
             </span>
         </p>
     </div>
