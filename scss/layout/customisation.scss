@@ -1,7 +1,11 @@
 /*
 Fichier de customisation du CSS
 */
-
+#retourenhaut {
+    z-index: 9999;
+    background-color: white;
+    border-radius: 25px;
+}
 .newsletter-desktop {
     display: block;
 }
