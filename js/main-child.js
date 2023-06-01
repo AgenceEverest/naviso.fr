@@ -39,6 +39,8 @@ if (boutonNewsletterFooter) {
     })
 }
 
+
+
 if (closeButtonFooter) {
     closeButtonFooter.addEventListener('click', () => {
         newsletterFooter.style.display = 'none';
@@ -51,7 +53,8 @@ let numeroTelephone = document.querySelector('#numeroTelephone');
 
 if (afficherNumeroTelephone && numeroTelephone) {
     afficherNumeroTelephone.addEventListener('click', () => {
-            numeroTelephone.style.display = 'block';
-            afficherNumeroTelephone.style.display = 'none';
+        numeroTelephone.style.display = 'block';
+        afficherNumeroTelephone.style.display = 'none';
     })
 }
+

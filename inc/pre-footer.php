@@ -22,6 +22,8 @@
 					<?php if ($accroche_sous_le_logo_footer) : ?>
 						<p id="aside_prefooter_baseline"><?php echo $accroche_sous_le_logo_footer; ?></p>
 					<?php endif; ?>
+					<p class="cta_btn_lead cta_ternaire newsletter-mobile"><a id="newsletter-button-footer"><?= $texte_inscription_newsletter ?></a></p>
+
 					<h3 class="titre-coordonnees"><?= $texte_titre_coordonnees ?><h3>
 							<?php $nom = get_field('nom', 'option'); ?>
 							<?php $adresseligne1 = get_field('adresse_ligne_1', 'option'); ?>
@@ -63,7 +65,7 @@
 						<?php endif; ?>
 			</div>
 			<div class="aside_prefooter_col prefooter_col_2">
-				<p class="cta_btn_lead cta_ternaire"><a id="newsletter-button-footer"><?= $texte_inscription_newsletter ?></a></p>
+				<p class="cta_btn_lead cta_ternaire newsletter-desktop"><a id="newsletter-button-footer"><?= $texte_inscription_newsletter ?></a></p>
 				<?php
 				wp_nav_menu(array(
 					'theme_location' => 'menu-footer-2',

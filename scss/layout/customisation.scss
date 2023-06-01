@@ -1,6 +1,14 @@
 /*
 Fichier de customisation du CSS
 */
+
+.newsletter-desktop {
+    display: block;
+}
+.newsletter-mobile {
+    display: none;
+    text-align: left;
+}
 figure {
     border-radius: 0 !important;
 

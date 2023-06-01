@@ -99,29 +99,31 @@
         }
     }
 
-        .rs_link_item {
-            background: $greenNaviso;
-            width: 36px;
-            height: 36px;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0rem 1rem 0rem 0rem !important;
+    .rs_link_item {
+        background: $greenNaviso;
+        width: 36px;
+        height: 36px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0rem 1rem 0rem 0rem !important;
+
+        svg {
+            color: white;
+            height: 1.6rem;
+        }
+
+        &:hover {
+            background-color: white;
 
             svg {
-                color: white;
-                height: 1.6rem;
-            }
-
-            &:hover {
-                background-color: white;
-
-                svg {
-                    color: $greenNaviso !important;
-                }
+                color: $greenNaviso !important;
             }
         }
+    }
+
+
 
 
 }

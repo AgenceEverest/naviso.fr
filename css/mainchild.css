@@ -95,6 +95,13 @@ h2 strong, h3 strong {
 /*
 Fichier de customisation du CSS
 */
+.newsletter-desktop {
+  display: block;
+}
+.newsletter-mobile {
+  display: none;
+  text-align: left;
+}
 figure {
   border-radius: 0 !important;
 }
@@ -1031,10 +1038,10 @@ input.cta_btn_lead.cta_align_right {
 .fond_clair .quotes-container .entry-content p, .fond_clair .quotes-container .entry-content ul, .fond_clair .quotes-container .entry-content li, .fond_clair .quotes-container .entry-content a, .fond_clair .quotes-container .entry-content div, .fond_clair2 .quotes-container .entry-content p, .fond_clair2 .quotes-container .entry-content ul, .fond_clair2 .quotes-container .entry-content li, .fond_clair2 .quotes-container .entry-content a, .fond_clair2 .quotes-container .entry-content div {
   color: black;
 }
-.fond_clair:has(.quotes-container) .quotes g path {
+.fond_clair .quotes-container .quotes g path {
   fill: #1F2D46;
 }
-.fond_clair:has(.quotes-container) .formateur {
+.fond_clair .quotes-container .formateur {
   background-color: #1F2D46;
 }
 .extrait_formation {
@@ -1783,6 +1790,35 @@ header.entry_title h1 {
   }
 }
 @media (max-width: 480px) {
+  .newsletter-desktop {
+    display: none;
+  }
+  .newsletter-mobile {
+    display: block;
+    margin-bottom: 2rem;
+  }
+  .newsletter-container .newsletter-wrapper {
+    border-radius: 0;
+    margin: 0;
+    width: 100%;
+  }
+  .newsletter-container .newsletter-wrapper .visuel-newsletter {
+    top: 0;
+    right: 50%;
+  }
+  .col_flexible_image {
+    width: 120%;
+    left: -10%;
+  }
+  .text-header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+  .text-header-homepage {
+    width: 100% !important;
+  }
   .aside_prefooter_col {
     align-items: start;
   }
