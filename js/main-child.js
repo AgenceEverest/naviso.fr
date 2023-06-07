@@ -27,8 +27,6 @@ let closeButtonFooter = document.querySelectorAll('.close-button-footer');
 if (boutonsNewsletterFooter.length > 0) {
     boutonsNewsletterFooter.forEach(button => {
         button.addEventListener('click', () => {
-            console.log(boutonNewsletterFooter);
-            console.log(newsletterFooter);
             if (newsletterFooter.style.display == 'block') {
                 newsletterFooter.style.display = 'none';
                 htmlElement.style.overflow = 'visible';
