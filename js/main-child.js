@@ -24,7 +24,7 @@ if (closeButton) {
 let boutonNewsletterFooter = document.querySelector('#newsletter-button-footer');
 let newsletterFooter = document.querySelector('#newsletter-footer');
 let closeButtonFooter = document.querySelector('#close-button-footer');
-console.log('ok');
+console.log(boutonNewsletterFooter);
 if (boutonNewsletterFooter) {
     boutonNewsletterFooter.addEventListener('click', () => {
         console.log(boutonNewsletterFooter);
