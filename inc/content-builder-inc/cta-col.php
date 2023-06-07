@@ -29,7 +29,8 @@ $style_du_bouton = get_sub_field('style_du_bouton'); ?>
 
 <!-- Fichier à télécharger  -->
 <?php if ($cb_calltoaction_interne_externe_col == 'fichier_telechargement') : ?>
-    <?php if (isset($cb_calltoaction_fichier_col)) : ?>
+    <?php if ($cb_calltoaction_fichier_col) : ?>
+        <?php print_r($cb_calltoaction_fichier_col) ?>
         <p class="cta_btn_lead <?php echo $alignement_du_bouton; ?> <?php echo $style_du_bouton; ?>"><a href="<?php echo $cb_calltoaction_fichier_col['url']; ?>" <?php if ($ouvrir_dans_un_nouvel_onglet_col) : ?> target="_blank" <?php endif; ?>><?php get_template_part('inc/arrow-download'); ?><?php echo $cb_calltoaction_col; ?> <span class="download_doc_size">- <?php echo size_format($cb_calltoaction_fichier_col_size, $decimals = 0); ?></span></a></p>
     <?php endif; ?>
 <?php endif; ?>
