@@ -156,7 +156,6 @@ export default {
     }
 
     this.storeFilters(filters);
-    //  this.getCpt(this.cpt);
     this.getCpt(this.cpt).then(() => {
       // la première option est sélectionnée par défaut dans le select, mais il faut aussi l'activer dans le store
       if (this.filterType === "select") {
@@ -164,9 +163,6 @@ export default {
       } else {
         this.activeAllAtStart();
       }
-
-      /*       // permet de cacher ou d'afficher le bouton pour charger plus de résultats
-      this.checkIfMaxPostsIsReached(); */
     });
   },
   updated() {
