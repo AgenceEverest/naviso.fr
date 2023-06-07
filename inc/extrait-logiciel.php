@@ -20,18 +20,14 @@ foreach (get_post_taxonomies($post_id) as $taxonomy) {
 <div class="cpt-extrait">
     <div class="terms extrait-defaut">
         <?php if (isset($terms[0])) : ?>
-            <p class="term taxo-0">
-                <span class="term-0">
-                    <?= $terms[0] ?>
-                </span>
-            </p>
+            <span class="term taxo-0">
+                <?= $terms[0] ?>
+            </span>
         <?php endif; ?>
         <?php if (isset($terms[1])) : ?>
-            <p class="term taxo-1">
-                <span class="term-0">
-                    <?= $terms[1] ?>
-                </span>
-            </p>
+            <span class="term taxo-1">
+                <?= $terms[1] ?>
+            </span>
         <?php endif; ?>
     </div>
     <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
