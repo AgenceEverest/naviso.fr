@@ -29,14 +29,12 @@ foreach (get_post_taxonomies($post_id) as $taxonomy) {
                 $terms = get_the_terms($post_id, $taxonomy);
                 if (is_array($terms) || is_object($terms)) {
                     if (count($terms) > 0) {
-                        echo '<div class="taxonomy ' . $taxonomy . '">';
                         if ($terms && !is_wp_error($terms)) {
                             foreach ($terms as $term) {
                                 echo '<p class="term term-' . $index . '">' . $term->name . '</p>';
                                 $index++;
                             }
                         }
-                        echo '</div>';
                     }
                 }
             }

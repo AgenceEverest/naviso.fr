@@ -133,7 +133,11 @@
         width: 100%;
         justify-content: center;
         flex-wrap: wrap;
-
+        flex-direction: column;
+        .taxonomy {
+            display: flex;
+            flex-wrap: wrap;
+        }
         .term {
             background-color: white;
             margin-right: 0.5rem;
