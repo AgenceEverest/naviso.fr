@@ -23,7 +23,7 @@ if (closeButton) {
 
 let boutonsNewsletterFooter = document.querySelectorAll('.newsletter-button-footer'); // il y a 2 boutons, l'un pour le mobile, l'autre pour desktop
 let newsletterFooter = document.querySelector('#newsletter-footer');
-let closeButtonFooter = document.querySelectorAll('.close-button-footer');
+let closeButtonFooter = document.querySelector('#close-button-footer');
 if (boutonsNewsletterFooter.length > 0) {
     boutonsNewsletterFooter.forEach(button => {
         button.addEventListener('click', () => {
@@ -38,14 +38,12 @@ if (boutonsNewsletterFooter.length > 0) {
     })
 }
 
-if (closeButtonFooter.length > 0) {
-    closeButtonFooter.forEach(button => {
-        button.addEventListener('click', () => {
-            newsletterFooter.style.display = 'none';
-            htmlElement.style.overflow = 'visible';
-        })
-    })
-}
+
+closeButtonFooter.addEventListener('click', () => {
+    newsletterFooter.style.display = 'none';
+    htmlElement.style.overflow = 'visible';
+})
+
 
 let afficherNumeroTelephone = document.querySelector('#afficherNumeroTelephone');
 let numeroTelephone = document.querySelector('#numeroTelephone');
