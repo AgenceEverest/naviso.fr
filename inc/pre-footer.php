@@ -6,7 +6,7 @@
 <?php $texte_inscription_newsletter = get_field('texte_inscription_newsletter', 'option'); ?>
 <?php $texte_titre_coordonnees = get_field('texte_titre_coordonnees', 'option'); ?>
 <?php $logo_bretagne_a_droite_du_footer = get_field('logo_bretagne_a_droite_du_footer', 'option') ?>
-<?php $texte_afficher_le_numero = get_field('texte_afficher_le_numero', 'option'); ?> 
+<?php $texte_afficher_le_numero = get_field('texte_afficher_le_numero', 'option'); ?>
 
 <?php if (!$masquer_le_prefooter) : ?>
 	<aside id="aside_prefooter" class="padding_section">
@@ -22,7 +22,7 @@
 					<?php if ($accroche_sous_le_logo_footer) : ?>
 						<p id="aside_prefooter_baseline"><?php echo $accroche_sous_le_logo_footer; ?></p>
 					<?php endif; ?>
-					<p class="cta_btn_lead cta_ternaire newsletter-mobile"><a id="newsletter-button-footer"><?= $texte_inscription_newsletter ?></a></p>
+					<p class="cta_btn_lead cta_ternaire newsletter-mobile newsletter-button-footer"><a><?= $texte_inscription_newsletter ?></a></p>
 
 					<h3 class="titre-coordonnees"><?= $texte_titre_coordonnees ?><h3>
 							<?php $nom = get_field('nom', 'option'); ?>
@@ -65,7 +65,7 @@
 						<?php endif; ?>
 			</div>
 			<div class="aside_prefooter_col prefooter_col_2">
-				<p class="cta_btn_lead cta_ternaire newsletter-desktop"><a id="newsletter-button-footer"><?= $texte_inscription_newsletter ?></a></p>
+				<p class="cta_btn_lead cta_ternaire newsletter-desktop newsletter-button-footer"><a><?= $texte_inscription_newsletter ?></a></p>
 				<?php
 				wp_nav_menu(array(
 					'theme_location' => 'menu-footer-2',
