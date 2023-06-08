@@ -347,6 +347,10 @@
 }
 
 @media (max-width: 480px) {
+
+    .element-visuel-deux-col {
+        display: none;
+    }
     .newsletter-desktop {
         display: none;
     }
