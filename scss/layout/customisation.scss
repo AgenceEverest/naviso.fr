@@ -519,6 +519,7 @@ ul#menu-menu-principal li a {
 .hauteur-fixe-visuel-large {
     display: flex;
     align-items: center;
+    top: 1rem;
     .col_right_wide_imgleft, .col_double_wide_imgleft {
         min-height: 373px;
     }
