@@ -509,8 +509,10 @@ ul#menu-menu-principal li a {
     align-items: center;
 
     figure {
-        height: 373px;
         position: relative;
+        img {
+            height: 373px;
+        }
     }
 }
 
@@ -610,7 +612,7 @@ input.cta_btn_lead.cta_align_right {
 .block-2-colonnes-textevisuel-large {
     &:has(.hauteur-fixe-visuel-large) {
         padding-top: 0rem;
-        padding-bottom: 7.5rem;
+        padding-bottom: 0rem;
     }
 }
 
