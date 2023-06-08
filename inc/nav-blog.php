@@ -17,8 +17,8 @@ if (is_singular('post')) : ?>
 			</div>
 			<div id="nav_blog_center" class="nav_blog_item">
 				<?php $page_for_posts = get_field('page_for_posts',  'option');
-				if (isset($page_for_posts)){
-					$page_for_posts_permalink= get_permalink($page_for_posts->ID);
+				if (isset($page_for_posts)) {
+					$page_for_posts_permalink = get_permalink($page_for_posts->ID);
 				}
 				$texte_bouton_de_retour_blog = get_field('texte_bouton_de_retour_blog', 'option'); ?>
 				<a href="<?= $page_for_posts_permalink ?>" class="nav_blog_link_item">
@@ -91,8 +91,8 @@ if (is_singular('client')) : ?>
 			<div id="nav_blog_center" class="nav_blog_item">
 				<?php $texte_bouton_de_retour_aux_clients = get_field('texte_bouton_de_retour_clients', 'option');
 				$page_qui_liste_les_clients = get_field('page_qui_liste_les_clients', 'option');
-				$page_qui_liste_les_clients_id = $page_qui_liste_les_clients->ID;
-				$page_qui_liste_les_clients_permalink = get_permalink($page_qui_liste_les_clients_id); ?>
+				$page_qui_liste_les_clients_id = $page_qui_liste_les_clients ? $page_qui_liste_les_clients->ID : '';
+				$page_qui_liste_les_clients_permalink = $page_qui_liste_les_clients_id ? get_permalink($page_qui_liste_les_clients_id) : ''; ?>
 				<a href="<?php echo $page_qui_liste_les_clients_permalink; ?>" class="nav_blog_link_item">
 					<span><?php if ($blog_retour) : ?><?php echo $blog_retour; ?><?php endif; ?><br><?php echo $texte_bouton_de_retour_aux_clients; ?></span>
 				</a>
@@ -217,4 +217,3 @@ if (is_singular('metier')) : ?>
 		</nav>
 	</div>
 <?php endif; ?>
-
