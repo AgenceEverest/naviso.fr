@@ -516,13 +516,16 @@ ul#menu-menu-principal li a {
     }
 }
 
+.block-2-colonnes-textevisuel-large:has(.hauteur-fixe-visuel-large) {
+    .col_right_wide_imgleft, .col_double_wide_imgleft {
+        min-height: 373px;
+    }    
+}
 .hauteur-fixe-visuel-large {
     display: flex;
     align-items: center;
     top: 1rem;
-    .col_right_wide_imgleft, .col_double_wide_imgleft {
-        min-height: 373px;
-    }
+ 
     figure {
         height: 373px;
         img {
