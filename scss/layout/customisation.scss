@@ -519,7 +519,9 @@ ul#menu-menu-principal li a {
 .hauteur-fixe-visuel-large {
     display: flex;
     align-items: center;
-
+    .col_right_wide_imgleft, .col_double_wide_imgleft {
+        min-height: 373px;
+    }
     figure {
         height: 373px;
         img {
@@ -657,6 +659,7 @@ input.cta_btn_lead.cta_align_right {
     padding-left: 8rem;
     padding-right: 2rem;
 }
+
 
 .grand_icone_carre.picto {
     background-color: transparent;
