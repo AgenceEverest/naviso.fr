@@ -62,18 +62,3 @@ get_header(); ?>
 	</section>
 	<?php get_footer(); ?>
 </div> <!-- #global_content -->
-
-<?php
-$activer__desactiver_le_bandeau = get_field('activer__desactiver_le_bandeau', 'option');
-$texte_du_bandeau = get_field('texte_du_bandeau', 'option');
-$couleur_du_bandeau = get_field('couleur_du_bandeau', 'option');
-
-?>
-<?php if ($activer__desactiver_le_bandeau) : ?>
-	<div class="bandeau-accueil couleur-bandeau-<?= $couleur_du_bandeau ? $couleur_du_bandeau : '' ?>">
-		<p><?= $texte_du_bandeau ? $texte_du_bandeau : ''; ?></p>
-		<div id="close-button">
-			x
-		</div>
-	</div>
-<?php endif; ?>
