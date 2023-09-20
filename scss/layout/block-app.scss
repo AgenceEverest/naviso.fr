@@ -148,16 +148,16 @@
             font-weight: bolder;
             margin-bottom: 0.5rem;
             text-align: center;
-            // color: $bleuNaviso;
-            // border: 2px solid $bleuNaviso;
+            color: $bleuNaviso;
+            border: 2px solid $bleuNaviso;
             &.term-0 {
                 color: $greenNaviso;
                 border: 2px solid $greenNaviso;
             }
-            &.term-1 {
-                color: $bleuNaviso;
-                border: 2px solid $bleuNaviso;
-            }
+            // &.term-1 {
+            //     color: $bleuNaviso;
+            //     border: 2px solid $bleuNaviso;
+            // }
         }
     }
 
