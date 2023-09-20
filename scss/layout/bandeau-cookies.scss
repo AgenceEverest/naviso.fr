@@ -1,0 +1,36 @@
+#bandeau_cookies {
+    #boutons_bandeau{
+        #refuser_cookies, #choisir_lesquels_cookies{
+            background-color:$greenNaviso;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.3)!important;
+            &:hover{
+                background-color:rgba(255, 255, 255, 0.3);
+            }
+        }
+        #accepter_cookies{
+            color:#fff;
+            &:hover{
+                color:$bleuNaviso;
+            }
+        }
+    }
+}
+#choisir_les_cookies{
+    .choisir_les_cookies_boutons{
+        #retour_texte{
+            background-color:$greenNaviso;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.3)!important;
+            &:hover{
+                background-color:rgba(255, 255, 255, 0.3);
+            }
+        }
+        #accepter_cookies_selectionnes{
+            color:#fff;
+            &:hover{
+                color:$bleuNaviso;
+            }
+        }
+    }
+}
