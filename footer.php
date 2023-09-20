@@ -81,8 +81,8 @@
 
 <?php $copyright_text = get_field('copyright_text', 'option') ?>
 <footer id="footer">
-    <div id="footer_wrapper">
-        <p id="footer_content" class="legende content_width">
+    <div id="footer_wrapper" class="content_width">
+        <p id="footer_content" class="legende">
             <span>
                 <?php $signature_footer = get_field('signature_footer', 'option'); ?>
                 © <?php echo date("Y") ?> <?php bloginfo('name'); ?> -
@@ -97,14 +97,14 @@
                     'depth'           => 0,
                 );
                 echo strip_tags(wp_nav_menu($menuParameters), '<a>'); ?>
+
                 <?php $page_facebook = get_field('page_facebook', 'option'); ?>
                 <?php $page_twitter = get_field('page_twitter', 'option'); ?>
                 <?php $page_linkedin = get_field('page_linkedin', 'option'); ?>
                 <?php $page_instagram = get_field('page_instagram', 'option'); ?>
                 <?php $page_youtube = get_field('page_youtube', 'option'); ?>
                 <?php $reseaux_sociaux_suivez_nous_sur = get_field('reseaux_sociaux_suivez-nous_sur', 'option'); ?>
-
-                <div class="rs_link_wrapper">
+                <span class="rs_link_wrapper">
                     <?php if ($page_facebook) : ?>
                         <a target="_blank" href="<?php echo $page_facebook; ?>" class="rs_link_item" title="<?php if ($reseaux_sociaux_suivez_nous_sur) : ?>
                         <?php echo $reseaux_sociaux_suivez_nous_sur; ?>
@@ -136,7 +136,7 @@
                             <?= showSvg(get_stylesheet_directory_uri() . '/svg/youtube.svg') ?>
                         </a>
                     <?php endif; ?>
-                </div>
+                </span>
             </span>
         </p>
     </div>

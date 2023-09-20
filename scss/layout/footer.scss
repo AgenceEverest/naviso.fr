@@ -28,9 +28,7 @@
 }
 
 #footer_wrapper {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    width: 100%;
+    padding: 1.7rem 0 1.7rem 0;
 }
 
 .prefooter_col_1 {
@@ -81,59 +79,81 @@
     padding-top: 0 !important;
     margin-bottom: 2rem;
 }
-.rs_link_wrapper {
-    display: flex;
-    .rs_link_item {
-        background: $greenNaviso;
-        width: 36px;
-        height: 36px;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0rem 1rem 0rem 0rem !important;
-        display: flex;
-        justify-content: center;
-        align-items: center;
 
-        svg {
-            color: white;
-            height: 1.6rem;
-        }
-
-        &:hover {
-            background-color: white;
-
-            svg {
-                color: $greenNaviso !important;
-            }
-        }
-    }
-}
 
 #footer_content {
     display: flex;
     justify-content: space-between;
     margin: auto;
-    width: 80%;
     span {
         text-decoration: underline;
+        align-items: center;
+        display: flex;
     }
-
     #menu-footer {
         display: flex;
-
         a {
-            margin-right: 1rem;
+            margin-left: 1rem;
         }
     }
-
- 
-
-
-
-
+    .rs_link_wrapper {
+        display: flex;
+        .rs_link_item {
+            background: $greenNaviso;
+            width: 36px;
+            height: 36px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0rem 0rem 0rem 1rem !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            svg {
+                color: white;
+                height: 1.6rem;
+            }
+    
+            &:hover {
+                background-color: white;
+    
+                svg {
+                    color: $greenNaviso !important;
+                }
+            }
+        }
+    }
 }
+
+@media only screen and (max-width: 1024px) {
+    #footer_content {
+        display: block;
+        span{
+            align-items: inherit;
+            display: inherit;
+        }
+    }
+    #footer_content #menu-footer{
+        display: block;
+        padding-top:1rem;
+        a {
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+        }
+    }
+    #footer_content .rs_link_wrapper {
+        justify-content: center;
+        padding-top:1rem;
+        width:100%;
+        .rs_link_item {
+            margin: 0rem 0.5rem 0rem 0.5rem !important;
+        }
+    }
+}
+
+
 
 .menu-menu-footer-2-container {
     display: flex;
