@@ -148,14 +148,16 @@
             font-weight: bolder;
             margin-bottom: 0.5rem;
             text-align: center;
-            &:nth-child(odd) {
-                color: $greenNaviso;
-            border: 2px solid $greenNaviso;
-            }
-            &:nth-child(even) {
-                color: $bleuNaviso;
-                border: 2px solid $bleuNaviso;
-            }
+            color: $bleuNaviso;
+            border: 2px solid $bleuNaviso;
+            // &:nth-child(odd) {
+            //     color: $greenNaviso;
+            // border: 2px solid $greenNaviso;
+            // }
+            // &:nth-child(even) {
+            //     color: $bleuNaviso;
+            //     border: 2px solid $bleuNaviso;
+            // }
         }
     }
 
