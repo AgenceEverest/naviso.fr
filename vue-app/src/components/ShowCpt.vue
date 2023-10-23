@@ -9,7 +9,10 @@ import CasClient from "./excerpts/CasClient.vue";
 import ExtraitActualite from "./excerpts/ExtraitActualite.vue";
 import ExtraitFormation from "./excerpts/ExtraitFormation.vue";
 import he from "he";
-import { getApiData } from "../utils/getApi";
+import { getApiData } from "../helpers/getApi";
+import { cleanUrl } from "../helpers/cleanUrl";
+import dataProperties from "../helpers/dataProperties";
+
 export default {
   name: "ShowCpt",
   components: {
@@ -22,112 +25,15 @@ export default {
   },
   data() {
     return {
-      app: HTMLElement,
-      activeTerms: [],
-      afficherBoutonTelechargement: false,
-      afficherBoutonFicheDePoste: false,
-      cpt: "",
-      cpts: [],
-      cptName: "",
-      displayablePosts: 0, // correspond au nombre de posts qui ont show = true et toCome = true
-      displayed: 0,
-      selected: "",
-      filters: [],
-      filterType: "",
-      taxonomiesAndTerms: [],
-      indexCptShow: 0,
-      incrementNumber: 0,
-      isLoaded: false,
-      texteFinCandidature: "",
-      texteBoutonTelecharger: "",
-      hasMoreContent: true,
-      howManyTaxonomiesInExcerpt: 0,
-      extraitPaddingTop: "extrait-padding-top-1",
-      maxDisplayable: 0,
-      searchInput: false,
-      protocol: "",
-      perPage: 0,
-      post: "post",
-      posts: "posts",
-      postsFilteredByKeyword: false,
-      postsFoundByKeyword: 0,
-      lastKeyword: "",
-      loadMore: "",
-      taxonomiesToShow: [],
-      texteEventsAVenir: "",
-      texteEventsPasses: "",
-      texteTouslesFiltres1: "",
-      texteTouslesFiltres2: "",
-      texteTouslesFiltres3: "",
-      texteTouslesFiltres4: "",
-      texteDateDeLappelaProjet: "",
-      texteDateDeLevenement: "",
-      texteBoutonVideo: "",
-      texteEnSavoirPlus: "",
-      website: "",
+      ...dataProperties(),
+      dataJson: {},
     };
   },
+
   mounted() {
+
+
     this.app = document.querySelector("#app");
-    this.cpt = this.app.getAttribute("cpt");
-    this.texteDateDeLappelaProjet = this.app.getAttribute(
-      "texte-date-de-lappel-a-projet"
-    );
-    this.texteDateDeLevenement = this.app.getAttribute(
-      "texte-date-de-levenement"
-    );
-    this.filterType = this.app.getAttribute("filtre");
-    this.searchInput = this.app.getAttribute("champ-recherche");
-    this.searchInput = this.searchInput === "1" ? true : false;
-    this.setMaxDisplayablePosts(this.app.getAttribute("max-posts"));
-    this.setIncrementNumber(this.app.getAttribute("increment-number"));
-    this.texteFinCandidature = this.app.getAttribute("texte-fin-candidature");
-    this.texteEnSavoirPlus = this.app.getAttribute("texte-en-savoir-plus");
-    this.textH2EventAVenir = this.app.getAttribute("text-h2-event-a-venir");
-    this.textH2EventPasse = this.app.getAttribute("text-h2-event-passe");
-    this.afficherBoutonFicheDePoste = this.app.getAttribute(
-      "afficher-bouton-fiche-de-poste"
-    );
-    this.texteBoutonFicheDePoste = this.app.getAttribute(
-      "texte-bouton-fiche-de-poste"
-    );
-    this.texteEventsAVenir = this.app.getAttribute("texte-evenements-a-venir");
-    this.texteEventsPasses = this.app.getAttribute("texte-evenements-passes");
-
-    this.texteBoutonTelecharger = this.app.getAttribute(
-      "texte-bouton-de-telechargement"
-    );
-    this.afficherBoutonTelechargement = this.app.getAttribute(
-      "afficher-bouton-telechargement"
-    );
-
-    this.texteTouslesFiltres1 = this.app.getAttribute(
-      "texte-tous-les-filtres-1"
-    );
-
-    this.texteTouslesFiltres2 = this.app.getAttribute(
-      "texte-tous-les-filtres-2"
-    );
-    this.texteTouslesFiltres3 = this.app.getAttribute(
-      "texte-tous-les-filtres-3"
-    );
-    this.texteTouslesFiltres4 = this.app.getAttribute(
-      "texte-tous-les-filtres-4"
-    );
-
-    this.texteBoutonFicheFormation = this.app.getAttribute(
-      "texte-du-bouton-fiche-formation"
-    );
-
-    this.texteCardChampDuree = this.app.getAttribute(
-      "texte-de-la-card-pour-le-champ-duree"
-    );
-
-    this.textCardChampProchaineSession = this.app.getAttribute(
-      "texte-de-la-card-pour-le-champ-prochaine-session"
-    );
-
-    this.texteBoutonVideo = this.app.getAttribute("texte-bouton-video");
 
     const taxoInExcerptAttribute = [
       "taxo-1-extrait",
@@ -142,27 +48,11 @@ export default {
         this.taxonomiesToShow.push(taxoInExcerpt);
       }
     }
-
-    this.extraitPaddingTop =
-      "extrait-padding-top-" + this.howManyTaxonomiesInExcerpt;
-
-    this.loadMoreText = this.app.getAttribute("load-more-text");
-
-    let i = 1;
-    const filters = [];
-    for (i = 1; i < 5; i++) {
-      let filter = this.app.getAttribute("filtre-etage-" + i);
-      filter ? filters.push(filter) : null;
-    }
-
-    this.storeFilters(filters);
-    this.getCpt(this.cpt).then(() => {
-      // la première option est sélectionnée par défaut dans le select, mais il faut aussi l'activer dans le store
-      if (this.filterType === "select") {
-        this.setFirstOptionAsActive();
-      } else {
-        this.activeAllAtStart();
-      }
+    this.dataJson = JSON.parse(this.app.getAttribute("data-json"));
+    this.setMaxDisplayablePosts(this.dataJson.max_posts);
+    this.setIncrementNumber(this.dataJson.increment_number);
+    this.getCpt(this.dataJson.publication_liste_app_child).then(() => {
+      this.activeAllAtStart();
     });
   },
   updated() {
@@ -176,26 +66,12 @@ export default {
       });
       this.filters.forEach((filter) => {
         filter.isAllButtonToggled = true;
+        filter.terms.forEach((term) => {
+          term.active = false;
+        });
       });
       this.hasMoreContent = this.displayed < this.displayablePosts;
       this.recordOriginalCpts();
-    },
-    cleanUrl() {
-      console.log("lurl est cleanée");
-      if (location.hostname === "localhost") {
-        let pathname = location.pathname;
-        if (location.pathname === "/") {
-          // dans le cas d'un localhost avec la commande NPM run dev
-          pathname = "/naviso";
-        }
-        pathname = pathname.split("/");
-        pathname = pathname[1];
-        this.website = `localhost/${pathname}`;
-        this.protocol = "http";
-      } else {
-        this.website = location.host;
-        this.protocol = "https";
-      }
     },
     convertToFrenchDate(dateString) {
       if (dateString) {
@@ -209,78 +85,70 @@ export default {
       }
     },
     async getCpt(cptName) {
-      console.log("récupération des CPTS");
-      this.cleanUrl();
+      const { website, protocol } = cleanUrl(this.website, this.protocol); // récupère le bon nom de site et le bon protocole
+      this.website = website;
+      this.protocol = protocol;
       this.cptName = cptName;
-      if (this.cptName === "post") {
-        cptName = "posts";
-      }
-      try {
-        console.log(
-          `${this.protocol}://${this.website}/wp-json/wp/v2/${cptName}?per_page=100&_embed`
-        );
-        this.cpts = await getApiData(
-          `${this.protocol}://${this.website}/wp-json/wp/v2/${cptName}?per_page=100&_embed`
-        );
-        this.cpts.forEach(async (cpt) => {
-          cpt.show = true;
-          if ("_embedded" in cpt) {
-            cpt.terms = cpt._embedded["wp:term"]
-              ? cpt._embedded["wp:term"].flatMap((taxo) => taxo)
-              : "";
-          } else {
-            cpt.terms = [];
-          }
-          cpt.toCome = true; // on le met par défaut sur tous les CPT pour faciliter le codes
-          if (cpt.acf.date_de_levenement) {
-            if (cpt.acf.date_de_levenement) {
-              const year = cpt.acf.date_de_levenement.slice(0, 4);
-              const month = cpt.acf.date_de_levenement.slice(4, 6) - 1; // Les mois commencent à 0
-              const day = cpt.acf.date_de_levenement.slice(6, 8);
-              const eventDate = new Date(year, month, day);
-              const now = new Date();
-              if (eventDate < now) {
-                cpt.toCome = false; // L'événement est déjà passé
-              }
-              if (cpt.acf.date_de_levenement) {
-                cpt.acf.date_de_levenement = this.convertToFrenchDate(
-                  cpt.acf.date_de_levenement
-                );
-              }
-            }
-          }
-          if (cpt.acf.fichier_a_telecharger) {
-            console.log("fichier à télécharger");
-            const fileObject = await getApiData(
-              `${this.protocol}://${this.website}/wp-json/wp/v2/media/${cpt.acf.fichier_a_telecharger}`
-            );
-            console.log("requête lancée");
 
-            console.log(fileObject);
-            cpt.acf.fichier_a_telecharger = fileObject.source_url;
-          }
-        });
+      let cptNameForRequest = this.cptName;
+
+      // attention ici en cas d'usage des posts, le nom est différent entre la route et le nom en PHP...
+      if (this.cptName === "post") {
+        cptNameForRequest = "posts";
+      }
+
+      try {
+        this.cpts = await getApiData(
+          `${this.protocol}://${this.website}/wp-json/wp/v2/${cptNameForRequest}?per_page=100&_embed`
+        );
+
+        this.cpts = this.reorganiseCpts(this.cpts);
+
         //on récupère les taxonomies et les terms
-        const taxonomiesAndTerms = await getApiData(
+        this.taxonomiesAndTerms = await getApiData(
           `${this.protocol}://${this.website}/wp-json/wp/v2/taxonomies-and-terms/`
         );
-        this.taxonomiesAndTerms = taxonomiesAndTerms;
 
-        this.filters = this.filters.map((filter) => {
-          if (this.taxonomiesAndTerms[this.cptName][filter]) {
-            return {
-              taxonomy: filter,
-              terms: this.taxonomiesAndTerms[this.cptName][filter],
-              isAllButtonToggled: false,
-            };
-          }
-        });
-
+        // on charge le contenu des filtres
+        this.filters = this.loadFiltersContent(
+          this.taxonomiesAndTerms,
+          this.cptName
+        );
         this.isLoaded = true;
       } catch (err) {
         console.log(err);
       }
       // si this.cpts.length est égal à 100, il faut refaire une requête pour récupérer les 100 suivants
+    },
+    loadFiltersContent(taxonomiesAndTerms, cptName) {
+      let filters = [];
+      let i = 1;
+      for (i = 1; i < 5; i++) {
+        let filter = this.dataJson["filtre_etage_" + i];
+        filter ? filters.push(filter) : null;
+      }
+      return filters.map((filter) => {
+        if (taxonomiesAndTerms[cptName][filter]) {
+          return {
+            taxonomy: filter,
+            terms: taxonomiesAndTerms[cptName][filter],
+            isAllButtonToggled: false,
+          };
+        }
+      });
+    },
+    reorganiseCpts(cpts) {
+      return (cpts = cpts.map((cpt) => {
+        let newCpt = { ...cpt, show: true };
+        if ("_embedded" in newCpt) {
+          newCpt.terms = newCpt._embedded["wp:term"]
+            ? newCpt._embedded["wp:term"].flatMap((taxo) => taxo)
+            : "";
+        } else {
+          newCpt.terms = [];
+        }
+        return newCpt;
+      }));
     },
     decodeHtmlInTree(node) {
       const nodes = node.childNodes;
@@ -295,29 +163,17 @@ export default {
         }
       }
     },
-    toggleAllButton(filter) {
-      console.log('le bouton "tout est activé');
-      filter.terms.forEach((term) => {
-        if (term.active) {
-          this.isAllButtonToggled = false;
-        }
-      });
-      this.recordFilteredCpts();
-    },
     displayPostAccordingMaxDisplayable(cpt) {
-      console.log("montre les CPT selon le max possible");
-      if (cpt.toCome) {
-        this.displayablePosts++;
-        if (this.displayed < this.maxDisplayable) {
-          cpt.display = true;
-          this.displayed++;
-        } else {
-          cpt.display = false;
-        }
+      // console.log("montre les CPT selon le max possible");
+      this.displayablePosts++;
+      if (this.displayed < this.maxDisplayable) {
+        cpt.display = true;
+        this.displayed++;
+      } else {
+        cpt.display = false;
       }
     },
     handleClick(termName, filter) {
-      console.log(termName, filter);
       console.log("gestion du clic des boutons");
       if (this.originalCpts.length === 0) {
         this.recordOriginalCpts();
@@ -329,70 +185,49 @@ export default {
           this.cpts = JSON.parse(JSON.stringify(this.originalCpts));
         }
       }
-      if (termName === "all") {
-        this.displayed = 0;
-        this.displayablePosts = 0;
-        console.log("Clic sur TOUT");
-        filter.terms.forEach((term) => {
-          if (this.activeTerms.includes(term.name)) {
-            this.activeTerms = this.activeTerms.filter(
-              (activeTerm) => activeTerm !== term.name
-            );
-          }
-        });
-        let filterTaxonomy = filter.taxonomy;
-        this.filters.forEach((filter) => {
-          if (filter.taxonomy === filterTaxonomy) {
-            filter.terms.forEach((term) => {
-              term.active = false;
-            });
-          }
-        });
-        this.toggleAllButton(filter);
-        if (this.activeTerms.length > 0) {
-          this.filterCpts();
-        } else {
-          this.cpts.forEach((cpt) => {
-            cpt.show = true;
-            this.displayPostAccordingMaxDisplayable(cpt);
-          });
-        }
-      } else {
-        console.log("Clic sur un filtre");
-        this.filters.forEach((filter) => {
-          filter.terms.forEach((term) => {
-            if (term.name === termName) {
-              if (term.active) {
-                term.active = false;
-                this.activeTerms = this.activeTerms.filter(
-                  (activeTerm) => activeTerm !== term.name
-                );
-              } else {
-                term.active = true;
-                filter.isAllButtonToggled = false;
-                this.activeTerms.push(term.name);
-              }
-            }
-            // on réactive le button pour tous les termes, mais si un terme est actif, on le désactive, ce qui permet
-            // de le réactiver par défaut quand on désactive un terme
-          });
-          if (filter.terms.find((term) => term.active) !== undefined) {
-            filter.isAllButtonToggled = false;
+      console.log("Clic sur un filtre");
+      this.filters = this.filters.map((innerFilter) => {
+        if (termName === "all") {
+          if (innerFilter.taxonomy === filter.taxonomy) {
+            return this.toggleAllToTrueInFilter(innerFilter);
           } else {
-            filter.isAllButtonToggled = true;
+            return innerFilter;
           }
-        });
-        this.filterCpts();
-      }
+        } else {
+          let termsCopy = this.toggleTermClicked(termName, innerFilter);
+          let isAllButtonToggled = this.checkIfAnyTermActive(termsCopy);
+
+          return {
+            ...innerFilter, // On copie toutes les propriétés de 'filter'
+            terms: termsCopy, // On utilise la copie modifiée des termes
+            isAllButtonToggled: isAllButtonToggled, // On met à jour la valeur de 'isAllButtonToggled'
+          };
+        }
+      });
+      this.filterCpts(filter);
       this.hasMoreContent = this.displayed < this.displayablePosts;
+    },
+    toggleTermClicked(termName, innerFilter) {
+      let termsCopy = innerFilter.terms.map((term) => {
+        let termCopy = { ...term }; // Copie de l'objet 'term'
+        if (termCopy.name === termName) {
+          termCopy.active = !termCopy.active;
+        }
+        return termCopy;
+      });
+      return termsCopy;
+    },
+    checkIfAnyTermActive(termsCopy) {
+      let activeTermFound = termsCopy.find((term) => term.active);
+      let isAllButtonToggled = activeTermFound === undefined ? true : false;
+      return isAllButtonToggled;
     },
     incrementmaxDisplayable() {
       this.maxDisplayable = this.maxDisplayable + this.incrementNumber;
-
       this.displayed = 0;
       this.cpts.forEach((cpt) => {
         if (this.displayed < this.maxDisplayable) {
-          if (cpt.show && cpt.toCome) {
+          if (cpt.show) {
             cpt.display = true;
             this.displayed++;
           }
@@ -401,18 +236,22 @@ export default {
 
       this.hasMoreContent = this.displayed < this.displayablePosts;
     },
-    recordOriginalCpts() {
-      console.log("enregistrement des CPTS originaux");
-      this.originalCpts = JSON.parse(JSON.stringify(this.cpts));
-    },
-    setFirstOptionAsActive() {
-      console.log("Activation de la première option en cas de selected");
-
-      this.filters.forEach((filter) => {
-        filter.terms[0].active = true;
-        this.activeTerms.push(filter.terms[0].name);
+    toggleAllToTrueInFilter(innerFilter) {
+      let termsCopy = innerFilter.terms.map((term) => {
+        let termCopy = { ...term }; // Copie de l'objet 'term'
+        termCopy.active = false;
+        return termCopy;
       });
-      this.filterCpts();
+      let isAllButtonToggled = true;
+      return {
+        ...innerFilter, // On copie toutes les propriétés de 'filter'
+        terms: termsCopy, // On utilise la copie modifiée des termes
+        isAllButtonToggled: isAllButtonToggled, // On met à jour la valeur de 'isAllButtonToggled'
+      };
+    },
+    recordOriginalCpts() {
+      // console.log("enregistrement des CPTS originaux");
+      this.originalCpts = JSON.parse(JSON.stringify(this.cpts));
     },
     setMaxDisplayablePosts(value) {
       this.maxDisplayable = parseInt(value);
@@ -420,13 +259,8 @@ export default {
     setIncrementNumber(value) {
       this.incrementNumber = parseInt(value);
     },
-    storeFilters(filters) {
-      console.log("stockage des filtres dans le store");
-      this.filters = filters;
-    },
     userSearchOrDeleteKeyword(keyword) {
       this.lastKeyword = keyword;
-
       // Si le mot-clé est vide (l'utilisateur a effacé son mot-clé), on réinitialise la liste des CPTs et on sort de la fonction
       // Si le mot-clé est de longueur 1 (quand l'utilisateur a commencé à entrer une valeur),
       // on supprime du tableau des CPT ceux qui ne sont pas visibles, dans le but de pouvoir revenir à l'état
@@ -434,49 +268,43 @@ export default {
       this.displayed = 0;
       this.displayablePosts = 0;
       this.cpts.forEach((cpt) => {
-        if (cpt.toCome) {
-          const title = cpt.title.rendered.toLowerCase();
-          // condition qui permet de vérifier si le mot-clé renvoyé par l'utilisateur correspond à une des propriétés du custom post type
-          let match = false;
-          for (const key in cpt.acf) {
-            if (cpt.acf[key] && typeof cpt.acf[key] === "string") {
-              if (
-                he
-                  .decode(cpt.acf[key].toLowerCase())
-                  .includes(keyword.toLowerCase())
-              ) {
-                match = true;
-                break;
-              }
+        const title = cpt.title.rendered.toLowerCase();
+
+        const checkMatch = (input) =>
+          he.decode(input.toLowerCase()).includes(keyword.toLowerCase());
+
+        const checkAcfFields = (acf) => {
+          for (const key in acf) {
+            if (
+              acf[key] &&
+              typeof acf[key] === "string" &&
+              checkMatch(acf[key])
+            ) {
+              return true;
             }
           }
+          return false;
+        };
 
-          // vérification des terms du custom post type
-          if (cpt.terms.length > 0) {
-            for (const key in cpt.terms) {
-              if (
-                he
-                  .decode(cpt.terms[key].name)
-                  .toLowerCase()
-                  .includes(keyword.toLowerCase())
-              ) {
-                match = true;
-                break;
-              }
-              break;
+        const checkTerms = (terms) => {
+          for (const key in terms) {
+            if (checkMatch(terms[key].name)) {
+              return true;
             }
           }
+          return false;
+        };
 
-          if (
-            (he.decode(title).includes(keyword.toLowerCase()) || match) &&
-            cpt.show
-          ) {
-            this.displayablePosts++;
-            cpt.display = false;
-            if (this.displayed < this.maxDisplayable) {
-              cpt.display = true;
-              this.displayed++;
-            }
+        let match =
+          checkMatch(title) ||
+          checkAcfFields(cpt.acf) ||
+          (cpt.terms.length > 0 && checkTerms(cpt.terms));
+        cpt.display = match && cpt.show && cpt.display;
+
+        if (cpt.display) {
+          this.displayablePosts++;
+          if (this.displayed < this.maxDisplayable) {
+            this.displayed++;
           } else {
             cpt.display = false;
           }
@@ -512,39 +340,48 @@ export default {
           this.hasMoreContent = this.displayed < this.displayablePosts;
           return;
         } else {
-          /*           this.postsFilteredByKeyword = true;
-           */ console.log("l'utilisateur efface mais le champ n'est pas vide");
+          console.log("l'utilisateur efface mais le champ n'est pas vide");
           this.userSearchOrDeleteKeyword(keyword);
         }
       }
     },
-    filterCpts() {
-      console.log("les CPTS sont filtrés");
+    filterCpts(filter) {
       this.displayablePosts = 0;
       this.displayed = 0;
       this.cpts.forEach((cpt) => {
-        // On vérifie tous les terms actifs, et si l'un des terms du CPT correspond à l'un des terms actif, alors on affiche le CPT
-        if (this.activeTerms.length > 0) {
-          cpt.show = this.activeTerms.some((activeTerm) => {
-            if (cpt.terms.length > 0) {
-              return cpt.terms.some((term) => term.name === activeTerm);
-            }
-          });
-          if (cpt.show) {
-            this.displayPostAccordingMaxDisplayable(cpt);
+        const taxonomyFiltered = filter.taxonomy;
+        let termPresentInFilter;
+        let isAllButtonToggledInFilter;
+        let isAllButtonToggledInOtherFilter;
+        let termPresentInOtherFilter;
+        this.filters.forEach((innerFilter) => {
+          if (innerFilter.taxonomy === taxonomyFiltered) {
+            isAllButtonToggledInFilter = innerFilter.isAllButtonToggled;
+            termPresentInFilter = innerFilter.terms.find(
+              (term) => term.term_id === cpt[innerFilter.taxonomy][0]
+            );
+          } else {
+            isAllButtonToggledInOtherFilter = innerFilter.isAllButtonToggled;
+            termPresentInOtherFilter = innerFilter.terms.find(
+              (term) => term.term_id === cpt[innerFilter.taxonomy][0]
+            );
           }
-        } else {
-          // aucun term n'est actif, on affiche tout
-          console.log("Aucun term actif, on affiche tout");
+        });
+        if (
+          isAllButtonToggledInFilter ||
+          (termPresentInFilter.active && isAllButtonToggledInOtherFilter) ||
+          (termPresentInFilter.active && termPresentInOtherFilter.active)
+        ) {
           cpt.show = true;
           this.displayPostAccordingMaxDisplayable(cpt);
+        } else {
+          cpt.show = false;
         }
+        this.hasMoreContent = this.displayed < this.displayablePosts;
+        this.recordFilteredCpts();
       });
-      this.hasMoreContent = this.displayed < this.displayablePosts;
-      this.recordFilteredCpts();
     },
     recordFilteredCpts() {
-      console.log("enregistrement des CPTS filtrés");
       this.filteredCpts = JSON.parse(JSON.stringify(this.cpts));
     },
   },
@@ -553,16 +390,20 @@ export default {
 
 <template>
   <FiltersCpts
-    v-show="isLoaded"
-    :filters="filters"
-    :search-input="searchInput"
-    :filter-type="filterType"
+  v-show="isLoaded"
     @handleClick="handleClick"
     @filterElementsByKeyword="filterElementsByKeyword"
-    :texteTouslesFiltres1="texteTouslesFiltres1"
-    :texteTouslesFiltres2="texteTouslesFiltres2"
-    :texteTouslesFiltres3="texteTouslesFiltres3"
-    :texteTouslesFiltres4="texteTouslesFiltres4"
+    :filters="filters"
+    :champs_texte_pour_affiner="dataJson.champs_texte_pour_affiner"
+    :type_de_filtre="dataJson.type_de_filtre"
+    :texte_pour_le_label_1="dataJson.texte_pour_le_label_1"
+    :texte_pour_le_label_2="dataJson.texte_pour_le_label_2"
+    :texte_pour_le_label_3="dataJson.texte_pour_le_label_3"
+    :texte_pour_le_label_4="dataJson.texte_pour_le_label_4"
+    :texte_tous_les_filtres_1="dataJson.texte_tous_les_filtres_1"
+    :texte_tous_les_filtres_2="dataJson.texte_tous_les_filtres_2"
+    :texte_tous_les_filtres_3="dataJson.texte_tous_les_filtres_3"
+    :texte_tous_les_filtres_4="dataJson.texte_tous_les_filtres_4"
   />
   <div v-show="isLoaded" :class="'extraits-container ' + extraitPaddingTop">
     <template v-if="cptName === 'webinaire'">
@@ -573,10 +414,12 @@ export default {
           v-for="cpt in cpts"
           :key="cpt.id"
           :cpt="cpt"
-          :texteFinCandidature="texteFinCandidature"
-          :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
-          :texteEnSavoirPlus="texteEnSavoirPlus"
-          :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
+          :date_de_fin_de_candidature_texte="date_de_fin_de_candidature_texte"
+          :afficher_le_bouton_lie_a_la_fiche_de_poste="
+            afficher_le_bouton_lie_a_la_fiche_de_poste
+          "
+          :texte_en_savoir_plus="texte_en_savoir_plus"
+          :texte_bouton_fiche_de_poste="texte_bouton_fiche_de_poste"
         />
       </div>
       <div
@@ -584,7 +427,7 @@ export default {
         v-if="hasMoreContent"
         class="load-more"
       >
-        {{ loadMoreText }}
+        {{ dataJson.load_more_text }}
       </div>
     </template>
     <template v-else-if="cptName === 'client'">
@@ -595,11 +438,15 @@ export default {
           v-for="cpt in cpts"
           :key="cpt.id"
           :cpt="cpt"
-          :texteFinCandidature="texteFinCandidature"
-          :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
-          :texteEnSavoirPlus="texteEnSavoirPlus"
-          :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
-          :texteBoutonVideo="texteBoutonVideo"
+          :date_de_fin_de_candidature_texte="
+            dataJson.date_de_fin_de_candidature_texte
+          "
+          :afficher_le_bouton_lie_a_la_fiche_de_poste="
+            dataJson.afficher_le_bouton_lie_a_la_fiche_de_poste
+          "
+          :texte_en_savoir_plus="dataJson.texte_en_savoir_plus"
+          :texte_bouton_fiche_de_poste="dataJson.texte_bouton_fiche_de_poste"
+          :texte_bouton_video="dataJson.texte_bouton_video"
         />
       </div>
       <div
@@ -607,7 +454,7 @@ export default {
         v-if="hasMoreContent"
         class="load-more"
       >
-        {{ loadMoreText }}
+        {{ dataJson.load_more_text }}
       </div>
     </template>
     <template v-else-if="cptName === 'post'">
@@ -618,10 +465,14 @@ export default {
           v-for="cpt in cpts"
           :key="cpt.id"
           :cpt="cpt"
-          :texteFinCandidature="texteFinCandidature"
-          :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
-          :texteEnSavoirPlus="texteEnSavoirPlus"
-          :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
+          :date_de_fin_de_candidature_texte="
+            dataJson.date_de_fin_de_candidature_texte
+          "
+          :afficher_le_bouton_lie_a_la_fiche_de_poste="
+            dataJson.afficher_le_bouton_lie_a_la_fiche_de_poste
+          "
+          :texte_en_savoir_plus="dataJson.texte_en_savoir_plus"
+          :texte_bouton_fiche_de_poste="dataJson.texte_bouton_fiche_de_poste"
         />
       </div>
       <div
@@ -629,7 +480,7 @@ export default {
         v-if="hasMoreContent"
         class="load-more"
       >
-        {{ loadMoreText }}
+        {{ dataJson.load_more_text }}
       </div>
     </template>
     <template v-else-if="cptName === 'formation'">
@@ -640,14 +491,24 @@ export default {
           v-for="cpt in cpts"
           :key="cpt.id"
           :cpt="cpt"
-          :texteFinCandidature="texteFinCandidature"
-          :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
-          :texteEnSavoirPlus="texteEnSavoirPlus"
-          :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
+          :date_de_fin_de_candidature_texte="
+            dataJson.date_de_fin_de_candidature_texte
+          "
+          :afficher_le_bouton_lie_a_la_fiche_de_poste="
+            dataJson.afficher_le_bouton_lie_a_la_fiche_de_poste
+          "
+          :texte_en_savoir_plus="dataJson.texte_en_savoir_plus"
+          :texte_bouton_fiche_de_poste="dataJson.texte_bouton_fiche_de_poste"
           :taxonomiesToShow="taxonomiesToShow"
-          :texteBoutonFicheFormation="texteBoutonFicheFormation"
-          :texteCardChampDuree="texteCardChampDuree"
-          :textCardChampProchaineSession="textCardChampProchaineSession"
+          :texte_du_bouton_fiche_formation="
+            dataJson.texte_du_bouton_fiche_formation
+          "
+          :texte_de_la_card_pour_le_champ_duree="
+            dataJson.texte_de_la_card_pour_le_champ_duree
+          "
+          :texte_de_la_card_pour_le_champ_prochaine_session="
+            dataJson.texte_de_la_card_pour_le_champ_prochaine_session
+          "
         />
       </div>
       <div
@@ -655,7 +516,7 @@ export default {
         v-if="hasMoreContent"
         class="load-more"
       >
-        {{ loadMoreText }}
+        {{ dataJson.load_more_text }}
       </div>
     </template>
     <template v-else>
@@ -666,10 +527,14 @@ export default {
           v-for="cpt in cpts"
           :key="cpt.id"
           :cpt="cpt"
-          :texteFinCandidature="texteFinCandidature"
-          :afficherBoutonFicheDePoste="afficherBoutonFicheDePoste"
-          :texteEnSavoirPlus="texteEnSavoirPlus"
-          :texteBoutonFicheDePoste="texteBoutonFicheDePoste"
+          :date_de_fin_de_candidature_texte="
+            dataJson.date_de_fin_de_candidature_texte
+          "
+          :afficher_le_bouton_lie_a_la_fiche_de_poste="
+            dataJson.afficher_le_bouton_lie_a_la_fiche_de_poste
+          "
+          :texte_en_savoir_plus="dataJson.texte_en_savoir_plus"
+          :texte_bouton_fiche_de_poste="dataJson.texte_bouton_fiche_de_poste"
           :taxonomiesToShow="taxonomiesToShow"
         />
       </div>
@@ -678,7 +543,7 @@ export default {
         v-if="hasMoreContent"
         class="load-more"
       >
-        {{ loadMoreText }}
+        {{ dataJson.load_more_text }}
       </div>
     </template>
   </div>

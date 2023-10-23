@@ -5,28 +5,28 @@ export default {
     cpt: {
       type: Object,
     },
-    texteFinCandidature: {
+    date_de_fin_de_candidature_texte: {
       type: String,
     },
-    afficherBoutonFicheDePoste: {
+    afficher_le_bouton_lie_a_la_fiche_de_poste: {
       type: String,
     },
-    texteBoutonFicheDePoste: {
+    texte_bouton_fiche_de_poste: {
       type: String,
     },
-    texteEnSavoirPlus: {
+    texte_en_savoir_plus: {
       type: String,
     },
     taxonomiesToShow: {
       type: Array,
     },
-    texteBoutonFicheFormation: {
+    texte_du_bouton_fiche_formation: {
       type: String,
     },
-    texteCardChampDuree: {
+    texte_de_la_card_pour_le_champ_duree: {
       type: String,
     },
-    textCardChampProchaineSession: {
+    texte_de_la_card_pour_le_champ_prochaine_session: {
       type: String,
     },
   },
@@ -80,11 +80,11 @@ export default {
       {{ cpt.acf.description_extrait_de_la_page }}
     </p>
     <p v-if="cpt.acf.prochaine_session">
-      {{ textCardChampProchaineSession }} :
+      {{ texte_de_la_card_pour_le_champ_prochaine_session }} :
       {{ cpt.acf.prochaine_session }}
     </p>
     <p v-if="cpt.acf.duree">
-      {{ texteCardChampDuree }} :
+      {{ texte_de_la_card_pour_le_champ_duree }} :
       {{ cpt.acf.duree }}
     </p>
 
@@ -97,11 +97,11 @@ export default {
           target="_blank"
           v-if="cpt.acf.hasOwnProperty('fichier_a_telecharger')"
           :href="cpt.acf.fichier_a_telecharger"
-          >{{ texteBoutonFicheFormation }}</a
+          >{{ texte_du_bouton_fiche_formation }}</a
         >
       </p>
       <p class="cta_btn_lead cta_primaire">
-        <a :href="cpt.link">{{ texteEnSavoirPlus }}</a>
+        <a :href="cpt.link">{{ texte_en_savoir_plus }}</a>
       </p>
     </div>
   </div>
