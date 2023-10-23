@@ -349,37 +349,134 @@ export default {
       this.displayablePosts = 0;
       this.displayed = 0;
       this.cpts.forEach((cpt) => {
-        const taxonomyFiltered = filter.taxonomy;
-        let termPresentInFilter;
-        let isAllButtonToggledInFilter;
-        let isAllButtonToggledInOtherFilter;
-        let termPresentInOtherFilter;
-        this.filters.forEach((innerFilter) => {
-          if (innerFilter.taxonomy === taxonomyFiltered) {
-            isAllButtonToggledInFilter = innerFilter.isAllButtonToggled;
-            termPresentInFilter = innerFilter.terms.find(
-              (term) => term.term_id === cpt[innerFilter.taxonomy][0]
-            );
-          } else {
-            isAllButtonToggledInOtherFilter = innerFilter.isAllButtonToggled;
-            termPresentInOtherFilter = innerFilter.terms.find(
-              (term) => term.term_id === cpt[innerFilter.taxonomy][0]
-            );
-          }
-        });
+
+
+        const {
+          taxonomiesActiveInFilters,
+          isAllButtonToggledInFilters,
+          numberOfInactiveTaxonomy,
+          noButtonsAllToggled,
+          allButtonsToggled,
+        } = this.getFilterState(cpt);
+
+
+
+        // Vérifier si le CPT satisfait tous les filtres actifs
+        let allActiveFiltersSatisfied;
+
+        const useEvery =
+          this.dataJson.type_de_filtre_entre_les_taxonomies === "et";
+
+        // En fonction de la satisfaction des filtres, on utilise la méthode "every" ou "some".
+        // "every" correspond à "et" : on affiche les taxonomies filtrées dans l'étage un ET dans l'étage 2 : il faut une correspondance entre les taxonomies pour que le CPT s'affiche
+        // "some" correspond à "ou" : on affiche les taxonomies filtrées dans l'étage un OU dans l'étage 2 : peu importe les correspondances
+        allActiveFiltersSatisfied = Object.keys(taxonomiesActiveInFilters)[
+          useEvery ? "every" : "some"
+        ](
+          (taxonomy) =>
+            isAllButtonToggledInFilters[taxonomy] ||
+            taxonomiesActiveInFilters[taxonomy]
+        );
+
         if (
-          isAllButtonToggledInFilter ||
-          (termPresentInFilter.active && isAllButtonToggledInOtherFilter) ||
-          (termPresentInFilter.active && termPresentInOtherFilter.active)
+          noButtonsAllToggled &&
+          numberOfInactiveTaxonomy === this.filters.length
         ) {
-          cpt.show = true;
-          this.displayPostAccordingMaxDisplayable(cpt);
+          this.resetCptDisplay(cpt);
         } else {
-          cpt.show = false;
+          this.handleCptDisplayIfFiltered(
+            cpt,
+            allButtonsToggled,
+            allActiveFiltersSatisfied
+          );
         }
+
+        // Vérifier s'il y a plus de contenu à afficher
         this.hasMoreContent = this.displayed < this.displayablePosts;
         this.recordFilteredCpts();
+
       });
+    },
+
+    handleCptDisplayIfFiltered(
+      cpt,
+      allButtonsToggled,
+      allActiveFiltersSatisfied
+    ) {
+      if (allButtonsToggled || allActiveFiltersSatisfied) {
+        cpt.show = true;
+        cpt.display = true;
+        this.displayed++;
+        this.displayablePosts++;
+        this.maxDisplayable = this.displayed;
+      } else {
+        cpt.show = false;
+      }
+    },
+
+    resetCptDisplay(cpt) {
+      if (this.displayed < this.dataJson.max_posts) {
+        cpt.show = true;
+        cpt.display = true;
+        this.displayed++;
+        this.displayablePosts++;
+        this.maxDisplayable = this.displayed;
+      } else {
+        cpt.show = true;
+        cpt.display = false;
+        this.displayablePosts++;
+      }
+    },
+    getFilterState(cpt) {
+      let taxonomiesActiveInFilters = {};
+      let isAllButtonToggledInFilters = {};
+      let numberOfInactiveTaxonomy = 0;
+      this.filters.forEach((innerFilter) => {
+        const currentTaxonomy = innerFilter.taxonomy;
+        // Vérifier si le bouton "tout" est actif pour cette taxonomie
+        isAllButtonToggledInFilters[currentTaxonomy] =
+          innerFilter.isAllButtonToggled;
+
+        const activeTerms = innerFilter.terms.filter((term) => term.active);
+
+        // Si le CPT contient la taxonomie actuelle
+        if (cpt[currentTaxonomy]) {
+          const termsIdsInCpt = Array.from(cpt[currentTaxonomy]);
+          // Vérifier si l'un des terms actifs est lié à ce CPT
+          taxonomiesActiveInFilters[currentTaxonomy] = activeTerms.some(
+            (term) => termsIdsInCpt.includes(term.term_id)
+          );
+
+          // Dans le cas où aucun term n'est sélectionné, on considère qu'ils le sont tous,
+          // pour permettre au CPT de s'afficher si un seul term qui match est sélectionné dans l'autre filtre
+          if (this.dataJson.type_de_filtre_entre_les_taxonomies === "et") {
+            if (activeTerms.length === 0) {
+              taxonomiesActiveInFilters[currentTaxonomy] = true;
+            }
+          }
+        }
+
+        // on comptabilise les taxonomies inactives pour vérifier à la fin si elles le sont toutes et ainsi reseter l'état de l'app
+        if (activeTerms.length === 0) {
+          numberOfInactiveTaxonomy++;
+        }
+      });
+      const noButtonsAllToggled = Object.values(
+        isAllButtonToggledInFilters
+      ).every((toggled) => !toggled);
+
+      // Vérifier si tous les boutons "tout" sont activés
+      const allButtonsToggled = Object.values(
+        isAllButtonToggledInFilters
+      ).every((toggled) => toggled);
+
+      return {
+        taxonomiesActiveInFilters,
+        isAllButtonToggledInFilters,
+        numberOfInactiveTaxonomy,
+        noButtonsAllToggled,
+        allButtonsToggled,
+      };
     },
     recordFilteredCpts() {
       this.filteredCpts = JSON.parse(JSON.stringify(this.cpts));
