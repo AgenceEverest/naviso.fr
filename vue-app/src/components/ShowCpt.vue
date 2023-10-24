@@ -49,7 +49,6 @@ export default {
     this.setMaxDisplayablePosts(this.dataJson.max_posts);
     this.setIncrementNumber(this.dataJson.increment_number);
     console.log(this.dataJson);
-    console.log('ok');
     this.getCpt(this.dataJson.publication_liste_app_child).then(() => {
       this.activeAllAtStart();
     });
