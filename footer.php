@@ -164,3 +164,5 @@
     let durationRefused = '<?= htmlspecialchars($duree_reapparition_bandeau) ?>';
 </script>
 <?php wp_footer(); ?>
+
+testfr
