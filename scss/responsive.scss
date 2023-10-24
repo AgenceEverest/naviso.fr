@@ -139,12 +139,14 @@
 }
 
 @media (max-width: 768px) {
-
+    .hauteur-fixe-visuel-large figure img {
+        height: auto;
+    }
     .hauteur-fixe-visuel figure img {
         height: auto;
     }
 
-    img.image_simple_recadree {
+    img.image_simple_recadree, .col_left_wide_imgleft_img img {
         object-fit: contain;
     }
 
