@@ -31,10 +31,7 @@ export default {
   },
 
   mounted() {
-
-
     this.app = document.querySelector("#app");
-
     const taxoInExcerptAttribute = [
       "taxo-1-extrait",
       "taxo-2-extrait",
@@ -174,7 +171,7 @@ export default {
       }
     },
     handleClick(termName, filter) {
-      console.log("gestion du clic des boutons");
+      this.$refs.filtersComponent.resetUserEntry();
       if (this.originalCpts.length === 0) {
         this.recordOriginalCpts();
       } else {
@@ -261,10 +258,6 @@ export default {
     },
     userSearchOrDeleteKeyword(keyword) {
       this.lastKeyword = keyword;
-      // Si le mot-clé est vide (l'utilisateur a effacé son mot-clé), on réinitialise la liste des CPTs et on sort de la fonction
-      // Si le mot-clé est de longueur 1 (quand l'utilisateur a commencé à entrer une valeur),
-      // on supprime du tableau des CPT ceux qui ne sont pas visibles, dans le but de pouvoir revenir à l'état
-      // du premier filtre
       this.displayed = 0;
       this.displayablePosts = 0;
       this.cpts.forEach((cpt) => {
@@ -288,27 +281,20 @@ export default {
 
         const checkTerms = (terms) => {
           for (const key in terms) {
-            if (checkMatch(terms[key].name)) {
-              return true;
+            const termsArray = Array.from(terms[key]);
+            for (let i = 0; i < termsArray.length; i++) {
+              if (checkMatch(termsArray[i])) {
+                return true; // Si un match est trouvé, retourner true directement.
+              }
             }
           }
-          return false;
+          return false; // Aucun match n'a été trouvé, retourner false.
         };
 
-        let match =
-          checkMatch(title) ||
-          checkAcfFields(cpt.acf) ||
-          (cpt.terms.length > 0 && checkTerms(cpt.terms));
-        cpt.display = match && cpt.show && cpt.display;
+        const termFound = cpt.terms ? checkTerms(cpt.terms) : false;
 
-        if (cpt.display) {
-          this.displayablePosts++;
-          if (this.displayed < this.maxDisplayable) {
-            this.displayed++;
-          } else {
-            cpt.display = false;
-          }
-        }
+        let match = checkMatch(title) || checkAcfFields(cpt.acf) || termFound;
+        cpt.display = match && cpt.show;
       });
 
       this.hasMoreContent = this.displayed < this.displayablePosts;
@@ -316,41 +302,35 @@ export default {
     filterElementsByKeyword(keyword) {
       this.displayed = 0;
       this.displayablePosts = 0;
-      console.log("filtre par mots clés : ", keyword);
       if (this.lastKeyword.length < keyword.length) {
-        console.log("lutilisateur affine");
         this.userSearchOrDeleteKeyword(keyword);
       } else {
-        console.log("lutilisateur efface");
+        //  console.log("lutilisateur efface");
         this.lastKeyword = keyword;
+        const isAnyTermActive = this.isAnyTermActive();
+        console.log(isAnyTermActive);
+        if (!isAnyTermActive) {
+          this.cpts = JSON.parse(JSON.stringify(this.originalCpts));
+        } else {
+          this.cpts = JSON.parse(JSON.stringify(this.filteredCpts));
+        }
         if (keyword === "") {
-          console.log("le champ est de nouveau vide");
-          if (this.activeTerms.length > 0) {
-            this.cpts = JSON.parse(JSON.stringify(this.filteredCpts));
-          } else {
-            this.cpts = JSON.parse(JSON.stringify(this.originalCpts));
-          }
-
+          //  console.log("le champ est de nouveau vide");
           this.cpts.forEach((cpt) => {
-            if (cpt.show) {
-              this.displayPostAccordingMaxDisplayable(cpt);
-            }
+            this.resetCptDisplay(cpt);
           });
-
           this.hasMoreContent = this.displayed < this.displayablePosts;
           return;
         } else {
-          console.log("l'utilisateur efface mais le champ n'est pas vide");
+          //  console.log("l'utilisateur efface mais le champ n'est pas vide");
           this.userSearchOrDeleteKeyword(keyword);
         }
       }
     },
-    filterCpts(filter) {
+    filterCpts() {
       this.displayablePosts = 0;
       this.displayed = 0;
       this.cpts.forEach((cpt) => {
-
-
         const {
           taxonomiesActiveInFilters,
           isAllButtonToggledInFilters,
@@ -358,8 +338,6 @@ export default {
           noButtonsAllToggled,
           allButtonsToggled,
         } = this.getFilterState(cpt);
-
-
 
         // Vérifier si le CPT satisfait tous les filtres actifs
         let allActiveFiltersSatisfied;
@@ -394,7 +372,6 @@ export default {
         // Vérifier s'il y a plus de contenu à afficher
         this.hasMoreContent = this.displayed < this.displayablePosts;
         this.recordFilteredCpts();
-
       });
     },
 
@@ -413,7 +390,11 @@ export default {
         cpt.show = false;
       }
     },
-
+    isAnyTermActive() {
+      return this.filters.some((filter) => {
+        return filter.terms.some((term) => term.active === true);
+      });
+    },
     resetCptDisplay(cpt) {
       if (this.displayed < this.dataJson.max_posts) {
         cpt.show = true;
@@ -487,7 +468,7 @@ export default {
 
 <template>
   <FiltersCpts
-  v-show="isLoaded"
+    v-show="isLoaded"
     @handleClick="handleClick"
     @filterElementsByKeyword="filterElementsByKeyword"
     :filters="filters"
@@ -501,6 +482,7 @@ export default {
     :texte_tous_les_filtres_2="dataJson.texte_tous_les_filtres_2"
     :texte_tous_les_filtres_3="dataJson.texte_tous_les_filtres_3"
     :texte_tous_les_filtres_4="dataJson.texte_tous_les_filtres_4"
+    ref="filtersComponent"
   />
   <div v-show="isLoaded" :class="'extraits-container ' + extraitPaddingTop">
     <template v-if="cptName === 'webinaire'">

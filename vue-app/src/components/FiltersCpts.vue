@@ -58,6 +58,11 @@ export default {
       userEntry: "",
     };
   },
+  methods: {
+    resetUserEntry () {
+      this.userEntry = "";
+    }
+  }
 };
 </script>
 
