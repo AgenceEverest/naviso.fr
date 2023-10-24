@@ -140,10 +140,10 @@
 
 @media (max-width: 768px) {
     .hauteur-fixe-visuel-large figure img {
-        height: auto;
+        height: -webkit-fill-available;
     }
     .hauteur-fixe-visuel figure img {
-        height: auto;
+        height: -webkit-fill-available;
     }
 
     img.image_simple_recadree, .col_left_wide_imgleft_img img {
