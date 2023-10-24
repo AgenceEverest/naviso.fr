@@ -3,7 +3,7 @@ import SvgLoop from "../svg/SvgLoop.vue";
 
 export default {
   name: "FiltersCpts",
-  emits: ['handleClick', 'filterElementsByKeyword'],
+  emits: ["handleClick", "filterElementsByKeyword"],
   props: {
     filters: {
       type: Array,
@@ -59,10 +59,10 @@ export default {
     };
   },
   methods: {
-    resetUserEntry () {
+    resetUserEntry() {
       this.userEntry = "";
-    }
-  }
+    },
+  },
 };
 </script>
 

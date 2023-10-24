@@ -100,7 +100,7 @@ export default {
 
       try {
         this.cpts = await getApiData(
-          `${this.protocol}://${this.website}/wp-json/wp/v2/formation?per_page=100&_embed`
+          `${this.protocol}://${this.website}/wp-json/wp/v2/${cptNameForRequest}?per_page=100&_embed`
         );
 
         this.cpts = this.reorganiseCpts(this.cpts);
