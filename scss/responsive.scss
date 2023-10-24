@@ -140,10 +140,10 @@
 
 @media (max-width: 768px) {
     .hauteur-fixe-visuel-large figure img {
-        height: -webkit-fill-available;
+        height: inherit;
     }
     .hauteur-fixe-visuel figure img {
-        height: -webkit-fill-available;
+        height: inherit;
     }
 
     img.image_simple_recadree, .col_left_wide_imgleft_img img {
