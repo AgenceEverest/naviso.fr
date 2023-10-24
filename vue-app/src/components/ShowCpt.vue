@@ -33,7 +33,6 @@ export default {
   },
 
   mounted() {
-    console.log('test');
     this.app = document.querySelector("#app");
     const taxoInExcerptAttribute = [
       "taxo-1-extrait",
