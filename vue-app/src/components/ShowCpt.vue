@@ -1,6 +1,8 @@
 <!-- Si vous souhaitez customiser l'app, copiez tous le dossier de l'app ainsi que le block acf associé 
 dans le thème enfant, et redéclarez un bloc avec l'app copiée -->
 
+<!-- Branch master -->
+
 <script>
 import FiltersCpts from "./FiltersCpts.vue";
 import ExtraitDefaut from "./excerpts/ExtraitDefaut.vue";
