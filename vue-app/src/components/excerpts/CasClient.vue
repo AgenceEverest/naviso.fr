@@ -5,13 +5,13 @@ export default {
     cpt: {
       type: Object,
     },
-    texteFinCandidature: {
+    date_de_fin_de_candidature_texte: {
       type: String,
     },
-    texteBoutonVideo: {
+    texte_bouton_video: {
       type: String,
     },
-    texteEnSavoirPlus: {
+    texte_en_savoir_plus: {
       type: String,
     },
     taxonomiesToShow: {
@@ -76,7 +76,7 @@ export default {
         :class="{ cta_center: !cpt.acf.lien_vers_la_video }"
       >
         <a target="_blank" :href="cpt.acf.lien_landing_page_hubspot.url">{{
-          texteEnSavoirPlus
+          texte_en_savoir_plus
         }}</a>
       </p>
       <p
@@ -84,7 +84,7 @@ export default {
         class="cta_btn_lead cta_primaire"
       >
         <a target="_blank" :href="cpt.acf.lien_vers_la_video.url">{{
-          texteBoutonVideo
+          texte_bouton_video
         }}</a>
       </p>
     </div>

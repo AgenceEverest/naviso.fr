@@ -5,16 +5,16 @@ export default {
     cpt: {
       type: Object,
     },
-    texteFinCandidature: {
+    date_de_fin_de_candidature_texte: {
       type: String,
     },
-    afficherBoutonFicheDePoste: {
+    afficher_le_bouton_lie_a_la_fiche_de_poste: {
       type: String,
     },
-    texteBoutonFicheDePoste: {
+    texte_bouton_fiche_de_poste: {
       type: String,
     },
-    texteEnSavoirPlus: {
+    texte_en_savoir_plus: {
       type: String,
     },
     taxonomiesToShow: {
@@ -67,7 +67,7 @@ export default {
       {{ cpt.acf.description_extrait_de_la_page }}
     </p>
     <p v-if="cpt.acf.hasOwnProperty('date_de_fin_de_candidature')">
-      {{ texteFinCandidature }}
+      {{ date_de_fin_de_candidature_texte }}
       {{ convertToFrenchDate(cpt.acf.date_de_fin_de_candidature) }}
     </p>
     <!--      <p>{{ cpt.acf.lieu }}</p> -->
@@ -76,10 +76,10 @@ export default {
       <p
         v-if="cpt.acf.landing_page_hubspot"
         class="cta_btn_lead cta_primaire"
-        :class="{ cta_center: !afficherBoutonFicheDePoste }"
+        :class="{ cta_center: !afficher_le_bouton_lie_a_la_fiche_de_poste }"
       >
         <a target="_blank" :href="cpt.acf.landing_page_hubspot.url">{{
-          texteEnSavoirPlus
+          texte_en_savoir_plus
         }}</a>
       </p>
     </div>

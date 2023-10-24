@@ -1,0 +1,18 @@
+{
+    "publication_liste_app_child": "formation",
+    "type_de_filtre": "boutons",
+    "max_posts": "12",
+    "increment_number": "3",
+    "filtre_etage_1_activation": true,
+    "filtre_etage_1": "type_de_formation",
+    "afficher_la_taxonomie_dans_les_extraits_1": true,
+    "texte_tous_les_filtres_1": "Type de formation",
+    "filtre_etage_2_activation": true,
+    "filtre_etage_2": "nom_logiciel",
+    "texte_tous_les_filtres_2": "Tous les logiciels",
+    "texte_en_savoir_plus": "En savoir plus",
+    "load_more_text": "Charger davantage",
+    "texte_du_bouton_fiche_formation": "Fiche formation",
+    "texte_de_la_card_pour_le_champ_duree": "Dur\u00e9e",
+    "texte_de_la_card_pour_le_champ_prochaine_session": "Prochaine session"
+}
