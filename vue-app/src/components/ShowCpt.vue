@@ -48,9 +48,10 @@ export default {
       }
     }
     this.dataJson = JSON.parse(this.app.getAttribute("data-json"));
+
+    console.log(this.dataJson);
     this.setMaxDisplayablePosts(this.dataJson.max_posts);
     this.setIncrementNumber(this.dataJson.increment_number);
-    console.log(this.dataJson);
     this.getCpt(this.dataJson.publication_liste_app_child).then(() => {
       this.activeAllAtStart();
     });
