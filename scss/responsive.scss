@@ -12,6 +12,13 @@
 }
 
 @media (max-width: 1024px) {
+
+    .bandeau-header-page + .block-2-colonnes-textevisuel-large {
+        .col_right_wide_imgleft.padding_section {
+            padding-top: 0 !important;
+        }
+    }
+
     .col_right_wide_imgleft_wrapper_custom {
         padding-left: 3rem;
     }
@@ -353,11 +360,6 @@
 }
 
 @media (max-width: 480px) {
-    .bandeau-header-page + .block-2-colonnes-textevisuel-large {
-        .col_right_wide_imgleft.padding_section {
-            padding-top: 0 !important;
-        }
-    }
 
     .element-visuel-deux-col {
         display: none;
