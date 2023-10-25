@@ -353,6 +353,11 @@
 }
 
 @media (max-width: 480px) {
+    .bandeau-header-page + .block-2-colonnes-textevisuel-large {
+        .col_right_wide_imgleft.padding_section {
+            padding: 0;
+        }
+    }
 
     .element-visuel-deux-col {
         display: none;
