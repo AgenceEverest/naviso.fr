@@ -362,8 +362,8 @@
 @media (max-width: 480px) {
 
     .col_flexible_image img {
-        object-fit: cover;
-        height: auto;
+        object-fit: contain !important;
+        height: auto !important;
     }
     .element-visuel-deux-col {
         display: none;
