@@ -49,7 +49,6 @@ export default {
     }
     this.dataJson = JSON.parse(this.app.getAttribute("data-json"));
 
-    console.log(this.dataJson);
     this.setMaxDisplayablePosts(this.dataJson.max_posts);
     this.setIncrementNumber(this.dataJson.increment_number);
     this.getCpt(this.dataJson.publication_liste_app_child).then(() => {
@@ -186,7 +185,6 @@ export default {
           this.cpts = JSON.parse(JSON.stringify(this.originalCpts));
         }
       }
-      console.log("Clic sur un filtre");
       this.filters = this.filters.map((innerFilter) => {
         if (termName === "all") {
           if (innerFilter.taxonomy === filter.taxonomy) {
@@ -476,16 +474,7 @@ export default {
     @handleClick="handleClick"
     @filterElementsByKeyword="filterElementsByKeyword"
     :filters="filters"
-    :champs_texte_pour_affiner="dataJson.champs_texte_pour_affiner"
-    :type_de_filtre="dataJson.type_de_filtre"
-    :texte_pour_le_label_1="dataJson.texte_pour_le_label_1"
-    :texte_pour_le_label_2="dataJson.texte_pour_le_label_2"
-    :texte_pour_le_label_3="dataJson.texte_pour_le_label_3"
-    :texte_pour_le_label_4="dataJson.texte_pour_le_label_4"
-    :texte_tous_les_filtres_1="dataJson.texte_tous_les_filtres_1"
-    :texte_tous_les_filtres_2="dataJson.texte_tous_les_filtres_2"
-    :texte_tous_les_filtres_3="dataJson.texte_tous_les_filtres_3"
-    :texte_tous_les_filtres_4="dataJson.texte_tous_les_filtres_4"
+    :dataJson="dataJson"
     ref="filtersComponent"
   />
   <div v-show="isLoaded" :class="'extraits-container ' + extraitPaddingTop">

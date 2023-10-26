@@ -5,49 +5,13 @@ export default {
   name: "FiltersCpts",
   emits: ["handleClick", "filterElementsByKeyword"],
   props: {
+    dataJson: {
+      type: Object,
+      default: () => {},
+    },
     filters: {
       type: Array,
       default: () => [],
-    },
-    type_de_filtre: {
-      type: String,
-      default: "",
-    },
-    champs_texte_pour_affiner: {
-      type: Boolean,
-      default: false,
-    },
-    texte_pour_le_label_1: {
-      type: String,
-      default: "Type 1",
-    },
-    texte_pour_le_label_2: {
-      type: String,
-      default: "Type 2",
-    },
-    texte_pour_le_label_3: {
-      type: String,
-      default: "Type 3",
-    },
-    texte_pour_le_label_4: {
-      type: String,
-      default: "Type 4",
-    },
-    texte_tous_les_filtres_1: {
-      type: String,
-      default: "Tous les filtres",
-    },
-    texte_tous_les_filtres_2: {
-      type: String,
-      default: "Tous les filtres",
-    },
-    texte_tous_les_filtres_3: {
-      type: String,
-      default: "Tous les filtres",
-    },
-    texte_tous_les_filtres_4: {
-      type: String,
-      default: "Tous les filtres",
     },
   },
   components: {
@@ -69,7 +33,7 @@ export default {
 <template>
   <div class="filters">
     <!-- Filtre avec boutons -->
-    <template v-if="this.type_de_filtre === 'boutons'">
+    <template v-if="this.$props.dataJson.type_de_filtre === 'boutons'">
       <div
         class="buttons"
         v-for="(filter, index) in filters"
@@ -87,7 +51,7 @@ export default {
           "
           class="button"
         >
-          {{ this.$props[`texte_tous_les_filtres_${index + 1}`] }}
+          {{ this.$props.dataJson[`texte_tous_les_filtres_${index + 1}`] }}
         </div>
         <div
           @click="$emit('handleClick', term.name, filter)"
@@ -101,10 +65,13 @@ export default {
       </div>
     </template>
     <!-- Champ pour filtrer les résultats de la page -->
-    <div v-if="champs_texte_pour_affiner" class="text-filter-container">
+    <div
+      v-if="dataJson.champs_texte_pour_affiner"
+      class="text-filter-container"
+    >
       <SvgLoop />
       <input
-        v-if="champs_texte_pour_affiner"
+        v-if="dataJson.champs_texte_pour_affiner"
         type="text"
         v-model="userEntry"
         @input="$emit('filterElementsByKeyword', userEntry)"
