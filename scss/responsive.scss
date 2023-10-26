@@ -361,6 +361,14 @@
 
 @media (max-width: 480px) {
 
+    .double-cta {
+        flex-direction: column;
+    }
+
+    .double-cta .cta_btn_lead:nth-child(2) {
+        margin-left: 0;
+    }
+
     .col_flexible_image img {
         object-fit: contain !important;
         height: auto !important;
