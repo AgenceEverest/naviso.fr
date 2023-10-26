@@ -599,15 +599,7 @@ export default {
           v-for="cpt in cpts"
           :key="cpt.id"
           :cpt="cpt"
-          :date_de_fin_de_candidature_texte="
-            dataJson.date_de_fin_de_candidature_texte
-          "
-          :afficher_le_bouton_lie_a_la_fiche_de_poste="
-            dataJson.afficher_le_bouton_lie_a_la_fiche_de_poste
-          "
-          :texte_en_savoir_plus="dataJson.texte_en_savoir_plus"
-          :texte_bouton_fiche_de_poste="dataJson.texte_bouton_fiche_de_poste"
-          :taxonomiesToShow="taxonomiesToShow"
+          :dataJson="dataJson"
         />
       </div>
       <div
