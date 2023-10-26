@@ -37,11 +37,11 @@
 
 #refuser_cookies {
     padding: 0 !important;
-    background-color: none;
+    background-color: transparent !important;
     color: $bleuNaviso;
     text-decoration: underline;
     &:hover {
         color: $bleuNaviso;
-        background-color: none;
+        background-color: transparent !important;
     }
 }
