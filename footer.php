@@ -21,7 +21,9 @@
                 <?php $en_savoir_plus_cookies = get_field('en_savoir_plus_cookies', 'option'); ?>
                 <?php $choisir_lesquels_cookies = get_field('choisir_lesquels_cookies', 'option'); ?>
                 <?php $retour_texte = get_field('retour_texte', 'option'); ?>
-                <p id="boutons_bandeau" class="cta_btn_lead"><a tabindex="0" id="choisir_lesquels_cookies"><?php echo $choisir_lesquels_cookies; ?></a><a tabindex="0" id="refuser_cookies"><?php echo $refuser_cookies; ?></a><a tabindex="0" id="accepter_cookies"><?php echo $accepter_tous_cookies; ?></a>
+                <p id="boutons_bandeau" class="cta_btn_lead"><a tabindex="0" id="choisir_lesquels_cookies"><?php echo $choisir_lesquels_cookies; ?></a>
+                <a tabindex="0" id="accepter_cookies"><?php echo $accepter_tous_cookies; ?></a>
+                <a tabindex="0" id="refuser_cookies"><?php echo $refuser_cookies; ?></a>
                 </p>
             <?php endif; ?>
         </div>
@@ -164,5 +166,3 @@
     let durationRefused = '<?= htmlspecialchars($duree_reapparition_bandeau) ?>';
 </script>
 <?php wp_footer(); ?>
-<div>
-testfr</div>
