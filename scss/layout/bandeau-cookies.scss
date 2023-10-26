@@ -3,40 +3,46 @@
     flex-direction: column;
     align-items: center;
 }
+
 #bandeau_cookies {
-    #boutons_bandeau{
-        #choisir_lesquels_cookies{
-            background-color:$greenNaviso;
+    #boutons_bandeau {
+        #choisir_lesquels_cookies {
+            background-color: $greenNaviso;
             color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.3)!important;
-            width:100%;
-            &:hover{
-                background-color:rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3) !important;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.3);
             }
         }
-        #accepter_cookies{
-            width: 100%;
-            color:#fff;
-            &:hover{
-                color:$bleuNaviso;
+
+        #accepter_cookies {
+            color: #fff;
+
+            &:hover {
+                color: $bleuNaviso;
             }
         }
     }
 }
-#choisir_les_cookies{
-    .choisir_les_cookies_boutons{
-        #retour_texte{
-            background-color:$greenNaviso;
+
+#choisir_les_cookies {
+    .choisir_les_cookies_boutons {
+        #retour_texte {
+            background-color: $greenNaviso;
             color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.3)!important;
-            &:hover{
-                background-color:rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3) !important;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.3);
             }
         }
-        #accepter_cookies_selectionnes{
-            color:#fff;
-            &:hover{
-                color:$bleuNaviso;
+
+        #accepter_cookies_selectionnes {
+            color: #fff;
+
+            &:hover {
+                color: $bleuNaviso;
             }
         }
     }
@@ -52,8 +58,15 @@
     color: $bleuNaviso;
     text-decoration: underline;
     margin-top: 1rem;
+
     &:hover {
         color: $bleuNaviso;
         background-color: transparent !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #accepter_cookies, #choisir_lesquels_cookies {
+        width: 100%;
     }
 }
