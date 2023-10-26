@@ -23,8 +23,8 @@
                 <?php $retour_texte = get_field('retour_texte', 'option'); ?>
                 <p id="boutons_bandeau" class="cta_btn_lead"><a tabindex="0" id="choisir_lesquels_cookies"><?php echo $choisir_lesquels_cookies; ?></a>
                 <a tabindex="0" id="accepter_cookies"><?php echo $accepter_tous_cookies; ?></a>
-                <a tabindex="0" id="refuser_cookies"><?php echo $refuser_cookies; ?></a>
                 </p>
+                <a tabindex="0" id="refuser_cookies"><?php echo $refuser_cookies; ?></a>
             <?php endif; ?>
         </div>
     </div>
