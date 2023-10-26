@@ -369,6 +369,10 @@
         margin-left: 0;
     }
 
+    .double-cta .cta_btn_lead:nth-child(1) {
+        margin-right: 0;
+    }
+
     .col_flexible_image img {
         object-fit: contain !important;
         height: auto !important;
