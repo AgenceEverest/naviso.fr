@@ -309,24 +309,22 @@ export default {
       } else {
         //  console.log("lutilisateur efface");
         this.lastKeyword = keyword;
-        const isAnyTermActive = this.isAnyTermActive();
-        console.log(isAnyTermActive);
-        if (!isAnyTermActive) {
-          this.cpts = JSON.parse(JSON.stringify(this.originalCpts));
-        } else {
-          this.cpts = JSON.parse(JSON.stringify(this.filteredCpts));
-        }
+        this.syncCptsWithActiveTerms();
         if (keyword === "") {
           //  console.log("le champ est de nouveau vide");
-          this.cpts.forEach((cpt) => {
-            this.resetCptDisplay(cpt);
-          });
           this.hasMoreContent = this.displayed < this.displayablePosts;
-          return;
-        } else {
-          //  console.log("l'utilisateur efface mais le champ n'est pas vide");
-          this.userSearchOrDeleteKeyword(keyword);
         }
+        //  console.log("l'utilisateur efface mais le champ n'est pas vide");
+        this.userSearchOrDeleteKeyword(keyword);
+      }
+    },
+
+    syncCptsWithActiveTerms() {
+      const isAnyTermActive = this.isAnyTermActive();
+      if (!isAnyTermActive) {
+        this.cpts = JSON.parse(JSON.stringify(this.originalCpts));
+      } else {
+        this.cpts = JSON.parse(JSON.stringify(this.filteredCpts));
       }
     },
     filterCpts() {
