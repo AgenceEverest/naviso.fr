@@ -360,7 +360,9 @@
 }
 
 @media (max-width: 480px) {
-
+    .test {
+        display: none;
+    }
     .double-cta {
         flex-direction: column;
     }
