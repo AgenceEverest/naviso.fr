@@ -1,6 +1,6 @@
 #bandeau_cookies {
     #boutons_bandeau{
-        #refuser_cookies, #choisir_lesquels_cookies{
+        #choisir_lesquels_cookies{
             background-color:$greenNaviso;
             color: #fff;
             border: 1px solid rgba(255, 255, 255, 0.3)!important;
@@ -32,5 +32,16 @@
                 color:$bleuNaviso;
             }
         }
+    }
+}
+
+#refuser_cookies {
+    padding: 0 !important;
+    background-color: none;
+    color: $bleuNaviso;
+    text-decoration: underline;
+    &:hover {
+        color: $bleuNaviso;
+        background-color: none;
     }
 }
