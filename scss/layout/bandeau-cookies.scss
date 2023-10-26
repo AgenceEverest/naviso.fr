@@ -44,7 +44,7 @@
 
 #refuser_cookies {
     width: 100%;
-    display: flex;
+    display: flex !important;
     justify-content: center;
     cursor: pointer;
     padding: 0 !important;
