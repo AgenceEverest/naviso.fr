@@ -50,6 +50,7 @@
 
 #refuser_cookies {
     width: 100%;
+    margin-top: 1rem;
     display: flex !important;
     justify-content: center;
     cursor: pointer;
@@ -67,6 +68,6 @@
 
 @media (max-width: 480px) {
     #accepter_cookies, #choisir_lesquels_cookies {
-        width: 100%;
+        width: 100% !important;
     }
 }
