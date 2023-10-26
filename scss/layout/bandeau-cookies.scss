@@ -9,11 +9,13 @@
             background-color:$greenNaviso;
             color: #fff;
             border: 1px solid rgba(255, 255, 255, 0.3)!important;
+            width:100%;
             &:hover{
                 background-color:rgba(255, 255, 255, 0.3);
             }
         }
         #accepter_cookies{
+            width: 100%;
             color:#fff;
             &:hover{
                 color:$bleuNaviso;
@@ -41,6 +43,7 @@
 }
 
 #refuser_cookies {
+    width: 100%;
     display: flex;
     justify-content: center;
     cursor: pointer;
