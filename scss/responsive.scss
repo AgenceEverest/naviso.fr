@@ -368,7 +368,7 @@
     }
 
     .cta-sous-bloc-container {
-        flex-direction: column;
+        flex-direction: column !important;
 
         &.cta_sous_colonnes_flex:nth-child(1) {
             margin-right: 0 !important;
