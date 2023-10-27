@@ -375,7 +375,7 @@
         }
 
         .cta_sous_colonnes_flex:nth-child(2) {
-            margin-right: 0 !important;
+            margin-left: 0 !important;
         }
     }
 
@@ -384,14 +384,12 @@
     }
 
     .double-cta .cta_btn_lead:nth-child(2) {
-        margin-left: 0;
-        margin-right: 0;
+        margin-right: 0 !important;
 
     }
 
     .double-cta .cta_btn_lead:nth-child(1) {
-        margin-left: 0;
-        margin-right: 0;
+        margin-left: 0 !important;
     }
 
     .col_flexible_image img {
