@@ -5,20 +5,11 @@ export default {
     cpt: {
       type: Object,
     },
-    date_de_fin_de_candidature_texte: {
-      type: String,
-    },
-    afficher_le_bouton_lie_a_la_fiche_de_poste: {
-      type: String,
-    },
     texte_bouton_fiche_de_poste: {
       type: String,
     },
     texte_en_savoir_plus: {
       type: String,
-    },
-    taxonomiesToShow: {
-      type: Array,
     },
   },
   methods: {
@@ -33,7 +24,6 @@ export default {
         return new Intl.DateTimeFormat("fr-FR", options).format(date);
       }
     },
-
   },
 };
 </script>
@@ -69,10 +59,7 @@ export default {
     >
       {{ cpt.acf.description_extrait_de_la_page }}
     </p>
-    <p v-if="cpt.acf.hasOwnProperty('date_de_fin_de_candidature')">
-      {{ date_de_fin_de_candidature_texte }}
-      {{ convertToFrenchDate(cpt.acf.date_de_fin_de_candidature) }}
-    </p>
+ 
     <!--      <p>{{ cpt.acf.lieu }}</p> -->
 
     <div class="buttons-extrait">
@@ -82,22 +69,18 @@ export default {
           cpt.acf.url_pour_le_lien_en_savoir_plus != ''
         "
         class="cta_btn_lead cta_primaire"
-        :class="{ cta_center: !afficher_le_bouton_lie_a_la_fiche_de_poste }"
       >
         <a :href="cpt.link">{{ texte_en_savoir_plus }}</a>
       </p>
       <p
-        v-if="
-          afficher_le_bouton_lie_a_la_fiche_de_poste &&
-          cpt.acf.lien_vers_la_fiche_de_poste !== ''
-        "
+        v-if="cpt.acf.lien_vers_la_fiche_de_poste !== ''"
         class="cta_btn_lead cta_primaire"
       >
         <a
           target="_blank"
           v-if="cpt.acf.hasOwnProperty('lien_vers_la_fiche_de_poste')"
           :href="cpt.acf.lien_vers_la_fiche_de_poste"
-          >{{ texte_bouton_fiche_de_poste }}</a
+          >{{ dataJson.texte_bouton_fiche_de_poste }}</a
         >
       </p>
     </div>

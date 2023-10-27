@@ -17,9 +17,6 @@ export default {
     texte_en_savoir_plus: {
       type: String,
     },
-    taxonomiesToShow: {
-      type: Array,
-    },
   },
   methods: {
     convertToFrenchDate(dateString) {
@@ -33,7 +30,6 @@ export default {
         return new Intl.DateTimeFormat("fr-FR", options).format(date);
       }
     },
-
   },
 };
 </script>

@@ -34,23 +34,14 @@ export default {
 
   mounted() {
     this.app = document.querySelector("#app");
-    const taxoInExcerptAttribute = [
-      "taxo-1-extrait",
-      "taxo-2-extrait",
-      "taxo-3-extrait",
-      "taxo-4-extrait",
-    ];
 
-    for (let i = 0; i < taxoInExcerptAttribute.length; i++) {
-      const taxoInExcerpt = this.app.getAttribute(taxoInExcerptAttribute[i]);
-      if (taxoInExcerpt !== null) {
-        this.taxonomiesToShow.push(taxoInExcerpt);
-      }
-    }
     this.dataJson = JSON.parse(this.app.getAttribute("data-json"));
 
     this.setMaxDisplayablePosts(this.dataJson.max_posts);
+
+    // Concerne le nombre de posts à afficher en plus quand on clique sur un bouton
     this.setIncrementNumber(this.dataJson.increment_number);
+
     this.getCpt(this.dataJson.publication_liste_app_child).then(() => {
       this.activeAllAtStart();
     });
@@ -64,14 +55,17 @@ export default {
         cpt.show = true;
         this.displayPostAccordingMaxDisplayable(cpt);
       });
+      this.setFiltersToInitialState();
+      this.recordOriginalCpts();
+    },
+
+    setFiltersToInitialState() {
       this.filters.forEach((filter) => {
         filter.isAllButtonToggled = true;
         filter.terms.forEach((term) => {
           term.active = false;
         });
       });
-      this.hasMoreContent = this.displayed < this.displayablePosts;
-      this.recordOriginalCpts();
     },
     convertToFrenchDate(dateString) {
       if (dateString) {
@@ -204,7 +198,6 @@ export default {
         }
       });
       this.filterCpts(filter);
-      this.hasMoreContent = this.displayed < this.displayablePosts;
     },
     toggleTermClicked(termName, innerFilter) {
       let termsCopy = innerFilter.terms.map((term) => {
@@ -232,8 +225,6 @@ export default {
           }
         }
       });
-
-      this.hasMoreContent = this.displayed < this.displayablePosts;
     },
     toggleAllToTrueInFilter(innerFilter) {
       let termsCopy = innerFilter.terms.map((term) => {
@@ -298,8 +289,6 @@ export default {
         let match = checkMatch(title) || checkAcfFields(cpt.acf) || termFound;
         cpt.display = match && cpt.show;
       });
-
-      this.hasMoreContent = this.displayed < this.displayablePosts;
     },
     filterElementsByKeyword(keyword) {
       this.displayed = 0;
@@ -309,38 +298,65 @@ export default {
       } else {
         //  console.log("lutilisateur efface");
         this.lastKeyword = keyword;
-        this.syncCptsWithActiveTerms();
-        if (keyword === "") {
-          //  console.log("le champ est de nouveau vide");
-          this.hasMoreContent = this.displayed < this.displayablePosts;
+        if (keyword === "") { // le champ est vide
+          this.syncCptsWithActiveTerms();
+        } else { // le champ n'est pas vide donc on continue à chercher
+          this.userSearchOrDeleteKeyword(keyword);
         }
-        //  console.log("l'utilisateur efface mais le champ n'est pas vide");
-        this.userSearchOrDeleteKeyword(keyword);
       }
     },
 
     syncCptsWithActiveTerms() {
       const isAnyTermActive = this.isAnyTermActive();
-      if (!isAnyTermActive) {
-        this.cpts = JSON.parse(JSON.stringify(this.originalCpts));
+      const { allButtonsToggled } = this.getAllButtonsStatus();
+      console.log(isAnyTermActive, allButtonsToggled);
+      if (!isAnyTermActive && allButtonsToggled) {
+        this.cpts.forEach((cpt) => this.resetCptDisplay(cpt));
       } else {
         this.cpts = JSON.parse(JSON.stringify(this.filteredCpts));
       }
+    },
+
+    getAllButtonsStatus() {
+      let isAllButtonToggledInFilters = {};
+      this.filters.forEach((innerFilter) => {
+        const currentTaxonomy = innerFilter.taxonomy;
+
+        // Vérifier si le bouton "tout" est actif pour cette taxonomie
+        isAllButtonToggledInFilters[currentTaxonomy] =
+          innerFilter.isAllButtonToggled;
+      });
+
+      return {
+        isAllButtonToggledInFilters,
+        noButtonsAllToggled: this.noButtonsAllToggled(
+          isAllButtonToggledInFilters
+        ),
+        allButtonsToggled: this.allButtonsToggled(isAllButtonToggledInFilters),
+      };
+    },
+    noButtonsAllToggled(isAllButtonToggledInFilters) {
+      return Object.values(isAllButtonToggledInFilters).every(
+        (toggled) => !toggled
+      );
+    },
+    allButtonsToggled(isAllButtonToggledInFilters) {
+      return Object.values(isAllButtonToggledInFilters).every(
+        (toggled) => toggled
+      );
     },
     filterCpts() {
       this.displayablePosts = 0;
       this.displayed = 0;
       this.cpts.forEach((cpt) => {
-        const {
-          taxonomiesActiveInFilters,
-          isAllButtonToggledInFilters,
-          numberOfInactiveTaxonomy,
-          noButtonsAllToggled,
-          allButtonsToggled,
-        } = this.getFilterState(cpt);
+        const { taxonomiesActiveInFilters, numberOfInactiveTaxonomy } =
+          this.getFilterState(cpt);
 
-        // Vérifier si le CPT satisfait tous les filtres actifs
-        let allActiveFiltersSatisfied;
+        const {
+          allButtonsToggled,
+          noButtonsAllToggled,
+          isAllButtonToggledInFilters,
+        } = this.getAllButtonsStatus();
 
         const useEvery =
           this.dataJson.type_de_filtre_entre_les_taxonomies === "et";
@@ -348,9 +364,9 @@ export default {
         // En fonction de la satisfaction des filtres, on utilise la méthode "every" ou "some".
         // "every" correspond à "et" : on affiche les taxonomies filtrées dans l'étage un ET dans l'étage 2 : il faut une correspondance entre les taxonomies pour que le CPT s'affiche
         // "some" correspond à "ou" : on affiche les taxonomies filtrées dans l'étage un OU dans l'étage 2 : peu importe les correspondances
-        allActiveFiltersSatisfied = Object.keys(taxonomiesActiveInFilters)[
-          useEvery ? "every" : "some"
-        ](
+        const allActiveFiltersSatisfied = Object.keys(
+          taxonomiesActiveInFilters
+        )[useEvery ? "every" : "some"](
           (taxonomy) =>
             isAllButtonToggledInFilters[taxonomy] ||
             taxonomiesActiveInFilters[taxonomy]
@@ -410,16 +426,10 @@ export default {
     },
     getFilterState(cpt) {
       let taxonomiesActiveInFilters = {};
-      let isAllButtonToggledInFilters = {};
       let numberOfInactiveTaxonomy = 0;
       this.filters.forEach((innerFilter) => {
         const currentTaxonomy = innerFilter.taxonomy;
-        // Vérifier si le bouton "tout" est actif pour cette taxonomie
-        isAllButtonToggledInFilters[currentTaxonomy] =
-          innerFilter.isAllButtonToggled;
-
         const activeTerms = innerFilter.terms.filter((term) => term.active);
-
         // Si le CPT contient la taxonomie actuelle
         if (cpt[currentTaxonomy]) {
           const termsIdsInCpt = Array.from(cpt[currentTaxonomy]);
@@ -442,21 +452,10 @@ export default {
           numberOfInactiveTaxonomy++;
         }
       });
-      const noButtonsAllToggled = Object.values(
-        isAllButtonToggledInFilters
-      ).every((toggled) => !toggled);
-
-      // Vérifier si tous les boutons "tout" sont activés
-      const allButtonsToggled = Object.values(
-        isAllButtonToggledInFilters
-      ).every((toggled) => toggled);
 
       return {
         taxonomiesActiveInFilters,
-        isAllButtonToggledInFilters,
         numberOfInactiveTaxonomy,
-        noButtonsAllToggled,
-        allButtonsToggled,
       };
     },
     recordFilteredCpts() {
@@ -535,14 +534,7 @@ export default {
           v-for="cpt in cpts"
           :key="cpt.id"
           :cpt="cpt"
-          :date_de_fin_de_candidature_texte="
-            dataJson.date_de_fin_de_candidature_texte
-          "
-          :afficher_le_bouton_lie_a_la_fiche_de_poste="
-            dataJson.afficher_le_bouton_lie_a_la_fiche_de_poste
-          "
-          :texte_en_savoir_plus="dataJson.texte_en_savoir_plus"
-          :texte_bouton_fiche_de_poste="dataJson.texte_bouton_fiche_de_poste"
+          :dataJson="dataJson"
         />
       </div>
       <div
@@ -561,24 +553,7 @@ export default {
           v-for="cpt in cpts"
           :key="cpt.id"
           :cpt="cpt"
-          :date_de_fin_de_candidature_texte="
-            dataJson.date_de_fin_de_candidature_texte
-          "
-          :afficher_le_bouton_lie_a_la_fiche_de_poste="
-            dataJson.afficher_le_bouton_lie_a_la_fiche_de_poste
-          "
-          :texte_en_savoir_plus="dataJson.texte_en_savoir_plus"
-          :texte_bouton_fiche_de_poste="dataJson.texte_bouton_fiche_de_poste"
-          :taxonomiesToShow="taxonomiesToShow"
-          :texte_du_bouton_fiche_formation="
-            dataJson.texte_du_bouton_fiche_formation
-          "
-          :texte_de_la_card_pour_le_champ_duree="
-            dataJson.texte_de_la_card_pour_le_champ_duree
-          "
-          :texte_de_la_card_pour_le_champ_prochaine_session="
-            dataJson.texte_de_la_card_pour_le_champ_prochaine_session
-          "
+          :dataJson="dataJson"
         />
       </div>
       <div
@@ -602,7 +577,7 @@ export default {
       </div>
       <div
         @click="incrementmaxDisplayable"
-        v-if="hasMoreContent"
+        v-if="displayed < displayablePosts"
         class="load-more"
       >
         {{ dataJson.load_more_text }}

@@ -5,29 +5,8 @@ export default {
     cpt: {
       type: Object,
     },
-    date_de_fin_de_candidature_texte: {
-      type: String,
-    },
-    afficher_le_bouton_lie_a_la_fiche_de_poste: {
-      type: String,
-    },
-    texte_bouton_fiche_de_poste: {
-      type: String,
-    },
-    texte_en_savoir_plus: {
-      type: String,
-    },
-    taxonomiesToShow: {
-      type: Array,
-    },
-    texte_du_bouton_fiche_formation: {
-      type: String,
-    },
-    texte_de_la_card_pour_le_champ_duree: {
-      type: String,
-    },
-    texte_de_la_card_pour_le_champ_prochaine_session: {
-      type: String,
+    dataJson: {
+      type: Object,
     },
   },
   methods: {
@@ -42,11 +21,6 @@ export default {
         return new Intl.DateTimeFormat("fr-FR", options).format(date);
       }
     },
-    /*     taxoIsShowable(taxo) {
-      if (taxo[0]) {
-        return this.taxonomiesToShow.find((t) => t == taxo[0].taxonomy);
-      }
-    }, */
   },
 };
 </script>
@@ -80,11 +54,11 @@ export default {
       {{ cpt.acf.description_extrait_de_la_page }}
     </p>
     <p v-if="cpt.acf.prochaine_session">
-      {{ texte_de_la_card_pour_le_champ_prochaine_session }} :
+      {{ dataJson.texte_de_la_card_pour_le_champ_prochaine_session }} :
       {{ cpt.acf.prochaine_session }}
     </p>
     <p v-if="cpt.acf.duree">
-      {{ texte_de_la_card_pour_le_champ_duree }} :
+      {{ dataJson.texte_de_la_card_pour_le_champ_duree }} :
       {{ cpt.acf.duree }}
     </p>
 
@@ -97,11 +71,11 @@ export default {
           target="_blank"
           v-if="cpt.acf.hasOwnProperty('fichier_a_telecharger')"
           :href="cpt.acf.fichier_a_telecharger"
-          >{{ texte_du_bouton_fiche_formation }}</a
+          >{{ dataJson.texte_du_bouton_fiche_formation }}</a
         >
       </p>
       <p class="cta_btn_lead cta_primaire">
-        <a :href="cpt.link">{{ texte_en_savoir_plus }}</a>
+        <a :href="cpt.link">{{ dataJson.texte_en_savoir_plus }}</a>
       </p>
     </div>
   </div>
