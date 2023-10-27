@@ -370,11 +370,11 @@
     .cta-sous-bloc-container {
         flex-direction: column !important;
 
-        &.cta_sous_colonnes_flex:nth-child(1) {
+        .cta_sous_colonnes_flex:nth-child(1) {
             margin-right: 0 !important;
         }
 
-        &.cta_sous_colonnes_flex:nth-child(2) {
+        .cta_sous_colonnes_flex:nth-child(2) {
             margin-right: 0 !important;
         }
     }
@@ -385,10 +385,13 @@
 
     .double-cta .cta_btn_lead:nth-child(2) {
         margin-left: 0;
+        margin-right: 0;
+
     }
 
     .double-cta .cta_btn_lead:nth-child(1) {
         margin-left: 0;
+        margin-right: 0;
     }
 
     .col_flexible_image img {
