@@ -363,6 +363,10 @@
 
 @media (max-width: 480px) {
 
+    .test {
+        display: none;
+    }
+
     .cta-sous-bloc-container {
         flex-direction: column;
 
