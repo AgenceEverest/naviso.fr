@@ -524,6 +524,9 @@ ul#menu-menu-principal li a {
 .block-2-colonnes-textevisuel-large:has(.hauteur-fixe-visuel-large) {
     .col_right_wide_imgleft, .col_double_wide_imgleft {
         min-height: 373px;
+        @media (max-width: 1024px) {
+            min-height: auto;
+        }
     }    
 }
 .hauteur-fixe-visuel-large {
