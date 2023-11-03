@@ -13,8 +13,15 @@
 
 @media (max-width: 1024px) {
 
+    .block-2-colonnes-textevisuel-large {
+        .col_right_wide_imgleft.padding_section {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+    }
+
     .bandeau-header-page+.block-2-colonnes-textevisuel-large {
-        .padding_section {
+        .col_right_wide_imgleft.padding_section {
             padding-top: 0 !important;
             padding-bottom: 0 !important;
         }
