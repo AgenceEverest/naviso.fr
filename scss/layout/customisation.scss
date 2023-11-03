@@ -529,6 +529,12 @@ ul#menu-menu-principal li a {
         }
     }    
 }
+@media (max-width: 1024px) {
+    .logo-naviso-titre {
+        width: 2rem;
+    }
+}
+
 .hauteur-fixe-visuel-large {
     display: flex;
     align-items: center;
