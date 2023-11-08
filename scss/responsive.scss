@@ -31,16 +31,17 @@
         padding-left: 3rem;
     }
 
+    .col_left_wide_imgleft{
+        padding-top: 0;
+    }
+    .col_left_wide_imgleft_img {
+        position: inherit;
+    }
+
     .flex-dir-inherit {
         .hauteur-fixe-visuel-large {
             top: inherit;
             margin-bottom: 2rem;
-        }
-        .col_left_wide_imgleft{
-            padding-top: 0;
-        }
-        .col_left_wide_imgleft_img {
-            position: inherit;
         }
     }
 
