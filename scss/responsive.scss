@@ -32,8 +32,10 @@
     }
 
     .flex-dir-inherit {
-        .col_left_wide_imgleft_img {
+        .col_left_wide_imgleft{
             padding-top: 0;
+        }
+        .col_left_wide_imgleft_img {
             position: inherit;
         }
     }
