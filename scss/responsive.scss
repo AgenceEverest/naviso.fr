@@ -32,6 +32,9 @@
     }
 
     .flex-dir-inherit {
+        .hauteur-fixe-visuel-large {
+            top: inherit;
+        }
         .col_left_wide_imgleft{
             padding-top: 0;
         }
@@ -46,9 +49,7 @@
 
     .flex-dir-row-reverse.visuel-en-haut-format-mobile {
         flex-direction: inherit !important;
-        .hauteur-fixe-visuel-large {
-            top: inherit;
-        }
+    
     }
 
     #charger_les_images_wrapper {
