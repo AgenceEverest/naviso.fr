@@ -22,7 +22,7 @@ endif;
 
 
 
-wp_enqueue_script('vue-app-js', get_stylesheet_directory_uri() . '/vue-app/dist/assets/index.js', null, gmdate("YmdH", time()));
+wp_enqueue_script('vue-app-js', get_stylesheet_directory_uri() . '/vue-app/dist/assets/index.js', null, time());
 /* wp_enqueue_style('vue-app-css', get_stylesheet_directory_uri() . '/vue-app/dist/assets/index.css');
  */ ?>
 <div id="block-app" class="<?php
