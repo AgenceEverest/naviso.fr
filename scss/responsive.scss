@@ -59,6 +59,9 @@
         .hauteur-fixe-visuel-large {
             margin-bottom: 2rem;
             margin-top: 0;
+            figure {
+                height: inherit;
+            }
         }
     }
 
