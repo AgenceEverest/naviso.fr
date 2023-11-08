@@ -31,6 +31,13 @@
         padding-left: 3rem;
     }
 
+    .flex-dir-inherit {
+        .col_left_wide_imgleft_img {
+            padding-top: 0;
+            position: inherit;
+        }
+    }
+
     .flex-dir-row-reverse {
         flex-direction: column-reverse !important;
     }
