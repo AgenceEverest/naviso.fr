@@ -56,7 +56,10 @@
 
     .flex-dir-row-reverse.visuel-en-haut-format-mobile {
         flex-direction: inherit !important;
-    
+        .hauteur-fixe-visuel-large {
+            margin-bottom: 2rem;
+            margin-top: 0;
+        }
     }
 
     #charger_les_images_wrapper {
