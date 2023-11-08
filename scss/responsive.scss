@@ -37,19 +37,21 @@
     .col_left_wide_imgleft_img {
         position: inherit;
     }
-    .hauteur-fixe-visuel-large {
-        top: inherit;
-        margin-bottom: 2rem;
-    }
+
     .flex-dir-inherit {
         .hauteur-fixe-visuel-large {
             top: inherit;
             margin-bottom: 2rem;
         }
     }
+  
 
     .flex-dir-row-reverse {
         flex-direction: column-reverse !important;
+        .hauteur-fixe-visuel-large {
+            margin-bottom: 0;
+            margin-top: 2rem;
+        }
     }
 
     .flex-dir-row-reverse.visuel-en-haut-format-mobile {
