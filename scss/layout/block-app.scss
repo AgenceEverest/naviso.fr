@@ -3,8 +3,10 @@
     margin-bottom: 1rem;
 
     .cta-center {
-        margin: auto;
+        width: 100%;
+        justify-content: center;
     }
+
     .filters {
         flex-direction: column;
         display: flex;
@@ -137,10 +139,12 @@
         justify-content: center;
         flex-wrap: wrap;
         flex-direction: row;
+
         .taxonomy {
             display: flex;
             flex-wrap: wrap;
         }
+
         .term {
             background-color: white;
             margin-right: 0.5rem;
@@ -153,10 +157,12 @@
             text-align: center;
             color: $bleuNaviso;
             border: 2px solid $bleuNaviso;
+
             &.term-0 {
                 color: $greenNaviso;
                 border: 2px solid $greenNaviso;
             }
+
             // &.term-1 {
             //     color: $bleuNaviso;
             //     border: 2px solid $bleuNaviso;
@@ -182,8 +188,9 @@
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
+
         .cta_btn_lead {
-            margin-bottom:1rem;
+            margin-bottom: 1rem;
         }
     }
 }

@@ -65,13 +65,13 @@ export default {
  
     <!--      <p>{{ cpt.acf.lieu }}</p> -->
 
-    <div class="buttons-extrait">
+    <div class="buttons-extrait cta-center">
       <p
         v-if="
           cpt.acf.lien_bouton_en_savoir_plus != '' ||
           cpt.acf.url_pour_le_lien_en_savoir_plus != ''
         "
-        class="cta_btn_lead cta_primaire cta-center"
+        class="cta_btn_lead cta_primaire"
       >
         <a :href="cpt.link">{{ dataJson.texte_en_savoir_plus }}</a>
       </p>
