@@ -593,6 +593,7 @@ export default {
 </template>
 
 <style lang="scss">
+
 .loader-container {
   display: flex;
   justify-content: center;

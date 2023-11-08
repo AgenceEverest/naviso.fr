@@ -71,13 +71,13 @@ export default {
           cpt.acf.lien_bouton_en_savoir_plus != '' ||
           cpt.acf.url_pour_le_lien_en_savoir_plus != ''
         "
-        class="cta_btn_lead cta_primaire"
+        class="cta_btn_lead cta_primaire cta-center"
       >
         <a :href="cpt.link">{{ dataJson.texte_en_savoir_plus }}</a>
       </p>
       <p
         v-if="cpt.acf.lien_vers_la_fiche_de_poste !== ''"
-        class="cta_btn_lead cta_primaire"
+        class="cta_btn_lead cta_primaire cta-center"
       >
         <a
           target="_blank"
