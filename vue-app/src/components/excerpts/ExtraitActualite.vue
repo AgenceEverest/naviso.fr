@@ -11,6 +11,9 @@ export default {
     texte_en_savoir_plus: {
       type: String,
     },
+    dataJson: {
+      type: Object,
+    }
   },
   methods: {
     convertToFrenchDate(dateString) {
@@ -70,7 +73,7 @@ export default {
         "
         class="cta_btn_lead cta_primaire"
       >
-        <a :href="cpt.link">{{ texte_en_savoir_plus }}</a>
+        <a :href="cpt.link">{{ dataJson.texte_en_savoir_plus }}</a>
       </p>
       <p
         v-if="cpt.acf.lien_vers_la_fiche_de_poste !== ''"
