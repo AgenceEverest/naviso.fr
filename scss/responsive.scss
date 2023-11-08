@@ -35,6 +35,10 @@
         flex-direction: column-reverse !important;
     }
 
+    .flex-dir-row-reverse.visuel-en-haut-format-mobile {
+        flex-direction: inherit !important;
+    }
+
     #charger_les_images_wrapper {
         position: relative !important;
         justify-content: center;

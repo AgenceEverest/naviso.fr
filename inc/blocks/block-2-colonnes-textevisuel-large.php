@@ -36,8 +36,8 @@ if (have_rows('block_2_colonnes_textevisuel_large')) : the_row(); // il s'agit d
 	$cb_calltoaction_fichier_2 = get_sub_field('cb_call-to-action_fichier_2');
 	$style_du_bouton_2 = get_sub_field('style_du_bouton_2');
 	$choixDirection = get_sub_field('contentbuilder_visuel_a_gauche_ou_a_droite');
-
 	$visuel_en_haut_format_mobile = get_sub_field('visuel_en_haut_format_mobile');
+
 	if ($choixDirection == 'gauche') {
 		$flexDirection = 'flex-dir-inherit';
 	} else {
@@ -75,8 +75,7 @@ if ($marge_externe_en_bas_du_bloc) :
 	echo " margin_section_bottom";
 endif;
 echo " block block-2-colonnes-textevisuel-large '>" ?>
-<div class="col_double_wide_imgleft <?= $flexDirection ?> <?php if ($visuel_en_haut_format_mobile) : echo 'visuel-en-haut-format-mobile';
-															endif; ?>">
+<div class="col_double_wide_imgleft <?= $flexDirection ?> <?php if ($visuel_en_haut_format_mobile) : echo ' visuel-en-haut-format-mobile ';	endif; ?>">
 	<div class="col_left_wide_imgleft">
 		<?php if (have_rows('image_de_fond')) : ?>
 			<?php while (have_rows('image_de_fond')) : the_row();
