@@ -12,6 +12,12 @@
 }
 
 @media (max-width: 1024px) {
+
+    
+    .footer_certification {
+        margin-bottom: 10%;
+    }
+
     
     .block-2-colonnes-textevisuel-large {
         .col_right_wide_imgleft.padding_section {
@@ -487,10 +493,12 @@
     }
 
     .footer_certification {
+
         img {
             width: 100%;
         }
     }
+
 
     #header_contact {
         display: none !important;
