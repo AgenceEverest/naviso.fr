@@ -83,8 +83,6 @@
 
 			<div class="aside_prefooter_col prefooter_col_3">
 				<?php if (!$masquer_les_certifications) : ?>
-					<?php $certifications_footer = get_field('certifications_footer', 'option'); ?>
-					<h3><?php if ($certifications_footer) : ?><?php echo $certifications_footer; ?><?php endif; ?></h3>
 					<?php if (have_rows('logos_certifications', 'option')) : ?>
 						<div id="footer_certification_wrapper">
 							<?php while (have_rows('logos_certifications', 'option')) : the_row(); ?>
