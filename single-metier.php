@@ -14,7 +14,6 @@
 				the_content();
 			endif; ?>
 
-			<?php get_template_part('inc/share-post'); ?>
 
 		</article>
 		<?php get_template_part('inc/aside-actualites'); ?>
