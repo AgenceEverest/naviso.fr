@@ -95,7 +95,9 @@
     }
     #menu-footer {
         display: flex;
+        text-decoration: none;
         a {
+            text-decoration: underline;
             margin-left: 1rem;
         }
     }
