@@ -186,3 +186,11 @@ if (!function_exists('acf_load_icons')) {
     }
     add_filter('acf/load_field/name=icone_svg', 'acf_load_icons', 20);
 }
+
+// add Hubspot tracking in <head>
+function add_Hubspot_tracking() {
+    ?>
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/25676509.js"></script>
+    <?php
+}
+add_action('wp_head', 'add_Hubspot_tracking');
