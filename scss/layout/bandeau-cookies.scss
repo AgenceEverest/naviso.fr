@@ -1,74 +1,91 @@
-#bandeau_content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#bandeau_cookies_v2 #bandeau_content h1,
+#bandeau_cookies_v2 #bandeau_content h2,
+#bandeau_cookies_v2 #bandeau_content h3,
+#bandeau_cookies_v2 #bandeau_content h4,
+#bandeau_cookies_v2 #bandeau_content h5,
+#bandeau_cookies_v2 #bandeau_content h6{
+    font-size: 1.4rem!important;
+    font-weight: 700!important;
+    margin: 0.7rem 0!important;
 }
 
-#bandeau_cookies {
-    #boutons_bandeau {
-        #choisir_lesquels_cookies {
-            background-color: $greenNaviso;
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.3) !important;
-
-            &:hover {
-                background-color: rgba(255, 255, 255, 0.3);
-            }
-        }
-
-        #accepter_cookies {
-            color: #fff;
-
-            &:hover {
-                color: $bleuNaviso;
-            }
-        }
-    }
+.slider{
+    background-color:$greenNavisoDark;
 }
-
-#choisir_les_cookies {
-    .choisir_les_cookies_boutons {
-        #retour_texte {
-            background-color: $greenNaviso;
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.3) !important;
-
-            &:hover {
-                background-color: rgba(255, 255, 255, 0.3);
-            }
-        }
-
-        #accepter_cookies_selectionnes {
-            color: #fff;
-
-            &:hover {
-                color: $bleuNaviso;
-            }
-        }
-    }
+input:checked + .slider{
+    background-color:$bleuNaviso;
 }
+// #bandeau_content {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+// }
 
-#refuser_cookies {
-    width: 100%;
-    margin-top: 1rem !important;
-    display: flex !important;
-    justify-content: center;
-    cursor: pointer;
-    padding: 0 !important;
-    background-color: transparent !important;
-    color: $bleuNaviso;
-    text-decoration: underline;
-    margin-top: 1rem;
-    font-size: 0.85rem;
+// #bandeau_cookies {
+//     #boutons_bandeau {
+//         #choisir_lesquels_cookies {
+//             background-color: $greenNaviso;
+//             color: #fff;
+//             border: 1px solid rgba(255, 255, 255, 0.3) !important;
 
-    &:hover {
-        color: $bleuNaviso;
-        background-color: transparent !important;
-    }
-}
+//             &:hover {
+//                 background-color: rgba(255, 255, 255, 0.3);
+//             }
+//         }
 
-@media (max-width: 640px) {
-    #accepter_cookies, #choisir_lesquels_cookies {
-        width: 100% !important;
-    }
-}
+//         #accepter_cookies {
+//             color: #fff;
+
+//             &:hover {
+//                 color: $bleuNaviso;
+//             }
+//         }
+//     }
+// }
+
+// #choisir_les_cookies {
+//     .choisir_les_cookies_boutons {
+//         #retour_texte {
+//             background-color: $greenNaviso;
+//             color: #fff;
+//             border: 1px solid rgba(255, 255, 255, 0.3) !important;
+
+//             &:hover {
+//                 background-color: rgba(255, 255, 255, 0.3);
+//             }
+//         }
+
+//         #accepter_cookies_selectionnes {
+//             color: #fff;
+
+//             &:hover {
+//                 color: $bleuNaviso;
+//             }
+//         }
+//     }
+// }
+
+// #refuser_cookies {
+//     width: 100%;
+//     margin-top: 1rem !important;
+//     display: flex !important;
+//     justify-content: center;
+//     cursor: pointer;
+//     padding: 0 !important;
+//     background-color: transparent !important;
+//     color: $bleuNaviso;
+//     text-decoration: underline;
+//     margin-top: 1rem;
+//     font-size: 0.85rem;
+
+//     &:hover {
+//         color: $bleuNaviso;
+//         background-color: transparent !important;
+//     }
+// }
+
+// @media (max-width: 640px) {
+//     #accepter_cookies, #choisir_lesquels_cookies {
+//         width: 100% !important;
+//     }
+// }

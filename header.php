@@ -4,6 +4,45 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <?php 
+     
+     // cookies v1
+     $masquer_cookies = get_field("masquer_cookies", "option");
+     if ($masquer_cookies) :
+         $cookieNameToCheck = get_field('nom_du_cookie', 'option');
+         if (isset($_COOKIE[$cookieNameToCheck])) {
+             if ($_COOKIE[$cookieNameToCheck] == 'accepted') {
+                 if (isset($_COOKIE['googleAnalyticsCookie'])) {
+                     if (($_COOKIE['googleAnalyticsCookie']) == 'accepted') {
+                         $google_analytics = get_field('google_analytics', 'option');
+                         if ($google_analytics) {
+                             echo $google_analytics;
+                         }
+                     }
+                 }
+ 
+                 if (isset($_COOKIE['facebookCookie'])) {
+                     if (($_COOKIE['facebookCookie']) == 'accepted') {
+                         $facebook_pixel = get_field('pixel_facebook', 'option');
+                         if ($facebook_pixel) {
+                             echo $facebook_pixel;
+                         }
+                     }
+                 }
+             }
+         }
+     endif; 
+     
+     // cookies v2
+     $activer_le_bandeau_de_cookies_v2 = get_field('activer_le_bandeau_de_cookies_v2', 'option');
+     if ($activer_le_bandeau_de_cookies_v2) :
+         $nom_du_cookie = get_field('nom_du_cookie', 'option');
+         if (isset($_COOKIE[$nom_du_cookie]) && $_COOKIE[$nom_du_cookie] === 'accepted') {
+             insertCookieScripts("head");
+         }
+     endif;
+     
+     ?>
     <title><?php wp_title(); ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
@@ -12,45 +51,19 @@
     <?php $favicon = get_field('favicon', 'option'); ?>
     <?php if ($favicon) : ?>
         <link rel="icon" type="image/x-icon" href="<?php echo $favicon; ?>" />
-    <?php endif;
-    $cookieNameToCheck = get_field('nom_du_cookie', 'option');
-    if (isset($_COOKIE[$cookieNameToCheck])) {
-        if ($_COOKIE[$cookieNameToCheck] == 'accepted') {
-            if (isset($_COOKIE['googleAnalyticsCookie'])) {
-                if (($_COOKIE['googleAnalyticsCookie']) == 'accepted') {
-                    $google_analytics = get_field('google_analytics', 'option');
-                    if ($google_analytics) {
-                        echo $google_analytics;
-                    }
-                }
-            }
+    <?php endif; ?>
 
-            if (isset($_COOKIE['facebookCookie'])) {
-                if (($_COOKIE['facebookCookie']) == 'accepted') {
-                    $facebook_pixel = get_field('pixel_facebook', 'option');
-                    if ($facebook_pixel) {
-                        echo $facebook_pixel;
-                    }
-                }
-            }
-        }
-    }
-
+    <?php
     $tracking_matomo = get_field('tracking_matomo', 'option');
     if ($tracking_matomo) {
         echo $tracking_matomo;
     }
-    ?>
-    <?php wp_head(); ?>
+    wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-    <!--googleoff: index-->
-    <a tabindex="0" href="#global_content" class="skip_to_global_content">Passer au contenu principal</a>
-    <!--googleon: index -->
 
-    <?php
-
+<?php
     if (isset($_COOKIE[$cookieNameToCheck])) {
         if ($_COOKIE[$cookieNameToCheck] == 'accepted') {
             if (isset(($_COOKIE['googleAnalyticsCookie']))) {
@@ -71,7 +84,21 @@
                 }
             }
         }
-    } ?>
+    }
+    if ($activer_le_bandeau_de_cookies_v2) :
+        $nom_du_cookie = get_field('nom_du_cookie', 'option');
+        if (isset($_COOKIE[$nom_du_cookie]) && $_COOKIE[$nom_du_cookie] === 'accepted') {
+            // $is_in_body = true;
+            // $is_in_head = false;
+            // include(get_template_directory() . '/inc/content-builder-inc/cookies.php');
+            insertCookieScripts("body");
+        }
+    endif;
+?>
+
+    <!--googleoff: index-->
+    <a tabindex="0" href="#global_content" class="skip_to_global_content">Passer au contenu principal</a>
+    <!--googleon: index -->
 
 
     <?php $multilingue_traductions = get_field('multilingue_traductions', 'option'); ?>
@@ -86,7 +113,7 @@
 
 
     <header id="header" <?php if ($multilingue_traductions) : ?> class="multilingue_header" <?php endif; ?>>
-        <div id="header_shadow"></div>
+        <div class="header_shadow"></div>
         <div id="branding">
             <div id="content_header" class="content_large">
                 <a href="<?php bloginfo('url'); ?>" title="Retour à la page d'accueil">
