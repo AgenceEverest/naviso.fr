@@ -95,6 +95,9 @@ h2 strong, h3 strong {
 /*
 Fichier de customisation du CSS
 */
+div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner {
+  display: none;
+}
 #retourenhaut {
   z-index: 9999;
   background-color: white;
@@ -424,6 +427,16 @@ ul#menu-menu-principal li a {
 .block-2-colonnes-textevisuel-large:has(.hauteur-fixe-visuel-large) .col_right_wide_imgleft, .block-2-colonnes-textevisuel-large:has(.hauteur-fixe-visuel-large) .col_double_wide_imgleft {
   min-height: 373px;
 }
+@media (max-width: 1024px) {
+  .block-2-colonnes-textevisuel-large:has(.hauteur-fixe-visuel-large) .col_right_wide_imgleft, .block-2-colonnes-textevisuel-large:has(.hauteur-fixe-visuel-large) .col_double_wide_imgleft {
+    min-height: auto;
+  }
+}
+@media (max-width: 1024px) {
+  .logo-naviso-titre {
+    width: 2rem;
+  }
+}
 .hauteur-fixe-visuel-large {
   display: flex;
   align-items: center;
@@ -687,7 +700,7 @@ input.cta_btn_lead.cta_align_right {
 .header-home .filtre-image-header {
   width: 100%;
   height: 100%;
-  background-color: #132b4478;
+  background-color: #132b44b5;
   z-index: 2;
   position: absolute;
 }
@@ -1215,6 +1228,10 @@ input.cta_btn_lead.cta_align_right {
   left: 1px;
   bottom: 1px;
 }
+.cta-center {
+  width: 100%;
+  justify-content: center;
+}
 #block-app {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -1382,10 +1399,10 @@ input.cta_btn_lead.cta_align_right {
 }
 .logiciel header h1, .metier header h1, .formation header h1, .client header h1 {
   color: white !important;
-  font-size: 38px;
+  font-size: 1.5rem;
 }
 .logiciel header h1 svg, .metier header h1 svg, .formation header h1 svg, .client header h1 svg {
-  height: 38px;
+  height: 1.5rem;
 }
 .type-post header.entry_title {
   background-color: #4AB8A5;
@@ -1403,10 +1420,10 @@ input.cta_btn_lead.cta_align_right {
 }
 header.entry_title {
   padding-top: 0rem !important;
-  padding-bottom: 2.5rem !important;
+  padding-bottom: 2rem !important;
 }
 header.entry_title h1 {
-  margin-bottom: 0.5rem !important;
+  margin-bottom: 0rem !important;
 }
 .breadcrumb_container {
   background-color: #1F2D46;
@@ -1531,6 +1548,9 @@ header.entry_title h1 {
   height: auto !important;
   margin-bottom: 22%;
 }
+.prefooter_col_3 .footer_certification img {
+  height: 150px;
+}
 #aside_prefooter_baseline {
   color: white;
   text-align: left;
@@ -1549,8 +1569,10 @@ header.entry_title h1 {
 }
 #footer_content #menu-footer {
   display: flex;
+  text-decoration: none;
 }
 #footer_content #menu-footer a {
+  text-decoration: underline;
   margin-left: 1rem;
 }
 #footer_content .rs_link_wrapper {
@@ -1637,33 +1659,16 @@ header.entry_title h1 {
 .phone_number {
   text-decoration: underline;
 }
-#bandeau_cookies #boutons_bandeau #refuser_cookies, #bandeau_cookies #boutons_bandeau #choisir_lesquels_cookies {
-  background-color: #4AB8A5;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+#bandeau_cookies_v2 #bandeau_content h1, #bandeau_cookies_v2 #bandeau_content h2, #bandeau_cookies_v2 #bandeau_content h3, #bandeau_cookies_v2 #bandeau_content h4, #bandeau_cookies_v2 #bandeau_content h5, #bandeau_cookies_v2 #bandeau_content h6 {
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  margin: 0.7rem 0 !important;
 }
-#bandeau_cookies #boutons_bandeau #refuser_cookies:hover, #bandeau_cookies #boutons_bandeau #choisir_lesquels_cookies:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+.slider {
+  background-color: #2a9886;
 }
-#bandeau_cookies #boutons_bandeau #accepter_cookies {
-  color: #fff;
-}
-#bandeau_cookies #boutons_bandeau #accepter_cookies:hover {
-  color: #1F2D46;
-}
-#choisir_les_cookies .choisir_les_cookies_boutons #retour_texte {
-  background-color: #4AB8A5;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
-}
-#choisir_les_cookies .choisir_les_cookies_boutons #retour_texte:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-#choisir_les_cookies .choisir_les_cookies_boutons #accepter_cookies_selectionnes {
-  color: #fff;
-}
-#choisir_les_cookies .choisir_les_cookies_boutons #accepter_cookies_selectionnes:hover {
-  color: #1F2D46;
+input:checked + .slider {
+  background-color: #1F2D46;
 }
 @media (max-width: 1400px) {
   .fond-header {
@@ -1685,11 +1690,47 @@ header.entry_title h1 {
             position: inherit;
         }
     }  */
+  .footer_certification {
+    margin-bottom: 10% !important;
+  }
+  .block-2-colonnes-textevisuel-large .col_right_wide_imgleft.padding_section {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .bandeau-header-page + .block-2-colonnes-textevisuel-large .col_right_wide_imgleft.padding_section {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
   .col_right_wide_imgleft_wrapper_custom {
     padding-left: 3rem;
   }
+  .col_left_wide_imgleft {
+    padding-top: 0;
+  }
+  .col_left_wide_imgleft_img {
+    position: inherit;
+  }
+  .flex-dir-inherit .hauteur-fixe-visuel-large {
+    top: inherit;
+    margin-bottom: 2rem;
+  }
   .flex-dir-row-reverse {
     flex-direction: column-reverse !important;
+  }
+  .flex-dir-row-reverse .hauteur-fixe-visuel-large {
+    margin-bottom: 0;
+    margin-top: 2rem;
+  }
+  .flex-dir-row-reverse.visuel-en-haut-format-mobile {
+    flex-direction: inherit !important;
+  }
+  .flex-dir-row-reverse.visuel-en-haut-format-mobile .hauteur-fixe-visuel-large {
+    margin-bottom: 2rem;
+    margin-top: 0;
+    top: 0;
+  }
+  .flex-dir-row-reverse.visuel-en-haut-format-mobile .hauteur-fixe-visuel-large figure {
+    height: inherit;
   }
   #charger_les_images_wrapper {
     position: relative !important;
@@ -1765,8 +1806,20 @@ header.entry_title h1 {
   }
 }
 @media (max-width: 768px) {
+  .vague-milieu {
+    display: none;
+  }
+  .hauteur-fixe-visuel-large figure img {
+    height: inherit;
+  }
+  .hauteur-fixe-visuel figure img {
+    height: inherit;
+  }
+  img.image_simple_recadree, .col_left_wide_imgleft_img img {
+    object-fit: contain;
+  }
   .quotes-container {
-    padding-top: 220px;
+    padding-top: 40px;
   }
   .formateur {
     padding-top: 0.5rem;
@@ -1899,6 +1952,31 @@ header.entry_title h1 {
   }
 }
 @media (max-width: 480px) {
+  .test {
+    display: none;
+  }
+  .cta-sous-bloc-container {
+    flex-direction: column !important;
+  }
+  .cta-sous-bloc-container .cta_sous_colonnes_flex:nth-child(1) {
+    margin-right: 0 !important;
+  }
+  .cta-sous-bloc-container .cta_sous_colonnes_flex:nth-child(2) {
+    margin-left: 0 !important;
+  }
+  .double-cta {
+    flex-direction: column;
+  }
+  .double-cta .cta_btn_lead:nth-child(2) {
+    margin-right: 0 !important;
+  }
+  .double-cta .cta_btn_lead:nth-child(1) {
+    margin-left: 0 !important;
+  }
+  .col_flexible_image img {
+    object-fit: contain !important;
+    height: auto !important;
+  }
   .element-visuel-deux-col {
     display: none;
   }
@@ -1938,9 +2016,6 @@ header.entry_title h1 {
     width: 90%;
     margin: auto;
   }
-  .footer_certification img {
-    width: 100%;
-  }
   #header_contact {
     display: none !important;
   }
@@ -1948,7 +2023,7 @@ header.entry_title h1 {
     width: 100% !important;
   }
   .col_flexible_image {
-    height: 300px;
+    height: auto;
   }
   .col_flexible_image img {
     height: 380px;
@@ -1956,5 +2031,5 @@ header.entry_title h1 {
     object-position: left;
   }
 }
-/*# sourceMappingURL=/home/clients/c647bb43f1cb4d0594e8025ceba4af87/sites/naviso.fr/wp-content/themes/nanosite-proefficace-child/css/mainchild.css.map */
+/*# sourceMappingURL=C:\MAMP\htdocs\naviso/wp-content/themes/nanosite-proefficace-child/css/mainchild.css.map */
 /*# sourceMappingURL=mainchild.css.map */

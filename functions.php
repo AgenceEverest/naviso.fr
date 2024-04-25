@@ -31,7 +31,7 @@ function my_acf_init_child()
             'render_callback'    => 'block_callback_child',
             'category'            => 'layout',
             'icon'                => 'image-flip-vertical',
-            'mode'                => 'edit', // permet d'ouvrir le bloc immédiatement, l'autre mode est "preview"
+            'mode'                => 'auto', // permet d'ouvrir le bloc immédiatement, l'autre mode est "preview"
         ));
         acf_register_block(array(
             'name'                => 'block-contacter-expert-logiciel',
@@ -40,7 +40,7 @@ function my_acf_init_child()
             'render_callback'    => 'block_callback_child',
             'category'            => 'layout',
             'icon'                => 'image-flip-vertical',
-            'mode'                => 'edit', // permet d'ouvrir le bloc immédiatement, l'autre mode est "preview"
+            'mode'                => 'auto', // permet d'ouvrir le bloc immédiatement, l'autre mode est "preview"
         ));
         acf_register_block(array(
             'name'                => 'block-listant-les-metiers',
@@ -49,7 +49,7 @@ function my_acf_init_child()
             'render_callback'    => 'block_callback_child',
             'category'            => 'layout',
             'icon'                => 'image-flip-vertical',
-            'mode'                => 'edit', // permet d'ouvrir le bloc immédiatement, l'autre mode est "preview"
+            'mode'                => 'auto', // permet d'ouvrir le bloc immédiatement, l'autre mode est "preview"
         ));
         acf_register_block(array(
             'name'                => 'block-newsletter',
@@ -58,7 +58,7 @@ function my_acf_init_child()
             'render_callback'    => 'block_callback_child',
             'category'            => 'layout',
             'icon'                => 'image-flip-vertical',
-            'mode'                => 'edit', // permet d'ouvrir le bloc immédiatement, l'autre mode est "preview"
+            'mode'                => 'auto', // permet d'ouvrir le bloc immédiatement, l'autre mode est "preview"
         ));
         acf_register_block(array(
             'name'                => 'block-app',
@@ -67,7 +67,7 @@ function my_acf_init_child()
             'render_callback'    => 'block_callback_child',
             'category'            => 'layout',
             'icon'                => 'image-flip-vertical',
-            'mode'                => 'edit', // permet d'ouvrir le bloc immédiatement, l'autre mode est "preview"
+            'mode'                => 'auto', // permet d'ouvrir le bloc immédiatement, l'autre mode est "preview"
         ));
         acf_register_block(array(
             'name'                => 'block-trois-derniers-webinaires',
@@ -76,7 +76,7 @@ function my_acf_init_child()
             'render_callback'    => 'block_callback_child',
             'category'            => 'layout',
             'icon'                => 'image-flip-vertical',
-            'mode'                => 'edit', // permet d'ouvrir le bloc immédiatement, l'autre mode est "preview"
+            'mode'                => 'auto', // permet d'ouvrir le bloc immédiatement, l'autre mode est "preview"
         ));
     }
 }
