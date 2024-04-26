@@ -15,6 +15,24 @@ function styles2_css()
 //la priorité à 99, c'est pour que main2.css soit chargé après main.css, de cette manière les règles CSS du thème enfant peuvent écraser celles du thème parent.
 add_action('wp_enqueue_scripts', 'styles2_css', 99);
 
+
+// on désactive l'import des champs ACF (Ils ne sont plus importés depuis le thème, mais depuis ACF lui même)
+define('DISABLE_ACF_CUSTOMISATION_NANOSITE', true);
+define('DISABLE_ACF_CLONABLE_COLONNE_FLEXIBLE', true);
+define('DISABLE_ACF_CLONABLE_BLOCK_OPTIONS', true);
+define('DISABLE_ACF_BLOCK_1_COLONNE', true);
+define('DISABLE_ACF_BLOCK_2_COLONNES', true);
+define('DISABLE_ACF_BLOCK_3_COLONNES', true);
+define('DISABLE_ACF_BLOCK_2_COLONNES_TEXTEVISUEL', true);
+define('DISABLE_ACF_BLOCK_2_COLONNES_TEXTEVISUEL_LARGE', true);
+define('DISABLE_ACF_BLOCK_MULTICOLONNES', true);
+define('DISABLE_ACF_BLOCK_LISTE_POSTS', true);
+define('DISABLE_ACF_BLOCK_TEXT_CTA', true);
+define('DISABLE_ACF_BLOCK_CHIFFRES_CLES', true);
+define('DISABLE_ACF_BLOCK_ANCRES_V2', true);
+define('DISABLE_ACF_CLONABLE_COLONNES_FLEXIBLES', true);
+define('DISABLE_ACF_CLONABLE_OPTIONS', true);
+
 /**
  * Si vous avez besoin d'ajouter des blocs ACF dans le thème enfant d'un site, il faut les ajouter ici, il su
  */
@@ -23,7 +41,15 @@ function my_acf_init_child()
 {
     // check function exists
     if (function_exists('acf_register_block')) {
-        // register block test
+        acf_register_block(array(
+            'name'                => 'block-2-colonnes-superposition',
+            'title'                => __('Bloc 2 colonnes avec superposition de contenu'),
+            'description'        => __('Un bloc pour le theme enfant.'),
+            'render_callback'    => 'block_callback_child',
+            'category'            => 'layout',
+            'icon'                => 'image-flip-vertical',
+            'mode'                => 'edit', // permet d'ouvrir le bloc immédiatement, l'autre mode est "preview"
+        ));
         acf_register_block(array(
             'name'                => 'block-selection-clients',
             'title'                => __('Bloc sélection de cas clients'),
