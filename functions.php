@@ -41,6 +41,17 @@ function my_acf_init_child()
 {
     // check function exists
     if (function_exists('acf_register_block')) {
+
+        // register block filtre
+		acf_register_block(array(
+			'name'				=> 'block-cpt-list-filterable',
+			'title'				=> __('Bloc listant les articles customisés filtrables'),
+			'description'		=> __('Un bloc montrant un filtre.'),
+			'render_callback'	=> 'block_callback',
+			'category'			=> 'layout',
+			'icon'				=> 'image-flip-vertical',
+			'mode'				=> 'auto', // permet d'ouvrir le bloc immédiatement, l'autre mode est "preview"
+		));
         acf_register_block(array(
             'name'                => 'block-2-colonnes-superposition',
             'title'                => __('Bloc 2 colonnes avec superposition de contenu'),
@@ -48,7 +59,7 @@ function my_acf_init_child()
             'render_callback'    => 'block_callback_child',
             'category'            => 'layout',
             'icon'                => 'image-flip-vertical',
-            'mode'                => 'edit', // permet d'ouvrir le bloc immédiatement, l'autre mode est "preview"
+            'mode'                => 'auto', // permet d'ouvrir le bloc immédiatement, l'autre mode est "preview"
         ));
         acf_register_block(array(
             'name'                => 'block-selection-clients',
