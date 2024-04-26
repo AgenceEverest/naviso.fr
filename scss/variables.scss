@@ -25,9 +25,14 @@ $primaire1: $greenNaviso !default;
 $primaire: $greenNaviso !default;
 $primaire2: $greenNaviso !default;
 
+
 $secondaire1: $bleuNaviso !default;
 $secondaire: $bleuNaviso !default;
 $secondaire2: $bleuNaviso !default;
+
+
+$primaireAlpha: rgba($primaire, 0.2);
+$secondaireAlpha: rgba($secondaire, 0.2);
 
 //alertes
 $red: #ff0000;
