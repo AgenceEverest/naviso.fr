@@ -73,3 +73,9 @@ header.entry_title{
         color: white !important;
     }
 }
+
+
+body.blog header.entry_title,
+.archive header.entry_title {
+    background-color: $bleuNaviso;
+}

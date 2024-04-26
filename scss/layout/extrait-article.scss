@@ -1,0 +1,36 @@
+.article_extrait{
+    box-shadow: 0px 10px 50px 20px #68686829;
+    background-color:#fff;
+    padding-bottom:7rem;
+    .entry_title_date {
+        text-align:center;
+        a{
+            color:$greenNaviso;
+        }
+    }
+    .article_extrait_wrapper_text{
+        padding-bottom:0;
+    }
+    .article_extrait_post_title{
+        text-align: center;
+        font-size: 24px;
+        margin-top: 1rem;
+        a{
+            font-family: "Montserrat-bolder" !important;
+            font-weight: bold !important;
+            color: #000;
+            &:hover{
+                color: $greenNaviso;
+            }
+        }
+    }
+    .article_extrait_post_desc{
+        text-align:center;
+    }
+    .cta_extrait_article{
+        position:absolute;
+        left:50%;
+        transform: translateX(-50%);
+        bottom:2rem;
+    }
+}
