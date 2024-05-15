@@ -45,13 +45,9 @@ closeButtonFooter.addEventListener('click', () => {
 })
 
 
-let afficherNumeroTelephone = document.querySelector('#afficherNumeroTelephone');
-let numeroTelephone = document.querySelector('#numeroTelephone');
-
-if (afficherNumeroTelephone && numeroTelephone) {
-    afficherNumeroTelephone.addEventListener('click', () => {
-        numeroTelephone.style.display = 'block';
-        afficherNumeroTelephone.style.display = 'none';
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector(".phone_number").addEventListener('click', (event) => {
+        document.querySelector(".phone_number #afficherNumeroTelephone").style.display = 'none'
+        document.querySelector(".phone_number #numeroTelephone").style.display = 'inline-block'
     })
-}
-
+});

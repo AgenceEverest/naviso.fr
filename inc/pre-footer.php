@@ -24,7 +24,7 @@
 					<?php endif; ?>
 					<p class="cta_btn_lead cta_ternaire newsletter-mobile newsletter-button-footer"><a><?= $texte_inscription_newsletter ?></a></p>
 
-					<h3 class="titre-coordonnees"><?= $texte_titre_coordonnees ?><h3>
+					<h3 class="titre-coordonnees"><?= $texte_titre_coordonnees ?></h3>
 							<?php $nom = get_field('nom', 'option'); ?>
 							<?php $adresseligne1 = get_field('adresse_ligne_1', 'option'); ?>
 							<?php $adresseligne2 = get_field('adresse_ligne_2', 'option'); ?>
@@ -38,7 +38,7 @@
 									<p class="coordonnees_p_i legende phone_number">
 										<?= apply_filters('add_svg', 'phone') ?>
 										<span id="afficherNumeroTelephone"><?php echo $texte_afficher_le_numero; ?></span>
-										<span id="numeroTelephone"><?php echo $numerodetelephone ?></span>
+										<span id="numeroTelephone"><?php echo $numerodetelephone; ?></span>
 									</p>
 								<?php endif; ?>
 								<p class="coordonnees_p_i legende">

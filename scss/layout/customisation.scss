@@ -2,6 +2,12 @@
 Fichier de customisation du CSS
 */
 
+// Home Blog 
+.term_tag_item::after{
+    background-color:$bleuNaviso;
+}
+
+// Bandeau Hubspot
 div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner{
     display:none;
 }
@@ -488,6 +494,7 @@ ul#menu-menu-principal li a {
     #aside_actualites_title {
         margin: auto;
         font-size: 38px;
+        line-height:1.35;
         color: $greenNaviso;
         width: auto;
     }

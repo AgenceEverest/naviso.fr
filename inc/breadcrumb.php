@@ -122,7 +122,7 @@ if (is_singular('post')) : ?>
 <!-- Archive blog -->
 <?php
 if (is_home()) : ?>
-	<?php $page_for_posts = get_option(''); ?>
+	<?php $page_for_posts = get_option('page_for_posts'); ?>
 	<div class="breadcrumb_container">
 		<nav class="breadcrumb_top content_width">
 			<p class="legende"><a href="<?php bloginfo('url'); ?>">

@@ -227,7 +227,7 @@ if (!function_exists('acf_load_icons')) {
 // add Hubspot tracking in <head>
 function add_Hubspot_tracking() {
     ?>
-    <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/25676509.js"></script>
+    <script type="text/javascript" id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/25676509.js"></script>
     <?php
 }
 add_action('wp_head', 'add_Hubspot_tracking');

@@ -12,21 +12,21 @@ if (isset($page_for_posts)){
 
 		<div id="aside_actualites_header" class="content_width">
 			<h2 id="aside_actualites_title"><?php echo $titre_de_la_sidebar_actualites; ?></h2>
-			<div id="charger_les_images_wrapper" class="content_width">
+			<div id="charger_les_images_wrapper" class="content_width" style="display:none;">
 				<div class="legende">
-		<!-- 			<div id="charger_les_images_switch">
+					<div id="charger_les_images_switch">
 						<?php $charger_les_images = get_field('charger_les_images', 'option'); ?>
 						<label tabindex="0" for="f" id="charger_les_images"><?php if($charger_les_images): ?><?php echo $charger_les_images; ?><?php endif; ?></label>
 						<label tabindex="-1" id="charger_les_images_switch_label" class="switch">
 							<input tabindex="-1" name="charger_les_images_switch" id="f" type="checkbox">
 							<span tabindex="-1" class="slider round"></span>
 						</label>
-					</div> -->
+					</div>
 				</div>
 			</div>
 		</div>
 
-		<div id="aside_actualites_wrapper">
+		<div id="aside_actualites_wrapper" class="content_width">
 			<?php
 			$the_query = new WP_Query(array(
 				'post_type'         => 'post',
@@ -39,8 +39,6 @@ if (isset($page_for_posts)){
 			<?php endwhile; ?>
 			<?php wp_reset_query(); ?>
 		</div>
-
-		<div class="remove_margin"></div>
 
 		<?php $texte_du_bouton_pour_voir_tous_les_articles = get_field('texte_du_bouton_pour_voir_tous_les_articles', 'option'); ?>
 		<p class="cta_btn_lead cta_ternaire"><a href="<?= $page_for_posts ?>"><?php echo $texte_du_bouton_pour_voir_tous_les_articles; ?></a></p>
