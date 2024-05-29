@@ -56,13 +56,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 function reorderTarteaucitronButtons() {
-
     // Sélectionner le conteneur des boutons
     let container = document.getElementById("tarteaucitronAlertBig");
     
-    if(container){
+    if (container) {
+        // Sélectionner le texte des cookies à conserver
+        let texteCookies = document.getElementById("tarteaucitronDisclaimerAlert");
         
-        let texteCookies = document.getElementById("tarteaucitronDisclaimerAlert"); 
         // Sélectionner les boutons individuels
         let closeButton = document.getElementById("tarteaucitronCloseAlert");
         let personalizeButton = document.getElementById("tarteaucitronPersonalize2");
@@ -70,26 +70,26 @@ function reorderTarteaucitronButtons() {
     
         // Créer un fragment pour les nouveaux éléments
         let fragment = document.createDocumentFragment();
+
+        // Ajouter le texte des cookies au fragment
+        fragment.appendChild(texteCookies);
     
         // Ajouter les boutons dans l'ordre souhaité
-        fragment.appendChild(texteCookies);
         fragment.appendChild(closeButton);
         fragment.appendChild(personalizeButton);
         fragment.appendChild(denyButton);
     
-        // Vider le conteneur actuel des boutons
+        // Vider le conteneur actuel des boutons tout en gardant le texte des cookies
         while (container.firstChild) {
             container.removeChild(container.firstChild);
         }
     
-        // Ajouter les boutons réorganisés au conteneur
+        // Ajouter le texte et les boutons réorganisés au conteneur
         container.appendChild(fragment);
-
     }
-
 }
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => {
         reorderTarteaucitronButtons();
-    }, "500");
+    }, "800");
 });
