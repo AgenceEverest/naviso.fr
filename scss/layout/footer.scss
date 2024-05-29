@@ -207,7 +207,15 @@ body #tarteaucitronRoot div#tarteaucitronAlertBig{
 
 body #tarteaucitronRoot div#tarteaucitronAlertBig #tarteaucitronCloseAlert{
     background-color:transparent!important;
-    border:1px solid $primaireAlpha!important;
+    border:1px solid $secondaireAlpha!important;
+}
+body #tarteaucitronRoot div#tarteaucitronAlertBig #tarteaucitronCloseAlert,
+body #tarteaucitronRoot div#tarteaucitronAlertBig #tarteaucitronPersonalize2{
+    padding:0.7rem 1.6rem 0.8rem 1.6rem !important;
+    font-size:0.85rem!important;
+    line-height:1!important;
+    font-weight:bold;
+    font-family: "Montserrat" !important;
 }
 
 body #tarteaucitronRoot div#tarteaucitronAlertBig #tarteaucitronAllDenied2{
@@ -216,12 +224,12 @@ body #tarteaucitronRoot div#tarteaucitronAlertBig #tarteaucitronAllDenied2{
     margin-top: auto;
     text-align: center;
     background-color: transparent !important;
-    color: $primaire !important;
+    color: $secondaire !important;
     font-size: 0.85rem !important;
     padding: 0 !important;
     padding-bottom: 0px;
     margin-top: 1rem !important;
-    border-bottom: 1px solid $primaireAlpha;
+    border-bottom: 1px solid $secondaireAlpha;
     border-radius: 0 !important;
     padding-bottom: 0.2rem !important;
 }
