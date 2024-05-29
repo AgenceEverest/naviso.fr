@@ -86,6 +86,6 @@ function reorderTarteaucitronButtons() {
     }
 
 }
-
-// Appeler la fonction après le chargement de la page
-window.onload = reorderTarteaucitronButtons;
+document.addEventListener('DOMContentLoaded', function() {
+    reorderTarteaucitronButtons();
+});
