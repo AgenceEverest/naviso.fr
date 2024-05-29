@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function reorderTarteaucitronButtons() {
 
     if(document.getElementById("tarteaucitronAlertBig")){
-
+        console.log("citron")
         // Sélectionner le conteneur des boutons
         let container = document.getElementById("tarteaucitronAlertBig");
     
