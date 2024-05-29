@@ -61,8 +61,8 @@ function reorderTarteaucitronButtons() {
     let container = document.getElementById("tarteaucitronAlertBig");
     
     if(container){
-        console.log("citron")
-
+        
+        let texteCookies = document.getElementById("tarteaucitronDisclaimerAlert"); 
         // Sélectionner les boutons individuels
         let closeButton = document.getElementById("tarteaucitronCloseAlert");
         let personalizeButton = document.getElementById("tarteaucitronPersonalize2");
@@ -72,6 +72,7 @@ function reorderTarteaucitronButtons() {
         let fragment = document.createDocumentFragment();
     
         // Ajouter les boutons dans l'ordre souhaité
+        fragment.appendChild(texteCookies);
         fragment.appendChild(closeButton);
         fragment.appendChild(personalizeButton);
         fragment.appendChild(denyButton);
@@ -87,8 +88,8 @@ function reorderTarteaucitronButtons() {
     }
 
 }
-// document.addEventListener('DOMContentLoaded', function() {
-//     setTimeout(() => {
-//         reorderTarteaucitronButtons();
-//     }, "1000");
-// });
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(() => {
+        reorderTarteaucitronButtons();
+    }, "500");
+});
