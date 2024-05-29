@@ -57,11 +57,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function reorderTarteaucitronButtons() {
 
-    if(document.getElementById("tarteaucitronAlertBig")){
-        console.log("citron")
-        // Sélectionner le conteneur des boutons
-        let container = document.getElementById("tarteaucitronAlertBig");
+    // Sélectionner le conteneur des boutons
+    let container = document.getElementById("tarteaucitronAlertBig");
     
+    if(container){
+        console.log("citron")
+
         // Sélectionner les boutons individuels
         let closeButton = document.getElementById("tarteaucitronCloseAlert");
         let personalizeButton = document.getElementById("tarteaucitronPersonalize2");
