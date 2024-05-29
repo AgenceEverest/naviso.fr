@@ -51,3 +51,41 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector(".phone_number #numeroTelephone").style.display = 'inline-block'
     })
 });
+
+
+
+
+function reorderTarteaucitronButtons() {
+
+    if(document.getElementById("tarteaucitronAlertBig")){
+
+        // Sélectionner le conteneur des boutons
+        let container = document.getElementById("tarteaucitronAlertBig");
+    
+        // Sélectionner les boutons individuels
+        let closeButton = document.getElementById("tarteaucitronCloseAlert");
+        let personalizeButton = document.getElementById("tarteaucitronPersonalize2");
+        let denyButton = document.getElementById("tarteaucitronAllDenied2");
+    
+        // Créer un fragment pour les nouveaux éléments
+        let fragment = document.createDocumentFragment();
+    
+        // Ajouter les boutons dans l'ordre souhaité
+        fragment.appendChild(closeButton);
+        fragment.appendChild(personalizeButton);
+        fragment.appendChild(denyButton);
+    
+        // Vider le conteneur actuel des boutons
+        while (container.firstChild) {
+            container.removeChild(container.firstChild);
+        }
+    
+        // Ajouter les boutons réorganisés au conteneur
+        container.appendChild(fragment);
+
+    }
+
+}
+
+// Appeler la fonction après le chargement de la page
+window.onload = reorderTarteaucitronButtons;
