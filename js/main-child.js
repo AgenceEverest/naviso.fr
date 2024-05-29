@@ -88,5 +88,7 @@ function reorderTarteaucitronButtons() {
 
 }
 document.addEventListener('DOMContentLoaded', function() {
-    reorderTarteaucitronButtons();
+    setTimeout(() => {
+        reorderTarteaucitronButtons();
+    }, "1000");
 });
