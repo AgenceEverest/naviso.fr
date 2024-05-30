@@ -104,7 +104,7 @@ function reorderTarteaucitronButtons() {
 }
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => {
-        document.getElementById("tarteaucitronAlertBig").style.display = "block";
+        document.getElementById("tarteaucitronAlertBig").style.visibility = "visible";
         reorderTarteaucitronButtons();
     }, "800");
 });
