@@ -210,13 +210,15 @@ body #tarteaucitronRoot div#tarteaucitronAlertBig #tarteaucitronDisclaimerAlert{
     font-family: "Montserrat" !important;
     background-color:transparent!important;
     text-align:center!important;
-    margin-bottom:1rem!important;
+    margin-bottom:1.6rem!important;
     & p{
         text-align:center!important;
     }
     & h6{
         text-align:center!important;
-        margin-bottom:0!important;
+        margin-bottom: 0.5rem !important;
+        margin-top: 0.5rem !important;
+        font-size: 1.3rem;
     }
     & a{
         color:$secondaire!important;
@@ -246,7 +248,7 @@ body #tarteaucitronRoot div#tarteaucitronAlertBig #tarteaucitronAllDenied2{
     font-size: 0.85rem !important;
     padding: 0 !important;
     padding-bottom: 0px;
-    margin-top: 1rem !important;
+    margin-top: 0.3rem !important;
     border-bottom: 1px solid $primaireAlpha;
     border-radius: 0 !important;
     padding-bottom: 0.2rem !important;
