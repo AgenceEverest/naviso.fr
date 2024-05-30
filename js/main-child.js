@@ -60,8 +60,22 @@ function reorderTarteaucitronButtons() {
     let container = document.getElementById("tarteaucitronAlertBig");
     
     if (container) {
-        // Sélectionner le texte des cookies à conserver
-        let texteCookies = document.getElementById("tarteaucitronDisclaimerAlert");
+        // Supprimer le texte actuel des cookies
+        let oldTextCookies = document.getElementById("tarteaucitronDisclaimerAlert");
+        if (oldTextCookies) {
+            oldTextCookies.remove();
+        }
+
+        // Créer une nouvelle div pour le texte des cookies
+        let newTextCookies = document.createElement("div");
+        newTextCookies.id = "tarteaucitronDisclaimerAlert"; // Garder le même ID pour la nouvelle div
+        
+        // Ajouter le nouveau contenu
+        newTextCookies.innerHTML = `
+            <p>Ce site web utilise des cookies.</p>
+            <h6>Nous respectons votre vie privée.</h6>
+            <p>Découvrez <a href="https://www.naviso.fr/mentions-legales/">notre politique de confidentialité.</a></p>
+        `;
         
         // Sélectionner les boutons individuels
         let closeButton = document.getElementById("tarteaucitronCloseAlert");
@@ -72,7 +86,7 @@ function reorderTarteaucitronButtons() {
         let fragment = document.createDocumentFragment();
 
         // Ajouter le texte des cookies au fragment
-        fragment.appendChild(texteCookies);
+        fragment.appendChild(newTextCookies);
     
         // Ajouter les boutons dans l'ordre souhaité
         fragment.appendChild(closeButton);
