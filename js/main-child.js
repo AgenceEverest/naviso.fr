@@ -74,7 +74,7 @@ function reorderTarteaucitronButtons() {
         newTextCookies.innerHTML = `
             <p>Ce site web utilise des cookies.</p>
             <h6>Nous respectons votre vie privée.</h6>
-            <p>Découvrez <a href="https://www.naviso.fr/mentions-legales/">notre politique de confidentialité.</a></p>
+            <p>Découvrez <a href="https://www.naviso.fr/cgu/">notre politique de confidentialité.</a></p>
         `;
         
         // Sélectionner les boutons individuels
