@@ -106,5 +106,5 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => {
         document.getElementById("tarteaucitronAlertBig").style.visibility = "visible";
         reorderTarteaucitronButtons();
-    }, "800");
+    }, "700");
 });
