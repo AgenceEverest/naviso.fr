@@ -210,15 +210,17 @@ body #tarteaucitronRoot div#tarteaucitronAlertBig #tarteaucitronDisclaimerAlert{
     font-family: "Montserrat" !important;
     background-color:transparent!important;
     text-align:center!important;
+    margin-bottom:1rem!important;
     & p{
         text-align:center!important;
     }
     & h6{
         text-align:center!important;
+        margin-bottom:0!important;
     }
     & a{
         color:$secondaire!important;
-        border:1px solid $primaireAlpha!important;
+        border-bottom:1px solid $primaireAlpha!important;
     }
 }
 body #tarteaucitronRoot div#tarteaucitronAlertBig #tarteaucitronCloseAlert{
