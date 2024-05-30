@@ -208,6 +208,15 @@ body #tarteaucitronRoot div#tarteaucitronAlertBig{
     visibility:hidden;
 }
 
+@media only screen and (max-width: 768px) {
+    body #tarteaucitronRoot div#tarteaucitronAlertBig{
+        max-width:calc(100% - 1rem)!important;
+        width:calc(100% - 1rem)!important;
+        height:auto!important;
+        padding:60px 50px 50px 50px !important;
+    }
+}
+
 body #tarteaucitronRoot div#tarteaucitronAlertBig #tarteaucitronDisclaimerAlert{
     font-size:1rem!important;
     font-family: "Montserrat" !important;
