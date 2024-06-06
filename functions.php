@@ -258,4 +258,4 @@ add_action('wp_head', 'add_Hubspot_tracking');
 
 
 include(get_stylesheet_directory() . '/functions/exclude-from-xml-sitemap.php');
-// include(get_stylesheet_directory() . '/functions/structured-data-for-breadcrumb-child.php');
+include(get_stylesheet_directory() . '/functions/structured-data-for-breadcrumb-child.php');
