@@ -108,3 +108,11 @@ document.addEventListener('DOMContentLoaded', function() {
         reorderTarteaucitronButtons();
     }, "700");
 });
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    let logoHeader = document.getElementById("content_header");
+    logoHeader.style.display = "block";
+});

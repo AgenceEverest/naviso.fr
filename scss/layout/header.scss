@@ -1,3 +1,6 @@
+#content_header{
+    display:none; // il devient visible lorsque le DOM est chargé, via JS
+}
 .header-home {
     position: relative;
     .fond-header {
