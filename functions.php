@@ -15,6 +15,13 @@ function styles2_css()
 //la priorité à 99, c'est pour que main2.css soit chargé après main.css, de cette manière les règles CSS du thème enfant peuvent écraser celles du thème parent.
 add_action('wp_enqueue_scripts', 'styles2_css', 99);
 
+// Désenregistrer ArkFilter
+function arkfilter_deregister_scripts() {
+    wp_dequeue_script('ark_filter');
+    wp_deregister_script('ark_filter');
+}
+add_action('wp_enqueue_scripts', 'arkfilter_deregister_scripts', 100);
+
 
 // on désactive l'import des champs ACF (Ils ne sont plus importés depuis le thème, mais depuis ACF lui même)
 define('DISABLE_ACF_CUSTOMISATION_NANOSITE', true);
