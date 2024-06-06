@@ -236,25 +236,25 @@ add_action('wp_head', 'add_Hubspot_tracking');
 
 // Exclure les contneus inutiles du sitemap XML de Yoast
 
-// add_filter( 'wpseo_sitemap_exclude_taxonomy', 'exclude_taxonomy_from_sitemap', 10, 2 );
-// function exclude_taxonomy_from_sitemap( $value, $taxonomy ) {
-//     if ( $taxonomy == 'type_de_metier_actualite' ) {
-//         return true;
-//     }
-//     if ( $taxonomy == 'nom_logiciel' ) {
-//         return true;
-//     }
-//     if ( $taxonomy == 'type_de_formation' ) {
-//         return true;
-//     }
-//     if ( $taxonomy == 'type_de_metier' ) {
-//         return true;
-//     }
-//     if ( $taxonomy == 'partenaire' ) {
-//         return true;
-//     }
-//     return $value;
-// }
+add_filter( 'wpseo_sitemap_exclude_taxonomy', 'exclude_taxonomy_from_sitemap', 10, 2 );
+function exclude_taxonomy_from_sitemap( $value, $taxonomy ) {
+    if ( $taxonomy == 'type_de_metier_actualite' ) {
+        return true;
+    }
+    if ( $taxonomy == 'nom_logiciel' ) {
+        return true;
+    }
+    if ( $taxonomy == 'type_de_formation' ) {
+        return true;
+    }
+    if ( $taxonomy == 'type_de_metier' ) {
+        return true;
+    }
+    if ( $taxonomy == 'partenaire' ) {
+        return true;
+    }
+    return $value;
+}
 
 // add_filter( 'wpseo_sitemap_exclude_post_type', 'exclude_posttype_from_sitemap', 10, 2 );
 // function exclude_posttype_from_sitemap( $value, $taxonomy ) {
