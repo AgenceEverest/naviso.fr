@@ -13,7 +13,7 @@
                 while (have_rows('liste_naviso_avec_icone')) : the_row();
                     // Load sub field value.
                     $texteDeLaListe = get_sub_field('texte_de_la_liste'); ?>
-                 <p class="element-liste-naviso"><img class="picto-liste-naviso" src="<?= $image_picto ?>"> <?= $texteDeLaListe ?></p>
+                 <p class="element-liste-naviso"><img class="picto-liste-naviso" src="<?= $image_picto ?>" alt="Icône pour <?= $texteDeLaListe ?>"> <?= $texteDeLaListe ?></p>
 
          <?php endwhile;
             endif; ?>

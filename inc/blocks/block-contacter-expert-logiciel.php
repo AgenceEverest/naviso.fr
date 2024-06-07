@@ -86,7 +86,7 @@ endif;
                     <div class="col_flexible_item">
                         <div class="col_flexible_item_wrapper">
                             <div class="col_flexible_item_picto">
-                                <img src="<?php echo $picto; ?>" />
+                                <img src="<?php echo $picto; ?>" alt="icône"/>
                             </div>
                             <div class="col_flexible_item_texte">
                                 <?php echo $question_de_la_liste; ?>

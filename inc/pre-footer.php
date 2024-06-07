@@ -115,7 +115,7 @@
 					<?php else : endif; ?>
 				<?php endif; ?>
 			</div>
-			<img class="logo-bzh-footer" src="<?= $logo_bretagne_a_droite_du_footer ?>">
+			<img class="logo-bzh-footer" src="<?= $logo_bretagne_a_droite_du_footer ?>" alt="Logo Marque Bretagne">
 		</div>
 		<div class="remove_margin"></div>
 	</aside>
