@@ -207,6 +207,9 @@ body #tarteaucitronRoot div#tarteaucitronAlertBig{
     padding:60px 50px 50px 50px !important;
     // visibility:hidden;
 }
+#tarteaucitronIcon{
+    display:none!important;
+}
 
 @media only screen and (max-width: 768px) {
     body #tarteaucitronRoot div#tarteaucitronAlertBig{
